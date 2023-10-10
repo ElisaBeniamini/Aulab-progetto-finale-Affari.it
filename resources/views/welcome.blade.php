@@ -1,4 +1,4 @@
-<layoyt>
+<x-layout><x-navbar/>
 <div class="container mt-5">
     <h2 class="mb-4">Carica un nuovo articolo</h1>
     <form>
@@ -30,4 +30,4 @@
         <button type="submit" class="btn custom-purple-button">Carica articolo</button>
     </form>
 </div>
-</layout>
+</x-layout>
