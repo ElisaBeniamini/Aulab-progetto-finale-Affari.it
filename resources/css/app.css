@@ -163,3 +163,15 @@ label {
 .arrow {
     cursor: pointer;
 }
+.container {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.immagine img {
+    border-radius: 7px;
+    width: 30%;
+    float: right;
+    margin-top: -430px;
+    margin-right: 110px;
+}

@@ -30,4 +30,5 @@
         <button type="submit" class="btn custom-purple-button">Carica articolo</button>
     </form>
 </div>
+<div class="immagine"><img src="https://img.freepik.com/free-vector/ordering-goods-online-internet-store-online-shopping-niche-e-commerce-website-mother-buying-babies-clothes-footwear-toys-infant-accessories-vector-isolated-concept-metaphor-illustration_335657-2764.jpg?w=2000&t=st=1696965776~exp=1696966376~hmac=14b2d0c37cfc8fabedcfcde946b35b91a69dda8a337249cb97f2f1a538e1775c"> </div>
 </x-layout>
