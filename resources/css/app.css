@@ -170,8 +170,15 @@ label {
 
 .immagine img {
     border-radius: 7px;
+    display: flex;
     width: 30%;
     float: right;
-    margin-top: -430px;
-    margin-right: 110px;
+    margin-top: -430px !important;
+    margin-right: 110px !important;
+}
+
+@media (max-width: 768px) {
+    .immagine {
+        display: none;
+    }
 }
