@@ -14,7 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+<<<<<<< HEAD
 
 
 Route::get('/', [BasicController::class, 'homepage'])
     ->name('homepage');
+=======
+Route::get('/', function () {
+    return view('welcome');
+});
+
+//Start-Rotte-Annunci.
+Route::resource('/announcement',AnnouncementController::class);
+//End-Rotte-Annunci.
+>>>>>>> 0964f4dbea41093d6133fe7b1ac317dddb0e8cc9
