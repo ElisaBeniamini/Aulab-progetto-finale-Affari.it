@@ -67,5 +67,20 @@ class FortifyServiceProvider extends ServiceProvider
         Fortify::confirmPasswordView(function () {
             return view('auth.confirm-password');
         });
-    }
-}
+        Fortify::loginView(function () {
+        return view('auth.login');
+    });
+ 
+    // ...
+
+
+    Fortify::registerView(function () {
+        return view('auth.register');
+    });
+ 
+    // ...
+    }}
+
+    
+
+
