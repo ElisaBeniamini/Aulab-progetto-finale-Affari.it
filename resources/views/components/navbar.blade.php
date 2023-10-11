@@ -1,14 +1,14 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
         <a class="navbar-brand" href="#"><img src="Logo Presto.png" alt="Logo" width="200"></a>
-        @auth
-            <div class="d-flex justify-content-end align-items-center"><button type="button"
-                    class="btn btn-outline-primary">Inserisci annuncio</button>
-                <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" class="btn" type="image"
-                    width="50" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                    aria-controls="offcanvasRight">
-            </div>
-        @endauth
+
+        <div class="d-flex justify-content-end align-items-center"><button type="button"
+                class="btn btn-outline-primary">Inserisci annuncio</button>
+            <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" class="btn" type="image"
+                width="50" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                aria-controls="offcanvasRight">
+        </div>
+
 
     </div>
 </nav>
