@@ -31,7 +31,7 @@
 
         <!-- Pills content -->
         <div class="tab-content">
-            <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
+        <div class="tab-pane show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
                 <form>
                     <!-- Email input -->
                     <div class="form-outline mb-4">
@@ -72,7 +72,8 @@
                 </form>
             </div>
 
-            <div class="tab-pane fade d-none" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
+            <div class="tab-pane" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
+
                 <form>
                     <p class="text-center">or:</p>
 
