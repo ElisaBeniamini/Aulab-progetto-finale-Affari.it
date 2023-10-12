@@ -20,12 +20,11 @@ Route::get('/', [BasicController::class, 'homepage'])
     ->name('homepage');
 
 
-Route::get('/announcement/show', [AnnouncementController::class, 'show'])->name('show');
+Route::resource('announcement', AnnouncementController::class);
 
 
-
-Route::get('/announcement/index', [AnnouncementController::class, 'index'])
-    ->name('announcement.index');
+//Route::get('/announcement/index', [AnnouncementController::class, 'index'])
+//  ->name('announcement.index');
 
 
 
