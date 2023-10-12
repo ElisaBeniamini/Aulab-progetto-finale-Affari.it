@@ -75,15 +75,9 @@
             <div class="tab-pane" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
 
                 <form>
-                    <p class="text-center">or:</p>
+              
 
-                    <!-- Name input -->
-                    <div class="form-outline mb-4">
-                        <input type="text" id="registerName" class="form-control" />
-                        <label class="form-label" for="registerName">Name</label>
-                    </div>
-
-                    <!-- Username input -->
+                   <!-- Username input -->
                     <div class="form-outline mb-4">
                         <input type="text" id="registerUsername" class="form-control" />
                         <label class="form-label" for="registerUsername">Username</label>
@@ -117,7 +111,7 @@
                     </div>
 
                     <!-- Submit button -->
-                    <button type="submit" class="btn custom-purple-btn btn-block mb-3">Sign in</button>
+                    <button type="submit" class="btn custom-purple-button btn-block mb-4">Sign in</button>
                 </form>
             </div>
         </div>
