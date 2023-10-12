@@ -19,11 +19,11 @@
     <div class="offcanvas-body">
         <!-- Pills navs -->
         <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
-            <li class="nav-item" role="presentation">
+            <li class="nav-item px-1" role="presentation">
                 <a class="nav-link active custom-purple-button" id="tab-login" data-mdb-toggle="pill"
                     href="#pills-login" role="tab" aria-controls="pills-login" aria-selected="true">Login</a>
             </li>
-            <li class="nav-item" role="presentation">
+            <li class="nav-item px-1" role="presentation">
                 <a class="btn btn-outline-primary" id="tab-register" data-mdb-toggle="pill" href="#pills-register" role="tab"
                     aria-controls="pills-register" aria-selected="false">Register</a>
             </li>

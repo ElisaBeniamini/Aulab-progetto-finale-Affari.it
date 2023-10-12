@@ -101,6 +101,7 @@ label {
     ;
     color: #7069bc !important;
     width: 100%;
+    padding-left: 3px;
     position: absolute(start)
 }
 
@@ -203,12 +204,17 @@ label {
     .immagine {
         display: none;
     }
+    .offcanvas {
+        width: 100% !important;
+    }
 }
 
 /* Stile per l'input "Email or username" nel form di login */
 #pills-login #loginName {
 background-color: #fff !important;
 justify-content: center !important;
+width:100% !important;
+margin-top: 50px !important;
 }
 
 /* Stile per l'input "Password" nel form di login */
@@ -219,6 +225,7 @@ justify-content: center !important;
     align-items: center;
     justify-content: center;
     height: 100%; 
+    width: 100% !important;;
 }
 
 
