@@ -1,13 +1,16 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{{ route('homepage') }}"><img src="Logo Presto.png" alt="Logo" width="200"></a>
+        <a class="navbar-brand" href="{{ route('homepage') }}"><img src="/Logo Presto.png" alt="Logo" width="200"></a>
 
         <div class="d-flex justify-content-end align-items-center">
             <a class="btn btn-outline-primary" href="{{ route('announcement.create') }}">Inserisci annuncio</a>
             <div class="messaggio">Bentornato, Username <br> Logout</div>
-            <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" class="btn" type="image"
-                width="50" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                aria-controls="offcanvasRight">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="#7069bc" class="btn bi bi-person-fill" type="image"
+                data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                aria-controls="offcanvasRight"viewBox="0 0 16 16">
+  <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+</svg> 
         </div>
     </div>
 </nav>
@@ -46,17 +49,8 @@
                         <label class="form-label" for="loginPassword">Password</label>
                     </div>
 
-                    <!-- 2 column grid layout -->
-                    <div class="row mb-4">
-                        <div class="col-md-6 d-flex justify-content-center">
-                            <!-- Checkbox -->
-                            <div class="form-check mb-3 mb-md-0">
-                                <input class="form-check-input" type="checkbox" value="" id="loginCheck"
-                                    checked />
-                                <label class="form-check-label" for="loginCheck"> Remember me </label>
-                            </div>
-                        </div>
-                    </div>
+        
+                    
 
                     <!-- Submit button -->
                     <button type="submit" class="btn custom-purple-button btn-block mb-4">Sign in</button>
@@ -92,15 +86,6 @@
                     <div class="form-outline mb-4">
                         <input type="password" id="registerRepeatPassword" class="form-control" />
                         <label class="form-label" for="registerRepeatPassword">Repeat password</label>
-                    </div>
-
-                    <!-- Checkbox -->
-                    <div class="form-check d-flex justify-content-center mb-4 custom-checkbox-container">
-                        <input class="form-check-input me-2 custom-checkbox" type="checkbox" value=""
-                            id="registerCheck" checked aria-describedby="registerCheckHelpText" />
-                        <label class="form-check-label" for="registerCheck">
-                            I have read and agree to the terms
-                        </label>
                     </div>
 
                     <!-- Submit button -->

@@ -54,7 +54,7 @@
         </div>
         <div class="col-md-6">
         <div class="immagine"><img
-            src="public/ecommerce.jpg">
+            src="/ecommerce.jpg">
     </div>
         </div>
     </div>

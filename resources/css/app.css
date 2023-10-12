@@ -101,7 +101,6 @@ label {
     ;
     color: #7069bc !important;
     width: 100%;
-    padding-left: 3px;
     position: absolute(start)
 }
 
@@ -232,6 +231,7 @@ margin-top: 50px !important;
 /* Stile per l'input "Username" nel form di registrazione */
 #pills-register #registerUsername {
     background-color: #fff !important;
+    margin-top: 50px !important;
 }
 
 /* Stile per l'input "Email" nel form di registrazione */
