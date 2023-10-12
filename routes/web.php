@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\BasicController;
+use App\Models\Announcement;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,7 +20,15 @@ Route::get('/', [BasicController::class, 'homepage'])
     ->name('homepage');
 
 
-Route::resource('announcement', AnnouncementController::class);
+Route::get('/announcement/show', [AnnouncementController::class, 'show'])->name('show');
+
+
+
+Route::get('/announcement/index', [AnnouncementController::class, 'index'])
+    ->name('announcement.index');
+
+
+
 
 
 
