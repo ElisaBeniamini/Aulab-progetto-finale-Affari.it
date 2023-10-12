@@ -14,11 +14,18 @@ class Announcement extends Model
         'description',
         'price',
         'category_id',
+        'user_id',
     ];
 
     //Gli annunci appartanegono alle categorie.
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    //Gli annunci appartengona agli utenti.
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

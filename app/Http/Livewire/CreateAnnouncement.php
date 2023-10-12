@@ -4,7 +4,9 @@ namespace App\Http\Livewire;
 
 use App\Models\Announcement;
 use App\Models\Category;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
+
 
 class CreateAnnouncement extends Component
 {
@@ -25,11 +27,13 @@ class CreateAnnouncement extends Component
 
         $category = Category::find($this->category);
 
-        $category->announcements()->create([
+        $announcement = $category->announcements()->create([
             'title' => $this->title,
             'description' => $this->description,
             'price' => $this->price,
         ]);
+
+        Auth::user()->announcements()->save($announcement);
 
         $this->reset('title', 'description', 'price', 'category'); //Al submit pulisci i campi del form.
 
