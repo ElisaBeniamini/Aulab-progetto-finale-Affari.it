@@ -84,6 +84,8 @@ label {
     background-color: #7069bc !important;
     border-color: #7069bc;
     justify-content: space-between !important;
+    width: 20px !important; /* Imposta la larghezza desiderata */
+  
 }
 
 /* Stile del testo della label */
