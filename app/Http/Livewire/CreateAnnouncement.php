@@ -3,11 +3,12 @@
 namespace App\Http\Livewire;
 
 use App\Models\Announcement;
+use App\Models\Category;
 use Livewire\Component;
 
 class CreateAnnouncement extends Component
 {
-    public $title, $description, $price , $category;
+    public $title, $description, $price, $category;
 
     //START VALIDAZIONE DATI
     protected $rules = [
@@ -22,14 +23,15 @@ class CreateAnnouncement extends Component
     {
         $this->validate(); //Se i dai sono validati OK procedi alla creazione.
 
-        Announcement::create([
+        $category = Category::find($this->category);
+
+        $category->announcements()->create([
             'title' => $this->title,
             'description' => $this->description,
             'price' => $this->price,
-            'category' => $this->category,
         ]);
 
-        $this->reset('title', 'description', 'price' , 'category'); //Al submit pulisci i campi del form.
+        $this->reset('title', 'description', 'price', 'category'); //Al submit pulisci i campi del form.
 
         session()->flash('announcement', 'Annuncio creato corretamente');
     }
