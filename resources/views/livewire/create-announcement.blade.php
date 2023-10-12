@@ -1,7 +1,7 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col-md-6">
-            <h2 class="mb-4">Carica un nuovo articolo</h2>
+            <h2 class="mb-4">Carica un nuovo Annuncio</h2>
             <!-- Start Form inserimento annunci -->
             <form wire:submit.prevent="store">
                 @csrf
