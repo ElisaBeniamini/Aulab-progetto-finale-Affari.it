@@ -1,4 +1,12 @@
 <x-layout>
     <x-navbar />
-    <h1>Siamo nell homepage</h1>
+
+
+    <div class="row text-center">
+        <div class="col-12r">
+            <h1>Presto.it</h1>
+        </div>
+    </div>
+
+
 </x-layout>

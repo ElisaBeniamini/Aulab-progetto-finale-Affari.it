@@ -10,13 +10,4 @@ class BasicController extends Controller
     {
         return view('homepage');
     }
-    public function show()
-    {
-        return view('show');
-    }
-
-    public function index()
-    {
-        return view('index');
-    }
 }

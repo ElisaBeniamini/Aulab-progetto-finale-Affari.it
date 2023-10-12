@@ -41,7 +41,7 @@
 
                     <!-- Password input -->
                     <div class="form-outline mb-4">
-                        <input type="password" id "loginPassword" class="form-control" />
+                        <input type="password" id="loginPassword" class="form-control" />
                         <label class="form-label" for="loginPassword">Password</label>
                     </div>
 
