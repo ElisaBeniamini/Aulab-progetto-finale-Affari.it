@@ -24,7 +24,6 @@ h2 {
 .offcanvas {
     background-color: #f5f5f5 !important;
     width: 40% !important;
-
 }
 
 input {
@@ -115,11 +114,30 @@ label {
     ;
     color: #7069bc !important;
 }
-
-.form-control {
-    background-color: white !important;
-    width: 50%;
+/* Stile per il campo "Titolo" */
+#title {
+   background-color: #fff !important;
+   width: 100% !important;
 }
+
+/* Stile per il campo "Descrizione" */
+#description {
+    background-color: #fff !important;
+    width: 100%;
+}
+
+/* Stile per il campo "Prezzo" */
+#price {
+    background-color: #fff !important;
+    width: 50% !important;
+}
+
+/* Stile per il campo "Scegli Categoria" */
+#category {
+    background-color: #fff !important;
+    width: 50% !important;
+}
+
 
 /* Stile per le card */
 .card {
@@ -183,4 +201,41 @@ label {
     .immagine {
         display: none;
     }
+}
+
+/* Stile per l'input "Email or username" nel form di login */
+#pills-login #loginName {
+background-color: #fff !important;
+justify-content: center !important;
+}
+
+/* Stile per l'input "Password" nel form di login */
+#pills-login #loginPassword {
+    background-color: #fff !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%; 
+}
+
+
+/* Stile per l'input "Username" nel form di registrazione */
+#pills-register #registerUsername {
+    background-color: #fff !important;
+}
+
+/* Stile per l'input "Email" nel form di registrazione */
+#pills-register #registerEmail {
+    background-color: #fff !important;
+}
+
+/* Stile per l'input "Password" nel form di registrazione */
+#pills-register #registerPassword {
+    background-color: #fff !important;
+}
+
+/* Stile per l'input "Repeat password" nel form di registrazione */
+#pills-register #registerRepeatPassword {
+    background-color: #fff !important;
 }

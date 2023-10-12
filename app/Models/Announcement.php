@@ -13,5 +13,12 @@ class Announcement extends Model
         'title',
         'description',
         'price',
+        'category_id',
     ];
+
+    //Gli annunci appartanegono alle categorie.
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }
