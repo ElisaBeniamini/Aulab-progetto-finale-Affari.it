@@ -18,6 +18,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [BasicController::class, 'homepage'])
     ->name('homepage');
 
+
+
+
+
 //Start-Rotte-Annunci.
 Route::resource('/announcement', AnnouncementController::class);
 //End-Rotte-Annunci.
