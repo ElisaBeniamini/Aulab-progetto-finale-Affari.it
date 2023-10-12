@@ -5,7 +5,4 @@
             <h1>Presto.it</h1>
         </div>
     </div>
-
-
-
 </x-layout>

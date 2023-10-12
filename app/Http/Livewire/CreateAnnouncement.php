@@ -32,7 +32,7 @@ class CreateAnnouncement extends Component
             'description' => $this->description,
             'price' => $this->price,
         ]);
-
+        
         Auth::user()->announcements()->save($announcement);
 
         $this->reset('title', 'description', 'price', 'category'); //Al submit pulisci i campi del form.

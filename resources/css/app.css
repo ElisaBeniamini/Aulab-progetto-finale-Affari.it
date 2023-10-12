@@ -83,8 +83,9 @@ label {
     background-color: #7069bc !important;
     border-color: #7069bc;
     justify-content: space-between !important;
-    width: 20px !important; /* Imposta la larghezza desiderata */
-  
+    width: 20px !important;
+    /* Imposta la larghezza desiderata */
+
 }
 
 /* Stile del testo della label */
@@ -115,10 +116,11 @@ label {
     ;
     color: #7069bc !important;
 }
+
 /* Stile per il campo "Titolo" */
 #title {
-   background-color: #fff !important;
-   width: 100% !important;
+    background-color: #fff !important;
+    width: 100% !important;
 }
 
 /* Stile per il campo "Descrizione" */
@@ -184,6 +186,7 @@ label {
 .arrow {
     cursor: pointer;
 }
+
 .container {
     flex-direction: column;
     align-items: flex-start;
@@ -203,6 +206,7 @@ label {
     .immagine {
         display: none;
     }
+
     .offcanvas {
         width: 100% !important;
     }
@@ -210,10 +214,10 @@ label {
 
 /* Stile per l'input "Email or username" nel form di login */
 #pills-login #loginName {
-background-color: #fff !important;
-justify-content: center !important;
-width:100% !important;
-margin-top: 50px !important;
+    background-color: #fff !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin-top: 50px !important;
 }
 
 /* Stile per l'input "Password" nel form di login */
@@ -223,8 +227,9 @@ margin-top: 50px !important;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100%; 
-    width: 100% !important;;
+    height: 100%;
+    width: 100% !important;
+    ;
 }
 
 
@@ -253,4 +258,44 @@ margin-top: 50px !important;
     color: #7069bc;
     font-size: 10px;
     padding: 10px;
+}
+
+/* Stile per footer*/
+footer {
+    margin-top: 100px;
+    background-color: #7069bc;
+    height: auto;
+}
+
+.title-footer {
+    color: #f5f5f5 !important;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.list-footer {
+    list-style-type: none;
+}
+
+.link-footer {
+    color: #f5f5f5 !important;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.link-footer:hover {
+    text-decoration: underline !important;
+}
+
+.list-icon-footer {
+    list-style-type: none;
+}
+
+.container-footer-two {
+    background-color: #7069bc;
+}
+
+.icon-footer:hover{
+    opacity: 0.5;
+    cursor: pointer;
 }
