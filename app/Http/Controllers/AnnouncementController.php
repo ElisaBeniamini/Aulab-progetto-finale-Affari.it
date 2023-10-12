@@ -23,10 +23,10 @@ class AnnouncementController extends Controller
     }
 
 
-    // public function show()
-    // {
-    //     $announcementes = Announcement::all();
-    //     $categories = Category::all();
-    //     return view('announcement.show', compact('announcementes', 'categories'));
-    // }
+    //  public function show(Announcement $announcement)
+    //  {
+    //        $announcementes = Announcement::find($announcement->id);
+    //      $categories = Category::all();
+    //      return view('announcement.show');
+    //  }
 }

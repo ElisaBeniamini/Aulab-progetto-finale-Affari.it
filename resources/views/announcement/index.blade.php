@@ -21,7 +21,7 @@
                                             <p></p>{{ $announcement->categoy }}</p>
                                             <p>Pubblicato il : {{ $announcement->created_at->format('d/m/y') }}</p>
                                         </div>
-                                        <a href="#">Dettagli</a>
+                                        <!--  <a href="  //route('announcement.show') }}">Dettagli</a> -->
                                     </div>
                                 </div>
                             </div>
