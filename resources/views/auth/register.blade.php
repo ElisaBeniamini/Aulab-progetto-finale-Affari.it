@@ -2,9 +2,9 @@
 <div class="container my-5">
     <div class="row justify-content-center">
         <div class="col-12 col-md-8">
-            <form class="p-5 shadow" action="{{ route('register') }}" method="POST">
-                @method('POST')
+            <form action="{{ route('register') }}" method="POST">
                 @csrf
+                @method('POST')
                 @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
@@ -14,28 +14,49 @@
                         </ul>
                     </div>
                 @endif
-                <div class="mb-3">
-                    <label for="name" class="form-label">Nome utente</label>
-                    <input type="text" name="name" class="form-control" id="name" required>
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email utente</label>
-                    <input type="email" name="email" class="form-control" id="email" required>
-                </div>
-                <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
-                    <input type="password" name="password" class="form-control" id="password" required>
-                </div>
-                <div class="mb-3">
-                    <label for="password_confirmation" class="form-label">Conferma password</label>
-                    <input type="password" name="password_confirmation" class="form-control" id="password_confirmation"
-                        required>
+                <div class="form-outline form-white mb-4">
+                    <input type="text" name="name" value="{{ old('name') }}"
+                        class="form-control form-control-lg" />
+                    <label class="form-label" required>Nome utente</label>
                 </div>
 
-                <button type="submit" class="btn btn-dark">Registrati</button>
-                <a href="{{ route('login') }}" class="btn btn-outline-dark">Gia' iscritto?</a>
-            </form>
+                <div class="form-outline form-white mb-4">
+                    <input type="email" name="email" value="{{ old('email') }}" id="typeEmailX"
+                        class="form-control form-control-lg" />
+                    <label class="form-label" for="typeEmailX" required>Email</label>
+                </div>
+
+                <div class="form-outline form-white mb-4">
+                    <input type="password" name="password" id="typePasswordX" class="form-control form-control-lg" />
+                    <label class="form-label" for="typePasswordX" required>Password</label>
+                </div>
+
+                <div class="form-outline form-white mb-4">
+                    <input type="password" name="password_confirmation" id="typePasswordX"
+                        class="form-control form-control-lg" />
+                    <label class="form-label" for="typePasswordX">Conferma Password</label>
+                </div>
+
+                <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Ho dimenticato la password ?</a></p>
+
+                <button class=" gradient-custom btn btn-outline-light btn-lg px-5" type="submit">Registrati</button>
+
+                <div class="d-flex justify-content-center text-center mt-4 pt-1">
+                    <a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
+                    <a href="#!" class="text-white"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>
+                    <a href="#!" class="text-white"><i class="fab fa-google fa-lg"></i></a>
+                </div>
+
         </div>
+
+        <div>
+            <p class="mb-0">Non hai un account ?<a href="{{ route('login') }}"
+                    class="text-white-50 fw-bold">Login</a>
+            </p>
+        </div>
+
+        </form>
     </div>
+</div>
 </div>
 </x-layout>
