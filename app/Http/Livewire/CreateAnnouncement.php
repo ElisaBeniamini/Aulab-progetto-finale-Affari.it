@@ -7,21 +7,16 @@ use Livewire\Component;
 
 class CreateAnnouncement extends Component
 {
-    public $title, $description, $price;
+    public $title, $description, $price , $category;
 
     //START VALIDAZIONE DATI
     protected $rules = [
         'title' => 'required',
         'description' => 'required',
         'price' => 'required|numeric',
+        'category' => 'required',
     ];
     //END VALIDAZIONE DATI
-
-    protected $messages = [
-        'required' => 'il campo è obbligatorio',
-        'required' => 'il campo è obbligatorio',
-        'numeric' => 'il campo è obbligatorio',
-    ];
 
     public function store()
     {
@@ -31,9 +26,10 @@ class CreateAnnouncement extends Component
             'title' => $this->title,
             'description' => $this->description,
             'price' => $this->price,
+            'category' => $this->category,
         ]);
 
-        $this->reset('title', 'description', 'price'); //Al submit pulisci i campi del form.
+        $this->reset('title', 'description', 'price' , 'category'); //Al submit pulisci i campi del form.
 
         session()->flash('announcement', 'Annuncio creato corretamente');
     }
