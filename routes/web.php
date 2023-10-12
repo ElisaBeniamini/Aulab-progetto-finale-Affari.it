@@ -19,6 +19,9 @@ Route::get('/', [BasicController::class, 'homepage'])
     ->name('homepage');
 
 
+Route::resource('announcement', AnnouncementController::class);
+
+
 
 
 
