@@ -53,9 +53,9 @@
             <!-- End Form inserimento annunci -->
         </div>
         <div class="col-md-6">
-            <div class="immagine">
-                <img src="https://img.freepik.com/free-vector/ordering-goods-online-internet-store-online-shopping-niche-e-commerce-website-mother-buying-babies-clothes-footwear-toys-infant-accessories-vector-isolated-concept-metaphor-illustration_335657-2764.jpg?w=2000&t=st=1696965776~exp=1696966376~hmac=14b2d0c37cfc8fabedcfcde946b35b91a69dda8a337249cb97f2f1a538e1775f" class="rounded float-right" alt="Responsive image">
-            </div>
+        <div class="immagine"><img
+            src="public/ecommerce.jpg">
+    </div>
         </div>
     </div>
 </div>

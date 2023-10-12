@@ -4,6 +4,7 @@
 
         <div class="d-flex justify-content-end align-items-center">
             <a class="btn btn-outline-primary" href="{{ route('announcement.create') }}">Inserisci annuncio</a>
+            <div class="messaggio">Bentornato, Username <br> Logout</div>
             <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" class="btn" type="image"
                 width="50" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
                 aria-controls="offcanvasRight">
@@ -55,20 +56,12 @@
                                 <label class="form-check-label" for="loginCheck"> Remember me </label>
                             </div>
                         </div>
-
-                        <div class="col-md-6 d-flex justify-content-center">
-                            <!-- Simple link -->
-                            <a href="#!">Forgot password?</a>
-                        </div>
                     </div>
 
                     <!-- Submit button -->
                     <button type="submit" class="btn custom-purple-button btn-block mb-4">Sign in</button>
 
-                    <!-- Register buttons -->
-                    <div class="text-center">
-                        <p>Not a member? <a href="#!">Register</a></p>
-                    </div>
+                
                 </form>
             </div>
 

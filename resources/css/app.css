@@ -197,6 +197,7 @@ label {
     margin-right: 110px !important;
 }
 
+
 @media (max-width: 768px) {
     .immagine {
         display: none;
@@ -238,4 +239,10 @@ justify-content: center !important;
 /* Stile per l'input "Repeat password" nel form di registrazione */
 #pills-register #registerRepeatPassword {
     background-color: #fff !important;
+}
+
+.messaggio {
+    color: #7069bc;
+    font-size: 10px;
+    padding: 10px;
 }
