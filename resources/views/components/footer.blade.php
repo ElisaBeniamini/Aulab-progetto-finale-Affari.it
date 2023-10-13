@@ -1,4 +1,4 @@
-<footer style="margin-bottom:0px">
+<footer>
     <div class="container-fluid ">
         <div class="row d-flex justify-content-center">
             <div class="col-12 col-md-4 pt-5">
