@@ -1,8 +1,8 @@
 <x-layout>
     <x-navbar />
     <div class="container">
-        <div class="row text-center mt-3  ">
 
+        <div class="row text-center mt-3  ">
             <div class="col-12 col-md-12  d-flex justify-content-center align-items-center flex-column">
                 <h1>Presto.it</h1>
                 <h5 class="fw-bold">I nostri annunci</h5>
@@ -39,7 +39,7 @@
                                         <h5>Titolo - {{ $announcement->title }}</h5>
                                         <p>Descrizione - {{ $announcement->description }}</p>
                                         <p>€ {{ $announcement->price }}</p>
-                                        <p></p>{{ $announcement->categoy }}</p>
+                                        <p>{{ $announcement->categoy }}</p>
                                         <p>Pubblicato il : {{ $announcement->created_at->format('d/m/y') }}</p>
                                     </div>
                                     <!--  <a href="  //route('announcement.show') }}">Dettagli</a> -->

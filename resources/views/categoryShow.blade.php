@@ -3,13 +3,13 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-12 text-center">
-                <h1> Dettaglio Categoria {{ $category->name }}</h1>
+            <div class="col-12 col-md-12 text-center mt-5">
+                <h1>Categoria {{ $category->name }}</h1>
             </div>
         </div>
 
 
-        <div class="row">
+        <div class="row  justify-content-center ">
             @forelse ($category->announcements as $announcement)
                 <div class=" col-12 col-md-4 ">
                     <div class="card-container">
@@ -25,27 +25,24 @@
                                 <p>Pubblicato il : {{ $announcement->created_at->format('d/m/y') }} - Autore
                                     :{{ $announcement->user->name ?? '' }}</p>
                             </div>
-                            <!--  <a href="  //route('announcement.show') }}">Dettagli</a> -->
                         </div>
                     </div>
                 </div>
             @empty
-                <div class="col-12 col-md-12">
-                    <p>Non sono persenti annunci per questa categoria</p>
-                    <p>Aggiungi subito l annuncio <a class="custom-purple-button"
-                            href="{{ route('announcement.create') }}"></a></p>
+                <div class="col-12 col-md-6 mt-5 text-center">
+                    <h1 class="text-danger">Non sono persenti annunci per la categoria {{ $category->name }}</h1>
+                    <h2 class="mt-5">Aggiungi subito un'annuncio!</h2>
+                    <a class="btn btn-outline-primary fs-4  text-decoration-none"
+                        href="{{ route('announcement.create') }}">
+                        Crea Nuovo Annuncio
+                    </a>
+
 
                 </div>
         </div>
         @endforelse
-        <div class="col-12 col-md-12 text-center">
-
-
-
-
-        </div>
     </div>
-    </div>
+
 
 
 
