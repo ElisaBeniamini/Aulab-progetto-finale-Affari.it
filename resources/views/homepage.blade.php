@@ -8,6 +8,5 @@
             </div>
         </div>
     </div>
-
     <x-footer />
 </x-layout>

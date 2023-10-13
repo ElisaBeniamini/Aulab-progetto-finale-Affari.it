@@ -13,15 +13,16 @@
         href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@1,300&family=Great+Vibes&family=Open+Sans:wght@300&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css">
-
+    
     @vite(['resources\css\app.css', 'resources\js\app.js'])
+    
     @livewireStyles
 </head>
 
 <body>
     {{ $slot }}
     @livewireScripts
-
+    <script src="script.js"></script>
 </body>
 
 </html>
