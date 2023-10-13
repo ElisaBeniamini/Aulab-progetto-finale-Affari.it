@@ -8,19 +8,21 @@
     <title>Presto.it</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@1,300&family=Great+Vibes&family=Open+Sans:wght@300&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css">
-
+    
     @vite(['resources\css\app.css', 'resources\js\app.js'])
+    
     @livewireStyles
 </head>
 
 <body>
     {{ $slot }}
     @livewireScripts
-
+    <script src="script.js"></script>
 </body>
 
 </html>

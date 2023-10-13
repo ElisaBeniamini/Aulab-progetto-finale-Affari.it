@@ -1,97 +1,117 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
         <a class="navbar-brand" href="{{ route('homepage') }}"><img src="/Logo Presto.png" alt="Logo" width="200"></a>
-
-        <div class="d-flex justify-content-end align-items-center">
-            <a class="btn btn-outline-primary" href="{{ route('announcement.create') }}">Inserisci annuncio</a>
-            <div class="messaggio">Bentornato, Username <br> Logout</div>
-            
-            <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="#7069bc" class="btn bi bi-person-fill" type="image"
-                data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                aria-controls="offcanvasRight"viewBox="0 0 16 16">
-  <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
-</svg> 
-        </div>
     </div>
+
+    <!--Start Se utente non è registrato fai vedere questo form-->
+    @guest
+    <div class="d-flex me-3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="57" height="57" fill="#7069bc" class="btn bi bi-person-fill pe-3" type="image" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" viewBox="0 0 16 16">
+            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+        </svg>
+    </div>
+    <!--End Se utente non è registrato fai vedere questo form-->
+
+
+
+
+    <!--START - Senno se utente è registrato fai vedere nome + logout-->
+    <!--START button inserisci annuncio-->
+    @else
+    <div class="d-flex justify-content-end align-items-center me-3">
+        <a class="btn btn-outline-primary btn-inserisci-annuncio" href="{{ route('announcement.create') }}">
+            Inserisci annuncio
+        </a>
+    </div>
+    <!--END button inserisci annuncio-->
+
+    <div class="dropdown">
+        <button class="btn dropdown-toggle btn-logout d-flex  align-items-center fs-5" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <p class="messaggio m-0 pe-4">Ciao , {{Auth::user()->name}}</p>
+            <ul class="dropdown-menu">
+                <li>
+                    <a class="dropdown-item" href="/logout" onclick="event.preventDefault();getElementById('form-logout').submit()">
+                        <div class="d-flex  align-items-center border-bottom">
+                            <i class="bi bi-box-arrow-right ps-1 fs-5"></i>
+                            <p class="title-logout m-0 ps-3">
+                                Esci
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                <form id="form-logout" action="{{route('logout')}}" method="POST">
+                    @csrf
+                    @method('POST')
+                </form>
+            </ul>
+        </button>
+    </div>
+    @endguest
+    <!--END - Senno se utente è registrato fai vedere nome + logout-->
+
 </nav>
 
+<!--START CANVAS PER LOGIN E REGISTRAZIONE-->
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
     <div class="offcanvas-header">
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
-    <div class="offcanvas-body">
+    <div class="offcanvas-body px-3">
         <!-- Pills navs -->
-        <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
-            <li class="nav-item px-1" role="presentation">
-                <a class="nav-link active custom-purple-button" id="tab-login" data-mdb-toggle="pill"
-                    href="#pills-login" role="tab" aria-controls="pills-login" aria-selected="true">Login</a>
-            </li>
-            <li class="nav-item px-1" role="presentation">
-                <a class="btn btn-outline-primary" id="tab-register" data-mdb-toggle="pill" href="#pills-register" role="tab"
-                    aria-controls="pills-register" aria-selected="false">Register</a>
-            </li>
-        </ul>
+
+        <div class="text-center">
+            <h4 class="title-login-canvas">
+                Login
+            </h4>
+        </div>
+
         <!-- Pills navs -->
 
         <!-- Pills content -->
         <div class="tab-content">
-        <div class="tab-pane show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
-                <form>
-                    <!-- Email input -->
-                    <div class="form-outline mb-4">
-                        <input type="email" id="loginName" class="form-control" />
-                        <label class="form-label" for="loginName">Email or username</label>
+            <div class="tab-pane show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
+                <form action="{{ route('login') }}" method="POST">
+                    @csrf
+                    @method('POST')
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
+                    <div class="form-outline form-white mb-4 mt-2 pt-3">
+                        <label class="form-label" for="typeEmailX">Email</label>
+                        <input type="email" name="email" id="typeEmailX" class="form-control form-control-lg input-email-password-canvas" />
                     </div>
 
-                    <!-- Password input -->
-                    <div class="form-outline mb-4">
-                        <input type="password" id="loginPassword" class="form-control" />
-                        <label class="form-label" for="loginPassword">Password</label>
+                    <div class="form-outline form-white mb-4">
+                        <label class="form-label" for="typePasswordX">Password</label>
+                        <input type="password" name="password" id="typePasswordX" class="form-control form-control-lg input-email-password-canvas" />
                     </div>
 
-        
-                    
-
-                    <!-- Submit button -->
-                    <button type="submit" class="btn custom-purple-button btn-block mb-4">Sign in</button>
-
-                
+                    <button class="gradient-custom btn btn-login-canvas px-5" type="submit">Login</button>
                 </form>
             </div>
 
-            <div class="tab-pane" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
-
-                <form>
-              
-
-                   <!-- Username input -->
-                    <div class="form-outline mb-4">
-                        <input type="text" id="registerUsername" class="form-control" />
-                        <label class="form-label" for="registerUsername">Username</label>
-                    </div>
-
-                    <!-- Email input -->
-                    <div class="form-outline mb-4">
-                        <input type="email" id="registerEmail" class="form-control" />
-                        <label class="form-label" for="registerEmail">Email</label>
-                    </div>
-
-                    <!-- Password input -->
-                    <div class="form-outline mb-4">
-                        <input type="password" id="registerPassword" class="form-control" />
-                        <label class="form-label" for="registerPassword">Password</label>
-                    </div>
-
-                    <!-- Repeat Password input -->
-                    <div class="form-outline mb-4">
-                        <input type="password" id="registerRepeatPassword" class="form-control" />
-                        <label class="form-label" for="registerRepeatPassword">Repeat password</label>
-                    </div>
-
-                    <!-- Submit button -->
-                    <button type="submit" class="btn custom-purple-button btn-block mb-4">Sign in</button>
-                </form>
+            <div class="mt-5">
+                <p class="text-center">
+                    Non hai un account? registrati
+                </p>
+                <a href="{{route('register')}}">
+                    <button class="gradient-custom btn btn-register-canvas px-5" type="submit">
+                        Registrati
+                    </button>
+                </a>
             </div>
         </div>
+        <div>
+        </div>
     </div>
+    <!--Se utente non è registrato fai vedere questo form-->
+
 </div>
+
+<!--START CANVAS PER LOGIN E REGISTRAZIONE-->
