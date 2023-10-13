@@ -12,8 +12,9 @@ class AnnouncementController extends Controller
     public function index()
     {
         $categories = Category::all();
-        $announcements = Announcement::all();
-        return view('announcement.index', compact('announcements', 'categories'));
+        $announcementes = Announcement::all();
+        // $announcementes = Announcement::take(6)->get()->sortByDesc('created_at');   visualizzare i primi sei annunci
+        return view('announcement.index', compact('announcementes', 'categories'));
     }
 
 
@@ -23,8 +24,8 @@ class AnnouncementController extends Controller
     }
 
 
-    public function show(Announcement $announcement)
+    public function categoryShow(Category $category)
     {
-        //
+        return view('categoryShow', compact('category'));
     }
 }
