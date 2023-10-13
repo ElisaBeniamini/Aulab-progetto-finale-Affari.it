@@ -9,6 +9,13 @@ use Illuminate\Http\Request;
 class AnnouncementController extends Controller
 {
 
+    public function create()
+    {
+        return view('announcement.create');
+    }
+
+
+
     public function index()
     {
         $categories = Category::all();
@@ -18,10 +25,14 @@ class AnnouncementController extends Controller
     }
 
 
-    public function create()
+
+
+
+    public function showAnnouncement(Announcement $announcement)
     {
-        return view('announcement.create');
+        return view('announcement.show', compact('announcement'));
     }
+
 
 
     public function categoryShow(Category $category)

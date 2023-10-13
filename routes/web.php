@@ -24,6 +24,9 @@ Route::resource('announcement', AnnouncementController::class);
 Route::get('/category/{category}', [AnnouncementController::class, 'categoryShow'])->name('categoryShow');
 
 
+Route::get('/detail/announcement/{announcement}', [AnnouncementController::class, 'showAnnouncement'])->name('announcement.show');
+
+
 
 
 
