@@ -11,7 +11,7 @@
                 <!-- Titolo -->
                 <div class="mb-3">
                     <label for="title" class="form-label">Titolo</label>
-                    <input type="text" class="form-control" id="title" wire:model="title" required>
+                    <input type="text" class="form-control input-register" id="title" wire:model="title" required>
                     @error('title')
                     <span class="error text-danger">{{ $message }}</span>
                     @enderror
@@ -27,7 +27,7 @@
                 <!-- Prezzo -->
                 <div class="mb-3">
                     <label for="price" class="form-label">Prezzo</label>
-                    <input type="number" class="form-control" id="price" wire:model="price" step="0.01" required>
+                    <input type="number" class="form-control input-register" id="price" wire:model="price" step="0.01" required>
                     @error('price')
                     <span class="error text-danger">{{ $message }}</span>
                     @enderror
@@ -36,7 +36,7 @@
                 <!--Start-Scelta-Categorie-->
                 <div class="mb-3">
                     <label for="category" class="form-label">Scegli Categoria</label>
-                    <select wire:model.defer="category" id="category" class="form-control">
+                    <select wire:model.defer="category" id="category" class="form-control input-register">
                         @foreach($categories as $category)
                         <option value="{{$category->id}}">{{$category->name}}</option>
                         @endforeach
@@ -48,7 +48,7 @@
                 <!--End-Scelta-Categorie-->
 
                 <!-- Pulsante di invio -->
-                <button type="submit" class="btn custom-purple-button">Carica articolo</button>
+                <button type="submit" class="btn custom-purple-button btn-register mt-5">Carica articolo</button>
             </form>
             <!-- End Form inserimento annunci -->
         </div>
