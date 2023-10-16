@@ -36,6 +36,7 @@ Route::resource('/announcement', AnnouncementController::class);
 
 //*Home revisore
 Route::get('/revisor/home', [RevisorController::class, 'index'])->name('revisor.index');
+
 //*Accetta annuncio
 Route::patch('/accetta/annuncio/{announcement}', [RevisorController::class,'acceptAnnouncement'])->name('revisor.accept_announcement');
 //*Rifiuta annuncio
