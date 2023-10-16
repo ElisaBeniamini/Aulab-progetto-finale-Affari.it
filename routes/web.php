@@ -18,18 +18,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [BasicController::class, 'homepage'])
     ->name('homepage');
-
-
-Route::resource('announcement', AnnouncementController::class);
-Route::get('/category/{category}', [AnnouncementController::class, 'categoryShow'])->name('categoryShow');
+Route::get('/category/{category}', [BasicController::class, 'categoryShow'])
+    ->name('categoryShow');
 
 
 Route::get('/detail/announcement/{announcement}', [AnnouncementController::class, 'showAnnouncement'])->name('announcement.show');
-
-
-
-
-
 
 
 

@@ -1,54 +1,112 @@
 <x-layout>
     <x-navbar />
-    <!-- Header homepage -->
-    <header>
-        <div class="container-fluid mt-5">
-            <div class="row text-center justify-content-center">
-                <div class=" col-12 col-md-6 px-0">
-                    <h1 class="px-0 mx-0">Presto.it - Homepage</h1>
-                    <a class="btn btn-outline-primary" href="{{ route('announcement.index') }}"> Lista annunci
-                    </a>
+
+    <div class="container mt-4">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-9">
+                <div class="card p-4 mt-3">
+                    <h3 class="heading mt-5 text-center">Hi! How can we help You?</h3>
+                    <div class="d-flex justify-content-center px-5">
+                        <div class="search"> <input type="text" class="search-input" placeholder="Search..."
+                                name=""> <a href="#" class="search-icon"> <i class="fa fa-search"></i> </a>
+                        </div>
+                    </div>
+                    <div class="row mt-4 g-1 px-4 mb-5">
+                        <div class="col-md-2">
+                            <div class="card-inner p-3 d-flex flex-column align-items-center"> <img
+                                    src="https://i.imgur.com/Mb8kaPV.png" width="50">
+                                <div class="text-center mg-text"> <span class="mg-text">Account</span> </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="card-inner p-3 d-flex flex-column align-items-center"> <img
+                                    src="https://i.imgur.com/ueLEPGq.png" width="50">
+                                <div class="text-center mg-text"> <span class="mg-text">Payments</span> </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="card-inner p-3 d-flex flex-column align-items-center"> <img
+                                    src="https://i.imgur.com/tmqv0Eq.png" width="50">
+                                <div class="text-center mg-text"> <span class="mg-text">Delivery</span> </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="card-inner p-3 d-flex flex-column align-items-center"> <img
+                                    src="https://i.imgur.com/D0Sm15i.png" width="50">
+                                <div class="text-center mg-text"> <span class="mg-text">Product</span> </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="card-inner p-3 d-flex flex-column align-items-center"> <img
+                                    src="https://i.imgur.com/Z7BJ8Po.png" width="50">
+                                <div class="text-center mg-text"> <span class="mg-text">Return</span> </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="card-inner p-3 d-flex flex-column align-items-center"> <img
+                                    src="https://i.imgur.com/YLsQrn3.png" width="50">
+                                <div class="text-center mg-text"> <span class="mg-text">Guarantee</span> </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </header>
-
-    <!-- Section index 6 annunci -->
+    </div>
 
 
-    <section class="mt-5">
-        <h1 class="text-center">
-            Gli ultimi annunci pubblicati
-        </h1>
-        <div class="container-fluid mt- ">
-            <div class="row">
-                @foreach ($announcementes as $announcement)
-                    <div class="col-12 col-md-3 py-2">
-                        <div class="card-container">
-                            <div class="card">
-                                <img src="https://m.media-amazon.com/images/I/61ubg48TFnS._AC_UY780_.jpg"
-                                    class="card-img-top" alt="Immagine 1">
-                                <div class="card-text">
-                                    <h5>Titolo - {{ $announcement->title }}</h5>
-                                    <p>Descrizione - {{ $announcement->description }} leggi altro...</p>
-                                    <p>€ {{ $announcement->price }}</p>
-                                    <p></p>{{ $announcement->categoy }}</p>
-                                    <p>Pubblicato il : {{ $announcement->created_at->format('d/m/y') }}</p>
+
+
+
+    <!-- Section index 6 annunci
+    <div class="gridCard my-5 px-2" id="grid">
+        @foreach ($announcementes as $announcement)
+<div>
+                <a class="link-card" href="{{ route('announcement.show', ['announcement' => $announcement]) }}">
+                    <div class="containerCard px-3 py-3">
+                        <div>
+                            <img class="img-card" src="/img/img-show-3.webp" alt="">
+                        </div>
+                        <div class="cardBody mt-3">
+                            <div>
+                                <h6 class="title-card">
+                                    {{ $announcement->title }}
+                                </h6>
+                            </div>
+                            <div>
+                                <h6 class="price-card">
+                                    {{ $announcement->price }} €
+                                </h6>
+                            </div>
+                            <div>
+                                <h6 class="price-card">
+                                    {{ $announcement->category->name }}
+                                </h6>
+                            </div>
+
+                            <div>
+                                <div class="d-flex align-items-center">
+                                    <div>
+                                        <img class="img-pubblicataDa" src="/img/img-pubblicatada.jpeg" alt="">
+                                    </div>
+                                    <div class="ps-2">
+                                        <h6 class="title-user-card m-0">
+                                            Pubblicato da {{ $announcement->user->name ?? '' }}
+                                            il {{ $announcement->created_at->format('d/m/y') }}
+                                        </h6>
+                                    </div>
                                 </div>
                             </div>
-                            <a href="{{ route('announcement.show', ['announcement' => $announcement]) }}">
-                                Visualizza
-                            </a>
-
                         </div>
                     </div>
-                @endforeach
+                </a>
             </div>
-        </div>
+@endforeach
+    </div>
     </section>
 
+    -->
 
-    <h1>ciao prova</h1>
 
 
 
