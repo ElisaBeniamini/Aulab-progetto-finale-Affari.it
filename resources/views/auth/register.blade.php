@@ -45,7 +45,7 @@
                         </div>
 
                         <!-- Submit button Registrati-->
-                        <a href="{{route('homepage')}}">
+                        <a href="{{route('announcement.create')}}">
                             <button type="submit" class="btn custom-purple-button btn-block mt-4 btn-register">Registrati</button>
                         </a>
                     </form>

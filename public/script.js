@@ -1,16 +1,25 @@
 //icon input password register-login
 
 
-function mostraPassword() {
-    let mostra = document.getElementById("registerPassword");
-    let icon = document.getElementById("cambiaIcon");
-  
-    if (mostra.type === true) {
-        mostra.type = false;
-        icon.innerHTML =`<i class="bi bi-eye iconPassword me-3"></i>`;
+function gridSistem() {
+    var grid = document.getElementById("grid")
 
-    } else{
-        mostra.type = true;
-        icon.innerHTML =`<i class="bi bi-eye-slash iconPassword me-3" onclick="mostraPassword()"></i>`;
-    }
+    
+    grid.style.gridTemplateColumns = "1fr 1fr 1fr";
+    grid.style.transition= "1s";
+
 }
+
+
+function gridSistemTwo() {
+    var grid = document.getElementById("grid")
+
+    
+    grid.style.gridTemplateColumns = "1fr 1fr 1fr 1fr 1fr 1fr";
+    grid.style.transition= "1s";
+
+}
+
+//script img show
+
+

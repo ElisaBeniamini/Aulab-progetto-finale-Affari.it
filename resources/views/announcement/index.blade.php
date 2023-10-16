@@ -1,60 +1,54 @@
 <x-layout>
     <x-navbar />
-    <div class="container">
-        <div class="row text-center mt-3  ">
-
-            <div class="col-12 col-md-12  d-flex flex-column">
-                <h1>Presto.it</h1>
-
-                <h5 class="fw-bold">I nostri annunci</h5>
-                <!-- START select list category per lo show -->
-                <div class="dropdown">
-                    <button class="btn dropdown-toggle btn-logout d-flex  align-items-center fs-5" type="button" id="dropdownMenuButton1"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Ricerca per categoria
-                    </button>
-                    <ul class="dropdown-menu text-center" aria-labelledby="dropdownMenuButton1">
-                        @foreach ($categories as $category)
-                            <li><a class="fs-5 text-decoration-none"
-                                    href="{{ route('categoryShow', compact('category')) }}">{{ $category->name }}</a>
-                            </li>
-                        @endforeach
-                    </ul>
-                </div>
-                <!--END select list category per lo show -->
-            </div>
-        </div>
-
-
-        <!--Start Card Announcement -->
-            
-                <div class="container-fluid my-5">
-                    <div class="row">
-                        @foreach ($announcementes as $announcement)
-                        <div class="col-12 col-md-3 py-2">
-                            <div class="card-container">
-                                <div class="card">
-                                    <img src="https://m.media-amazon.com/images/I/61ubg48TFnS._AC_UY780_.jpg"
-                                        class="card-img-top" alt="Immagine 1">
-                                    <div class="card-text">
-                                        <h5>Titolo - {{ $announcement->title }}</h5>
-                                        <p>Descrizione - {{ $announcement->description }} leggi altro...</p>
-                                        <p>€ {{ $announcement->price }}</p>
-                                        <p></p>{{ $announcement->categoy }}</p>
-                                        <p>Pubblicato il : {{ $announcement->created_at->format('d/m/y') }}</p>
-                                    </div>
+    <!--Start Card Announcement -->
+    <div class="gridCard my-5 px-2" id="grid">
+        @foreach($announcementes as $announcement)
+        <div>
+            <a class="link-card" href="{{ route('announcement.show', ['announcement' => $announcement]) }}">
+                <div class="containerCard px-3 py-3">
+                    <div>
+                        <img class="img-card" src="/img/img-show-3.webp" alt="">
+                    </div>
+                    <div class="cardBody mt-3">
+                        <div>
+                            <h6 class="title-card">
+                                {{$announcement->title}}
+                            </h6>
+                        </div>
+                        <div>
+                            <h6 class="price-card">
+                                {{$announcement->price}} €
+                            </h6>
+                        </div>
+                        <div>
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <img class="img-pubblicataDa" src="/img/img-pubblicatada.jpeg" alt="">
                                 </div>
-                                <a href="{{ route('announcement.show', ['announcement' => $announcement]) }}">
-                                    Visualizza
-                                </a>
-
+                                <div class="ps-2">
+                                    <h6 class="title-user-card m-0">
+                                    Pubblicato da {{ $announcement->user->name ?? '' }}
+                                      il {{ $announcement->created_at->format('d/m/y') }}
+                                    </h6>
+                                </div>
                             </div>
                         </div>
-                        @endforeach
                     </div>
-            
+                </div>
+            </a>
         </div>
-        <!--End Card Announcement -->
+        @endforeach
+    </div>
+    <!--End Card Announcement -->
+    <div class="container-button-grid">
+        <div class="button-grid">
+            <button class="btn-grid-animation" onclick="gridSistem()">
+                <i class="bi bi-grid-3x2-gap-fill fs-4"></i>
+            </button>
+            <button class="btn-grid-animationtwo" onclick="gridSistemTwo()">
+                <i class="bi bi-grid-fill fs-4"></i>
+            </button>
+        </div>
     </div>
     <x-footer />
 </x-layout>

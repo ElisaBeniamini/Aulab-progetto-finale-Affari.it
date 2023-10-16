@@ -15,14 +15,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css">
     
     @vite(['resources\css\app.css', 'resources\js\app.js'])
-    
+    <script src="script.js"></script>
     @livewireStyles
 </head>
 
 <body>
     {{ $slot }}
     @livewireScripts
-    <script src="script.js"></script>
 </body>
 
 </html>
