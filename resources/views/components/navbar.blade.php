@@ -24,6 +24,13 @@
                 Inserisci annuncio
             </a>
         </div>
+        @if(Auth::user()->is_revisor)
+        <a class="nav-link btn btn-outline-succes btn-sm position-relative"
+        aria-current="page" href="{{route('revisor.index')}}">
+        Zona revisore
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            {{App\Models\Announcement::toBeRevisionedCount()}}
+            <span class="visually-hidden">unread messages</span></span></a>
         <!--END button inserisci annuncio-->
 
         <div class="dropdown">
