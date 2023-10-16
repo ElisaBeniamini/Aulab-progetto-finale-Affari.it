@@ -1,8 +1,18 @@
 <header>
     <nav class="navbar navbar-expand-lg  border-bottom darkLight">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{ route('homepage') }}"><img src="/Logo Presto.png" alt="Logo" width="200"></a>
+            <a class="navbar-brand" href="{{ route('homepage') }}">
+                <img src="/Logo Presto.png" alt="Logo" width="200">
+            </a>
+
+            <!--START BARRA DI RICERCA-->
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+            <!--END BARRA DI RICERCA-->
         </div>
+
 
         <!--Start Se utente non è registrato fai vedere questo form-->
         @guest
@@ -13,9 +23,6 @@
         </div>
         <!--End Se utente non è registrato fai vedere questo form-->
 
-
-
-
         <!--START - Senno se utente è registrato fai vedere nome + logout-->
         <!--START button inserisci annuncio-->
         @else
@@ -25,12 +32,16 @@
             </a>
         </div>
         @if(Auth::user()->is_revisor)
-        <a class="nav-link btn btn-outline-succes btn-sm position-relative"
-        aria-current="page" href="{{route('revisor.index')}}">
-        Zona revisore
-        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-            {{App\Models\Announcement::toBeRevisionedCount()}}
-            <span class="visually-hidden">unread messages</span></span></a>
+        <a class="nav-link btn btn-outline-succes btn-sm position-relative" aria-current="page" href="{{route('revisor.index')}}">
+            Zona revisore
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                {{App\Models\Announcement::toBeRevisionedCount()}}
+                <span class="visually-hidden">
+                    unread messages
+                </span>
+            </span>
+        </a>
+        @endif
         <!--END button inserisci annuncio-->
 
         <div class="dropdown">
@@ -56,7 +67,6 @@
         </div>
         @endguest
         <!--END - Senno se utente è registrato fai vedere nome + logout-->
-
     </nav>
 </header>
 <nav class="nav-two-show-category border-bottom darkLight">
@@ -128,8 +138,6 @@
                     </button>
                 </a>
             </div>
-        </div>
-        <div>
         </div>
     </div>
     <!--Se utente non è registrato fai vedere questo form-->
