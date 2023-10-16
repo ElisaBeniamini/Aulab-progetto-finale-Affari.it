@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\BasicController;
+use App\Http\Controllers\RevisorController;
 use App\Models\Announcement;
 use Illuminate\Support\Facades\Route;
 
@@ -32,3 +33,6 @@ Route::get('/detail/announcement/{announcement}', [AnnouncementController::class
 //Start-Rotte-Annunci.
 Route::resource('/announcement', AnnouncementController::class);
 //End-Rotte-Annunci.
+
+//*Home revisore
+Route::get('/revisor/home', [RevisorController::class, 'index'])->name('revisor.index');
