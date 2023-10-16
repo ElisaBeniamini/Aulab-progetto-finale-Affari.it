@@ -21,6 +21,8 @@ Route::get('/', [BasicController::class, 'homepage'])
 
 
 Route::resource('announcement', AnnouncementController::class);
+
+
 Route::get('/category/{category}', [AnnouncementController::class, 'categoryShow'])->name('categoryShow');
 
 
