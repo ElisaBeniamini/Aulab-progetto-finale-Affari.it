@@ -25,28 +25,6 @@
             </div>
             <!--End Se utente non è registrato fai vedere questo form-->
 
-<<<<<<< HEAD
-        <!--START - Senno se utente è registrato fai vedere nome + logout-->
-        <!--START button inserisci annuncio-->
-        @else
-        <div class="d-flex justify-content-end align-items-center me-3">
-            <a class="btn btn-outline-primary btn-inserisci-annuncio" href="{{ route('announcement.create') }}">
-                Inserisci annuncio
-            </a>
-        </div>
-        @if(Auth::user()->is_revisor)
-        <a class="nav-link btn btn-outline-succes btn-sm position-relative" aria-current="page" href="{{route('revisor.index')}}">
-            Zona revisore
-            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                {{App\Models\Announcement::toBeRevisionedCount()}}
-                <span class="visually-hidden">
-                    unread messages
-                </span>
-            </span>
-        </a>
-        @endif
-        <!--END button inserisci annuncio-->
-=======
 
 
 
@@ -69,7 +47,6 @@
                 </a>
             @endif
             <!--END button inserisci annuncio-->
->>>>>>> ce128684705db60d120a1a5b282990fbf5453f07
 
             <div class="dropdown">
                 <button class="btn dropdown-toggle btn-logout d-flex  align-items-center fs-5" type="button"

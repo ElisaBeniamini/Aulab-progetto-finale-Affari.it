@@ -31,9 +31,6 @@ Route::get('/detail/announcement/{announcement}', [AnnouncementController::class
 
 
 
-
-
-
 //Start-Rotte-Annunci.
 Route::resource('/announcement', AnnouncementController::class);
 //End-Rotte-Annunci.
