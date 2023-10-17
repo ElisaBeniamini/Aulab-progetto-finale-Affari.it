@@ -8,7 +8,7 @@
 
     <!-- Section index 6 annunci -->
     <div class="gridCard my-5 px-2" id="grid">
-        @foreach ($announcementes as $announcement)
+        @foreach ($announcements as $announcement)
             <div>
                 <a class="link-card" href="{{ route('announcement.show', ['announcement' => $announcement]) }}">
                     <div class="containerCard px-3 py-3">
@@ -28,7 +28,8 @@
                             </div>
                             <div>
                                 <h6 class="price-card">
-                                    {{ $announcement->category->name }}
+                                {{ $announcement->category ? $announcement->category->name : 'Nessuna categoria' }}
+    </h6>
                                 </h6>
                             </div>
 

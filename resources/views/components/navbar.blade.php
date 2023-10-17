@@ -23,16 +23,19 @@
             <a class="btn btn-outline-primary btn-inserisci-annuncio" href="{{ route('announcement.create') }}">
                 Inserisci annuncio
             </a>
-        </div>
+        </div> 
+        <!--END button inserisci annuncio-->
+        <!----PER utente revisore--->
         @if(Auth::user()->is_revisor)
-        <a class="nav-link btn btn-outline-succes btn-sm position-relative"
-        aria-current="page" href="{{route('revisor.index')}}">
+    <a class="nav-link btn btn-outline-succes btn-sm position-relative"
+       aria-current="page" href="{{ route('revisor.index') }}">
         Zona revisore
         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-            {{App\Models\Announcement::toBeRevisionedCount()}}
-            <span class="visually-hidden">unread messages</span></span></a>
-        <!--END button inserisci annuncio-->
-
+            {{ App\Models\Announcement::toBeRevisionedCount() }}
+            <span class="visually-hidden">unread messages</span>
+        </span>
+    </a> @endif
+       <!----Fine PER utente revisore--->
         <div class="dropdown">
             <button class="btn dropdown-toggle btn-logout d-flex  align-items-center fs-5" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <p class="messaggio m-0 pe-4">Ciao , {{Auth::user()->name}}</p>

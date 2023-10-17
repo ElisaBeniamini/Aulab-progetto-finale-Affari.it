@@ -11,8 +11,11 @@ class BasicController extends Controller
     public function homepage()
     {
         $categories = Category::all();
-        $announcementes = Announcement::take(6)->get()->sortByDesc('created_at');
-        return view('homepage', compact('announcementes', 'categories'));
+        $announcements = Announcement::where('is_accepted', true)
+            ->orderBy('created_at', 'desc')
+            ->take(6)
+            ->get();
+        return view('homepage', compact('announcements', 'categories'));
     }
 
     public function categoryShow(Category $category)
