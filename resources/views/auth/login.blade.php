@@ -6,22 +6,24 @@
                     @csrf
                     @method('POST')
                     @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
                     @endif
                     <div class="form-outline form-white mb-4">
-                        <input type="email" name="email" id="typeEmailX" class="form-control form-control-lg" />
-                        <label class="form-label" for="typeEmailX">Email</label>
+                        <input type="email" name="email" id="typeEmailX" class="form-control form-control-lg"
+                            required />
+                        <label class="form-label" for="typeEmailX" required>Email</label>
                     </div>
 
                     <div class="form-outline form-white mb-4">
-                        <input type="password" name="password" id="typePasswordX" class="form-control form-control-lg" />
-                        <label class="form-label" for="typePasswordX">Password</label>
+                        <input type="password" name="password" id="typePasswordX" class="form-control form-control-lg"
+                            required />
+                        <label class="form-label" for="typePasswordX" required>Password</label>
                     </div>
 
                     <button class=" gradient-custom btn btn-outline-light btn-lg px-5" type="submit">Login</button>
