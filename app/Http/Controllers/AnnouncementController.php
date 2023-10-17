@@ -8,6 +8,14 @@ use Illuminate\Http\Request;
 
 class AnnouncementController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware("auth")->only('announcement.create'); //solo per la rotta create.announcemet
+    }
+
+
+
+
     public function create()  // creazione annuncio
     {
         return view('announcement.create');
