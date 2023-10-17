@@ -641,3 +641,29 @@ body {
 .accordion-item {
     border-radius: 7px !important;
 }
+
+.img-carousel{
+    width: 100%!important;
+    height: 80vh;
+    object-fit: cover;
+    position: relative;
+}
+
+.container-carousel{
+    position: absolute;
+    top: 500px;
+    width: 100%;
+}
+
+.carousel-control-prev{
+    display: flex;
+    align-items: start;
+    padding-top: 60px;
+}
+
+
+.carousel-control-next{
+    display: flex;
+    align-items: start;
+    padding-top: 60px;
+}

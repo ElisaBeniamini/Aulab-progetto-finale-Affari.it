@@ -19,14 +19,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [BasicController::class, 'homepage'])
     ->name('homepage');
-Route::get('/category/{category}', [BasicController::class, 'categoryShow'])
-    ->name('categoryShow');
+
+
+Route::resource('announcement', AnnouncementController::class);
+
+
+Route::get('/category/{category}', [BasicController::class, 'categoryShow'])->name('categoryShow');
 
 
 Route::get('/detail/announcement/{announcement}', [AnnouncementController::class, 'showAnnouncement'])->name('announcement.show');
-
-
-
 
 
 
@@ -34,7 +35,6 @@ Route::get('/detail/announcement/{announcement}', [AnnouncementController::class
 Route::resource('/announcement', AnnouncementController::class);
 Route::get('/announcement/{id}', 'AnnouncementController@showAnnouncement');
 //End-Rotte-Annunci.
-
 
 // Home revisore
 Route::get('/revisor/home', [RevisorController::class, 'index'])->middleware('isRevisor')->name('revisor.index');
