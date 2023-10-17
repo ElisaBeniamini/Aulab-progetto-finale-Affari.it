@@ -19,15 +19,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [BasicController::class, 'homepage'])
     ->name('homepage');
-
-
-Route::resource('announcement', AnnouncementController::class);
-
-
-Route::get('/category/{category}', [AnnouncementController::class, 'categoryShow'])->name('categoryShow');
+Route::get('/category/{category}', [BasicController::class, 'categoryShow'])
+    ->name('categoryShow');
 
 
 Route::get('/detail/announcement/{announcement}', [AnnouncementController::class, 'showAnnouncement'])->name('announcement.show');
+
+
+
+
+
 
 //Start-Rotte-Annunci.
 Route::resource('/announcement', AnnouncementController::class);
@@ -35,8 +36,3 @@ Route::resource('/announcement', AnnouncementController::class);
 
 //*Home revisore
 Route::get('/revisor/home', [RevisorController::class, 'index'])->name('revisor.index');
-
-//*Accetta annuncio
-Route::patch('/accetta/annuncio/{announcement}', [RevisorController::class,'acceptAnnouncement'])->name('revisor.accept_announcement');
-//*Rifiuta annuncio
-Route::patch('/rifiuta/annuncio/{announcement}', [RevisorController::class, 'rejectAnnouncement'])->name('revisor.reject_announcement');

@@ -1,13 +1,9 @@
 <x-layout>
     <x-navbar />
     <!-- Header homepage -->
+    <a class="btn btn-outline-primary btn-inserisci-annuncio" href="{{ route('announcement.index') }}"> Vedi tutti gli
+        Annunci</a>
 
-
-
-    <!-- END Carousel Promozionale categorie piu visitate-->
-
-
-    <!-- Section index 6 annunci -->
 
 
 
