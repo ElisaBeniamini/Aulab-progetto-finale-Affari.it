@@ -2,11 +2,18 @@
 
 namespace App\Console;
 
+use App\Console\Commands\MakeUserRevisor;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Illuminate\Http\Request;
+
 
 class Kernel extends ConsoleKernel
-{
+{  
+    
+    protected $commands = [MakeUserRevisor::class,];
+
+
     /**
      * Define the application's command schedule.
      */
@@ -24,4 +31,8 @@ class Kernel extends ConsoleKernel
 
         require base_path('routes/console.php');
     }
+
+ 
+    
+    
 }
