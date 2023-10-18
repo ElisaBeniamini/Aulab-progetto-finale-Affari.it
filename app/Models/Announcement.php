@@ -17,6 +17,7 @@ class Announcement extends Model
         'price',
         'category_id',
         'user_id',
+        'is_accepted',
     ];
 
     //Gli annunci appartanegono alle categorie.
@@ -31,19 +32,15 @@ class Announcement extends Model
         return $this->belongsTo(User::class);
     }
 
-    //METODO PER RICERCA PRODOTTI
-    public function toSearchableArray()
+    public function setAccepted($value)
     {
-        $category = $this->category;
+        $this->is_accepted = $value;
+        $this->save();
+        return true;
+    }
 
-        $array = [
-            'id' => $this->id,
-            'title' => $this->title,
-            'description' => $this->description,
-            'price' => $this->price,
-            'category' => $category,
-        ];
-
-        return $array;
+    public static function toBeRevisionedCount()
+    {
+     return Announcement::where('is_accepted', null)->count();   
     }
 }

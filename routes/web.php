@@ -34,11 +34,23 @@ Route::get('/detail/announcement/{announcement}', [AnnouncementController::class
 
 //Start-Rotte-Annunci.
 Route::resource('/announcement', AnnouncementController::class);
+Route::get('/announcement/{id}', 'AnnouncementController@showAnnouncement');
 //End-Rotte-Annunci.
 
-//*Home revisore
-Route::get('/revisor/home', [RevisorController::class, 'index'])->name('revisor.index');
+// Home revisore
+Route::get('/revisor/home', [RevisorController::class, 'index'])->middleware('isRevisor')->name('revisor.index');
 
+// Accetta annuncio
+Route::patch('/accetta/annuncio/{announcement}', [RevisorController::class, 'acceptAnnouncement'])->middleware('isRevisor')->name('revisor.accept_announcement');
+
+// Rifiuta annuncio
+Route::patch('/rifiuta/annuncio/{announcement}', [RevisorController::class, 'rejectAnnouncement'])->middleware('isRevisor')->name('revisor.reject_announcement');
+
+// Richiedi di essere revisore
+Route::get('/richiesta/revisore', [RevisorController::class, 'becomeRevisor'])->middleware('auth')->name('become.revisor');
+
+// Rendi utente revisore
+Route::get('/rendi/revisore/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
 
 //ROTTA PER RICERCARE L'ANNUNCIO.
 Route::get('/ricerca/annuncio' , [SearchAnnouncement::class , 'searchAnnouncements'])->name('announcement.search');

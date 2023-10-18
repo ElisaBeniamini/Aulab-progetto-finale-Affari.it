@@ -71,6 +71,11 @@
                             Pubblicità
                         </a>
                     </li>
+                    <li class="py-1">Vuoi lavorare con noi? Registrati e clicca qui 
+                        <a href="{{route('become.revisor')}}" class="btn text-light">
+                            Diventa revisore 
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
