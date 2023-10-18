@@ -700,3 +700,15 @@ body {
     display: none;
 }
 
+.title-prodotti-correlati{
+    font-weight: bold;
+}
+
+.container-slider-img-show{
+    background-color: #d4d4d4;
+}
+
+.carousel-control-prev{
+    margin: 0px!important;
+}
+
