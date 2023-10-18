@@ -23,6 +23,13 @@
                             Pubblicità
                         </a>
                     </li>
+                    <li class="py-1 d-flex">
+                    <div>  
+                        <a href="{{route('become.revisor')}}" class="text-light">
+                        Diventa revisore <i class="bi bi-pencil mr-3"></i> 
+                        </a>
+                    </div> 
+                    </li>
                 </ul>
             </div>
             <div class="col-12 col-md-4 pt-5">
@@ -69,11 +76,6 @@
                     <li class="py-1">
                         <a class="link-footer" href="">
                             Pubblicità
-                        </a>
-                    </li>
-                    <li class="py-1">Vuoi lavorare con noi? Registrati e clicca qui 
-                        <a href="{{route('become.revisor')}}" class="btn text-light">
-                            Diventa revisore 
                         </a>
                     </li>
                 </ul>

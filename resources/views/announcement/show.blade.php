@@ -13,7 +13,7 @@
         <section>
             <div class="container-fluid my-5">
                 <div class="row align-items-center">
-                    <div class="col-12 col-md-7 d-flex justify-content-center ">
+                    <div class="col-12 col-md-7 d-flex justify-content-center">
                         <div class="d-flex">
                             <div class="d-flex flex-column">
                                 <div>
@@ -77,7 +77,7 @@
                                 </div>
                                 <div class="ps-2">
                                     <h6 class="title-user-card m-0">
-                                        Pubblicato da {{ $announcement->user->name ?? '' }}
+                                        Pubblicato da {{ $announcement->user->name ?? '' }} <br>
                                         il {{ $announcement->created_at->format('d/m/y') }}
                                     </h6>
                                 </div>
@@ -87,7 +87,136 @@
                 </div>
             </div>
         </section>
+        <!--START POTREBBE INTERESSARTI-->
+        <section>
+            <div class="border-top">
+                <h5 class="title-prodotti-correlati ps-5  m-0 py-4">
+                    Scopri altri prodotti correlati a questa categoria
+                </h5>
+            </div>
+            <div class="container-fluid px-4 pb-4 pt-4 container-slider-img-show">
+                <div class="row">
+                    <div id="carouselExample" class="carousel slide">
+                        <div class="carousel-inner">
+                            <!--START-SECTION-ONE-CAROUSEL-->
+                            <div class="carousel-item active">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        @foreach($consigliati as $consigliato)
+                                        <div class="col-12 col-md-2">
+                                            <!--START-CARD-->
+                                            <a class="link-card" href="{{ route('announcement.show', ['announcement' => $consigliato]) }}">
+                                                <div class="containerCard px-3 py-3">
+                                                    <div>
+                                                        <img class="img-card" src="/img/img-show-3.webp" alt="">
+                                                    </div>
+                                                    <div class="cardBody mt-3">
+                                                        <div>
+                                                            <h6 class="title-card">
+                                                                {{ $consigliato->title }}
+                                                            </h6>
+                                                        </div>
+                                                        <div>
+                                                            <h6 class="price-card">
+                                                                {{ $consigliato->price }} €
+                                                            </h6>
+                                                        </div>
+                                                        <div>
+                                                            <h6 class="price-card">
+                                                                {{ $consigliato->category->name }}
+                                                            </h6>
+                                                        </div>
 
+                                                        <div>
+                                                            <div class="d-flex align-items-center">
+                                                                <div>
+                                                                    <img class="img-pubblicataDa" src="/img/img-pubblicatada.jpeg" alt="">
+                                                                </div>
+                                                                <div class="ps-2">
+                                                                    <h6 class="title-user-card m-0">
+                                                                        Pubblicato da {{ $consigliato->user->name ?? '' }} <br>
+                                                                        il {{ $consigliato->created_at->format('d/m/y') }}
+                                                                    </h6>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <!--END-CARD-->
+                                        </div>
+                                        @endforeach
+                                    </div>
+                                </div>
+                            </div>
+                            <!--END-SECTION-ONE-CAROUSEL-->
+
+                            <!--START-SECTION-TWO-CAROUSEL-->
+                            <div class="carousel-item">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        @foreach($consigliatiTwo as $consigliato)
+                                        <div class="col-12 col-md-2">
+                                            <!--START-CARD-->
+                                            <a class="link-card" href="{{ route('announcement.show', ['announcement' =>  $consigliato]) }}">
+                                                <div class="containerCard px-3 py-3">
+                                                    <div>
+                                                        <img class="img-card" src="/img/img-show-3.webp" alt="">
+                                                    </div>
+                                                    <div class="cardBody mt-3">
+                                                        <div>
+                                                            <h6 class="title-card">
+                                                                {{ $consigliato->title }}
+                                                            </h6>
+                                                        </div>
+                                                        <div>
+                                                            <h6 class="price-card">
+                                                                {{ $consigliato->price }} €
+                                                            </h6>
+                                                        </div>
+                                                        <div>
+                                                            <h6 class="price-card">
+                                                                {{ $consigliato->category->name }}
+                                                            </h6>
+                                                        </div>
+
+                                                        <div>
+                                                            <div class="d-flex align-items-center">
+                                                                <div>
+                                                                    <img class="img-pubblicataDa" src="/img/img-pubblicatada.jpeg" alt="">
+                                                                </div>
+                                                                <div class="ps-2">
+                                                                    <h6 class="title-user-card m-0">
+                                                                        Pubblicato da {{ $consigliato->user->name ?? '' }}
+                                                                        il {{ $consigliato->created_at->format('d/m/y') }}
+                                                                    </h6>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <!--END-CARD-->
+                                        </div>
+                                        @endforeach
+                                    </div>
+                                </div>
+                            </div>
+                            <!--START-SECTION-TWO-CAROUSEL-->
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--START POTREBBE INTERESSARTI-->
         <!--START CLICK IMG-SMALL-XXXL-->
         <section class="d-flex justify-content-center">
             <div class="container-fluid container-show-xxxl bg-white panel-show-xxxl" id="panelXXXL">
