@@ -4,10 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Scout\Searchable;
 
 class Announcement extends Model
 {
-    use HasFactory;
+    use HasFactory, Searchable;
+
     //pescami dal DB titolo descizione e prezzo.
     protected $fillable = [
         'title',
@@ -27,5 +29,21 @@ class Announcement extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    //METODO PER RICERCA PRODOTTI
+    public function toSearchableArray()
+    {
+        $category = $this->category;
+
+        $array = [
+            'id' => $this->id,
+            'title' => $this->title,
+            'description' => $this->description,
+            'price' => $this->price,
+            'category' => $category,
+        ];
+
+        return $array;
     }
 }

@@ -3,6 +3,7 @@
 use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\BasicController;
 use App\Http\Controllers\RevisorController;
+use App\Http\Controllers\SearchAnnouncement;
 use App\Models\Announcement;
 use Illuminate\Support\Facades\Route;
 
@@ -37,3 +38,7 @@ Route::resource('/announcement', AnnouncementController::class);
 
 //*Home revisore
 Route::get('/revisor/home', [RevisorController::class, 'index'])->name('revisor.index');
+
+
+//ROTTA PER RICERCARE L'ANNUNCIO.
+Route::get('/ricerca/annuncio' , [SearchAnnouncement::class , 'searchAnnouncements'])->name('announcement.search');
