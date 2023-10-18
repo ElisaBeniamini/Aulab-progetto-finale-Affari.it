@@ -23,10 +23,12 @@
                             Pubblicità
                         </a>
                     </li>
-                    <li class="py-1">
+                    <li class="py-1 d-flex">
+                    <div>  
                         <a href="{{route('become.revisor')}}" class="text-light">
-                            Diventa revisore 
+                        Diventa revisore <i class="bi bi-pencil mr-3"></i> 
                         </a>
+                    </div> 
                     </li>
                 </ul>
             </div>
