@@ -667,3 +667,11 @@ body {
     align-items: start;
     padding-top: 60px;
 }
+
+.revisore {
+    margin-right: 15px;
+    white-space: nowrap;
+    height: 34px;
+    text-align: center;
+    line-height: 25px;
+}

@@ -37,7 +37,7 @@
                 </a>
             </div>
             @if (Auth::user()->is_revisor)
-                <a class="nav-link btn btn-outline-succes btn-sm position-relative" aria-current="page"
+                <a class="revisore btn btn-outline-primary btn-inserisci-annuncio btn-sm position-relative" aria-current="page"
                     href="{{ route('revisor.index') }}">
                     Zona revisore
                     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
@@ -49,7 +49,7 @@
             <!--END button inserisci annuncio-->
 
             <div class="dropdown">
-                <button class="btn dropdown-toggle btn-logout d-flex  align-items-center fs-5" type="button"
+                <button class="btn dropdown-toggle btn-logout d-flex  align-items-center fs-5 ml-2" type="button"
                     data-bs-toggle="dropdown" aria-expanded="false">
                     <p class="messaggio m-0 pe-4">Ciao , {{ Auth::user()->name }}</p>
                     <ul class="dropdown-menu">
