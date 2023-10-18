@@ -712,3 +712,18 @@ body {
     margin: 0px!important;
 }
 
+.panel-show-xxxl{
+    display: none;
+}
+
+.revisore {
+    margin-right: 15px;
+    white-space: nowrap;
+    height: 34px;
+    text-align: center;
+    line-height: 25px;
+}
+
+.rendi {
+    width:225px;
+}
