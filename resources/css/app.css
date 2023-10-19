@@ -761,3 +761,27 @@ body {
 
 
 }
+
+.carica {
+    width: 30% !important;
+
+}
+
+#description {
+    width: 70% !important;
+    display: block !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+}
+
+#title {
+    width: 70% !important;
+    display: block !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+}
+
+#category, #price {
+    width: 150px !important;
+    display: block !important; 
+}
