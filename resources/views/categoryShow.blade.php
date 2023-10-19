@@ -57,10 +57,11 @@
         </div>
         <!--END-CARD-->
 
+        <!--START PANNELLO DELLE ACCESSIBILITA-->
         <div class="container-usabilità">
             <img class="iconAc" src="/icons8-accessibilità-2-50.png" onclick="openAccessibilita()" alt="">
         </div>
-        <!--START PANNELLO DELLE ACCESSIBILITA-->
+
         <div class="container-accessibilità border" id="panelAcess">
             <div>
                 <div class="d-flex justify-content-end mt-2 me-2">
@@ -96,8 +97,6 @@
         </div>
         <!--END PANNELLO DELLE ACCESSIBILITA-->
     </main>
-
-
     <!--START-MESSAGGIO-NEL CASO NON ESISTA PRODOTTO-->
 
     <!-- 
@@ -114,7 +113,7 @@
 
     <!--FOOTER-->
     <x-footer />
-
+    <!--SCRIPT-->
     <script>
         function openAccessibilita() {
             let x = document.getElementById("panelAcess");
