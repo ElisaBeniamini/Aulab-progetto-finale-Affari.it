@@ -56,6 +56,7 @@
         @endforelse
     </div>
     <!--End Card Announcement -->
+    
     <div class="container-button-grid">
         <div class="button-grid">
             <button class="btn-grid-animation" onclick="gridSistem()">

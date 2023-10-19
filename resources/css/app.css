@@ -1,7 +1,7 @@
 @import 'bootstrap';
 
 body {
-    background-color: #f5f5f5 !important;
+    background-color: white !important;
     font-family: Avenir Next, Helvetica Neue, Helvetica, Arial, sans-serif !important;
 }
 
@@ -97,7 +97,7 @@ label {
     width: 100%;
 }
 
-.btn-outline-primary {
+.outline-primary {
     border-color: #7069bc !important;
     ;
     color: #7069bc !important;
@@ -557,7 +557,7 @@ body {
 }
 
 .title-show {
-    font-size: 50px;
+    font-size: 30px;
     font-weight: bold;
     color: black !important;
 }
@@ -672,17 +672,16 @@ body {
 
 .img-show-small-xxxl {
     width: 100%;
-    height: 86vh;
+    height: 92vh;
     object-fit: cover;
 }
 
 .container-show-xxxl {
-    width: 96% !important;
-    height: 96vh;
+    width: 100% !important;
+    height: 100vh;
     z-index: 999;
     position: fixed;
-    top: 2%;
-    border-radius: 8px;
+    top: 0%;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
@@ -702,10 +701,6 @@ body {
 
 .title-prodotti-correlati {
     font-weight: bold;
-}
-
-.container-slider-img-show {
-    background-color: #d4d4d4;
 }
 
 .carousel-control-prev {
@@ -760,4 +755,94 @@ body {
     }
 
 
+}
+
+.carica {
+    width: 30% !important;
+    display: block !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+}
+
+#description {
+    width: 70% !important;
+    display: block !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+}
+
+#title {
+    width: 70% !important;
+    display: block !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+}
+
+#category, #price {
+    width: 150px !important;
+    display: block !important; 
+}
+
+
+.carousel-control-prev {
+    width: 3% !important;
+}
+
+.carousel-control-next {
+    width: 3% !important;
+}
+
+.container-overflow-x {
+    background-color: lightblue;
+    width: 100%;
+    height: auto;
+    overflow-x: scroll;
+    overflow-y: hidden!important;
+}
+
+.content-overflwo-x {
+    width: 2000px;
+    margin: 10px;
+}
+
+.img-overflow {
+    width: 260px;
+    height: 280px;
+    object-fit: cover;
+    border: 20px solid white;
+}
+
+
+.container-overflow {
+    width: 96%;
+    height: auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    background-color: rgb(235, 230, 230);
+    border-radius: 12px;
+}
+
+.content-overflow {
+    width: 2000px;
+}
+
+.container-overflow::-webkit-scrollbar {
+    width: 12px;
+    border-radius: 20px;
+}
+
+.container-overflow::-webkit-scrollbar-track {
+    border-radius: 20px;
+    border: 1px solid #cacaca;
+    background-color: #f1f1f1;
+    box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.3);
+}
+
+.container-overflow::-webkit-scrollbar-thumb {
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(.5, #b8b5b5), color-stop(1, #f9f9f900));
+    border-radius: 20px;
+}
+
+.card-over-flow{
+    border-radius: 12px;
 }
