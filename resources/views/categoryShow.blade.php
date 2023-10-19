@@ -19,40 +19,41 @@
 
         <div class="gridCard py-3 px-2" id="grid">
             @foreach ($category->announcements as $announcement)
-            <div>
-                <a class="link-card" href="{{ route('announcement.show', ['announcement' => $announcement]) }}">
-                    <div class="containerCard px-3 py-3">
-                        <div>
-                            <img class="img-card" src="/img/img-show-3.webp" alt="">
-                        </div>
-                        <div class="cardBody mt-3">
+                <div>
+                    <a class="link-card" href="{{ route('announcement.show', ['announcement' => $announcement]) }}">
+                        <div class="containerCard px-3 py-3">
                             <div>
-                                <h6 class="title-card lightZone">
-                                    {{$announcement->title}}
-                                </h6>
+                                <img class="img-card" src="/img/img-show-3.webp" alt="">
                             </div>
-                            <div>
-                                <h6 class="price-card lightZone">
-                                    {{$announcement->price}} €
-                                </h6>
-                            </div>
-                            <div>
-                                <div class="d-flex align-items-center">
-                                    <div>
-                                        <img class="img-pubblicataDa" id="borderLd" src="/img/img-pubblicatada.jpeg" alt="">
-                                    </div>
-                                    <div class="ps-2">
-                                        <h6 class="title-user-card m-0 lightZone">
-                                            Pubblicato da {{ $announcement->user->name ?? '' }} <br>
-                                            Il {{ $announcement->created_at->format('d/m/y') }}
-                                        </h6>
+                            <div class="cardBody mt-3">
+                                <div>
+                                    <h6 class="title-card lightZone">
+                                        {{ $announcement->title }}
+                                    </h6>
+                                </div>
+                                <div>
+                                    <h6 class="price-card lightZone">
+                                        {{ $announcement->price }} €
+                                    </h6>
+                                </div>
+                                <div>
+                                    <div class="d-flex align-items-center">
+                                        <div>
+                                            <img class="img-pubblicataDa" id="borderLd"
+                                                src="/img/img-pubblicatada.jpeg" alt="">
+                                        </div>
+                                        <div class="ps-2">
+                                            <h6 class="title-user-card m-0 lightZone">
+                                                Pubblicato da {{ $announcement->user->name ?? '' }} <br>
+                                                Il {{ $announcement->created_at->format('d/m/y') }}
+                                            </h6>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </a>
-            </div>
+                    </a>
+                </div>
             @endforeach
         </div>
         <!--END-CARD-->
@@ -100,7 +101,7 @@
 
     <!--START-MESSAGGIO-NEL CASO NON ESISTA PRODOTTO-->
 
-    <!-- 
+    <!--
     <div class="col-12 col-md-6 mt-5 text-center">
         <h1 class="text-danger">Non sono persenti annunci per la categoria {{ $category->name }}</h1>
         <h2 class="mt-5">Aggiungi subito un'annuncio!</h2>

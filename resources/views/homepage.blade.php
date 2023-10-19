@@ -3,61 +3,30 @@
     <!-- Header homepage -->
 
     <header>
-        <img width="100%" src="/img/img-header.jpg" style="max-width:100%; height:auto;" alt="Donna Shopping">
+        <img width="100%" src="\img\img-header.jpg" style="max-width:100%; height:auto;" alt="Donna Shopping">
     </header>
 
 
-    <!-- START Carousel-0 Category-2-->
     <section>
-        <h1 class="text-muted h1-carousel-category">Informatica</h1>
-        <div class="container-fluid">
-            <div class="row">
-                <div id="carouselExampleControls" class="carousel carousel-dark slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="row d-flex justify-content-center">
-                                <div class="col-md-12 d-flex justify-content-center">
-                                    @foreach ($announcements->take(3) as $announcement)
-                                        @if ($announcement->category_id = 2)
-                                            <div class="card mx-5" style="width: 18rem;">
-                                                <img class="card-img-top" src="\img\informatica-carousel.jpg"
-                                                    alt="Card image cap">
-                                                <div class="card-body">
-                                                    <div class="cardBody">
-                                                        <div>
-                                                            <h6 class="title-card">
-                                                                {{ $announcement->title }}
-                                                            </h6>
-                                                        </div>
-                                                        <div>
-                                                            <h6 class="price-card">
-                                                                {{ $announcement->price }} €
-                                                            </h6>
-                                                        </div>
-                                                        <div>
-                                                            <h6 class="price-card">
-                                                                Categoria - {{ $announcement->category->name }}
-                                                            </h6>
-                                                        </div>
-
+        <!--Foreach-1 -->
+        @foreach ($categories as $category)
+            <div class="container-fluid mt-5">
+                <div class="row">
+                    <h1 class="text-muted h1-carousel-category">{{ $category->name }}</h1>
+                    <div id="carouselExample-{{ $category->id }}" class="carousel slide">
+                        <div class="carousel-inner">
+                            <!-- Foreach 1 -->
+                            @foreach ($category->announcementMaxN(15) as $announcement)
+                                <div class="carousel-item active">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-12 col-md-2">
+                                                <!-- start card -->
+                                                <div class="containerCard px-3 py-1">
+                                                    <div>
+                                                        <img class="img-card" src="/img/img-show-3.webp" alt="">
                                                     </div>
-                                                </div>
-                                            </div>
-                                        @endif
-                                    @endforeach
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="row d-flex justify-content-center">
-                                <div class="col-md-12 d-flex justify-content-center">
-                                    @foreach ($announcements->slice(3, 3) as $announcement)
-                                        @if ($announcement->category_id = 2)
-                                            <div class="card mx-5" style="width: 18rem;">
-                                                <img class="card-img-top" src="\img\informatica-carousel.jpg"
-                                                    alt="Card image cap">
-                                                <div class="card-body">
-                                                    <div class="cardBody">
+                                                    <div class="cardBody mt-3">
                                                         <div>
                                                             <h6 class="title-card">
                                                                 {{ $announcement->title }}
@@ -69,35 +38,54 @@
                                                             </h6>
                                                         </div>
                                                         <div>
-                                                            <div>
-                                                                <h6 class="price-card">
-                                                                    Categoria - {{ $announcement->category->name }}
-                                                                </h6>
+                                                            <h6 class="price-card">
+                                                                {{ $announcement->category->name }}
+                                                            </h6>
+                                                        </div>
+                                                        <div>
+                                                            <div class="d-flex align-items-center">
+                                                                <div>
+                                                                    <img class="img-pubblicataDa"
+                                                                        src="/img/img-pubblicatada.jpeg" alt="">
+                                                                </div>
+                                                                <div class="ps-2">
+                                                                    <h6 class="title-user-card m-0">
+                                                                        Pubblicato da
+                                                                        {{ $announcement->user->name ?? '' }}
+                                                                        il
+                                                                        {{ $announcement->created_at->format('d/m/y') }}
+                                                                    </h6>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <!-- end card -->
                                             </div>
-                                        @endif
-                                    @endforeach
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-    </section>
-    <!-- END Carousel-0 Category-2-->
 
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Foreach 2 -->
+                            @endforeach
+                        </div>
+                        <button class="carousel-control-prev" type="button"
+                            data-bs-target="#carouselExample-{{ $category->id }}" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button"
+                            data-bs-target="#carouselExample-{{ $category->id }}" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+
+
+                </div>
+            </div>
+        @endforeach
+    </section>
 
 
 
