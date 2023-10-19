@@ -7,43 +7,43 @@
     </header>
 
 
-    <!-- START Carousel-0 Category-1-->
+    <!-- START Carousel-0 Category-2-->
     <section>
-        <h1 class="text-muted h1-carousel-category">Categoria-1</h1>
-
+        <h1 class="text-muted h1-carousel-category">Informatica</h1>
         <div class="container-fluid">
             <div class="row">
-
                 <div id="carouselExampleControls" class="carousel carousel-dark slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <div class="row d-flex justify-content-center">
                                 <div class="col-md-12 d-flex justify-content-center">
-                                    @foreach ($announcements->take(4) as $announcement)
-                                        <div class="card mx-5" style="width: 18rem;">
-                                            <img class="card-img-top" src="\img\informatica-carousel.jpg"
-                                                alt="Card image cap">
-                                            <div class="card-body">
-                                                <div class="cardBody">
-                                                    <div>
-                                                        <h6 class="title-card">
-                                                            {{ $announcement->title }}
-                                                        </h6>
-                                                    </div>
-                                                    <div>
-                                                        <h6 class="price-card">
-                                                            {{ $announcement->price }} €
-                                                        </h6>
-                                                    </div>
-                                                    <div>
-                                                        <h6 class="price-card">
-                                                            {{ $announcement->category->name }}
-                                                        </h6>
-                                                    </div>
+                                    @foreach ($announcements->take(3) as $announcement)
+                                        @if ($announcement->category_id = 2)
+                                            <div class="card mx-5" style="width: 18rem;">
+                                                <img class="card-img-top" src="\img\informatica-carousel.jpg"
+                                                    alt="Card image cap">
+                                                <div class="card-body">
+                                                    <div class="cardBody">
+                                                        <div>
+                                                            <h6 class="title-card">
+                                                                {{ $announcement->title }}
+                                                            </h6>
+                                                        </div>
+                                                        <div>
+                                                            <h6 class="price-card">
+                                                                {{ $announcement->price }} €
+                                                            </h6>
+                                                        </div>
+                                                        <div>
+                                                            <h6 class="price-card">
+                                                                Categoria - {{ $announcement->category->name }}
+                                                            </h6>
+                                                        </div>
 
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        @endif
                                     @endforeach
                                 </div>
                             </div>
@@ -51,30 +51,34 @@
                         <div class="carousel-item">
                             <div class="row d-flex justify-content-center">
                                 <div class="col-md-12 d-flex justify-content-center">
-                                    @foreach ($announcements->slice(4, 4) as $announcement)
-                                        <div class="card mx-5" style="width: 18rem;">
-                                            <img class="card-img-top" src="\img\informatica-carousel.jpg"
-                                                alt="Card image cap">
-                                            <div class="card-body">
-                                                <div class="cardBody">
-                                                    <div>
-                                                        <h6 class="title-card">
-                                                            {{ $announcement->title }}
-                                                        </h6>
-                                                    </div>
-                                                    <div>
-                                                        <h6 class="price-card">
-                                                            {{ $announcement->price }} €
-                                                        </h6>
-                                                    </div>
-                                                    <div>
-                                                        <h6 class="price-card">
-                                                            {{ $announcement->category->name }}
-                                                        </h6>
+                                    @foreach ($announcements->slice(3, 3) as $announcement)
+                                        @if ($announcement->category_id = 2)
+                                            <div class="card mx-5" style="width: 18rem;">
+                                                <img class="card-img-top" src="\img\informatica-carousel.jpg"
+                                                    alt="Card image cap">
+                                                <div class="card-body">
+                                                    <div class="cardBody">
+                                                        <div>
+                                                            <h6 class="title-card">
+                                                                {{ $announcement->title }}
+                                                            </h6>
+                                                        </div>
+                                                        <div>
+                                                            <h6 class="price-card">
+                                                                {{ $announcement->price }} €
+                                                            </h6>
+                                                        </div>
+                                                        <div>
+                                                            <div>
+                                                                <h6 class="price-card">
+                                                                    Categoria - {{ $announcement->category->name }}
+                                                                </h6>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        @endif
                                     @endforeach
                                 </div>
                             </div>
@@ -92,7 +96,7 @@
                     </button>
                 </div>
     </section>
-    <!-- END Carousel-0 Category-1-->
+    <!-- END Carousel-0 Category-2-->
 
 
 
