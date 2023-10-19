@@ -1,6 +1,7 @@
-<div class="container-fluid mt-5">
-    <div class="row">
+<div>
+    <div class="row container-fluid mt-5">
         <div class="mt-2">
+            
             <h2 class="text-center mb-4 title-real-time">
                 Carica un nuovo Annuncio
             </h2>
@@ -9,7 +10,8 @@
             <form wire:submit.prevent="store">
                 @csrf
                 @if (session()->has('announcement'))
-                {{ session()->get('announcement') }}
+                <div class="alert alert-success" role="alert">{{ session()->get('announcement') }}</div>
+                
                 @endif
                 <!-- Titolo -->
                 <div class="mb-3 text-center ">
@@ -55,8 +57,8 @@
                 <!--End-Scelta-Categorie-->
 
                 <!-- Pulsante di invio -->
-                <div class="text-center"><button type="submit" class="carica btn custom-purple-button btn-register mt-3 mb-5"><i class="bi bi-upload"></i> Carica articolo</button>
-            </div> </form>
+                <button type="submit" class="carica btn custom-purple-button btn-register mt-3 mb-5"><i class="bi bi-upload"></i> Carica articolo</button>
+            </form>
             <!-- End Form inserimento annunci -->
         </div>
         <div class="col-12 col-md-6">

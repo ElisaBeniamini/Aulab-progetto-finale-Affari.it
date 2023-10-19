@@ -3,7 +3,7 @@
     <!-- Header homepage -->
 
     <header>
-        <img width="100%" src="/img/img-header.jpg" style="max-width:100%; height:auto;" alt="Donna Shopping">
+        <img width="100%" src="/img/wepik-export-20231019192724xBK2.png" style="max-width:100%; height:auto;" alt="Donna Shopping">
     </header>
 
 

@@ -764,7 +764,9 @@ body {
 
 .carica {
     width: 30% !important;
-
+    display: block !important;
+    margin: 0 auto !important;
+    text-align: center !important;
 }
 
 #description {
