@@ -1,7 +1,7 @@
 <div class="container-fluid mt-5">
     <div class="row">
-        <div class="text-center mt-2">
-            <h2 class="mb-4 title-real-time">
+        <div class="mt-2">
+            <h2 class="text-center mb-4 title-real-time">
                 Carica un nuovo Annuncio
             </h2>
             <!-- Start Form inserimento annunci -->
@@ -12,7 +12,7 @@
                 {{ session()->get('announcement') }}
                 @endif
                 <!-- Titolo -->
-                <div class="mb-3">
+                <div class="mb-3 text-center ">
                     <label for="title" class="form-label">Titolo</label>
                     <input type="text" class="form-control input-register" id="title" wire:model="title" required>
                     @error('title')
@@ -20,7 +20,7 @@
                     @enderror
                 </div>
                 <!-- Descrizione -->
-                <div class="mb-3">
+                <div class="mb-3 text-center ">
                     <label for="description" class="form-label">Descrizione</label>
                     <textarea class="form-control" id="description" wire:model="description" rows="4" required></textarea>
                     @error('description')
@@ -30,7 +30,7 @@
                 
                 <div class="d-flex justify-content-center">
     <!-- Prezzo -->
-    <div class="mb-3 me-3">
+    <div class="mb-3 me-3 text-center">
         <label for="price" class="form-label">Prezzo</label>
         <input type="number" class="form-control input-register" id="price" wire:model="price" step="0.01" required>
         @error('price')
@@ -40,7 +40,7 @@
 
     <!-- Scegli Categoria -->
     <div class="mb-3">
-        <label for="category" class="form-label">Scegli Categoria</label>
+        <label for="category" class="form-label text-center">Scegli Categoria</label>
         <select wire:model.defer="category" id="category" class="seleziona category form-control input-register">
             @foreach ($categories as $category)
             <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -55,8 +55,8 @@
                 <!--End-Scelta-Categorie-->
 
                 <!-- Pulsante di invio -->
-                <button type="submit" class="carica btn custom-purple-button btn-register mt-3 mb-5">Carica articolo</button>
-            </form>
+                <div class="text-center"><button type="submit" class="carica btn custom-purple-button btn-register mt-3 mb-5"><i class="bi bi-upload"></i> Carica articolo</button>
+            </div> </form>
             <!-- End Form inserimento annunci -->
         </div>
         <div class="col-12 col-md-6">
