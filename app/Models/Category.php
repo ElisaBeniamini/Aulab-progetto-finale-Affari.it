@@ -17,8 +17,8 @@ class Category extends Model
         return $this->hasMany(Announcement::class);
     }
 
-    public function announcementMaxN($n)
-    {
-        return $this->hasMany(Announcement::class)->take($n)->get();
-    }
+    //  public function announcementMaxN($n)
+    //  {
+    //      return $this->hasMany(Announcement::class)->take($n)->get();
+    //  }
 }
