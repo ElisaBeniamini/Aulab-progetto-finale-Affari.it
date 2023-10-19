@@ -29,11 +29,16 @@ class AnnouncementController extends Controller
     }
 
     public function showAnnouncement(Announcement $announcement)
-    {
-        return view('announcement.show', compact('announcement')); // vedi annuncio
+    {   
+        $consigliati = Announcement::inRandomOrder()->limit(6)->get();
+
+        $consigliatiTwo = Announcement::inRandomOrder()->limit(6)->get();
+
+        return view('announcement.show', compact('announcement','consigliati','consigliatiTwo')); // vedi annuncio
     }
+
     public function show(Announcement $announcement)
-    {
+    {   
         return view('announcement.show', compact('announcement'));
     }
 }
