@@ -29,55 +29,52 @@
         <!--START - Senno se utente è registrato fai vedere nome + logout-->
         <!--START button inserisci annuncio-->
         @else
-            <div class="d-flex justify-content-end align-items-center me-3">
-                <a class="btn btn-outline-primary btn-inserisci-annuncio" href="{{ route('announcement.create') }}">
-                    Inserisci annuncio
-                </a>
-            </div>
-            @if (Auth::user()->is_revisor)
-                <a class="revisore btn btn-outline-primary btn-inserisci-annuncio btn-sm position-relative" aria-current="page"
-                    href="{{ route('revisor.index') }}">
-                    Zona revisore
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                        {{ App\Models\Announcement::toBeRevisionedCount() }}
-                        <span class="visually-hidden">unread messages</span>
-                    </span>
-                </a>
-            @endif
-            <!--END button inserisci annuncio-->
+        <div class="d-flex justify-content-end align-items-center me-3">
+            <a class="btn btn-outline-primary btn-inserisci-annuncio" href="{{ route('announcement.create') }}">
+                Inserisci annuncio
+            </a>
+        </div>
+        @if (Auth::user()->is_revisor)
+        <a class="revisore btn btn-outline-primary btn-inserisci-annuncio btn-sm position-relative" aria-current="page" href="{{ route('revisor.index') }}">
+            Zona revisore
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                {{ App\Models\Announcement::toBeRevisionedCount() }}
+                <span class="visually-hidden">unread messages</span>
+            </span>
+        </a>
+        @endif
+        <!--END button inserisci annuncio-->
 
-            <div class="dropdown">
-                <button class="btn dropdown-toggle btn-logout d-flex  align-items-center fs-5 ml-2" type="button"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    <p class="messaggio m-0 pe-4">Ciao , {{ Auth::user()->name }}</p>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a class="dropdown-item" href="/logout"
-                                onclick="event.preventDefault();getElementById('form-logout').submit()">
-                                <div class="d-flex  align-items-center border-bottom">
-                                    <i class="bi bi-box-arrow-right ps-1 fs-5"></i>
-                                    <p class="title-logout m-0 ps-3">
-                                        Esci
-                                    </p>
-                                </div>
-                            </a>
-                        </li>
-                        <form id="form-logout" action="{{ route('logout') }}" method="POST">
-                            @csrf
-                            @method('POST')
-                        </form>
-                    </ul>
-                </button>
-            </div>
+        <div class="dropdown">
+            <button class="btn dropdown-toggle btn-logout d-flex  align-items-center fs-5 ml-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <p class="messaggio m-0 pe-4">Ciao , {{ Auth::user()->name }}</p>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a class="dropdown-item" href="/logout" onclick="event.preventDefault();getElementById('form-logout').submit()">
+                            <div class="d-flex  align-items-center border-bottom">
+                                <i class="bi bi-box-arrow-right ps-1 fs-5"></i>
+                                <p class="title-logout m-0 ps-3">
+                                    Esci
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                    <form id="form-logout" action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        @method('POST')
+                    </form>
+                </ul>
+            </button>
+        </div>
         @endguest
         <!--END - Senno se utente è registrato fai vedere nome + logout-->
     </nav>
 </header>
 <nav class="nav-two-show-category border-bottom darkLight">
-    <ul class="list-category-nav d-flex ps-0 align-items-center m-0 py-3">
+    <ul class="list-category-nav d-flex justify-content-center align-items-center m-0 py-3">
         @foreach ($categories as $category)
         <li class="px-4">
-            <a class="link-navbar-two" href="{{ route('categoryShow', compact('category')) }}">
+            <a class="link-navbar-two lightZone" href="{{ route('categoryShow', compact('category')) }}">
                 {{ $category->name }}
             </a>
         </li>

@@ -34,7 +34,9 @@ class AnnouncementController extends Controller
 
         $consigliatiTwo = Announcement::inRandomOrder()->limit(6)->get();
 
-        return view('announcement.show', compact('announcement','consigliati','consigliatiTwo')); // vedi annuncio
+        $ineferioridicianquanta = Announcement::where('price' ,'<', 50)->inRandomOrder()->limit(12)->get();
+        
+        return view('announcement.show', compact('announcement','consigliati','consigliatiTwo','ineferioridicianquanta')); // vedi annuncio
     }
 
     public function show(Announcement $announcement)
