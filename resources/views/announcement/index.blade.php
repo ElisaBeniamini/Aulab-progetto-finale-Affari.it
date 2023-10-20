@@ -2,7 +2,7 @@
     <x-navbar />
     <!--Start Card Announcement -->
     <div class="gridCard my-5 px-2" id="grid">
-        @forelse ($announcements as $announcement)
+        @forelse ($announcementes as $announcement)
             <div>
                 <a class="link-card" href="{{ route('announcement.show', ['announcement' => $announcement]) }}">
                     <div class="containerCard px-3 py-3">
