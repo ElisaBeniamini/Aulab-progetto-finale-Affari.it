@@ -74,7 +74,7 @@
     <ul class="list-category-nav d-flex justify-content-center align-items-center m-0 py-3">
         @foreach ($categories as $category)
         <li class="px-4">
-            <a class="link-navbar-two" href="{{ route('categoryShow', compact('category')) }}">
+            <a class="link-navbar-two lightZone" href="{{ route('categoryShow', compact('category')) }}">
                 {{ $category->name }}
             </a>
         </li>
