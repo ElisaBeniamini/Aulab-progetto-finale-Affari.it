@@ -1,7 +1,6 @@
 <x-layout>
     <main id="generalMain">
         <x-navbar />
-
         <!-- <div class="container-fuid">
         <div class="row">
             <div class="col-12 col-md-12 text-center mt-5">
@@ -9,76 +8,85 @@
             </div>
         </div>
        </div> -->
-
+        <!--MAIN-->
         <section>
             <div class="container-fluid my-5">
-                <div class="row align-items-center">
-                    <div class="col-12 col-md-7 d-flex justify-content-center">
-                        <div class="d-flex">
-                            <div class="d-flex flex-column">
-                                <div>
-                                    <img class="img-piccole-show" src="/img/img-show-3.webp" alt="" onclick="cambiaOne()">
-                                </div>
-                                <div class="my-2">
-                                    <img class="img-piccole-show" src="/img/img-show-quattro.webp" alt="" onclick="cambiaTwo()">
-                                </div>
-                                <div class="my-2">
-                                    <img class="img-piccole-show" src="/img/img-show-cinque.webp" alt="" onclick="cambiaThree()">
-                                </div>
-                                <div class="my-2">
-                                    <img class="img-piccole-show" src="/img/img-show.webp" alt="" onclick="cambiaFour()">
-                                </div>
-                            </div>
-                            <div class="ps-2">
-                                <div id="generalContainerImgShow" class="cic">
-                                    <img class="img-show" src="/img/img-show.webp" alt="" id="container-img-small" onclick="openPanelShowxxxl()">
-                                </div>
-                                <div class="text-center mt-2">
-                                    <p>
-                                        Clicca per visualizzare a tutto schermo
-                                    </p>
+                <div class="row">
+                    <div class="col-12 col-md-2 d-flex justify-content-center mb-5">
+                        <div class="d-flex flex-column">
+                            <div class="container-stiky">
+                                <div class="pippo pt-4">
+                                    <div class="mb-2">
+                                        <img class="img-piccole-show" src="/img/img-show-3.webp" alt="" onmouseover="cambiaOne()">
+                                    </div>
+                                    <div class="my-2">
+                                        <img class="img-piccole-show" src="/img/img-show-quattro.webp" alt="" onmouseover="cambiaTwo()">
+                                    </div>
+                                    <div class="my-2">
+                                        <img class="img-piccole-show" src="/img/img-show-cinque.webp" alt="" onmouseover="cambiaThree()">
+                                    </div>
+                                    <div class="mt-2">
+                                        <img class="img-piccole-show" src="/img/img-show.webp" alt="" onmouseover="cambiaFour()">
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-5 px-5">
-                        <div>
-                            <h2 class="title-show">
-                                {{ $announcement->title }}
-                            </h2>
+                    <div class="col-12 col-md-6 justify-content-center px-0">
+                        <div class="container-stiky">
+                            <div id="generalContainerImgShow" class="cic">
+                                <img class="img-show img-fluid px-2" src="/img/img-show.webp" alt="" id="container-img-small" onclick="openPanelShowxxxl()">
+                            </div>
+                            <div class="text-center mt-3">
+                                <p>
+                                    Clicca l'immaggine per visualizzare a tutto schermo
+                                </p>
+                            </div>
                         </div>
-                        <div class="mt-3">
-                            <h3 class="price-show">
-                                {{ $announcement->price }} € iva inclusa
-                            </h3>
-                        </div>
-                        <div class="my-3">
-                            {{ $announcement->description }}
-                        </div>
-                        <div class="mt-5">
-                            <div class="d-flex align-items-center">
-                                <div>
-                                    <img class="img-pubblicataDa" src="/img/img-pubblicatada.jpeg" alt="">
-                                </div>
-                                <div class="ps-2">
-                                    <h6 class="title-user-card m-0">
-                                        Pubblicato da {{ $announcement->user->name ?? '' }} <br>
-                                        il {{ $announcement->created_at->format('d/m/y') }}
-                                    </h6>
-                                </div>
+                    </div>
+                    <div class="col-12 col-md-4 px-5">
+                        <div class="">
+                            <div>
+                                <h2 class="title-show">
+                                    {{ $announcement->title }}
+                                </h2>
+                            </div>
+                            <div class="mt-4">
+                                <h3 class="price-show">
+                                    {{ $announcement->price }} € iva inclusa
+                                </h3>
+                            </div>
+                            <div class="mt-5 mb-4">
+                                {{ $announcement->description }}
                             </div>
                             <div class="mt-5">
-                                <h6 class="title-user-card m-0">
-                                    Contatta {{ $announcement->user->name ?? '' }}
-                                </h6>
-                                <a target="blank" class="mb-5" href=mailto:{{ $announcement->user->email ?? '' }}>{{ $announcement->user->email ?? '' }}
-                                </a>
+                                <div class="d-flex align-items-center">
+                                    <div>
+                                        <img class="img-pubblicataDa" src="/img/img-pubblicatada.jpeg" alt="">
+                                    </div>
+                                    <div class="ps-2">
+                                        <h6 class="title-user-card m-0">
+                                            Pubblicato da {{ $announcement->user->name ?? '' }} <br>
+                                            il {{ $announcement->created_at->format('d/m/y') }}
+                                        </h6>
+                                    </div>
+                                </div>
+                                <div class="mt-5 mb-5">
+                                    <h6 class="title-user-card m-0">
+                                        Contatta {{ $announcement->user->name ?? '' }}
+                                    </h6>
+                                    <i class="bi bi-envelope-at-fill fs-5"></i>
+                                    <a target="blank" class="mb-5 ps-1" href=mailto:{{ $announcement->user->email ?? '' }}>{{ $announcement->user->email ?? '' }}
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        <!--MAIN-->
+
         <!--START POTREBBE INTERESSARTI-->
         <section>
             <div class="border-top bg-light">
@@ -225,7 +233,7 @@
                                 @foreach($ineferioridicianquanta as $item)
                                 <!--START-CARD-->
                                 <a class="link-card" href="{{ route('announcement.show', ['announcement' =>   $item]) }}">
-                                    <div class="containerCard px-3 py-3">
+                                    <div class="containerCard px-2 py-3">
                                         <div>
                                             <img class="img-card px-0 card-over-flow" src="/img/img-show-3.webp" alt="">
                                         </div>
@@ -242,7 +250,7 @@
                                             </div>
                                             <div>
                                                 <h6 class="price-card">
-                                                    {{ $item->category->name }} €
+                                                    {{ $item->category->name }} 
                                                 </h6>
                                             </div>
                                         </div>
@@ -256,22 +264,20 @@
                 </div>
             </div>
         </section>
-        <!--START SECTION PRODOTTI MINORI DI 50€-->
+        <!--END SECTION PRODOTTI MINORI DI 50€-->
 
-
-
-        <!--START CLICK IMG-SMALL-XXXL-->
+        <!--START CONTAINER - CLICK IMG-SMALL-XXXL-->
         <section class="d-flex justify-content-center">
             <div class="container-fluid container-show-xxxl bg-white panel-show-xxxl" id="panelXXXL">
-                <div class="row">
+                <div class="row border-bottom">
                     <div class="col-12 px-4">
                         <div class="d-flex justify-content-between">
-                            <div class="pt-3 ps-3">
-                                <h4>
+                            <div class="py-3 ps-3">
+                                <h4 class="m-0">
                                     {{ $announcement->title }}
                                 </h4>
                             </div>
-                            <div class="pt-2 pe-1">
+                            <div class="py-3 pe-1">
                                 <span>
                                     <i class="bi bi-x-lg fs-4 icon-close-container-xxxl" onclick="closePanelShowxxxl()"></i>
                                 </span>
@@ -285,14 +291,7 @@
                             <img class="img-show-small-xxxl px-4 pe-0 py-4" src="/img/img-show-3.webp" alt="" id="container-img-xxxl">
                         </div>
                     </div>
-                    <div class="col-12 col-md-3">
-                        <div class="row">
-                            <div class="text-center">
-                                <p class="py-4 description-show">
-                                    {{ $announcement->description }}
-                                </p>
-                            </div>
-                        </div>
+                    <div class="col-12 col-md-3 pt-4">
                         <div class="row">
                             <div class="d-flex justify-content-center">
                                 <div class="px-1">
@@ -313,11 +312,12 @@
                 </div>
             </div>
         </section>
+        <!--END CLICK CONTAINER - IMG-SMALL-XXXL-->
+
         <!--START PANNELLO DELLE ACCESSIBILITA-->
         <div class="container-usabilità">
             <img class="iconAc" src="/icons8-accessibilità-2-50.png" onclick="openAccessibilita()" alt="">
         </div>
-
         <div class="container-accessibilità border" id="panelAcess">
             <div>
                 <div class="d-flex justify-content-end mt-2 me-2">
@@ -354,9 +354,6 @@
         <!--END PANNELLO DELLE ACCESSIBILITA-->
     </main>
     <!--END CLICK IMG-SMALL-XXXL-->
-
-
-
     <!-- <div class="container">
         <div class="row">
             <div class="text-center">
@@ -369,7 +366,6 @@
         </div>
     </div> -->
     <x-footer />
-
     <!--SCRIPT PER CLICK CAMBIA IMG + ZOOM-->
     <script>
         function cambiaOne() {
@@ -389,6 +385,7 @@
             document.getElementById("container-img-small").src = "/img/img-show.webp";
         }
 
+
         const containerShow = document.getElementById("generalContainerImgShow");
         const img = document.getElementById("container-img-small");
 
@@ -401,12 +398,12 @@
             const y = e.clientY - e.target.offsetTop;
 
             img.style.transformOrigin = `${x}px ${y}px`;
-            img.style.transform = "scale(6)";
+            img.style.transform = "scale(2)";
         }
 
         function offZoom(e) {
             img.style.transformOrigin = `center center`;
-            img.style.transform = "scale(1)";
+            img.style.transform = "scale(2)";
         }
 
         //ARPI PANEL SHOW-XXXL

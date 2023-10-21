@@ -5,9 +5,9 @@
         <section>
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-12 mt-4 ps-4">
-                        <h5 class="title-category lightZone">
-                            Categoria {{ $category->name }}
+                    <div class="col-12 mt-4 ps-4 ms-2">
+                        <h5 class="title-category lightZone m-0">
+                            {{ $category->name }}
                         </h5>
                     </div>
                 </div>
@@ -16,46 +16,50 @@
         <!--END-TITOLO-CATEGORIA-->
 
         <!--START-CARD-->
-
-        <div class="gridCard py-3 px-2" id="grid">
-            @foreach ($category->announcements as $announcement)
-                <div>
-                    <a class="link-card" href="{{ route('announcement.show', ['announcement' => $announcement]) }}">
-                        <div class="containerCard px-3 py-3">
-                            <div>
-                                <img class="img-card" src="/img/img-show-3.webp" alt="">
-                            </div>
-                            <div class="cardBody mt-3">
-                                <div>
-                                    <h6 class="title-card lightZone">
-                                        {{ $announcement->title }}
-                                    </h6>
-                                </div>
-                                <div>
-                                    <h6 class="price-card lightZone">
-                                        {{ $announcement->price }} €
-                                    </h6>
-                                </div>
-                                <div>
-                                    <div class="d-flex align-items-center">
+        <section>
+            <div class="container-fluid">
+                <div class="row px-3">
+                    @foreach ($category->announcements as $announcement)
+                    <div class="col-6 col-md-2 px-0">
+                        <div>
+                            <a class="link-card" href="{{ route('announcement.show', ['announcement' => $announcement]) }}">
+                                <div class="containerCard px-3 py-4">
+                                    <div>
+                                        <img class="img-card" src="/img/img-show-3.webp" alt="">
+                                    </div>
+                                    <div class="cardBody mt-3">
                                         <div>
-                                            <img class="img-pubblicataDa" id="borderLd"
-                                                src="/img/img-pubblicatada.jpeg" alt="">
-                                        </div>
-                                        <div class="ps-2">
-                                            <h6 class="title-user-card m-0 lightZone">
-                                                Pubblicato da {{ $announcement->user->name ?? '' }} <br>
-                                                Il {{ $announcement->created_at->format('d/m/y') }}
+                                            <h6 class="title-card lightZone">
+                                                {{ $announcement->title }}
                                             </h6>
+                                        </div>
+                                        <div>
+                                            <h6 class="price-card lightZone">
+                                                {{ $announcement->price }} €
+                                            </h6>
+                                        </div>
+                                        <div>
+                                            <div class="d-flex align-items-center">
+                                                <div>
+                                                    <img class="img-pubblicataDa" id="borderLd" src="/img/img-pubblicatada.jpeg" alt="">
+                                                </div>
+                                                <div class="ps-2">
+                                                    <h6 class="title-user-card m-0 lightZone">
+                                                        Pubblicato da {{ $announcement->user->name ?? '' }} <br>
+                                                        Il {{ $announcement->created_at->format('d/m/y') }}
+                                                    </h6>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
-                    </a>
+                    </div>
+                    @endforeach
                 </div>
-            @endforeach
-        </div>
+            </div>
+        </section>
         <!--END-CARD-->
 
         <!--START PANNELLO DELLE ACCESSIBILITA-->
