@@ -12,6 +12,10 @@
                 <h1>Entra nel mondo di Presto.it! <br>
                     Ti aspettano milioni di Offerte!
                 </h1>
+                <a class="btn btn-outline-primary btn-inserisci-annuncio" href="{{ route('announcement.index') }}"> Vedi
+                    tutti gli
+                    Annunci
+                </a>
                 <h2 class="mt-5"> Le Categorie piu Visitate della settimana</h2>
             </div>
         </div>
@@ -61,10 +65,7 @@
 
 
 
-
-
-
-
+    
 
 
 
