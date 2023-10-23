@@ -13,7 +13,7 @@
             <div id="cards_landscape_wrap-2">
 
                 <h2 class="text-dark" style="font-weight:bold;">
-                    Ultimi sei annunci pubblicati
+                    {{ __('ui.ultimi-sei-annunci') }}
                 </h2>
                 <div class="row">
                     @foreach ($announcements as $announcement)

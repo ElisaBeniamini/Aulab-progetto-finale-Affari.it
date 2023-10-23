@@ -34,4 +34,10 @@ class BasicController extends Controller
     {
         return view('categoryShow', compact('category'));
     }
+
+    public function setLanguage($lang)
+    {
+        session()->put('locale', $lang);
+        return redirect()->back();
+    }
 }
