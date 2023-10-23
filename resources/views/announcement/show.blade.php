@@ -17,16 +17,16 @@
                             <div class="container-stiky">
                                 <div class="pippo pt-4">
                                     <div class="mb-2">
-                                        <img class="img-piccole-show" src="/img/img-show-3.webp" alt="" onmouseover="cambiaOne()">
+                                        <img class="img-piccole-show" src="/macchina-uno.avif" alt="" onmouseover="cambiaOne()">
                                     </div>
                                     <div class="my-2">
-                                        <img class="img-piccole-show" src="/img/img-show-quattro.webp" alt="" onmouseover="cambiaTwo()">
+                                        <img class="img-piccole-show" src="/macchina-due.avif" alt="" onmouseover="cambiaTwo()">
                                     </div>
                                     <div class="my-2">
-                                        <img class="img-piccole-show" src="/img/img-show-cinque.webp" alt="" onmouseover="cambiaThree()">
+                                        <img class="img-piccole-show" src="/macchina-tre.avif" alt="" onmouseover="cambiaThree()">
                                     </div>
                                     <div class="mt-2">
-                                        <img class="img-piccole-show" src="/img/img-show.webp" alt="" onmouseover="cambiaFour()">
+                                        <img class="img-piccole-show" src="/macchina-quattro.avif" alt="" onmouseover="cambiaFour()">
                                     </div>
                                 </div>
                             </div>
@@ -35,11 +35,11 @@
                     <div class="col-12 col-md-6 justify-content-center px-0">
                         <div class="container-stiky">
                             <div id="generalContainerImgShow" class="cic">
-                                <img class="img-show img-fluid px-2" src="/img/img-show.webp" alt="" id="container-img-small" onclick="openPanelShowxxxl()">
+                                <img class="img-show img-fluid px-2" src="/macchina-uno.avif" alt="" id="container-img-small" onclick="openPanelShowxxxl()">
                             </div>
                             <div class="text-center mt-3">
                                 <p>
-                                    Clicca l'immaggine per visualizzare a tutto schermo
+                                    Clicca l'immagine per visualizzare a tutto schermo
                                 </p>
                             </div>
                         </div>
@@ -52,12 +52,14 @@
                                 </h2>
                             </div>
                             <div class="mt-4">
-                                <h3 class="price-show">
+                                <h3 class="price-show border-bottom pb-3">
                                     {{ $announcement->price }} € iva inclusa
                                 </h3>
                             </div>
-                            <div class="mt-5 mb-4">
-                                {{ $announcement->description }}
+                            <div class="mt-4 border-bottom  mb-4">
+                                <p class="pb-3">
+                                    {{ $announcement->description }}
+                                </p>
                             </div>
                             <div class="mt-5">
                                 <div class="d-flex align-items-center">
@@ -71,7 +73,7 @@
                                         </h6>
                                     </div>
                                 </div>
-                                <div class="mt-5 mb-5">
+                                <div class="mt-5 mb-5 border-bottom pb-4">
                                     <h6 class="title-user-card m-0">
                                         Contatta {{ $announcement->user->name ?? '' }}
                                     </h6>
@@ -108,7 +110,7 @@
                                             <a class="link-card" href="{{ route('announcement.show', ['announcement' => $consigliato]) }}">
                                                 <div class="containerCard px-3 py-3">
                                                     <div>
-                                                        <img class="img-card px-0" src="/img/img-show-3.webp" alt="">
+                                                        <img class="img-card px-0" src="/macchina-uno.avif" alt="">
                                                     </div>
                                                     <div class="cardBody mt-3">
                                                         <div>
@@ -161,7 +163,7 @@
                                             <a class="link-card" href="{{ route('announcement.show', ['announcement' =>  $consigliato]) }}">
                                                 <div class="containerCard px-3 py-3">
                                                     <div>
-                                                        <img class="img-card px-0" src="/img/img-show-3.webp" alt="">
+                                                        <img class="img-card px-0" src="/macchina-uno.avif" alt="">
                                                     </div>
                                                     <div class="cardBody mt-3">
                                                         <div>
@@ -235,7 +237,7 @@
                                 <a class="link-card" href="{{ route('announcement.show', ['announcement' =>   $item]) }}">
                                     <div class="containerCard px-2 py-3">
                                         <div>
-                                            <img class="img-card px-0 card-over-flow" src="/img/img-show-3.webp" alt="">
+                                            <img class="img-card px-0 card-over-flow" src="/macchina-uno.avif" alt="">
                                         </div>
                                         <div class="cardBody mt-3">
                                             <div>
@@ -250,7 +252,7 @@
                                             </div>
                                             <div>
                                                 <h6 class="price-card">
-                                                    {{ $item->category->name }} 
+                                                    {{ $item->category->name }}
                                                 </h6>
                                             </div>
                                         </div>
@@ -288,23 +290,23 @@
                 <div class="row pb-3">
                     <div class="col-12 col-md-9 pe-0">
                         <div>
-                            <img class="img-show-small-xxxl px-4 pe-0 py-4" src="/img/img-show-3.webp" alt="" id="container-img-xxxl">
+                            <img class="img-show-small-xxxl pe-0 py-4" src="/macchina-uno.avif" alt="" id="container-img-xxxl">
                         </div>
                     </div>
                     <div class="col-12 col-md-3 pt-4">
                         <div class="row">
-                            <div class="d-flex justify-content-center">
+                            <div class="d-flex justify-content-center px-1">
                                 <div class="px-1">
-                                    <img class="img-piccole-show-xxxl border" src="/img/img-show-3.webp" alt="" onclick="cambiaUno()">
+                                    <img class="img-piccole-show-xxxl border" src="/macchina-uno.avif" alt="" onclick="cambiaUno()">
                                 </div>
                                 <div class="px-1">
-                                    <img class="img-piccole-show-xxxl border" src="/img/img-show-quattro.webp" alt="" onclick="cambiaDue()">
+                                    <img class="img-piccole-show-xxxl border" src="/macchina-due.avif" alt="" onclick="cambiaDue()">
                                 </div>
                                 <div class="px-1">
-                                    <img class="img-piccole-show-xxxl border" src="/img/img-show-cinque.webp" alt="" onclick="cambiaTre()">
+                                    <img class="img-piccole-show-xxxl border" src="/macchina-tre.avif" alt="" onclick="cambiaTre()">
                                 </div>
                                 <div class="px-1">
-                                    <img class="img-piccole-show-xxxl border" src="/img/img-show.webp" alt="" onclick="cambiaQuattro()">
+                                    <img class="img-piccole-show-xxxl border" src="/macchina-quattro.avif" alt="" onclick="cambiaQuattro()">
                                 </div>
                             </div>
                         </div>
@@ -370,19 +372,19 @@
     <script>
         function cambiaOne() {
 
-            document.getElementById("container-img-small").src = "/img/img-show-3.webp";
+            document.getElementById("container-img-small").src = "/macchina-uno.avif";
         }
 
         function cambiaTwo() {
-            document.getElementById("container-img-small").src = "/img/img-show-quattro.webp";
+            document.getElementById("container-img-small").src = "/macchina-due.avif";
         }
 
         function cambiaThree() {
-            document.getElementById("container-img-small").src = "/img/img-show-cinque.webp";
+            document.getElementById("container-img-small").src = "/macchina-tre.avif";
         }
 
         function cambiaFour() {
-            document.getElementById("container-img-small").src = "/img/img-show.webp";
+            document.getElementById("container-img-small").src = "/macchina-quattro.avif";
         }
 
 
@@ -421,19 +423,19 @@
         //CAMBIA IMG AL CLIK N.B. PANEL-SHOW-XXXL
         function cambiaUno() {
 
-            document.getElementById("container-img-xxxl").src = "/img/img-show-3.webp";
+            document.getElementById("container-img-xxxl").src = "/macchina-uno.avif";
         }
 
         function cambiaDue() {
-            document.getElementById("container-img-xxxl").src = "/img/img-show-quattro.webp";
+            document.getElementById("container-img-xxxl").src = "/macchina-due.avif";
         }
 
         function cambiaTre() {
-            document.getElementById("container-img-xxxl").src = "/img/img-show-cinque.webp";
+            document.getElementById("container-img-xxxl").src = "/macchina-tre.avif";
         }
 
         function cambiaQuattro() {
-            document.getElementById("container-img-xxxl").src = "/img/img-show.webp";
+            document.getElementById("container-img-xxxl").src = "/macchina-quattro.avif";
         }
 
         //PANNELLO ACCESSIBILITA

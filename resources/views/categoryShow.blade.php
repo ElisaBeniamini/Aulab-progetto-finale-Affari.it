@@ -25,7 +25,7 @@
                             <a class="link-card" href="{{ route('announcement.show', ['announcement' => $announcement]) }}">
                                 <div class="containerCard px-3 py-4">
                                     <div>
-                                        <img class="img-card" src="/img/img-show-3.webp" alt="">
+                                        <img class="img-card" src="/macchina-uno.avif" alt="">
                                     </div>
                                     <div class="cardBody mt-3">
                                         <div>
