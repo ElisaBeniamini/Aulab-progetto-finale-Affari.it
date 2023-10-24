@@ -8,9 +8,9 @@ use Illuminate\Http\Request;
 class SearchAnnouncement extends Controller
 {
     public function searchAnnouncements(Request $request)
-     { 
-        $announcementes = Announcement::search($request->searched)->where('is_accepted', true)->paginate(10);
+    {
+        $announcements = Announcement::search($request->searched)->where('is_accepted', true)->paginate(10);
 
-        return view('announcement.index', compact('announcementes'));
+        return view('announcement.index', compact('announcements'));
     }
 }
