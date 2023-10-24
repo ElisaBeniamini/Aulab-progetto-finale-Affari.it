@@ -414,7 +414,8 @@ body {
 
 .nav-two-show-category {
     position: sticky;
-    top: 0px;
+    top: 0px!important;
+    width: 100%;
     background-color: #f5f5f5 !important;
     box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.1) !important;
     z-index: 3;
@@ -427,9 +428,9 @@ body {
 }
 
 .img-card {
-    width: 100%;
+    max-width: 100%;
     object-fit: cover;
-    height: 280px;
+    height: inherit;
     object-fit: cover;
     border-radius: 10px;
 }
@@ -462,6 +463,10 @@ body {
     transition: transform .2s;
     cursor: pointer;
 }
+
+/* .containerImgCard{
+   height: 500px;
+} */
 
 .containerCard:hover {
     transform: scale(1.04);
