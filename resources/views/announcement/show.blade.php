@@ -1,13 +1,19 @@
 <x-layout>
     <main id="generalMain">
         <x-navbar />
-        <!-- <div class="container-fuid">
-        <div class="row">
-            <div class="col-12 col-md-12 text-center mt-5">
-                <h1>Annuncio {{ $announcement->title }}</h1>
+        <!-- titolo pagina  -->
+        <div class="container-fuid">
+            <div class="row">
+                <div class="col-12 col-md-12 text-center mt-5">
+                    <h2>{{ __('ui.dettagli') }}
+                        {{ $announcement->title }}
+                        <span class="text-muted" style="font-size: 18px">
+                            {{ $announcement->category->name }}
+                        </span>
+                    </h2>
+                </div>
             </div>
         </div>
-       </div> -->
         <!--MAIN-->
         <section>
             <div class="container-fluid my-5">
@@ -17,16 +23,20 @@
                             <div class="container-stiky">
                                 <div class="pippo pt-4">
                                     <div class="mb-2">
-                                        <img class="img-piccole-show" src="/macchina-uno.avif" alt="" onmouseover="cambiaOne()">
+                                        <img class="img-piccole-show" src="/macchina-uno.avif" alt=""
+                                            onmouseover="cambiaOne()">
                                     </div>
                                     <div class="my-2">
-                                        <img class="img-piccole-show" src="/macchina-due.avif" alt="" onmouseover="cambiaTwo()">
+                                        <img class="img-piccole-show" src="/macchina-due.avif" alt=""
+                                            onmouseover="cambiaTwo()">
                                     </div>
                                     <div class="my-2">
-                                        <img class="img-piccole-show" src="/macchina-tre.avif" alt="" onmouseover="cambiaThree()">
+                                        <img class="img-piccole-show" src="/macchina-tre.avif" alt=""
+                                            onmouseover="cambiaThree()">
                                     </div>
                                     <div class="mt-2">
-                                        <img class="img-piccole-show" src="/macchina-quattro.avif" alt="" onmouseover="cambiaFour()">
+                                        <img class="img-piccole-show" src="/macchina-quattro.avif" alt=""
+                                            onmouseover="cambiaFour()">
                                     </div>
                                 </div>
                             </div>
@@ -35,11 +45,12 @@
                     <div class="col-12 col-md-6 justify-content-center px-0">
                         <div class="container-stiky">
                             <div id="generalContainerImgShow" class="cic">
-                                <img class="img-show img-fluid px-2" src="/macchina-uno.avif" alt="" id="container-img-small" onclick="openPanelShowxxxl()">
+                                <img class="img-show img-fluid px-2" src="/macchina-uno.avif" alt=""
+                                    id="container-img-small" onclick="openPanelShowxxxl()">
                             </div>
                             <div class="text-center mt-3">
                                 <p>
-                                    Clicca l'immagine per visualizzare a tutto schermo
+                                    {{ __('ui.clicca-per-visualizzare-tutto.schermo') }}
                                 </p>
                             </div>
                         </div>
@@ -53,7 +64,7 @@
                             </div>
                             <div class="mt-4">
                                 <h3 class="price-show border-bottom pb-3">
-                                    {{ $announcement->price }} € iva inclusa
+                                    {{ $announcement->price }} € {{ __('ui.iva-inclusa') }}
                                 </h3>
                             </div>
                             <div class="mt-4 border-bottom  mb-4">
@@ -68,17 +79,18 @@
                                     </div>
                                     <div class="ps-2">
                                         <h6 class="title-user-card m-0">
-                                            Pubblicato da {{ $announcement->user->name ?? '' }} <br>
-                                            il {{ $announcement->created_at->format('d/m/y') }}
+                                            {{ __('ui.pubblicato-da') }} {{ $announcement->user->name ?? '' }} <br>
+                                            {{ __('ui.il') }} {{ $announcement->created_at->format('d/m/y') }}
                                         </h6>
                                     </div>
                                 </div>
                                 <div class="mt-5 mb-5 border-bottom pb-4">
                                     <h6 class="title-user-card m-0">
-                                        Contatta {{ $announcement->user->name ?? '' }}
+                                        {{ __('ui.contatta') }} {{ $announcement->user->name ?? '' }}
                                     </h6>
                                     <i class="bi bi-envelope-at-fill fs-5"></i>
-                                    <a target="blank" class="mb-5 ps-1" href=mailto:{{ $announcement->user->email ?? '' }}>{{ $announcement->user->email ?? '' }}
+                                    <a target="blank" class="mb-5 ps-1"
+                                        href="mailto:{{ $announcement->user->email ?? '' }}">{{ $announcement->user->email ?? '' }}
                                     </a>
                                 </div>
                             </div>
@@ -93,7 +105,7 @@
         <section>
             <div class="border-top bg-light">
                 <h5 class="title-prodotti-correlati ps-5  m-0 pt-4">
-                    Scopri altri prodotti correlati a questa categoria
+                    {{ __('ui.scopri-prodotti-correlati') }}
                 </h5>
             </div>
             <div class="container-fluid px-4 pb-4 pt-4 container-slider-img-show bg-light">
@@ -104,49 +116,55 @@
                             <div class="carousel-item active">
                                 <div class="container-fluid">
                                     <div class="row">
-                                        @foreach($consigliati as $consigliato)
-                                        <div class="col-12 col-md-2 px-0">
-                                            <!--START-CARD-->
-                                            <a class="link-card" href="{{ route('announcement.show', ['announcement' => $consigliato]) }}">
-                                                <div class="containerCard px-3 py-3">
-                                                    <div>
-                                                        <img class="img-card px-0" src="/macchina-uno.avif" alt="">
-                                                    </div>
-                                                    <div class="cardBody mt-3">
+                                        @foreach ($consigliati as $consigliato)
+                                            <div class="col-12 col-md-2 px-0">
+                                                <!--START-CARD-->
+                                                <a class="link-card"
+                                                    href="{{ route('announcement.show', ['announcement' => $consigliato]) }}">
+                                                    <div class="containerCard px-3 py-3">
                                                         <div>
-                                                            <h6 class="title-card">
-                                                                {{ $consigliato->title }}
-                                                            </h6>
+                                                            <img class="img-card px-0" src="/macchina-uno.avif"
+                                                                alt="">
                                                         </div>
-                                                        <div>
-                                                            <h6 class="price-card">
-                                                                {{ $consigliato->price }} €
-                                                            </h6>
-                                                        </div>
-                                                        <div>
-                                                            <h6 class="price-card">
-                                                                {{ $consigliato->category->name }}
-                                                            </h6>
-                                                        </div>
+                                                        <div class="cardBody mt-3">
+                                                            <div>
+                                                                <h6 class="title-card">
+                                                                    {{ $consigliato->title }}
+                                                                </h6>
+                                                            </div>
+                                                            <div>
+                                                                <h6 class="price-card">
+                                                                    {{ $consigliato->price }} €
+                                                                </h6>
+                                                            </div>
+                                                            <div>
+                                                                <h6 class="price-card">
+                                                                    {{ $consigliato->category->name }}
+                                                                </h6>
+                                                            </div>
 
-                                                        <div>
-                                                            <div class="d-flex align-items-center">
-                                                                <div>
-                                                                    <img class="img-pubblicataDa" src="/img/img-pubblicatada.jpeg" alt="">
-                                                                </div>
-                                                                <div class="ps-2">
-                                                                    <h6 class="title-user-card m-0">
-                                                                        Pubblicato da {{ $consigliato->user->name ?? '' }} <br>
-                                                                        il {{ $consigliato->created_at->format('d/m/y') }}
-                                                                    </h6>
+                                                            <div>
+                                                                <div class="d-flex align-items-center">
+                                                                    <div>
+                                                                        <img class="img-pubblicataDa"
+                                                                            src="/img/img-pubblicatada.jpeg"
+                                                                            alt="">
+                                                                    </div>
+                                                                    <div class="ps-2">
+                                                                        <h6 class="title-user-card m-0">
+                                                                            {{ __('ui.pubblicato-da') }}
+                                                                            {{ $consigliato->user->name ?? '' }} <br>
+                                                                            {{ __('ui.il') }}
+                                                                            {{ $consigliato->created_at->format('d/m/y') }}
+                                                                        </h6>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </a>
-                                            <!--END-CARD-->
-                                        </div>
+                                                </a>
+                                                <!--END-CARD-->
+                                            </div>
                                         @endforeach
                                     </div>
                                 </div>
@@ -157,61 +175,71 @@
                             <div class="carousel-item">
                                 <div class="container-fluid">
                                     <div class="row">
-                                        @foreach($consigliatiTwo as $consigliato)
-                                        <div class="col-12 col-md-2 px-0">
-                                            <!--START-CARD-->
-                                            <a class="link-card" href="{{ route('announcement.show', ['announcement' =>  $consigliato]) }}">
-                                                <div class="containerCard px-3 py-3">
-                                                    <div>
-                                                        <img class="img-card px-0" src="/macchina-uno.avif" alt="">
-                                                    </div>
-                                                    <div class="cardBody mt-3">
+                                        @foreach ($consigliatiTwo as $consigliato)
+                                            <div class="col-12 col-md-2 px-0">
+                                                <!--START-CARD-->
+                                                <a class="link-card"
+                                                    href="{{ route('announcement.show', ['announcement' => $consigliato]) }}">
+                                                    <div class="containerCard px-3 py-3">
                                                         <div>
-                                                            <h6 class="title-card">
-                                                                {{ $consigliato->title }}
-                                                            </h6>
+                                                            <img class="img-card px-0" src="/macchina-uno.avif"
+                                                                alt="">
                                                         </div>
-                                                        <div>
-                                                            <h6 class="price-card">
-                                                                {{ $consigliato->price }} €
-                                                            </h6>
-                                                        </div>
-                                                        <div>
-                                                            <h6 class="price-card">
-                                                                {{ $consigliato->category->name }}
-                                                            </h6>
-                                                        </div>
+                                                        <div class="cardBody mt-3">
+                                                            <div>
+                                                                <h6 class="title-card">
+                                                                    {{ $consigliato->title }}
+                                                                </h6>
+                                                            </div>
+                                                            <div>
+                                                                <h6 class="price-card">
+                                                                    {{ $consigliato->price }} €
+                                                                </h6>
+                                                            </div>
+                                                            <div>
+                                                                <h6 class="price-card">
+                                                                    {{ $consigliato->category->name }}
+                                                                </h6>
+                                                            </div>
 
-                                                        <div>
-                                                            <div class="d-flex align-items-center">
-                                                                <div>
-                                                                    <img class="img-pubblicataDa" src="/img/img-pubblicatada.jpeg" alt="">
-                                                                </div>
-                                                                <div class="ps-2">
-                                                                    <h6 class="title-user-card m-0">
-                                                                        Pubblicato da {{ $consigliato->user->name ?? '' }}
-                                                                        il {{ $consigliato->created_at->format('d/m/y') }}
-                                                                    </h6>
+                                                            <div>
+                                                                <div class="d-flex align-items-center">
+                                                                    <div>
+                                                                        <img class="img-pubblicataDa"
+                                                                            src="/img/img-pubblicatada.jpeg"
+                                                                            alt="">
+                                                                    </div>
+                                                                    <div class="ps-2">
+                                                                        <h6 class="title-user-card m-0">
+                                                                            {{ __('ui.pubblicato-da') }}
+                                                                            {{ $consigliato->user->name ?? '' }}
+                                                                            {{ __('ui.il') }}
+                                                                            {{ $consigliato->created_at->format('d/m/y') }}
+                                                                        </h6>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </a>
-                                            <!--END-CARD-->
-                                        </div>
+                                                </a>
+                                                <!--END-CARD-->
+                                            </div>
                                         @endforeach
                                     </div>
                                 </div>
                             </div>
                             <!--START-SECTION-TWO-CAROUSEL-->
                         </div>
-                        <button class="carousel-control-prev justufy-content-start" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon bg-dark  rounded-3 px-2 py-2" aria-hidden="true"></span>
+                        <button class="carousel-control-prev justufy-content-start" type="button"
+                            data-bs-target="#carouselExample" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon bg-dark  rounded-3 px-2 py-2"
+                                aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                            <span class="carousel-control-next-icon bg-dark  rounded-3 px-2 py-2" aria-hidden="true"></span>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon bg-dark  rounded-3 px-2 py-2"
+                                aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
                     </div>
@@ -224,7 +252,7 @@
         <section>
             <div class="border-top bg-light">
                 <h5 class="title-prodotti-correlati ps-5  m-0 pt-4 pb-5">
-                    Ecco a te una selezione di articoli a basso costo
+                    {{ __('ui.selezione-articoli<50') }}
                 </h5>
             </div>
             <div class="container-fluid bg-light">
@@ -232,33 +260,35 @@
                     <div class="container-overflow mb-5">
                         <div class="content-overflow py-2">
                             <div class="d-flex">
-                                @foreach($ineferioridicianquanta as $item)
-                                <!--START-CARD-->
-                                <a class="link-card" href="{{ route('announcement.show', ['announcement' =>   $item]) }}">
-                                    <div class="containerCard px-2 py-3">
-                                        <div>
-                                            <img class="img-card px-0 card-over-flow" src="/macchina-uno.avif" alt="">
+                                @foreach ($ineferioridicianquanta as $item)
+                                    <!--START-CARD-->
+                                    <a class="link-card"
+                                        href="{{ route('announcement.show', ['announcement' => $item]) }}">
+                                        <div class="containerCard px-2 py-3">
+                                            <div>
+                                                <img class="img-card px-0 card-over-flow" src="/macchina-uno.avif"
+                                                    alt="">
+                                            </div>
+                                            <div class="cardBody mt-3">
+                                                <div>
+                                                    <h6 class="title-card">
+                                                        {{ $item->title }}
+                                                    </h6>
+                                                </div>
+                                                <div>
+                                                    <h6 class="price-card">
+                                                        {{ $item->price }} €
+                                                    </h6>
+                                                </div>
+                                                <div>
+                                                    <h6 class="price-card">
+                                                        {{ $item->category->name }}
+                                                    </h6>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="cardBody mt-3">
-                                            <div>
-                                                <h6 class="title-card">
-                                                    {{ $item->title }}
-                                                </h6>
-                                            </div>
-                                            <div>
-                                                <h6 class="price-card">
-                                                    {{ $item->price }} €
-                                                </h6>
-                                            </div>
-                                            <div>
-                                                <h6 class="price-card">
-                                                    {{ $item->category->name }}
-                                                </h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <!--END-CARD-->
+                                    </a>
+                                    <!--END-CARD-->
                                 @endforeach
                             </div>
                         </div>
@@ -281,7 +311,8 @@
                             </div>
                             <div class="py-3 pe-1">
                                 <span>
-                                    <i class="bi bi-x-lg fs-4 icon-close-container-xxxl" onclick="closePanelShowxxxl()"></i>
+                                    <i class="bi bi-x-lg fs-4 icon-close-container-xxxl"
+                                        onclick="closePanelShowxxxl()"></i>
                                 </span>
                             </div>
                         </div>
@@ -290,23 +321,28 @@
                 <div class="row pb-3">
                     <div class="col-12 col-md-9 pe-0">
                         <div>
-                            <img class="img-show-small-xxxl pe-0 py-4" src="/macchina-uno.avif" alt="" id="container-img-xxxl">
+                            <img class="img-show-small-xxxl pe-0 py-4" src="/macchina-uno.avif" alt=""
+                                id="container-img-xxxl">
                         </div>
                     </div>
                     <div class="col-12 col-md-3 pt-4">
                         <div class="row">
                             <div class="d-flex justify-content-center px-1">
                                 <div class="px-1">
-                                    <img class="img-piccole-show-xxxl border" src="/macchina-uno.avif" alt="" onclick="cambiaUno()">
+                                    <img class="img-piccole-show-xxxl border" src="/macchina-uno.avif" alt=""
+                                        onclick="cambiaUno()">
                                 </div>
                                 <div class="px-1">
-                                    <img class="img-piccole-show-xxxl border" src="/macchina-due.avif" alt="" onclick="cambiaDue()">
+                                    <img class="img-piccole-show-xxxl border" src="/macchina-due.avif" alt=""
+                                        onclick="cambiaDue()">
                                 </div>
                                 <div class="px-1">
-                                    <img class="img-piccole-show-xxxl border" src="/macchina-tre.avif" alt="" onclick="cambiaTre()">
+                                    <img class="img-piccole-show-xxxl border" src="/macchina-tre.avif" alt=""
+                                        onclick="cambiaTre()">
                                 </div>
                                 <div class="px-1">
-                                    <img class="img-piccole-show-xxxl border" src="/macchina-quattro.avif" alt="" onclick="cambiaQuattro()">
+                                    <img class="img-piccole-show-xxxl border" src="/macchina-quattro.avif"
+                                        alt="" onclick="cambiaQuattro()">
                                 </div>
                             </div>
                         </div>

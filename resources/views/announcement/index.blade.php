@@ -1,5 +1,10 @@
 <x-layout>
     <x-navbar />
+    <div class="row">
+        <div class="col-12 text-center mt-5">
+            <h2>{{ __('ui.h2-tutti-gli-annunci') }}</h2>
+        </div>
+    </div>
     <!--Start Card Announcement -->
     <div class="gridCard my-5 px-2" id="grid">
         @forelse ($announcements as $announcement)
@@ -33,7 +38,7 @@
                                     </div>
                                     <div class="ps-2">
                                         <h6 class="title-user-card m-0">
-                                            Pubblicato da {{ $announcement->user->name ?? '' }}
+                                            {{ __('ui.pubblicato-da') }} {{ $announcement->user->name ?? '' }}
                                             il {{ $announcement->created_at->format('d/m/y') }}
                                         </h6>
                                     </div>
@@ -48,7 +53,7 @@
                 <div class="row">
                     <div class="col-12">
                         <h5>
-                            Spiacenti il prodotto da te cercato non è presente , prova con altro...
+                            {{ __('ui.empty-category-announcement') }}
                         </h5>
                     </div>
                 </div>

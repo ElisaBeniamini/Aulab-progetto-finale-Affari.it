@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\ServiceProvider;
+
 App\Providers\FortifyServiceProvider::class;
 return [
 
@@ -83,8 +84,7 @@ return [
     |
     */
 
-    'locale' => 'en',
-
+    'locale' =>  'it',
     /*
     |--------------------------------------------------------------------------
     | Application Fallback Locale
