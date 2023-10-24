@@ -22,7 +22,7 @@
         <section>
             <div class="container-fluid">
                 <div class="row px-3">
-                    @foreach ($category->announcements as $announcement)
+                    @foreach ($category->announcements->where('is_accepted', true) as $announcement)
                     <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 px-0">
                         <div>
                             <a class="link-card" href="{{ route('announcement.show', ['announcement' => $announcement]) }}">
