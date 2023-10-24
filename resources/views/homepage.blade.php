@@ -5,13 +5,11 @@
         <img width="100%" src="\img\wepik-export-20231019192724xBK2.png" style="max-width:100%; height:auto;"
             alt="Donna Shopping">
     </header>
-    <a class="btn btn-outline-primary btn-inserisci-annuncio" href="{{ route('announcement.index') }}"> Vedi tutti gli
-        Annunci</a>
+
     <!-- Start Card ultimi sei annunci -->
     <div class="container bg-light pt-5 px-5 rounded-4 my-5" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
         <div class="row">
             <div id="cards_landscape_wrap-2">
-
                 <h2 class="text-dark" style="font-weight:bold;">
                     {{ __('ui.ultimi-sei-annunci') }}
                 </h2>
@@ -50,9 +48,11 @@
                                                     </div>
                                                     <div class="ps-2">
                                                         <h6 class="title-user-card text-start">
-                                                            Pubblicato da {{ $announcement->user->name ?? '' }} <br>
+                                                            {{ __('ui.pubblicato-da') }}
+                                                            {{ $announcement->user->name ?? '' }} <br>
                                                             <p class="m-0 pt-1">
-                                                                il {{ $announcement->created_at->format('d/m/y') }}
+                                                                {{ __('ui.il') }}
+                                                                {{ $announcement->created_at->format('d/m/y') }}
                                                             </p>
                                                         </h6>
                                                     </div>
@@ -193,7 +193,7 @@
                         </div>
                         <div>
                             <h4 class="title-contaiener-overflow m-0 ps-1">
-                                UNA SELEZIONE DI SMARTPHONE A PREZZI PIÙ BASSI
+                                {{ __('ui.selezione-prezzi-bassi') }}
                             </h4>
                         </div>
                     </div>

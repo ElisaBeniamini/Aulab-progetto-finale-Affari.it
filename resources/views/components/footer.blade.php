@@ -10,25 +10,25 @@
                     </li>
                     <li class="py-1">
                         <a class="link-footer" href="">
-                            Chi siamo
+                            {{ __('ui.chi-siamo') }}
                         </a>
                     </li>
                     <li class="py-1">
                         <a class="link-footer" href="">
-                            Lavori
+                            {{ __('ui.lavori') }}
                         </a>
                     </li>
                     <li class="py-1">
                         <a class="link-footer" href="">
-                            Pubblicità
+                            {{ __('ui.pubblicità') }}
                         </a>
                     </li>
                     <li class="py-1 d-flex">
-                    <div>  
-                        <a href="{{route('become.revisor')}}" class="text-light">
-                        Diventa revisore <i class="bi bi-pencil mr-3"></i> 
-                        </a>
-                    </div> 
+                        <div>
+                            <a href="{{ route('become.revisor') }}" class="text-light">
+                                {{ __('ui.diventa-revisore') }} <i class="bi bi-pencil mr-3"></i>
+                            </a>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -36,22 +36,22 @@
                 <ul class="list-footer">
                     <li class="py-1">
                         <h4 class="title-footer m-0">
-                            SCOPRI
+                            {{ __('ui.scopri') }}
                         </h4>
                     </li>
                     <li class="py-1">
                         <a class="link-footer" href="">
-                            Chi siamo
+                            {{ __('ui.chi-siamo') }}
                         </a>
                     </li>
                     <li class="py-1">
                         <a class="link-footer" href="">
-                            Lavori
+                            {{ __('ui.lavori') }}
                         </a>
                     </li>
                     <li class="py-1">
                         <a class="link-footer" href="">
-                            Pubblicità
+                            {{ __('ui.pubblicità') }}
                         </a>
                     </li>
                 </ul>
@@ -60,22 +60,22 @@
                 <ul class="list-footer">
                     <li class="py-1">
                         <h4 class="title-footer m-0">
-                            ASSISTENZA
+                            {{ __('ui.assistenza') }}
                         </h4>
                     </li>
                     <li class="py-1">
                         <a class="link-footer" href="">
-                            Chi siamo
+                            {{ __('ui.chi-siamo') }}
                         </a>
                     </li>
                     <li class="py-1">
                         <a class="link-footer" href="">
-                            Lavori
+                            {{ __('ui.lavori') }}
                         </a>
                     </li>
                     <li class="py-1">
                         <a class="link-footer" href="">
-                            Pubblicità
+                            {{ __('ui.pubblicità') }}
                         </a>
                     </li>
                 </ul>

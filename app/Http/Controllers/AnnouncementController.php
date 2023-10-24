@@ -29,18 +29,18 @@ class AnnouncementController extends Controller
     }
 
     public function showAnnouncement(Announcement $announcement)
-    {   
+    {
         $consigliati = Announcement::inRandomOrder()->limit(6)->get();
 
         $consigliatiTwo = Announcement::inRandomOrder()->limit(6)->get();
 
-        $ineferioridicianquanta = Announcement::where('price' ,'<', 50)->inRandomOrder()->limit(12)->get();
-        
-        return view('announcement.show', compact('announcement','consigliati','consigliatiTwo','ineferioridicianquanta')); // vedi annuncio
+        $ineferioridicianquanta = Announcement::where('price', '<', 50)->inRandomOrder()->limit(12)->get();
+
+        return view('announcement.show', compact('announcement', 'consigliati', 'consigliatiTwo', 'ineferioridicianquanta')); // vedi annuncio
     }
 
     public function show(Announcement $announcement)
-    {   
+    {
         return view('announcement.show', compact('announcement'));
     }
 }

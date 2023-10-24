@@ -6,6 +6,7 @@
                 <img class="imgLogo" src="/Logo Presto.png" alt="Logo">
             </a>
         </div>
+        <!-- Start div Bandierine  IT-ES-ENG-->
         <div>
             <x-_locale lang='it' nation='it' />
         </div>
@@ -15,14 +16,14 @@
         <div>
             <x-_locale lang='es' nation='es' />
         </div>
-
+        <!-- End div Bandierine  IT-ES-ENG-->
         <div class="container-input-search">
             <!--START BARRA DI RICERCA-->
             <div>
                 <form class="d-flex position-relative" role="search" action="{{ route('announcement.search') }}"
                     method="GET">
                     <input class="form-control me-2 input-search" type="search" name="searched"
-                        placeholder="Cosa stai cercando?" aria-label="Search">
+                        placeholder="  {{ __('ui.ricerca') }}" aria-label="Search">
                     <button class="btn btn-search position-absolute end-0" type="submit">
                         <i class="bi bi-search text-light fs-5"></i>
                     </button>
@@ -48,15 +49,17 @@
                     <button class="btnInserisciAnnuncio">
                         <a href="{{ route('announcement.create') }}">
                             <p class="text-light m-0">
-                                Inserisci annuncio
+                                {{ __('ui.inserisci-annuncio') }}
                             </p>
+
                         </a>
                     </button>
+
                 </div>
                 @if (Auth::user()->is_revisor)
                     <a class="revisore btn btn-outline-primary btn-inserisci-annuncio btn-sm position-relative"
                         aria-current="page" href="{{ route('revisor.index') }}">
-                        Zona revisore
+                        {{ __('ui.zona-revisore') }}
                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                             {{ App\Models\Announcement::toBeRevisionedCount() }}
                             <span class="visually-hidden">unread messages</span>
@@ -68,7 +71,7 @@
                     <div class="dropdown px-1">
                         <button class="btn dropdown-toggle btn-logout d-flex  align-items-center fs-5" type="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            <p class="messaggio m-0">Ciao , {{ Auth::user()->name }}</p>
+                            <p class="messaggio m-0"> {{ __('ui.ciao') }} {{ Auth::user()->name }}</p>
                             <ul class="dropdown-menu">
                                 <li>
                                     <a class="dropdown-item" href="/logout"
@@ -76,7 +79,7 @@
                                         <div class="d-flex  align-items-center border-bottom">
                                             <i class="bi bi-box-arrow-right ps-1 fs-5"></i>
                                             <p class="title-logout m-0">
-                                                Esci
+                                                Logout
                                             </p>
                                         </div>
                                     </a>
@@ -114,9 +117,13 @@
                         </a>
                     </li>
                 @endforeach
+                <a class="revisore btn btn-outline-primary btn-inserisci-annuncio btn-sm"
+                    href="{{ route('announcement.index') }}">
+                    {{ __('ui.btn-tutti-gli-annunci') }}</a>
             </ul>
         </div>
     </div>
+
 </nav>
 <!--END SOTTO NAVBAR LINK CATEGORIE-->
 
@@ -162,11 +169,11 @@
             </div>
             <div class="mt-5">
                 <p class="text-center">
-                    Non hai un account? registrati
+                    {{ __('ui.non-hai-ancora-account') }}
                 </p>
                 <a href="{{ route('register') }}">
                     <button class="gradient-custom btn btn-register-canvas px-5" type="submit">
-                        Registrati
+                        {{ __('ui.registrati') }}
                     </button>
                 </a>
             </div>
