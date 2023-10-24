@@ -34,16 +34,14 @@ return [
     'carica-articolo' => 'Carica Annuncio',
 
 
-    // Start category-show pagina annunci di una categorua
-    'h2-category-show' => 'Scopri le offerte vantaggiose su ',
-    'categoria' => 'Categoria',
+
     //pagina revisore
     'revisione-annunci-pieno' => 'Revisione Annunci',
     'revisione-annunci-vuoto' => 'Non ci sono annunci da revisionare',
     'accetta' => 'Accetta',
     'rifiuta' => 'Rifiuta',
     //pagina show announcement
-    'dettagli' => 'Dettagli',
+
     'clicca-per-visualizzare-tutto.schermo' => "Fare click sull'immagine per visualizzarla a schermo intero",
     'iva-inclusa' => 'Iva inclusa',
     'contatta' => 'Contatta',

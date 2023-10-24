@@ -1,19 +1,6 @@
 <x-layout>
     <main id="generalMain">
         <x-navbar />
-        <!-- titolo pagina  -->
-        <div class="container-fuid">
-            <div class="row">
-                <div class="col-12 col-md-12 text-center mt-5">
-                    <h2>{{ __('ui.dettagli') }}
-                        {{ $announcement->title }}
-                        <span class="text-muted" style="font-size: 18px">
-                            {{ $announcement->category->name }}
-                        </span>
-                    </h2>
-                </div>
-            </div>
-        </div>
         <!--MAIN-->
         <section>
             <div class="container-fluid my-5">
