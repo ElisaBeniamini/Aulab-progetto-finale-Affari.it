@@ -22,10 +22,6 @@ class BecomeRevisor extends Mailable
         $this->user = $user;
     }
 
-    public function build()
-    {
-        return $this->from('presto.it@noreply.com')->view('mail.become_revisor');
-    }
     /**
      * Get the message envelope.
      */
@@ -33,6 +29,7 @@ class BecomeRevisor extends Mailable
     {
         return new Envelope(
             subject: 'Become Revisor',
+            from: 'presto.it@noreply.com',
         );
     }
 
@@ -45,7 +42,7 @@ class BecomeRevisor extends Mailable
 public function content(): Content
 {
     return new Content(
-        view: 'mail.become_revisor',
+        view: 'mail.mail_revisor',
     );
 }
 
