@@ -59,21 +59,24 @@
                     </div>
                     <div class="mb-3">
                         <label for="formFile" class="form-label">Carica le tue immagini</label>
-                        <input wire:model="temporary_images" name="images" multiple class="form-control shadow @error('temporary_images.*') is-invalid @enderror" type="file" id="formFile">
+                        <input wire:model="temporary_images" type="file" name="images" multiple class="form-control shadow @error('temporary_images.*') is-invalid @enderror" placeholder="img"/>
                         @error('temporary_images.*')
                         <span class="error text-danger">{{ $message }}</span>
                         @enderror
                     </div>
                     @if(!empty($images))
+
                     <div class="row">
-                        <div class="col-12">
+                        <div class="col-12 justify-content-center">
                             <p>
-                                Live Immagini
+                                Anteprima
                             </p>
                             <div class="row border border-4 border-info rounded shadow py-4">
                                 @foreach($images as $key => $image)
-                                <div class="col my-3">
-                                    <div class="img-preview mx-auto shadow rounded" style="background-image: url({{$image->temporaryUrl()}});">
+                                <div class="col mb-3">
+                                    <img src="{{$image->temporaryUrl()}}"/>
+                                    
+                                    <div class="img-preview mx-auto shadow rounded"style="background-image: url({{$image->temporaryUrl()}});">
                                     </div>
 
 
@@ -88,7 +91,8 @@
                     @endif
 
                     <!--End-Scelta-Categorie-->
-
+                    <!--Pulsante crea-->
+                    <button type="submit" class="btn custom-purple-button btn-register mt-3 mb-5"> Crea</button>
                     <!-- Pulsante di invio -->
                     <button type="submit" class="carica btn custom-purple-button btn-register mt-3 mb-5"><i class="bi bi-upload"></i> {{ __('ui.carica-articolo') }}</button>
                 </form>

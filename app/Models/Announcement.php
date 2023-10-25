@@ -45,7 +45,7 @@ class Announcement extends Model
      return Announcement::where('is_accepted', null)->count();   
     }
 
-    //1 annuncio ha N immaggini
+    //1 annuncio ha N immagini
     public function images()
     {
         return $this->hasMany(Image::class);
