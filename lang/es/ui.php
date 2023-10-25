@@ -63,4 +63,9 @@ return [
     'diventa-revisore-clicca-qui' => 'Si quieres solicitar ser revisor, haz clic aquí',
     'invia-richiesta' => 'Enviar solicitud',
     'email' => 'Email',
+
+    //mail revisor
+    'rendilo-revisore-e-clicca-qui' => 'Hazlo revisor y haz clic aquí',
+    'questo-utente-vuole-lavorare-con-noi' => 'Este usuario quiere trabajar con nosotros',
+    'ecco-i-suoi-dati' => 'aquí están sus datos',
 ];

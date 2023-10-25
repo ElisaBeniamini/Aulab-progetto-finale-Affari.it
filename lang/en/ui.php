@@ -58,4 +58,9 @@ return [
     'invia-richiesta' => 'Submit request',
     'Email' => 'Email',
 
+    //mail revisor
+    'rendilo-revisore-e-clicca-qui' => 'Make it a reviewer and click here',
+    'questo-utente-vuole-lavorare-con-noi' => 'This user wants to work with us',
+    'ecco-i-suoi-dati' => 'Here are their data',
+
 ];

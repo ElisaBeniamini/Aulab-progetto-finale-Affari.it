@@ -55,4 +55,9 @@ return [
     'diventa-revisore-clicca-qui' => 'Se vuoi candidarti per diventare revisore, clicca qui',
     'invia-richiesta' => 'Invia Richiesta',
     'Email' => 'Email',
+
+    //mail revisor
+    'rendilo-revisore-e-clicca-qui' => 'Per renderlo Revisore , clicca qui',
+    'questo-utente-vuole-lavorare-con-noi' => 'Questo utente vuole lavorare con noi',
+    'ecco-i-suoi-dati' => 'Ecco i suoi dati',
 ];
