@@ -88,7 +88,7 @@
                     <div class="container-overflow-homepage mb-4">
                         <div class="content-overflow-homepage">
                             <div class="d-flex">
-                                @foreach ($itOnly as $item)
+                                @foreach ($itOnly->where('is_accepted', true) as $item)
                                     <!--START-CARD-->
                                     <a class="link-card" href="">
                                         <div class="containerCard px-2 py-3">
@@ -144,7 +144,7 @@
                     <div class="container-overflow-homepage mb-4">
                         <div class="content-overflow-homepage">
                             <div class="d-flex">
-                                @foreach ($motorsOnly as $item)
+                                @foreach ($motorsOnly->where('is_accepted', true) as $item)
                                     <!--START-CARD-->
                                     <a class="link-card" href="">
                                         <div class="containerCard px-2 py-3">
@@ -200,7 +200,7 @@
                     <div class="container-overflow-homepage mb-4">
                         <div class="content-overflow-homepage">
                             <div class="d-flex">
-                                @foreach ($smartphoneMinors as $item)
+                                @foreach ($smartphoneMinors->where('is_accepted', true) as $item)
                                     <!--START-CARD-->
                                     <a class="link-card" href="">
                                         <div class="containerCard px-2 py-3">
