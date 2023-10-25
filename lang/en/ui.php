@@ -35,9 +35,7 @@ return [
     'carica-articolo' => 'Upload a listing',
 
 
-    // Start category-show pagina annunci di una categorua
-    'h2-category-show' => 'Discover great deals on',
-    'categoria' => 'Category',
+
 
     //pagina revisore
     'revisione-annunci-pieno' => 'Review ads',
@@ -45,7 +43,7 @@ return [
     'accetta' => 'Accept',
     'rifiuta' => 'Reject',
     //pagina show announcement
-    'dettagli' => 'Detail',
+
     'clicca-per-visualizzare-tutto.schermo' => 'Click the image to view full-screen',
     'iva-inclusa' => 'VAT included',
     'contatta' => 'Contact',

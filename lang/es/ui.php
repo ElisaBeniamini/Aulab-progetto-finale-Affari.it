@@ -37,11 +37,7 @@ return [
     'carica-articolo' => 'Upload anuncio',
 
 
-    // Start category-show pagina annunci di una categorua
-    'h2-category-show' => 'Descubre excelentes ofertas en',
-    'categoria' => 'Categoria',
-    // <Publicato da>  preso dall homepage
-    // End category-show pagina annunci di una categorua
+
 
 
 
@@ -53,7 +49,7 @@ return [
     'rifiuta' => 'Rechazar',
 
     //pagina show announcement
-    'dettagli' => 'Detalles',
+
     'clicca-per-visualizzare-tutto.schermo' => 'Haz clic en la imagen para verla a pantalla completa',
     'iva-inclusa' => 'IVA incluida',
     'contatta' => 'Contacta',

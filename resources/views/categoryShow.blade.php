@@ -2,20 +2,6 @@
     <x-navbar />
     <!--START-TITOLO-CATEGORIA-->
     <main class="darkLight">
-        <section>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12 mt-4 ps-4 ms-2">
-                        <h2 class="text-center mt-5">
-                            {{ __('ui.h2-category-show') }}
-                            {{ $category->name }}</h2>
-                        <h5 class="title-category lightZone m-0">
-                            {{ __('ui.categoria') }} {{ $category->name }}
-                        </h5>
-                    </div>
-                </div>
-            </div>
-        </section>
         <!--END-TITOLO-CATEGORIA-->
 
         <!--START-CARD-->
