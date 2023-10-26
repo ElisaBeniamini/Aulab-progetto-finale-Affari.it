@@ -122,6 +122,7 @@ label {
 
 /* Stile per il campo "Prezzo" */
 #price {
+
     background-color: #fff !important;
     width: 50% !important;
 }
@@ -302,7 +303,7 @@ footer {
 
 .btn-register-canvas {
     background-color: #f5f5f5;
-    width: 100%!important;
+    width: 100% !important;
     height: 50px;
     border: 1px solid #7069bc;
 }
@@ -320,7 +321,7 @@ footer {
 }
 
 .input-email-password-canvas {
-    height: 10px!important;
+    height: 10px !important;
     width: 100% !important;
 }
 
@@ -416,7 +417,7 @@ body {
 
 .nav-two-show-category {
     position: sticky;
-    top: 0px!important;
+    top: 0px !important;
     width: 100%;
     background-color: #f5f5f5 !important;
     box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.1) !important;

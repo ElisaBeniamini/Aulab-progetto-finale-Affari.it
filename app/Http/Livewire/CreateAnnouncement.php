@@ -10,10 +10,10 @@ use Livewire\WithFileUploads;
 
 
 class CreateAnnouncement extends Component
-{   
+{
     use WithFileUploads;
 
-    public $title, $description, $price, $category , $temporary_images , $images = [] , $image, $validated, $form_id, $announcement;    
+    public $title, $description, $price, $category, $temporary_images, $images = [], $image, $validated, $form_id;
     //START VALIDAZIONE DATI
     protected $rules = [
         'title' => 'required',
@@ -25,29 +25,29 @@ class CreateAnnouncement extends Component
     ];
     //END VALIDAZIONE DATI
     protected $messages = [
-        'required'=>'il campo:attribute è richiesto',
-        'min'=>'il campo:attribute è troppo corto',
-        'temporary_images.required'=>'L\'immagine è richiesta',
-        'temporary_images.*.image'=>'I file devono essere immagini',
-        'temporary_images.*.max'=>'L\'immagine deve essere massimo di 1 mb',
-        'images.image'=>'L\'immagine deve essere un\'immagine',
-        'images.max'=>'L\'immagine deve essere massimo 1 mb',
+        'required' => 'il campo:attribute è richiesto',
+        'min' => 'il campo:attribute è troppo corto',
+        'temporary_images.required' => 'L\'immagine è richiesta',
+        'temporary_images.*.image' => 'I file devono essere immagini',
+        'temporary_images.*.max' => 'L\'immagine deve essere massimo di 1 mb',
+        'images.image' => 'L\'immagine deve essere un\'immagine',
+        'images.max' => 'L\'immagine deve essere massimo 1 mb',
     ];
 
     public function updatedTemporaryImages()
     {
         if ($this->validate([
-            'temporary_images.*'=>'image|max:1024',
+            'temporary_images.*' => 'image|max:1024',
         ])) {
             foreach ($this->temporary_images as $image) {
                 $this->images[] = $image;
-
             }
         }
     }
 
-    public function removeImage($key) {
-        if(in_array($key,array_keys($this->images))) {
+    public function removeImage($key)
+    {
+        if (in_array($key, array_keys($this->images))) {
             unset($this->images[$key]);
         }
     }
@@ -80,7 +80,7 @@ class CreateAnnouncement extends Component
     {
         return $this->hasMany(Image::class);
     }
-    
+
     public function render()
     {
         return view('livewire.create-announcement');
