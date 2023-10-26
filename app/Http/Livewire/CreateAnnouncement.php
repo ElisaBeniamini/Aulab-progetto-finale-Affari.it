@@ -8,13 +8,13 @@ use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use App\Jobs\ResizeImage;
-
+use Illuminate\Support\Facades\File;
 
 class CreateAnnouncement extends Component
 {
     use WithFileUploads;
 
-    public $title, $description, $price, $category, $temporary_images, $images = [], $image, $validated, $form_id;
+    public $title, $description, $price, $category, $temporary_images, $images = [], $image, $validated, $form_id, $announcement;
     //START VALIDAZIONE DATI
     protected $rules = [
         'title' => 'required',
@@ -57,27 +57,37 @@ class CreateAnnouncement extends Component
     {
 
         $this->validate(); //Se i dai sono validati OK procedi alla creazione.
-        $category = Category::find($this->category);
+        //$category = Category::find($this->category);
 
-        $announcement = $category->announcements()->create([
-            'title' => $this->title,
-            'description' => $this->description,
-            'price' => $this->price,
-            'image' => $this->image,
-        ]);
+        //$this->announcement = $category->announcements()->create([
+            //'title' => $this->title,
+            //'description' => $this->description,
+            //'price' => $this->price,
+            //'image' => $this->image,
+        //]);
+        $this->announcement=Category::find($this->category)->announcements()->create($this->validate());
         if (count($this->images)) {
             foreach ($this->images as $image) {
-                $announcement->images()->create(['path' => $image->store('images', 'public')]);
+                //$announcement->images()->create(['path' => $image->store('images', 'public')]);
+                $newFileName="announcements/{$this->announcement->id}";
+                $newImage=$this->announcement->images()->create(['path' => $image->store($newFileName, 'public')]);
+            
+            //dispatch(new ResizeImage($newImage->path, 400, 300));
             }
+            File::deleteDirectory(storage_path('/app/livewire-tmp'));
         }
 
 
 
-        Auth::user()->announcements()->save($announcement);
+        $this->announcement->user()->associate(Auth::user());
+        
+        $this->announcement->save();
+        
+        session()->flash('announcement', 'Annuncio creato correttamente, sarà pubblicato dopo la revisione.');
 
         $this->reset('title', 'description', 'price', 'category', 'image', 'images', 'temporary_images'); //Al submit pulisci i campi del form.
 
-        session()->flash('announcement', 'Annuncio creato correttamente, sarà pubblicato dopo la revisione.');
+        
     }
     public function images()
     {
