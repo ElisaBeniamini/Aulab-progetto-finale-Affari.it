@@ -103,7 +103,7 @@
                             <div class="carousel-item active">
                                 <div class="container-fluid">
                                     <div class="row">
-                                        @foreach ($consigliati as $consigliato)
+                                        @foreach ($consigliati->where('is_accepted', true) as $consigliato)
                                             <div class="col-12 col-md-2 px-0">
                                                 <!--START-CARD-->
                                                 <a class="link-card"
@@ -162,7 +162,7 @@
                             <div class="carousel-item">
                                 <div class="container-fluid">
                                     <div class="row">
-                                        @foreach ($consigliatiTwo as $consigliato)
+                                        @foreach ($consigliatiTwo->where('is_accepted', true) as $consigliato)
                                             <div class="col-12 col-md-2 px-0">
                                                 <!--START-CARD-->
                                                 <a class="link-card"
@@ -247,7 +247,7 @@
                     <div class="container-overflow mb-5">
                         <div class="content-overflow py-2">
                             <div class="d-flex">
-                                @foreach ($ineferioridicianquanta as $item)
+                                @foreach ($ineferioridicianquanta->where('is_accepted', true) as $item)
                                     <!--START-CARD-->
                                     <a class="link-card"
                                         href="{{ route('announcement.show', ['announcement' => $item]) }}">
