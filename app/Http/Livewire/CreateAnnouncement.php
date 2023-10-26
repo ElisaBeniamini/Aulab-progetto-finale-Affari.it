@@ -81,7 +81,7 @@ class CreateAnnouncement extends Component
 
         $this->announcement->user()->associate(Auth::user());
         
-        $this->announcement->save();
+ 
         
         session()->flash('announcement', 'Annuncio creato correttamente, sarà pubblicato dopo la revisione.');
 

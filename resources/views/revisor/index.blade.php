@@ -31,7 +31,7 @@
                                 {{ __('ui.descrizione') }}: {{ $announcement_to_check->body }}
                             </p>
                             <p class="card-footer">
-                                {{ __('ui.pubblicato-da') }} : {{ $announcement_to_check->user->name }} <br>
+                            {{ __('ui.pubblicato-da') }} : {{ $announcement_to_check->user->name ?? 'Autore Sconosciuto' }} <br>
                                 {{ __('ui.il') }} {{ $announcement_to_check->created_at->format('d/m/Y') }}
                             </p>
 
