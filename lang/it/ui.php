@@ -5,6 +5,7 @@ return [
     'btn-tutti-gli-annunci' => 'Annunci',
     'pubblicato-da' => 'Pubblicato da',
     'il' => 'il',
+    'selezione-prezzi-bassi' => 'Una selezione di smartphone a prezzi bassi',
 
     //index annunci
     'h2-tutti-gli-annunci' => 'Tutti gli annunci',
