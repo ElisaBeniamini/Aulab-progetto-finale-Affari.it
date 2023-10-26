@@ -7,18 +7,17 @@
         </h2>
     </div>
 
+
+                <div class="card-body shadow rounded col-6 mx-auto p-3 text-center mt-3">
     @if ($announcement_to_check)
-        <div class="container">
-            <div class="it-carousel-wrapper it-carousel-landscape-abstract-three-cols splide" data-bs-carousel-splide>
-                @if ($announcement_to_check->images)
+        
+                
                     @foreach($announcement_to_check->images as $image)
                         <div class="carousel-item @if($loop->first) active @endif">
                             <img src="{{ Storage::url($image->path) }}" class="img-fluid"/>
                         </div>
                     @endforeach
-                @endif
-
-                <div class="card-body shadow rounded col-6 mx-auto p-3 text-center mt-3">
+                
                     <h5 class="card-title">
                         {{ __('ui.titolo') }}: {{ $announcement_to_check->title }}
                     </h5>
