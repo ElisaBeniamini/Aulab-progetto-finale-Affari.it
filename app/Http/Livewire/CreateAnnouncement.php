@@ -54,13 +54,8 @@ class CreateAnnouncement extends Component
 
     public function store()
     {
+
         $this->validate(); //Se i dai sono validati OK procedi alla creazione.
-        $announcement = new Announcement();
-        if (count($this->images)) {
-            foreach ($this->images as $image) {
-                $announcement->images()->create(['path' => $image->store('images', 'public')]);
-            }
-        }
         $category = Category::find($this->category);
 
         $announcement = $category->announcements()->create([
@@ -69,10 +64,17 @@ class CreateAnnouncement extends Component
             'price' => $this->price,
             'image' => $this->image,
         ]);
+        if (count($this->images)) {
+            foreach ($this->images as $image) {
+                $announcement->images()->create(['path' => $image->store('images', 'public')]);
+            }
+        }
+
+
 
         Auth::user()->announcements()->save($announcement);
 
-        $this->reset('title', 'description', 'price', 'category', 'image'); //Al submit pulisci i campi del form.
+        $this->reset('title', 'description', 'price', 'category', 'image', 'images', 'temporary_images'); //Al submit pulisci i campi del form.
 
         session()->flash('announcement', 'Annuncio creato correttamente, sarà pubblicato dopo la revisione.');
     }
