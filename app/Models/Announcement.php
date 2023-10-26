@@ -19,6 +19,7 @@ class Announcement extends Model
         'category_id',
         'user_id',
         'is_accepted',
+
     ];
 
     //Gli annunci appartanegono alle categorie.
@@ -51,3 +52,4 @@ class Announcement extends Model
         return $this->hasMany(Image::class);
     }
 }
+
