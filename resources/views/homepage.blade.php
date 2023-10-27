@@ -20,7 +20,9 @@
                                 <div class="card-flyer">
                                     <div class="text-box">
                                         <div class="image-box">
-                                            <img class="img-card" src="/img/img-show-3.webp" alt="">
+                                            <img class="img-card"
+                                                src="{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}"
+                                                class="p-3 rounded">
                                         </div>
                                         <div class="text-container p-3">
                                             <!-- Title + Category -->
@@ -70,6 +72,8 @@
         </div>
     </div>
 
+    {{--
+
     <!--START SEZIONE INFORMATICA-->
     <section>
         <div class="container-fluid px-5 my-5">
@@ -93,7 +97,8 @@
                                     <a class="link-card" href="">
                                         <div class="containerCard px-2 py-3">
                                             <div>
-                                                <img class="img-card px-0 card-over-flow" src="/macchina-uno.avif"
+                                                <img class="img-card px-0 card-over-flow"
+                                                    src="{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}"
                                                     alt="">
                                             </div>
                                             <div class="cardBody mt-3">
@@ -125,7 +130,7 @@
         </div>
     </section>
     <!--END SEZIONE INFORMATICA-->
-
+   
     <!--START SEZIONE MOTORI-->
     <section>
         <div class="container-fluid px-5 my-5">
@@ -236,7 +241,7 @@
             </div>
         </div>
     </section>
-    <!--END SEZIONE TELEFONO < DI 600€-->
+    <!--END SEZIONE TELEFONO < DI 600€--> --}}
 
 
 

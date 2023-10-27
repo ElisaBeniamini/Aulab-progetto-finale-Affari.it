@@ -12,7 +12,9 @@
                 <a class="link-card" href="{{ route('announcement.show', ['announcement' => $announcement]) }}">
                     <div class="containerCard px-3 py-3">
                         <div>
-                            <img class="img-card" src="/img/img-show-3.webp" alt="">
+                            <img class="img-card"
+                                src="{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}"
+                                alt="">
                         </div>
                         <div class="cardBody mt-3">
                             <div>

@@ -8,17 +8,17 @@
     </div>
 
     <div class="container-fluid  shadow rounded">
-        <div class="row">
-            <div class="col-6 mx-auto p-3 text-center mt-3 mb-5">
+        <div class="row d-flex">
+            <div class="col-12 col-md-6 mx-auto p-3 text-center mt-3 mb-5">
                 <!-- se c è l annuncio -->
                 @if ($announcement_to_check)
                     <div class="container-fluid">
                         <div class="row d-flex justify-content-center">
-                            <div class="col-5 d-flex justify-content-end">
+                            <div class="col-6 col-md-6 d-flex justify-content-end">
                                 <!--Se ci sono delle immagini nell annuncio allora mostra l immagine -->
                                 @if ($announcement_to_check->images->isNotEmpty())
                                     @foreach ($announcement_to_check->images as $image)
-                                        <div>
+                                        <div class="mx-2">
                                             <img src="{{ Storage::url($image->path) }}"
                                                 class="img-fluid shadow rounded" />
                                         </div>

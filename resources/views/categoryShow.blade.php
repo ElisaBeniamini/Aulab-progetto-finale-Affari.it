@@ -9,42 +9,46 @@
             <div class="container-fluid">
                 <div class="row px-3">
                     @foreach ($category->announcements->where('is_accepted', true) as $announcement)
-                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 px-0">
-                        <div>
-                            <a class="link-card" href="{{ route('announcement.show', ['announcement' => $announcement]) }}">
-                                <div class="containerCard px-3 py-4">
-                                    <div class="containerImgCard">
-                                        <img class="img-card" src="/macchina-uno.avif" alt="">
-                                    </div>
-                                    <div class="cardBody mt-3">
-                                        <div>
-                                            <h6 class="title-card lightZone">
-                                                {{ $announcement->title }}
-                                            </h6>
+                        <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 px-0">
+                            <div>
+                                <a class="link-card"
+                                    href="{{ route('announcement.show', ['announcement' => $announcement]) }}">
+                                    <div class="containerCard px-3 py-4">
+                                        <div class="containerImgCard">
+                                            <img class="img-card"
+                                                src="{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}"
+                                                alt="">
                                         </div>
-                                        <div>
-                                            <h6 class="price-card lightZone">
-                                                {{ $announcement->price }} €
-                                            </h6>
-                                        </div>
-                                        <div>
-                                            <div class="d-flex align-items-center">
-                                                <div>
-                                                    <img class="img-pubblicataDa" id="borderLd" src="/img/img-pubblicatada.jpeg" alt="">
-                                                </div>
-                                                <div class="ps-2">
-                                                    <h6 class="title-user-card m-0 lightZone">
-                                                        Pubblicato da {{ $announcement->user->name ?? '' }} <br>
-                                                        Il {{ $announcement->created_at->format('d/m/y') }}
-                                                    </h6>
+                                        <div class="cardBody mt-3">
+                                            <div>
+                                                <h6 class="title-card lightZone">
+                                                    {{ $announcement->title }}
+                                                </h6>
+                                            </div>
+                                            <div>
+                                                <h6 class="price-card lightZone">
+                                                    {{ $announcement->price }} €
+                                                </h6>
+                                            </div>
+                                            <div>
+                                                <div class="d-flex align-items-center">
+                                                    <div>
+                                                        <img class="img-pubblicataDa" id="borderLd"
+                                                            src="/img/img-pubblicatada.jpeg" alt="">
+                                                    </div>
+                                                    <div class="ps-2">
+                                                        <h6 class="title-user-card m-0 lightZone">
+                                                            Pubblicato da {{ $announcement->user->name ?? '' }} <br>
+                                                            Il {{ $announcement->created_at->format('d/m/y') }}
+                                                        </h6>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                         </div>
-                    </div>
                     @endforeach
                 </div>
             </div>

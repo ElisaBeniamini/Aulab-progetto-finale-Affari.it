@@ -65,7 +65,7 @@
                         </div>
 
                     </div>
-                    <div class="mb-3 d-flex  flex-column align-items-center">
+                    <div class="mb-3 d-flex flex-column align-items-center">
                         <label for="formFile" class="form-label">Carica le tue immagini</label>
                         <input wire:model="temporary_images" type="file" name="images" multiple
                             class="form-control shadow @error('temporary_images.*') is-invalid @enderror"
@@ -75,17 +75,19 @@
                         @enderror
                     </div>
                     @if (!empty($images))
-                        <div class="row">
-                            <div class="col-12 justify-content-center">
-                                <p>
-                                    Anteprima
-                                </p>
-                                <div class="row border border-4 border-info rounded shadow py-4">
+                        <div class="row d-flex justify-content-center align-items-center">
+                            <div class="col-12 col-md-6 justify-content-center">
+                                <h4>
+                                    Anteprima immagini
+                                </h4>
+                                <div
+                                    class="row border border-4 border-info rounded shadow d-flex justify-content-center align-items-center">
                                     @foreach ($images as $key => $image)
-                                        <div class="col mb-3">
-                                            <img src="{{ $image->temporaryUrl() }}" />
+                                        <div class="col-5 col-md-5">
+                                            <img class="img-fluid" width="200px" height="auto"
+                                                src="{{ $image->temporaryUrl() }}" />
                                             <div
-                                                class="img-preview mx-auto shadow rounded"style="background-image: url({{ $image->temporaryUrl() }});">
+                                                class="mx-auto shadow rounded"style="background-image: url({{ $image->temporaryUrl() }});">
                                             </div>
                                             <button type="button" class="btn btn-danger"
                                                 wire:click="removeImage({{ $key }})">
