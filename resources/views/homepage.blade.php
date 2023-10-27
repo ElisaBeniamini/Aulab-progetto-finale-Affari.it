@@ -22,7 +22,7 @@
                                         <div class="image-box">
                                             <img class="img-card"
                                                 src="{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}"
-                                                class="p-3 rounded">
+                                                {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}} class="p-3 rounded">
                                         </div>
                                         <div class="text-container p-3">
                                             <!-- Title + Category -->

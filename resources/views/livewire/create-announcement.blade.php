@@ -81,15 +81,15 @@
                                     Anteprima immagini
                                 </h4>
                                 <div
-                                    class="row border border-4 border-info rounded shadow d-flex justify-content-center align-items-center">
+                                    class="row border border-4 border-secondary rounded shadow d-flex justify-content-center align-items-center mb-3">
                                     @foreach ($images as $key => $image)
-                                        <div class="col-5 col-md-5">
-                                            <img class="img-fluid" width="200px" height="auto"
+                                        <div class="col-5 col-md-5 d-flex flex-column align-items-center">
+                                            <img class="img-fluid mt-3" width="200px" height="300px"
                                                 src="{{ $image->temporaryUrl() }}" />
                                             <div
                                                 class="mx-auto shadow rounded"style="background-image: url({{ $image->temporaryUrl() }});">
                                             </div>
-                                            <button type="button" class="btn btn-danger"
+                                            <button type="button" class="btn btn-danger btn-sm m-3"
                                                 wire:click="removeImage({{ $key }})">
                                                 Cancella
                                             </button>
@@ -102,8 +102,10 @@
 
                     <!--End-Scelta-Categorie-->
                     <!-- Pulsante di invio -->
-                    <button type="submit" class="carica btn custom-purple-button btn-register mt-3 mb-5"><i
-                            class="bi bi-upload"></i> {{ __('ui.carica-articolo') }}</button>
+                    <button type="submit" class="carica btn custom-purple-button btn-register m-5">
+                        <i class="bi bi-upload"></i>
+                        {{ __('ui.carica-articolo') }}
+                    </button>
                 </form>
                 <!-- End Form inserimento annunci -->
             </div>

@@ -7,20 +7,20 @@
         </h2>
     </div>
 
-    <div class="container-fluid  shadow rounded">
+    <div class="container-fluid shadow rounded">
         <div class="row d-flex">
             <div class="col-12 col-md-6 mx-auto p-3 text-center mt-3 mb-5">
                 <!-- se c è l annuncio -->
                 @if ($announcement_to_check)
                     <div class="container-fluid">
                         <div class="row d-flex justify-content-center">
-                            <div class="col-6 col-md-6 d-flex justify-content-end">
+                            <div class="col-12 col-md-6 d-flex justify-content-end">
                                 <!--Se ci sono delle immagini nell annuncio allora mostra l immagine -->
                                 @if ($announcement_to_check->images->isNotEmpty())
                                     @foreach ($announcement_to_check->images as $image)
                                         <div class="mx-2">
                                             <img src="{{ Storage::url($image->path) }}"
-                                                class="img-fluid shadow rounded" />
+                                                class="img-fluid shadow rounded-3"width="200px" height="300px" />
                                         </div>
                                     @endforeach
                                     <!--Altrimenti mostra l immagine di default -->
@@ -33,7 +33,7 @@
                                 @endif
                             </div>
                             <!-- card dati utente -->
-                            <div class="col-7 d-flex justify-content-start ">
+                            <div class="col-7 col-md-6 d-flex justify-content-start ">
                                 <div class="card-body  col-6 mx-auto p-3 d-flex align-items-center flex-column mt-3">
                                     <h5 class="card-title mb-3">
                                         {{ __('ui.titolo') }}: {{ $announcement_to_check->title }}
