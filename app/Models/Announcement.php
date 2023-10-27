@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+
 use App\Models\Image;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -43,7 +44,7 @@ class Announcement extends Model
 
     public static function toBeRevisionedCount()
     {
-     return Announcement::where('is_accepted', null)->count();   
+        return Announcement::where('is_accepted', null)->count();
     }
 
     //1 annuncio ha N immagini
@@ -51,5 +52,15 @@ class Announcement extends Model
     {
         return $this->hasMany(Image::class);
     }
+    public function toSearchableArray()
+    {
+        $category = $this->category;
+        $array = [
+            'id' => $this->id,
+            'title' => $this->title,
+            'description' => $this->description,
+            'category' => $category
+        ];
+        return $array;
+    }
 }
-
