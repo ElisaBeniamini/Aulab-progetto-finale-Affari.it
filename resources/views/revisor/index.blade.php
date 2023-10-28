@@ -1,6 +1,6 @@
 <x-layout>
     <x-navbar />
-    <!-- questo reindirizzamemto non richiede una rotta; torna alla pagina precedente rispetto alla posizione dell utente -->
+    <!--reindirizzamemto non richiede una rotta; torna alla pagina precedente rispetto alla posizione dell utente -->
     <a class="btn btn-outline-primary btn-inserisci-annuncio m-4 mb-0 fs-5" href="{{ URL::previous() }}">
         <i class="bi bi-caret-left"> </i>
         Back

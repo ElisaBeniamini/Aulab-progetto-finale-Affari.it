@@ -3,7 +3,10 @@
     <!--START-TITOLO-CATEGORIA-->
     <main class="darkLight">
         <!--END-TITOLO-CATEGORIA-->
-
+        <a class="btn btn-outline-primary btn-inserisci-annuncio m-4 mb-3 fs-5" href="{{ URL::previous() }}">
+            <i class="bi bi-caret-left"> </i>
+            Back
+        </a>
         <!--START-CARD-->
         <section>
             <div class="container-fluid">
