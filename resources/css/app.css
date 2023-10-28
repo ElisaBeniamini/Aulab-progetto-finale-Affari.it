@@ -194,15 +194,7 @@ label {
 }
 
 
-@media (max-width: 768px) {
-    .immagine {
-        display: none;
-    }
 
-    .offcanvas {
-        width: 100% !important;
-    }
-}
 
 /* Stile per l'input "Email or username" nel form di login */
 #pills-login #loginName {
@@ -1054,8 +1046,21 @@ a {
 }
 
 /*  END CSS Card ultimi sei annunci HOMEPAGE */
-/* style img-preview su create-annoucement
-.img-preview {
-    width: 50%;
-    hre
-} */
+
+
+
+
+
+
+@media (max-width: 768px) {
+
+    .immagine {
+        display: none;
+    }
+
+    .offcanvas {
+        width: 100% !important;
+    }
+
+
+}

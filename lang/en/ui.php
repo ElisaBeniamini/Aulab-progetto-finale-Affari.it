@@ -4,7 +4,7 @@ return [
     'ultimi-sei-annunci' => 'Last six Announcements',
     'btn-tutti-gli-annunci' => 'Advertisements',
     'pubblicato-da' => 'Published by',
-    'il' => 'on',
+    'il' => 'Published on',
     'selezione-prezzi-bassi' => 'A selection of smartphones at lower prices',
 
     //index annunci

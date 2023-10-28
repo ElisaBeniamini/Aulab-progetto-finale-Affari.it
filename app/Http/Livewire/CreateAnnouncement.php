@@ -60,19 +60,19 @@ class CreateAnnouncement extends Component
         //$category = Category::find($this->category);
 
         //$this->announcement = $category->announcements()->create([
-            //'title' => $this->title,
-            //'description' => $this->description,
-            //'price' => $this->price,
-            //'image' => $this->image,
+        //'title' => $this->title,
+        //'description' => $this->description,
+        //'price' => $this->price,
+        //'image' => $this->image,
         //]);
-        $this->announcement=Category::find($this->category)->announcements()->create($this->validate());
+        $this->announcement = Category::find($this->category)->announcements()->create($this->validate());
         if (count($this->images)) {
             foreach ($this->images as $image) {
                 //$announcement->images()->create(['path' => $image->store('images', 'public')]);
-                $newFileName="announcements/{$this->announcement->id}";
-                $newImage=$this->announcement->images()->create(['path' => $image->store($newFileName, 'public')]);
-            
-            dispatch(new ResizeImage($newImage->path, 400, 300));
+                $newFileName = "announcements/{$this->announcement->id}";
+                $newImage = $this->announcement->images()->create(['path' => $image->store($newFileName, 'public')]);
+
+                dispatch(new ResizeImage($newImage->path, 400, 300));
             }
             File::deleteDirectory(storage_path('/app/livewire-tmp'));
         }
@@ -80,14 +80,14 @@ class CreateAnnouncement extends Component
 
 
         $this->announcement->user()->associate(Auth::user());
-        
- 
-        
+
+
+
         session()->flash('announcement', 'Annuncio creato correttamente, sarà pubblicato dopo la revisione.');
 
         $this->reset('title', 'description', 'price', 'category', 'image', 'images', 'temporary_images'); //Al submit pulisci i campi del form.
 
-        
+
     }
     public function images()
     {

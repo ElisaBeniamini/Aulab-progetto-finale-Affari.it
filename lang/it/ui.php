@@ -4,7 +4,7 @@ return [
     'ultimi-sei-annunci' => 'Ultimi sei annunci',
     'btn-tutti-gli-annunci' => 'Annunci',
     'pubblicato-da' => 'Pubblicato da',
-    'il' => 'il',
+    'il' => 'Pubblicato il',
     'selezione-prezzi-bassi' => 'Una selezione di smartphone a prezzi bassi',
 
     //index annunci
