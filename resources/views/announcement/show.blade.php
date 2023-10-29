@@ -37,7 +37,7 @@
                         <div class="container-stiky">
                             <div id="generalContainerImgShow" class="cic">
                                 <img class="img-show img-fluid px-2"
-                                    src="{{ !$announcement->images()->get()->isEmpty()? $announcement->images->first()->getUrl(400, 300): '\img\default-image.jpg' }}"
+                                    src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(400, 300) : asset('img/default-image.jpg') }}"
                                     alt="" id="container-img-small" onclick="openPanelShowxxxl()">
                             </div>
                             <div class="text-center mt-3">
@@ -116,7 +116,7 @@
                                                     <div class="containerCard px-3 py-3">
                                                         <div>
                                                             <img class="img-card px-0"
-                                                                src="{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}"
+                                                                src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(400, 300) : asset('img/default-image.jpg') }}"
                                                                 alt="">
                                                         </div>
                                                         <div class="cardBody mt-3">
@@ -176,7 +176,7 @@
                                                     <div class="containerCard px-3 py-3">
                                                         <div>
                                                             <img class="img-card px-0"
-                                                                src="{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}"
+                                                                src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(400, 300) : asset('img/default-image.jpg') }}"
                                                                 alt="">
                                                         </div>
                                                         <div class="cardBody mt-3">
@@ -261,7 +261,7 @@
                                         <div class="containerCard px-2 py-3">
                                             <div>
                                                 <img class="img-card px-0 card-over-flow"
-                                                    src="{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}"
+                                                    src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(400, 300) : asset('img/default-image.jpg') }}"
                                                     alt="">
                                             </div>
                                             <div class="cardBody mt-3">
