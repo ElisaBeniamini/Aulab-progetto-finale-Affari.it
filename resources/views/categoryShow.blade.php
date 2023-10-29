@@ -19,7 +19,7 @@
                                     <div class="containerCard px-3 py-4">
                                         <div class="containerImgCard">
                                             <img class="img-card"
-                                                src="{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}"
+                                                src="{{ !$announcement->images()->get()->isEmpty()? $announcement->images->first()->getUrl(400, 300): '\img\default-image.jpg' }}"
                                                 alt="">
                                         </div>
                                         <div class="cardBody mt-3">

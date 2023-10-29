@@ -12,6 +12,7 @@
                 <h2 class="display-4 text-center">
                     {{ $announcement_to_check ? __('ui.revisione-annunci-pieno') : __('ui.revisione-annunci-vuoto') }}
                 </h2>
+
             </div>
         </div>
     </div>
@@ -25,16 +26,18 @@
                     @if ($announcement_to_check->images->isNotEmpty())
                         @foreach ($announcement_to_check->images as $image)
                             <div>
-                                <img width="500px" height="auto" src="{{ Storage::url($image->path) }}"
+                                <img src="{{ $announcement_to_check->images->first()->getUrl(400, 300) }}"
                                     class="img-fluid rounded-3" />
                             </div>
                         @endforeach
                         <!--Altrimenti mostra l immagine di default -->
                     @else
-                        <div>
+                        <div class="d-flex flex-column">
                             <img src="\img\default-image.jpg" class="img-fluid " alt="">
-                            <span>Nessuna immagine caricata</span>
+                            <span class="fs-5 text-center">Nessuna immagine caricata</span>
+
                         </div>
+
                     @endif
                 </div>
                 <!-- card dati utente -->

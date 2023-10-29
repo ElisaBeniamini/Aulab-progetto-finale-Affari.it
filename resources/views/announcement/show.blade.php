@@ -37,7 +37,7 @@
                         <div class="container-stiky">
                             <div id="generalContainerImgShow" class="cic">
                                 <img class="img-show img-fluid px-2"
-                                    src="{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}"
+                                    src="{{ !$announcement->images()->get()->isEmpty()? $announcement->images->first()->getUrl(400, 300): '\img\default-image.jpg' }}"
                                     alt="" id="container-img-small" onclick="openPanelShowxxxl()">
                             </div>
                             <div class="text-center mt-3">

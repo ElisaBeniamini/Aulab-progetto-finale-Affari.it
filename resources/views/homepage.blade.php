@@ -21,7 +21,7 @@
                                     <div class="text-box">
                                         <div class="image-box">
                                             <img class="img-card"
-                                                src="{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}"
+                                                src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(400, 300) : asset('img/default-image.jpg') }}"
                                                 {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}} class="p-3 rounded">
                                         </div>
                                         <div class="text-container p-3">
