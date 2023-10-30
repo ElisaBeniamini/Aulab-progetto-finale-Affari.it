@@ -1,10 +1,7 @@
 <x-layout>
     <x-navbar />
     <!-- Header homepage -->
-    <header>
-        <img width="100%" src="\img\wepik-export-20231019192724xBK2.png" style="max-width:100%; height:auto;"
-            alt="Donna Shopping">
-    </header>
+   
 
     <!-- Start Card ultimi sei annunci -->
     <div class="container bg-light pt-5 px-5 rounded-4 my-5" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
