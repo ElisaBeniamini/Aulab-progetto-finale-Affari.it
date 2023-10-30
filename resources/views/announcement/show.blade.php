@@ -445,7 +445,7 @@
 
         function offZoom(e) {
             img.style.transformOrigin = `center center`;
-            img.style.transform = "scale(2)";
+            img.style.transform = "scale(1)";
         }
 
         //ARPI PANEL SHOW-XXXL
