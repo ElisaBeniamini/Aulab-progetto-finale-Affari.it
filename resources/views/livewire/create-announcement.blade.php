@@ -63,7 +63,7 @@
                         </div>
 
                     </div>
-                    <div class="mb-3 d-flex  flex-column align-items-center">
+                    <div class="mb-3 d-flex flex-column align-items-center">
                         <label for="formFile" class="form-label">Carica le tue immagini</label>
                         <input wire:model="temporary_images" type="file" name="images" multiple class="form-control shadow @error('temporary_images.*') is-invalid @enderror" placeholder="img" />
                         @error('temporary_images.*')
@@ -71,6 +71,29 @@
                         @enderror
                     </div>
                     @if (!empty($images))
+                        <div class="row d-flex justify-content-center align-items-center">
+                            <div class="col-12 col-md-6 justify-content-center">
+                                <h4>
+                                    Anteprima immagini
+                                </h4>
+                                <div
+                                    class="row border border-4 border-secondary rounded shadow d-flex justify-content-center align-items-center mb-3">
+                                    @foreach ($images as $key => $image)
+                                        <div class="col-5 col-md-5 d-flex flex-column align-items-center">
+                                            <img class="img-fluid mt-3" width="200px" height="300px"
+                                                src="{{ $image->temporaryUrl() }}" />
+                                            <div
+                                                class="mx-auto shadow rounded"style="background-image: url({{ $image->temporaryUrl() }});">
+                                            </div>
+                                            <button type="button" class="btn btn-danger btn-sm m-3"
+                                                wire:click="removeImage({{ $key }})">
+                                                Cancella
+                                            </button>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
                     <div class="row">
                         <div class="col-12 justify-content-center">
                             <p>

@@ -13,7 +13,7 @@
                         <div>
                             <p class="paragraf-register pt-3">
                                 Ricevi tutti i vantaggi di un epoca digitale più che mai<br>
-                                scopri di più solla nostra piattaforma...
+                                scopri di più sulla nostra piattaforma...
                             </p>
                         </div>
                     </div>

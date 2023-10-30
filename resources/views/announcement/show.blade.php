@@ -10,20 +10,24 @@
                             <div class="container-stiky">
                                 <div class="pippo pt-4">
                                     <div class="mb-2">
-                                        <img class="img-piccole-show" src="/macchina-uno.avif" alt=""
-                                            onmouseover="cambiaOne()">
+                                        <img class="img-piccole-show"
+                                            src="{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}"
+                                            alt="" onmouseover="cambiaOne()">
                                     </div>
                                     <div class="my-2">
-                                        <img class="img-piccole-show" src="/macchina-due.avif" alt=""
-                                            onmouseover="cambiaTwo()">
+                                        <img class="img-piccole-show"
+                                            src="{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}"
+                                            alt="" onmouseover="cambiaTwo()">
                                     </div>
                                     <div class="my-2">
-                                        <img class="img-piccole-show" src="/macchina-tre.avif" alt=""
-                                            onmouseover="cambiaThree()">
+                                        <img class="img-piccole-show"
+                                            src="{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}"
+                                            alt="" onmouseover="cambiaThree()">
                                     </div>
                                     <div class="mt-2">
-                                        <img class="img-piccole-show" src="/macchina-quattro.avif" alt=""
-                                            onmouseover="cambiaFour()">
+                                        <img class="img-piccole-show"
+                                            src="{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}"
+                                            alt="" onmouseover="cambiaFour()">
                                     </div>
                                 </div>
                             </div>
@@ -32,8 +36,9 @@
                     <div class="col-12 col-md-6 justify-content-center px-0">
                         <div class="container-stiky">
                             <div id="generalContainerImgShow" class="cic">
-                                <img class="img-show img-fluid px-2" src="/macchina-uno.avif" alt=""
-                                    id="container-img-small" onclick="openPanelShowxxxl()">
+                                <img class="img-show img-fluid px-2"
+                                    src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(400, 300) : asset('img/default-image.jpg') }}"
+                                    alt="" id="container-img-small" onclick="openPanelShowxxxl()">
                             </div>
                             <div class="text-center mt-3">
                                 <p>
@@ -103,14 +108,15 @@
                             <div class="carousel-item active">
                                 <div class="container-fluid">
                                     <div class="row">
-                                        @foreach ($consigliati as $consigliato)
+                                        @foreach ($consigliati->where('is_accepted', true) as $consigliato)
                                             <div class="col-12 col-md-2 px-0">
                                                 <!--START-CARD-->
                                                 <a class="link-card"
                                                     href="{{ route('announcement.show', ['announcement' => $consigliato]) }}">
                                                     <div class="containerCard px-3 py-3">
                                                         <div>
-                                                            <img class="img-card px-0" src="/macchina-uno.avif"
+                                                            <img class="img-card px-0"
+                                                                src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(400, 300) : asset('img/default-image.jpg') }}"
                                                                 alt="">
                                                         </div>
                                                         <div class="cardBody mt-3">
@@ -162,14 +168,15 @@
                             <div class="carousel-item">
                                 <div class="container-fluid">
                                     <div class="row">
-                                        @foreach ($consigliatiTwo as $consigliato)
+                                        @foreach ($consigliatiTwo->where('is_accepted', true) as $consigliato)
                                             <div class="col-12 col-md-2 px-0">
                                                 <!--START-CARD-->
                                                 <a class="link-card"
                                                     href="{{ route('announcement.show', ['announcement' => $consigliato]) }}">
                                                     <div class="containerCard px-3 py-3">
                                                         <div>
-                                                            <img class="img-card px-0" src="/macchina-uno.avif"
+                                                            <img class="img-card px-0"
+                                                                src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(400, 300) : asset('img/default-image.jpg') }}"
                                                                 alt="">
                                                         </div>
                                                         <div class="cardBody mt-3">
@@ -247,13 +254,14 @@
                     <div class="container-overflow mb-5">
                         <div class="content-overflow py-2">
                             <div class="d-flex">
-                                @foreach ($ineferioridicianquanta as $item)
+                                @foreach ($ineferioridicianquanta->where('is_accepted', true) as $item)
                                     <!--START-CARD-->
                                     <a class="link-card"
                                         href="{{ route('announcement.show', ['announcement' => $item]) }}">
                                         <div class="containerCard px-2 py-3">
                                             <div>
-                                                <img class="img-card px-0 card-over-flow" src="/macchina-uno.avif"
+                                                <img class="img-card px-0 card-over-flow"
+                                                    src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(400, 300) : asset('img/default-image.jpg') }}"
                                                     alt="">
                                             </div>
                                             <div class="cardBody mt-3">
@@ -308,27 +316,32 @@
                 <div class="row pb-3">
                     <div class="col-12 col-md-9 pe-0">
                         <div>
-                            <img class="img-show-small-xxxl pe-0 py-4" src="/macchina-uno.avif" alt=""
-                                id="container-img-xxxl">
+                            <img class="img-show-small-xxxl pe-0 py-4"
+                                src="{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}"
+                                alt="" id="container-img-xxxl">
                         </div>
                     </div>
                     <div class="col-12 col-md-3 pt-4">
                         <div class="row">
                             <div class="d-flex justify-content-center px-1">
                                 <div class="px-1">
-                                    <img class="img-piccole-show-xxxl border" src="/macchina-uno.avif" alt=""
-                                        onclick="cambiaUno()">
+                                    <img class="img-piccole-show-xxxl border"
+                                        src="{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}"
+                                        alt="" onclick="cambiaUno()">
                                 </div>
                                 <div class="px-1">
-                                    <img class="img-piccole-show-xxxl border" src="/macchina-due.avif" alt=""
-                                        onclick="cambiaDue()">
+                                    <img class="img-piccole-show-xxxl border"
+                                        src="{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}"
+                                        alt="" onclick="cambiaDue()">
                                 </div>
                                 <div class="px-1">
-                                    <img class="img-piccole-show-xxxl border" src="/macchina-tre.avif" alt=""
-                                        onclick="cambiaTre()">
+                                    <img class="img-piccole-show-xxxl border"
+                                        src="{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}"
+                                        alt="" onclick="cambiaTre()">
                                 </div>
                                 <div class="px-1">
-                                    <img class="img-piccole-show-xxxl border" src="/macchina-quattro.avif"
+                                    <img class="img-piccole-show-xxxl border"
+                                        src="{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}"
                                         alt="" onclick="cambiaQuattro()">
                                 </div>
                             </div>
@@ -379,7 +392,7 @@
         <!--END PANNELLO DELLE ACCESSIBILITA-->
     </main>
     <!--END CLICK IMG-SMALL-XXXL-->
-    <!-- <div class="container">
+    {{-- <div class="container">
         <div class="row">
             <div class="text-center">
                 <h1>Titolo - {{ $announcement->title }}</h1>
@@ -389,25 +402,29 @@
                 <h3>Pubblicato il : {{ $announcement->created_at->format('d/m/y') }}</h3>
             </div>
         </div>
-    </div> -->
+    </div>  --}}
     <x-footer />
     <!--SCRIPT PER CLICK CAMBIA IMG + ZOOM-->
     <script>
         function cambiaOne() {
 
-            document.getElementById("container-img-small").src = "/macchina-uno.avif";
+            document.getElementById("container-img-small").src =
+                "{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}";
         }
 
         function cambiaTwo() {
-            document.getElementById("container-img-small").src = "/macchina-due.avif";
+            document.getElementById("container-img-small").src =
+                "{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}";
         }
 
         function cambiaThree() {
-            document.getElementById("container-img-small").src = "/macchina-tre.avif";
+            document.getElementById("container-img-small").src =
+                "{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}";
         }
 
         function cambiaFour() {
-            document.getElementById("container-img-small").src = "/macchina-quattro.avif";
+            document.getElementById("container-img-small").src =
+                "{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}";
         }
 
 
@@ -446,19 +463,23 @@
         //CAMBIA IMG AL CLIK N.B. PANEL-SHOW-XXXL
         function cambiaUno() {
 
-            document.getElementById("container-img-xxxl").src = "/macchina-uno.avif";
+            document.getElementById("container-img-xxxl").src =
+                "{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}";
         }
 
         function cambiaDue() {
-            document.getElementById("container-img-xxxl").src = "/macchina-due.avif";
+            document.getElementById("container-img-xxxl").src =
+                "{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}";
         }
 
         function cambiaTre() {
-            document.getElementById("container-img-xxxl").src = "/macchina-tre.avif";
+            document.getElementById("container-img-xxxl").src =
+                "{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}";
         }
 
         function cambiaQuattro() {
-            document.getElementById("container-img-xxxl").src = "/macchina-quattro.avif";
+            document.getElementById("container-img-xxxl").src =
+                "{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}";
         }
 
         //PANNELLO ACCESSIBILITA

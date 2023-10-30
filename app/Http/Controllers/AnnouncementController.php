@@ -24,7 +24,7 @@ class AnnouncementController extends Controller
     public function index()
     {
         $categories = Category::all(); // index annunci
-        $announcements = Announcement::where('is_accepted', true)->paginate(6);
+        $announcements = Announcement::where('is_accepted', true)->get(); //->paginate(6)
         return view('announcement.index', compact('announcements', 'categories'));
     }
 
