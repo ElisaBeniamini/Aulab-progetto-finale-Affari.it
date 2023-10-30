@@ -636,14 +636,6 @@ body {
     border-radius: 7px !important;
 }
 
-.input-search {
-    width: 100% !important;
-    background-color: white !important;
-    margin: 0px !important;
-    border-radius: 8px;
-    height: 44px;
-
-}
 
 .input-register:focus {
     outline: none !important;
@@ -1046,6 +1038,238 @@ a {
 }
 
 /*  END CSS Card ultimi sei annunci HOMEPAGE */
+
+/* start navbar nuova */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.navbar {
+    background-color: #133c55 !important;
+}
+
+.container-input-cerca {
+    width: 100%;
+}
+
+.btn {
+    height: 28;
+    width: 100%;
+    background-color: #133c55 !important;
+}
+
+.btn-category {
+    height: 38px;
+    width: auto;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.offcanvas {
+
+    width: 24% !important;
+}
+
+@media (max-width:468px) {
+    .offcanvas {
+
+        width: 85% !important;
+    }
+}
+
+.input-search:focus {
+    outline: none !important;
+}
+
+.input-group:focus {
+    outline: none !important;
+}
+
+.input-group-text:focus {
+    outline: none !important;
+}
+
+.input-group-text {
+    width: 100%!important;
+    height: 38px;
+}
+
+.form-navbar{
+    width: 100%!important;
+}
+
+.inputCerca {
+    width: 100%!important;
+    height: 38px!important;
+    border: none!important;
+    border-radius: 8px;
+}
+
+.btn-cerca{
+    background-color: transparent;
+    border: none;
+}
+
+.navbar-toggler {
+    height: 48px;
+}
+
+::placeholder {
+    font-size: 16px;
+}
+
+.carousel {
+    margin-top: 78px;
+    width: 100%;
+}
+
+.img-carousel {
+    object-fit: cover;
+    height: 91vh;
+}
+
+video {
+    object-fit: cover;
+    height: 91vh;
+    width: 100%;
+}
+
+img {
+    object-fit: cover;
+}
+
+.carousel-control-prev {
+    justify-content: center;
+    align-items: start;
+    width: auto;
+}
+
+.carousel-control-next {
+    justify-content: center;
+    align-items: start;
+    width: auto;
+}
+
+.section-home {
+    position: absolute;
+    top: 250px;
+    width: 100%;
+}
+
+.card {
+    max-width: 100% !important;
+    height: inherit!important;
+    border-radius: 0px;
+    border: none !important;
+    transition: transform .2s;
+    cursor: pointer;
+}
+
+.card:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transform: scale(1.01);
+}
+
+.card-img-top {
+    border-radius: 0px;
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.card-body {
+    padding: 0px;
+    padding-top: 10px;
+}
+
+h3 {
+    font-weight: bold;
+}
+
+.img-test {
+    width: 100%;
+    height: 200px;
+}
+
+
+.nav-bottom {
+    background-color: #133c55;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    bottom: 0 !important;
+    left: 0 !important;
+    z-index: 999;
+    display: none !important;
+}
+
+.btnRevisoreBottom {
+    background-color: transparent !important;
+    border: 0px !important;
+    padding: 0px;
+}
+
+.title-navbarBottom{
+    font-size: 10px;
+}
+
+@media (max-width:468px) {
+    .nav-bottom {
+        display: flex !important;
+    }
+
+    .iconeNavBottom {
+        display: block !important;
+    }
+
+    h1 {
+        display: none !important;
+    }
+
+    .btn-category {
+        display: none !important;
+    }
+
+    .navbar-toggler{
+        display: none !important;
+    }
+
+    .navbar{
+        padding: 0px !important;
+    }
+
+    .carousel{
+        margin-top: 54px!important;
+    }
+}
+
+.btn-revisore{
+    width: 100%!important;
+}
+
+.btn-category-nav-bottom{
+    border: none;
+    background-color: transparent;
+}
+
+.iconaAccountNavBottom{
+    width:33px;
+    height:33px;
+    padding: 0px!important;
+}
+
+/* end navbar nuova */
 
 
 
