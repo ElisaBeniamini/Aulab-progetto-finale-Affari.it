@@ -4,7 +4,7 @@ namespace App\Jobs;
 
 use App\Models\Image;
 use Spatie\Image\Image as SpatieImage;
-use Google\Cloud\Vision\V1\Client\ImageAnnotatorClient;
+use Google\Cloud\Vision\V1\ImageAnnotatorClient;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -33,7 +33,7 @@ class RemoveFaces implements ShouldQueue
     public function handle(): void
     {
         $i = Image::find($this->announcement_image_id);
-        if($i) {
+        if(!$i) {
             return;
         }
 
@@ -44,8 +44,8 @@ class RemoveFaces implements ShouldQueue
 
     $imageAnnotator = new ImageAnnotatorClient();
     $response = $imageAnnotator->faceDetection($image);
-    $faces = $response->getFaceAnnotation();
-dd($faces);
+    $faces = $response->getFaceAnnotations();
+
     foreach ($faces as $face) {
         $vertices = $face->getBoundingPoly()->getVertices();
         $bounds = [];
