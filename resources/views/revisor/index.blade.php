@@ -5,7 +5,7 @@
         <i class="bi bi-caret-left"> </i>
         Back
     </a>
-    <!-- start container titolo pagina-->
+    {{-- <!-- start container titolo pagina-->
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 col-md-12">
@@ -29,27 +29,31 @@
                                 <img src="{{ $announcement_to_check->images->first()->getUrl(400, 300) }}"
                                     class="img-fluid rounded-3" />
                             </div>
-                            <div class="col-md-3 border-end">
-                                <h5 class="mt-3">Tags</h5>
-                                <div class="p-2">
-                                    @if ($image->labels)
-                                        @foreach ($image->labels as $label)
-                                            <p class="d-inline">{{ $label }},</p>
-                                        @endforeach
-                                    @endif
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="card-body">
-                                    <h5>Revisione Immagini</h5>
-                                    <p>Adulti : <span class="{{ $image->adult }}"></span></p>
-                                    <p>Satira : <span class="{{ $image->spoof }}"></span></p>
-                                    <p>Medicina : <span class="{{ $image->medical }}"></span></p>
-                                    <p>Violenza : <span class="{{ $image->violence }}"></span></p>
-                                    <p>Contenuto Ammiccante : <span class="{{ $image->racy }}"></span></p>
-                                </div>
-                            </div>
                         @endforeach
+                        <!-- div tags immagine -->
+                        <div class="col-md-3 border-end">
+                            <h5 class="mt-3">Tags</h5>
+                            <div class="p-2">
+                                @if ($image->labels)
+                                    @foreach ($image->labels as $label)
+                                        <p class="d-inline">{{ $label }},</p>
+                                    @endforeach
+                                @endif
+                            </div>
+                        </div>
+
+                        <!-- row semaforo -->
+                        <div class="col-md-3">
+                            <div class="card-body">
+                                <h5>Revisione Immagini</h5>
+                                <p>Adulti : <span class="{{ $image->adult }}"></span></p>
+                                <p>Satira : <span class="{{ $image->spoof }}"></span></p>
+                                <p>Medicina : <span class="{{ $image->medical }}"></span></p>
+                                <p>Violenza : <span class="{{ $image->violence }}"></span></p>
+                                <p>Contenuto Ammiccante : <span class="{{ $image->racy }}"></span></p>
+                            </div>
+                        </div>
+
                         <!--Altrimenti mostra l immagine di default -->
                     @else
                         <div class="d-flex flex-column">
@@ -106,8 +110,7 @@
                 </div>
             @endif
         </div>
-    </div>
-
+    </div> --}}
 
     <x-footer />
 </x-layout>
