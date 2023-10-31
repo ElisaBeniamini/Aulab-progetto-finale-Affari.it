@@ -5,7 +5,7 @@
         <i class="bi bi-caret-left"> </i>
         Back
     </a>
-    {{-- <!-- start container titolo pagina-->
+   <!-- start container titolo pagina-->
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 col-md-12">
@@ -110,7 +110,7 @@
                 </div>
             @endif
         </div>
-    </div> --}}
+    </div>
 
     <x-footer />
 </x-layout>
