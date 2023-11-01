@@ -1,17 +1,14 @@
 <x-layout>
     <x-navbar />
 
-    <div style="margin-top:100px ">
 
+    <!-- URL::previous() non richiede una rotta; torna alla pagina precedente rispetto alla posizione dell utente -->
+    <div style="margin-top:80px">
+        <a class="btn-go-back mt-5 mx-5" href="{{ URL::previous() }}">
+            <i class=" bi bi-caret-left"> </i>
+            Back
+        </a>
     </div>
-    <!--URL::previous() non richiede una rotta; torna alla pagina precedente rispetto alla posizione dell utente -->
-
-    <a class="btn-go-back" href="{{ URL::previous() }}">
-        <i class=" bi bi-caret-left"> </i>
-        Back
-    </a>
-
-
 
     @if ($announcement_to_check)
         <div class="container mb-5"
@@ -144,11 +141,13 @@
             </div>
         </div>
     @else
-        <div style="height: 380px">
-
+        <div style="margin-bottom: 358px">
+            <h2 class="display-4 text-center mt-5 mb-5">
+                {{ $announcement_to_check ? __('ui.revisione-annunci-pieno') : __('ui.revisione-annunci-vuoto') }}
+            </h2>
         </div>
-    @endif
 
+    @endif
 
 
 
@@ -278,7 +277,6 @@
 
                 </div> 
     @endif
-    </div>
-    </div> --}}
+    --}}
     <x-footer />
 </x-layout>
