@@ -15,7 +15,8 @@ p {
 
 h2 {
     font-family: 'Open Sans', sans-serif !important;
-    color: #7069bc !important;
+    color: #133c55;
+    font-weight: bolder;
 }
 
 .offcanvas {
@@ -217,12 +218,19 @@ label {
     background-color: #fff !important;
 }
 
+/*footer {
+    margin-top: 100px;
+    background-color: #7069bc;
+    height: auto; 
+}*/
 
-
-/* Stile per footer*/
+/* Stile per footer     codice per avere il footer fissato in basso.*/
 footer {
     background-color: #7069bc;
     height: auto;
+    width: 100%;
+    position: static;
+    bottom: 0;
 }
 
 .title-footer {
@@ -377,7 +385,7 @@ body {
     margin: 0 auto -100px;
 }
 
-.footer,
+/*.footer,*/
 .push {
     height: 100px;
 }
@@ -919,7 +927,7 @@ a {
     font-weight: bold;
 }
 
-/*  START CSS Card ultimi sei annunci HOMEPAGE */
+/*  START CSS Card ultimi sei annunci HOMEPAGE  non esiste piu 
 #cards_landscape_wrap-2 {
     text-align: center;
     background: #F7F7F7;
@@ -951,7 +959,7 @@ a {
     -o-transition: all .9s ease;
     -ms-transition: all .9s ease;
     transition: all .9s ease;
-    /* Definizione standard della proprietà transition */
+ Definizione standard della proprietà transition
     width: 100%;
     height: 200px;
 }
@@ -1010,7 +1018,7 @@ a {
     letter-spacing: 1px;
 }
 
-/*  END CSS Card ultimi sei annunci HOMEPAGE */
+  END CSS Card ultimi sei annunci HOMEPAGE non esiste piu */
 
 /* start navbar nuova */
 
@@ -1030,6 +1038,7 @@ header {
     width: 100%;
 }
 
+/*BUTT area-revisore NAVBAR/ pubblica-annuncio NAVBAR*/
 .btn {
     height: 28;
     width: 100%;
@@ -1075,22 +1084,22 @@ ul {
 }
 
 .input-group-text {
-    width: 100%!important;
+    width: 100% !important;
     height: 38px;
 }
 
-.form-navbar{
-    width: 100%!important;
+.form-navbar {
+    width: 100% !important;
 }
 
 .inputCerca {
-    width: 100%!important;
-    height: 38px!important;
-    border: none!important;
+    width: 100% !important;
+    height: 38px !important;
+    border: none !important;
     border-radius: 8px;
 }
 
-.btn-cerca{
+.btn-cerca {
     background-color: transparent;
     border: none;
 }
@@ -1143,7 +1152,7 @@ img {
 
 .card {
     max-width: 100% !important;
-    height: inherit!important;
+    height: inherit !important;
     border-radius: 0px;
     border: none !important;
     transition: transform .2s;
@@ -1188,7 +1197,7 @@ h3 {
     padding: 0px;
 }
 
-.title-navbarBottom{
+.title-navbarBottom {
     font-size: 10px;
 }
 
@@ -1209,37 +1218,58 @@ h3 {
         display: none !important;
     }
 
-    .navbar-toggler{
+    .navbar-toggler {
         display: none !important;
     }
 
-    .navbar{
+    .navbar {
         padding: 0px !important;
     }
 
-    .carousel{
-        margin-top: 54px!important;
+    .carousel {
+        margin-top: 54px !important;
     }
 }
 
-.btn-revisore{
-    width: 100%!important;
+.btn-revisore {
+    width: 100% !important;
 }
 
-.btn-category-nav-bottom{
+.btn-category-nav-bottom {
     border: none;
     background-color: transparent;
 }
 
-.iconaAccountNavBottom{
-    width:33px;
-    height:33px;
-    padding: 0px!important;
+.iconaAccountNavBottom {
+    width: 33px;
+    height: 33px;
+    padding: 0px !important;
 }
 
 /* end navbar nuova */
 
 
+/* start btn torna indietro  IN USO 1-11*/
+.btn-go-back {
+    background-color: white;
+    border: 2px solid #133c55;
+    border-radius: 8px;
+    color: #133c55;
+    padding: 5px 10px;
+    font-size: 17px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 20px;
+}
+
+.btn-go-back:hover {
+    background-color: #133c55;
+    border: 2px solid #133c55;
+    color: white;
+}
+
+/* end btn torna indietro*/
 
 
 
@@ -1257,6 +1287,6 @@ h3 {
 
 }
 
-.section-one{
+.section-one {
     margin-top: 99px;
 }
