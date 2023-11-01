@@ -5,18 +5,18 @@
 
     </div>
     <!--URL::previous() non richiede una rotta; torna alla pagina precedente rispetto alla posizione dell utente -->
-    <div>
-        <a class="btn-go-back" href="{{ URL::previous() }}">
-            <i class=" bi bi-caret-left"> </i>
-            Back
-        </a>
-    </div>
+
+    <a class="btn-go-back" href="{{ URL::previous() }}">
+        <i class=" bi bi-caret-left"> </i>
+        Back
+    </a>
+
 
 
     @if ($announcement_to_check)
         <div class="container mb-5"
-            style="box-shadow: rgb(228,161,27) 0px 8px 35px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset; ">
-            <div class="row d-flex justify-content-center  align-items-center p-5">
+            style="box-shadow: rgb(84,110,122,1.0) 0px 8px 35px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset; ">
+            <div class="row d-flex justify-content-center  align-items-center p-2">
                 <!-- carosello imamgini con tags e revisione immagine -->
                 <div class="col-12 col-md-6 d-flex justify-content-center align-items-center flex-column">
                     @if ($announcement_to_check->images->isNotEmpty())
@@ -90,28 +90,27 @@
                     @endif
                 </div>
                 <!-- summary annuncio -->
-                <div class="col-12 col-md-6 d-flex flex-column p-3 align-items-center ">
-                    <div class="card-body ">
+                <div class="col-12 col-md-6 d-flex flex-column p-3 align-items-center text-secondary ">
+                    <div class="card-body fs-3">
                         <!--titolo annuncio -->
-                        <div class=" mb-3">
-                            <h2 class="card-title  text-uppercase ">
-                                {{ __('ui.titolo') }}: {{ $announcement_to_check->title }}
-                            </h2>
-                        </div>
+                        <span class="card-title  text-uppercase ">
+                            {{ __('ui.titolo') }}: {{ $announcement_to_check->title }}
+                        </span>
+
                         <!-- dati annuncio -->
-                        <div class="d-flex flex-column mx-3">
-                            <span class="card-title  fs-2 text-capitalize ">
+                        <div class="d-flex flex-column ">
+                            <span class="card-title   text-capitalize ">
                                 categoria: {{ $announcement_to_check->category->name }}
                             </span>
-                            <span class="card-description fs-2 ">
+                            <span class="card-description">
                                 {{ __('ui.descrizione') }}: {{ $announcement_to_check->description }}
                             </span><br>
-                            <span class="card-footer fs-2 ">
+                            <span class="card-footer">
                                 {{ __('ui.pubblicato-da') }} :
                                 {{ $announcement_to_check->user->name ?? 'Autore Sconosciuto' }}
 
                             </span>
-                            <span class="card-footer fs-2">
+                            <span class="card-footer">
                                 {{ __('ui.il') }} :
                                 {{ $announcement_to_check->created_at->format('d/m/Y') }}
                             </span>
@@ -120,6 +119,29 @@
                 </div>
 
 
+                <!-- button accetta e cancella anuncio -->
+                <div class="row  mt-5 ">
+                    <div class="col-12 col-md-12 text-center d-flex justify-content-center ">
+                        <form
+                            action="{{ route('revisor.accept_announcement', ['announcement' => $announcement_to_check]) }}"
+                            method="POST" class="mx-3">
+                            @csrf
+                            @method('PATCH')
+                            <button type="submit"
+                                class="btn btn-success border-5 btn-lg  animate__animated animate__bounce">
+                                {{ __('ui.accetta') }}</button>
+                        </form>
+                        <form
+                            action="{{ route('revisor.reject_announcement', ['announcement' => $announcement_to_check]) }}"
+                            method="POST">
+                            @csrf
+                            @method('PATCH')
+                            <button type="submit"
+                                class="btn btn-danger  border-5 btn-lg animate__animated animate__bounce animate__delay-2s">
+                                {{ __('ui.rifiuta') }}</button>
+                        </form>
+                    </div>
+                </div>
 
 
 
@@ -128,26 +150,6 @@
             </div>
         </div>
 
-        <!-- button accetta e cancella anuncio -->
-        <div class="row  mt-5 ">
-            <div class="col-12 col-md-12 text-center d-flex justify-content-center ">
-                <form action="{{ route('revisor.accept_announcement', ['announcement' => $announcement_to_check]) }}"
-                    method="POST" class="mx-3">
-                    @csrf
-                    @method('PATCH')
-                    <button type="submit" class="btn btn-success border-5 btn-lg  animate__animated animate__bounce">
-                        {{ __('ui.accetta') }}</button>
-                </form>
-                <form action="{{ route('revisor.reject_announcement', ['announcement' => $announcement_to_check]) }}"
-                    method="POST">
-                    @csrf
-                    @method('PATCH')
-                    <button type="submit"
-                        class="btn btn-danger  border-5 btn-lg animate__animated animate__bounce animate__delay-2s">
-                        {{ __('ui.rifiuta') }}</button>
-                </form>
-            </div>
-        </div>
 
     @endif
 
