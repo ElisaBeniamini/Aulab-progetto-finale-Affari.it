@@ -125,7 +125,8 @@
                             @csrf
                             @method('PATCH')
                             <button type="submit"
-                                class="btn btn-success border-5 btn-lg  animate__animated animate__bounce">
+                                class="btn btn-success border-5 btn-lg  animate__animated animate__bounce"> <i
+                                    class="bi bi-check bg-success"></i>
                                 {{ __('ui.accetta') }}</button>
                         </form>
                         <form
@@ -134,7 +135,8 @@
                             @csrf
                             @method('PATCH')
                             <button type="submit"
-                                class="btn btn-danger  border-5 btn-lg animate__animated animate__bounce animate__delay-2s">
+                                class="btn btn-danger  border-5 btn-lg animate__animated animate__bounce animate__delay-2s"><i
+                                    class="bi bi-x bg-danger"></i>
                                 {{ __('ui.rifiuta') }}</button>
                         </form>
                     </div>
