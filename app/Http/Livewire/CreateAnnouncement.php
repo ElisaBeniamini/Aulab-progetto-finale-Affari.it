@@ -73,15 +73,15 @@ class CreateAnnouncement extends Component
             foreach ($this->images as $image) {
                 //$announcement->images()->create(['path' => $image->store('images', 'public')]);
                 $newFileName = "announcements/{$this->announcement->id}";
-                $newImage = $this->announcement->images()->create(['path'=>$image->store($newFileName, 'public')]);
+                $newImage = $this->announcement->images()->create(['path' => $image->store($newFileName, 'public')]);
 
                 RemoveFaces::withChain([
-                new ResizeImage($newImage->path, 400, 300),  // job resize img 400*300
-                new GoogleVisionSafeSearch($newImage->id), // job GoogleVision
-                new GoogleVisionLabelImage($newImage->id), // job GoogleVision 
+                    new ResizeImage($newImage->path, 400, 300),  // job resize img 400*300
+                    new ResizeImage($newImage->path, 600, 400),  // job resize img 400*300
+                    new GoogleVisionSafeSearch($newImage->id), // job GoogleVisionSafeSearch
+                    new GoogleVisionLabelImage($newImage->id), // job GoogleVisionLabelImage
 
                 ])->dispatch($newImage->id);
-               
             }
             File::deleteDirectory(storage_path('/app/livewire-tmp'));
         }
