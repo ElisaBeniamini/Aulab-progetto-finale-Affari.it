@@ -1,5 +1,5 @@
 <header>
-    <nav class="navbar navbar-expand-lg bg-dark shadow-lg py-3" id="nav">
+    <nav class="navbar navbar-expand-lg bg-dark shadow-lg py-2" id="nav">
         <div class="container-fluid py-0 px-0">
             <!--START-LOGO-->
             <a class="navbar-brand  me-0" href="{{ route('homepage') }}">

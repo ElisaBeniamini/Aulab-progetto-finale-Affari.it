@@ -1,62 +1,76 @@
 <x-layout>
     <x-navbar />
-    <!--START-TITOLO-CATEGORIA-->
+
     <main class="darkLight">
-        <!--END-TITOLO-CATEGORIA-->
-        <a class="btn btn-outline-primary btn-inserisci-annuncio m-4 mb-3 fs-5" href="{{ URL::previous() }}">
+
+        <!-- <a class="btn btn-outline-primary btn-inserisci-annuncio mt-5 mb-3 fs-5" href="{{ URL::previous() }}">
             <i class="bi bi-caret-left"> </i>
             Back
-        </a>
-        <!--START-CARD-->
-        <section>
-            <div class="container-fluid">
-                <div class="row px-3">
-                    @foreach ($category->announcements->where('is_accepted', true) as $announcement)
-                        <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 px-0">
-                            <div>
-                                <a class="link-card"
-                                    href="{{ route('announcement.show', ['announcement' => $announcement]) }}">
-                                    <div class="containerCard px-3 py-4">
-                                        <div class="containerImgCard">
-                                            <img class="img-card"
-                                                src="{{ !$announcement->images()->get()->isEmpty()? $announcement->images->first()->getUrl(400, 300): '\img\default-image.jpg' }}"
-                                                alt="">
-                                        </div>
-                                        <div class="cardBody mt-3">
-                                            <div>
-                                                <h6 class="title-card lightZone">
-                                                    {{ $announcement->title }}
-                                                </h6>
-                                            </div>
-                                            <div>
-                                                <h6 class="price-card lightZone">
-                                                    {{ $announcement->price }} €
-                                                </h6>
-                                            </div>
-                                            <div>
-                                                <div class="d-flex align-items-center">
-                                                    <div>
-                                                        <img class="img-pubblicataDa" id="borderLd"
-                                                            src="/img/img-pubblicatada.jpeg" alt="">
-                                                    </div>
-                                                    <div class="ps-2">
-                                                        <h6 class="title-user-card m-0 lightZone">
-                                                            Pubblicato da {{ $announcement->user->name ?? '' }} <br>
-                                                            Il {{ $announcement->created_at->format('d/m/y') }}
-                                                        </h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+        </a> -->
+        <div id="primoSloganDiv" style="height: 30px;" class="mt-4">
+
+        </div>
+        <div class="mt-4 container-titolo-categorie" id="titoloSposta">
+            <h3 class="titoloCategoriaScript m-0 ms-2 coloreCambia" id="titolo">
+                {{$category->name}}
+            </h3>
+        </div>
+
+        <section class="sectionCategoryIndex">
+            <div class="d-flex">
+                <div class="containerFiltri my-5 px-2 mx-1 py-2 bg-light border">
+                    <label for="exampleFormControlInput1" class="form-label">
+                        <h4 class="coloreCambia titoloFiltra">
+                            FILTRA
+                        </h4>
+                    </label>
+                    <input type="text" class="form-control inputCercaIndex" id="exampleFormControlInput1" placeholder="cerca">
+                    <label for="customRange1" class="form-label mt-5 titoloRange">
+                        <p class="m-0 fs-6 coloreCambia">
+                            Seleziona prezzo
+                        </p>
+                    </label>
+                    <input type="range" class="form-range bg-light" id="customRange1">
+                    <p class="mb-2 fs-6 mt-5 coloreCambia">
+                        Ordina per
+                    </p>
+                    <select class="form-select coloreCambia" aria-label="Default select example">
+                        <option selected>Dal più recente</option>
+                        <option value="1">Dal più recente</option>
+                        <option value="2">Dal più caro</option>
+                        <option value="3">Dal meno caro</option>
+                    </select>
+                </div>
+                <div class="container pe-4 ps-4 my-4">
+                    <div class="row">
+                        @foreach($category->announcements->where('is_accepted', true) as $announcement)
+                        <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center px-1">
+                            <!--CARD-->
+                            <a class="linkShow" href="">
+                                <div class="cardBox border my-4">
+                                    <img class="img-card-official" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(400, 300) : asset('img/default-image.jpg') }}" {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}}>
+                                    <div class="corpo pt-4 px-3 pb-1 bg-light">
+                                        <h4 class="prezzoCard coloreCambia">
+                                            {{ $announcement->price }} €
+                                        </h4>
+                                        <h5 class="titoloCard mt-3">
+                                            {{ $announcement->title }}
+                                        </h5>
+                                        <h6 class="pubblicatoCard mb-0">
+                                            Pubblicato da {{ $announcement->user->name ?? '' }} <br>
+                                            Il {{ $announcement->created_at->format('d/m/y') }}
+                                        </h6>
                                     </div>
-                                </a>
-                            </div>
+                                </div>
+                            </a>
+                            <!--CARD-->
                         </div>
-                    @endforeach
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </section>
-        <!--END-CARD-->
+
 
         <!--START PANNELLO DELLE ACCESSIBILITA-->
         <div class="container-usabilità">
@@ -161,5 +175,66 @@
             }
 
         }
+
+        //questa funzione mi fa colorare le categorie
+        var value = document.getElementById("titolo").innerText;
+        var out = document.getElementsByClassName("coloreCambia");
+
+        if (value === "Informatica") {
+            for (let i = 0; i < out.length; i++) {
+                out[i].style.color = "#0466c8";
+            }
+        } else if (value === "Motori") {
+            for (let i = 0; i < out.length; i++) {
+                out[i].style.color = "#c44536";
+            }
+        } else if (value === "Elettrodomestici") {
+            for (let i = 0; i < out.length; i++) {
+                out[i].style.color = "#5c8001";
+            }
+        } else if (value === "Libri") {
+            for (let i = 0; i < out.length; i++) {
+                out[i].style.color = "#fbb02d";
+            }
+        } else if (value === "Giochi") {
+            for (let i = 0; i < out.length; i++) {
+                out[i].style.color = "#99582a";
+            }
+        } else if (value === "Sport") {
+            for (let i = 0; i < out.length; i++) {
+                out[i].style.color = "#62b6cb";
+            }
+        } else if (value === "Immobili") {
+            for (let i = 0; i < out.length; i++) {
+                out[i].style.color = "#7678ed";
+            }
+        } else if (value === "Telefoni") {
+            for (let i = 0; i < out.length; i++) {
+                out[i].style.color = "#6d6875";
+            }
+        } else if (value === "Arredamento") {
+            for (let i = 0; i < out.length; i++) {
+                out[i].style.color = "#73ba9b";
+            }
+        }
+
+        //questa funzione mi permette che allo scroll si sposta il titolo diventa fisso e si fa pi picolo
+        window.addEventListener("scroll", (event) => {
+            let scrollTop = document.documentElement.scrollTop;
+            let primoSloganDiv = document.getElementById("primoSloganDiv");
+            let titolo = document.getElementById("titoloSposta");
+            let topPrimoSloganDiv = primoSloganDiv.offsetTop;
+
+            if (scrollTop > topPrimoSloganDiv) {
+                titolo.style.justifyContent = "start";
+                titolo.style.position = "sticky";
+                titolo.style.top = "150px";
+                titolo.style.width = "25%";
+            } else {
+                titolo.style.justifyContent = "center";
+                titolo.style.width = "100%";
+            }
+
+        })
     </script>
 </x-layout>
