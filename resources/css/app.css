@@ -1320,14 +1320,13 @@ h3 {
     font-weight: 600;
 }
 
-.linkShow:hover {
-    text-decoration: none !important;
+
 .linkShow:hover {
     text-decoration: none !important;
     color: black;
 }
 
-.containerFiltri {
+
 .containerFiltri {
     position: sticky;
     top: 200px !important;
@@ -1335,7 +1334,7 @@ h3 {
 
 }
 
-.titoloFiltra {
+ 
 .titoloFiltra {
     color: black;
 }
@@ -1494,12 +1493,11 @@ h3 {
 
 }
 
-.wolf{
+.wolf {
     position: sticky!important;
     top: 200px!important;
 }
 
 .contenitoreShow {
-    margin-top: 100px !important;
+    margin-top: 100px;
 }
-
