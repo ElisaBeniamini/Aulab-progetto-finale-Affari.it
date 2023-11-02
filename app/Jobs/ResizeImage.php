@@ -4,7 +4,8 @@ namespace App\Jobs;
 
 use App\Models\Image as ModelsImage;
 
-use Spatie\Image\Image;
+use Spatie\Image\Image as SpatieImage;
+
 use Spatie\Image\Manipulations;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
@@ -44,8 +45,18 @@ class ResizeImage implements ShouldQueue
         $srcPath = storage_path() . '/app/public/' . $this->path . '/' . $this->fileName; // path da cui prendere l immagine 
         $destPath = storage_path() . '/app/public/' . $this->path . "/crop_{$w}x{$h}_" . $this->fileName; // path dove salvare l immagine.
 
-        $croppedImage = Image::load($srcPath)  // croppare effettivamente l img
-            ->crop(Manipulations::CROP_CENTER, $w, $h)
+
+
+
+        $croppedImage = SpatieImage::load($srcPath);  // Carica l'immagine dal percorso specificato
+        $croppedImage->crop(Manipulations::CROP_CENTER, $w, $h)
+            ->save($destPath);
+        $croppedImage->watermark(base_path('resources\img\watermark.png')) //Sovrapponi il watermark all'immagine.
+            ->watermarkPosition('bottom-right') //posizione del watermark
+            ->watermarkPadding(1, 5, Manipulations::UNIT_PERCENT) //  Imposta l'offset del watermark rispetto ai margini dell'immagine.
+            ->watermarkWidth(100, Manipulations::UNIT_PIXELS) // Regola la larghezza del watermark
+            ->watermarkHeight(100, Manipulations::UNIT_PIXELS) // Regola l'altezza del watermark
+            ->watermarkFit(Manipulations::FIT_STRETCH)
             ->save($destPath);
     }
 }

@@ -4,16 +4,16 @@
 
     <!-- URL::previous() non richiede una rotta; torna alla pagina precedente rispetto alla posizione dell utente -->
     <div style="margin-top:80px">
-        <a class="btn-go-back mt-5 mx-5" href="{{ URL::previous() }}">
+        <a class="btn-go-back m-4 " href="{{ URL::previous() }}">
             <i class=" bi bi-caret-left"> </i>
             Back
         </a>
     </div>
 
     @if ($announcement_to_check)
-        <div class="container mb-5"
-            style="box-shadow: rgb(84,110,122,1.0) 0px 8px 35px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset; ">
-            <div class="row d-flex justify-content-center text-center align-items-center p-2">
+        <div class="container mb-5 "
+            style="box-shadow: rgb(84,110,122,1.0) 0px 8px 35px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset; border-radius:10px;">
+            <div class="row d-flex justify-content-center text-center align-items-center p-2 ">
                 <!-- carosello imamgini con tags e revisione immagine -->
                 <div class="col-12 col-md-6 d-flex justify-content-center align-items-center flex-column">
                     @if ($announcement_to_check->images->isNotEmpty())
@@ -23,7 +23,7 @@
                                 <!-- immagine carosello -->
                                 @foreach ($announcement_to_check->images as $image)
                                     <div class="carousel-item  {{ $loop->first ? 'active' : '' }} text-center">
-                                        <img src="{{ $image->getUrl(600, 400) }}" class="img-fluid rounded-3" />
+                                        <img src="{{ $image->getUrl(600, 300) }}" class="img-fluid rounded-3" />
                                     </div>
                                 @endforeach
                             </div>
