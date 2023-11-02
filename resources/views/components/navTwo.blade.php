@@ -1,55 +1,29 @@
-<header>
-    <nav class="navbar navbar-expand-lg  py-2" id="nav">
-        <div class="container-fluid py-0 px-0">
-            <!--START-LOGO-->
-            <a class="navbar-brand  me-0" href="{{ route('homepage') }}">
-                <h1 class="m-0 fs-3 text-light px-3">
-                    PRESTO.IT
-                </h1>
-            </a>
-            <!--END-LOGO-->
-
-            <!--START-BTN-CATEGORY-->
-            <button class="btn bg-dark border mx-3 btn-category d-flex justify-content-center align-items-center" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
-
-                <div>
-                    <i class="bi bi-list fs-4 text-light"></i>
-                </div>
-                <div>
-                    <p class="m-0 ps-2 text-light">
-                        Categorie
-                    </p>
-                </div>
-
-            </button>
-            <!--END-BTN-CATEGORY-->
-
-            <!--START-BURGER-MENU-->
-            <button class="navbar-toggler me-1 text-light border-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <!--END-BURGER-MENU-->
-
-            <!--START-CERCA-->
-            <div class="input-group input-group-lg container-input-cerca px-2 py-2">
-                <form action="{{route('announcement.search')}}" method="GET" class="form-navbar d-flex">
-                    <button class="position-relative btn-cerca">
-                        <div class="position-absolute top-0 start-0">
-                            <i class="bi bi-search fs-4"></i>
+<nav class="navbar navbar-expand-lg" id="nav">
+    <div class="container-fluid">
+        <a class="navbar-brand fs-1" href="{{route('homepage')}}">
+            Affari.it
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <button class="btn border border-dark mx-3 btn-category d-flex justify-content-center align-items-center" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+                        <div>
+                            <i class="bi bi-list fs-4 text-dark"></i>
+                        </div>
+                        <div>
+                            <p class="m-0 ps-2 text-dark">
+                                Categorie
+                            </p>
                         </div>
                     </button>
-                    <input type="search" name="searched" placeholder="{{ __('ui.ricerca') }}" aria-label="Search" class="inputCerca">
-                </form>
-            </div>
-            <!--END-CERCA-->
-
-            <div class="collapse navbar-collapse" id="navbarNav">
+                </li>
                 @auth
-                <!--START-BTN-REVISORE-->
-                <div class="px-4 py-1">
-                    @if (Auth::user()->is_revisor)
+                <li class="nav-item">
                     <a href="{{route('revisor.index')}}">
-                        <button type="button" class="btn bg-dark text-light position-relative border btn-revisore">
+                        <button type="button" class="btn  text-dark border-dark position-relative btn-revisore">
                             {{ __('ui.zona-revisore') }}
                             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                                 {{ App\Models\Announcement::toBeRevisionedCount() }}
@@ -57,62 +31,52 @@
                             </span>
                         </button>
                     </a>
-                    @endif
-                </div>
-                <!--END-BTN-REVISORE-->
-                <!--START-BTN-PUBBLICA-->
-                <div class="px-4 py-1">
-                    <button class="btn bg-dark text-light border" type="submit">
-                        <a href="{{ route('announcement.create') }}" class="text-light">
-                            <p class="text-light m-0">
-                                {{ __('ui.inserisci-annuncio') }}
-                            </p>
-                        </a>
-                    </button>
-                </div>
-
-                <!--END-BTN-PUBBLICA-->
-                <!--START-LOGOUT-->
-                <div class="px-4 py-1">
-                    <div class="container-btn-drop">
-                        <div class="dropdown px-1">
-                            <button class="btn dropdown-toggle btn-logout d-flex  align-items-center fs-5" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <p class="messaggio m-0">{{ __('ui.ciao') }} {{ Auth::user()->name }}</p>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a class="dropdown-item" href="/logout" onclick="event.preventDefault();getElementById('form-logout').submit()">
-                                            <div class="d-flex  align-items-center border-bottom">
-                                                <i class="bi bi-box-arrow-right ps-1 fs-5"></i>
-                                                <p class="title-logout m-0">
-                                                    Logout
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <form id="form-logout" action="{{ route('logout') }}" method="POST">
-                                        @csrf
-                                        @method('POST')
-                                    </form>
-                                </ul>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('announcement.create') }}">
+                        {{ __('ui.inserisci-annuncio') }}
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        {{ __('ui.ciao') }} {{ Auth::user()->name }}
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="dropdown-item" href="/logout" onclick="event.preventDefault();getElementById('form-logout').submit()">
+                                <div class="d-flex  align-items-center border-bottom">
+                                    <i class="bi bi-box-arrow-right ps-1 fs-5"></i>
+                                    <p class="title-logout m-0">
+                                        Logout
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+                        <form id="form-logout" action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            @method('POST')
+                        </form>
+                    </ul>
+                </li>
                 @endauth
-                <!--END-LOGOUT-->
-                @guest
-                <!--Login-->
-                <div>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="67" height="67" fill="#f5f5f5" class="btn bi bi-person-fill pe-3" type="image" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" viewBox="0 0 16 16">
-                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
-                    </svg>
-                </div>
-                <!--Login-->
-                @endguest
+            </ul>
+            <form action="{{route('announcement.search')}}" method="GET" class="d-flex" role="search">
+                <input class="form-control me-2 cercAA" name="searched" type="search" placeholder="{{ __('ui.ricerca')}}" aria-label="Search">
+                <button class="btn btn-outline-dark" type="submit">Cerca</button>
+            </form>
+            @guest
+            <!--Login-->
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="67" height="67" fill="#f5f5f5" class="btn bi bi-person-fill pe-3" type="image" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" viewBox="0 0 16 16">
+                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+                </svg>
             </div>
+            <!--Login-->
+            @endguest
         </div>
-    </nav>
-</header>
+    </div>
+</nav>
+
 <!--START-NAVBAR-BOTTOM-->
 <div class="nav-bottom d-flex justify-content-between align-items-center px-3 pt-1">
     <div class="text-center">

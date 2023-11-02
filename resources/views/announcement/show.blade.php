@@ -19,16 +19,16 @@
             <div class="row">
                 <div class="col-12 d-flex justify-content-between">
                     <div>
-                        <img class="img-piccole-show" src="{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}" alt="" onmouseover="cambiaOne()">
+                        <img class="img-piccole-show" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(80, 120) : asset('img/default-image.jpg') }}" alt="" onmouseover="cambiaOne()">
                     </div>
                     <div>
-                        <img class="img-piccole-show" src="{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}" alt="" onmouseover="cambiaTwo()">
+                        <img class="img-piccole-show" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(80, 120) : asset('img/default-image.jpg') }}" alt="" onmouseover="cambiaTwo()">
                     </div>
                     <div>
-                        <img class="img-piccole-show" src="{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}" alt="" onmouseover="cambiaThree()">
+                        <img class="img-piccole-show" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(80, 120) : asset('img/default-image.jpg') }}" alt="" onmouseover="cambiaThree()">
                     </div>
                     <div>
-                        <img class="img-piccole-show" src="{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}" alt="" onmouseover="cambiaFour()">
+                        <img class="img-piccole-show" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(80, 120) : asset('img/default-image.jpg') }}" alt="" onmouseover="cambiaFour()">
                     </div>
                 </div>
             </div>
@@ -40,17 +40,17 @@
             <div class="row">
                 <div class="col-12 col-md-2 d-flex justify-content-end">
                     <div class="d-flex flex-column containerPiccole wolf">
-                        <img class="img-piccole-show" src="{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}" alt="" onmouseover="cambiaOne()">
-                        <img class="img-piccole-show" src="{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}" alt="" onmouseover="cambiaTwo()">
-                        <img class="img-piccole-show" src="{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}" alt="" onmouseover="cambiaThree()">
-                        <img class="img-piccole-show" src="{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}" alt="" onmouseover="cambiaFour()">
+                        <img class="img-piccole-show" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(80, 120) : asset('img/default-image.jpg') }}" alt="" onmouseover="cambiaOne()">
+                        <img class="img-piccole-show" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(80, 120) : asset('img/default-image.jpg') }}" alt="" onmouseover="cambiaTwo()">
+                        <img class="img-piccole-show" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(80, 120) : asset('img/default-image.jpg') }}" alt="" onmouseover="cambiaThree()">
+                        <img class="img-piccole-show" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(80, 120) : asset('img/default-image.jpg') }}" alt="" onmouseover="cambiaFour()">
                     </div>
                 </div>
 
                 <div class="col-12 col-md-7 justify-content-center">
                     <div id="generalContainerImgShow" class="cic">
 
-                        <img class="img-show img-fluid" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(400, 300) : asset('img/default-image.jpg') }}" alt="" id="container-img-small" onclick="openPanelShowxxxl()">
+                        <img class="img-show img-fluid" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(740, 560) : asset('img/default-image.jpg') }}" alt="" id="container-img-small" onclick="openPanelShowxxxl()">
 
                     </div>
                     <div class="text-center mt-3 mb-5 border-bottom">
@@ -119,7 +119,7 @@
                         <!--CARD-->
                         <a class="linkShow" href="{{route('announcement.show',['announcement' => $consigliato])}}">
                             <div class="cardBox my-4">
-                                <img class="img-card-official" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(400, 300) : asset('img/default-image.jpg') }}" {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}}>
+                                <img class="img-card-official" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(215, 230) : asset('img/default-image.jpg') }}" {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}}>
                                 <div class="corpoCard pt-4 px-3 pb-1 bg-light">
                                     <p class="prezzoCard">
                                         {{ $consigliato->price }} €
@@ -160,7 +160,7 @@
                         <!--CARD-->
                         <a class="linkShow" href="{{route('announcement.show',['announcement' => $item])}}">
                             <div class="cardBox my-4">
-                                <img class="img-card-official" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(400, 300) : asset('img/default-image.jpg') }}" {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}}>
+                                <img class="img-card-official" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(215, 230) : asset('img/default-image.jpg') }}" {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}}>
                                 <div class="corpoCard pt-4 px-3 pb-1 bg-light">
                                     <p class="prezzoCard">
                                         {{ $item->price }} €

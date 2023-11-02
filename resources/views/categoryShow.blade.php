@@ -23,7 +23,7 @@
                         <!--CARD-->
                         <a class="linkShow" href="{{route('announcement.show',['announcement' => $announcement])}}">
                             <div class="cardBox my-4">
-                                <img class="img-card-official" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(400, 300) : asset('img/default-image.jpg') }}" {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}}>
+                                <img class="img-card-official" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(215, 230) : asset('img/default-image.jpg') }}" {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}}>
                                 <div class="corpo pt-4 px-3 pb-1 bg-light">
                                     <h4 class="prezzoCard coloreCambia">
                                         {{ $announcement->price }} €
@@ -193,21 +193,21 @@
         }
 
         //questa funzione mi permette che allo scroll si sposta il titolo diventa fisso e si fa pi picolo
-        window.addEventListener("scroll", (event) => {
-            let scrollTop = document.documentElement.scrollTop;
-            let primoSloganDiv = document.getElementById("primoSloganDiv");
-            let titolo = document.getElementById("titoloSposta");
-            let topPrimoSloganDiv = primoSloganDiv.offsetTop;
+        // window.addEventListener("scroll", (event) => {
+        //     let scrollTop = document.documentElement.scrollTop;
+        //     let primoSloganDiv = document.getElementById("primoSloganDiv");
+        //     let titolo = document.getElementById("titoloSposta");
+        //     let topPrimoSloganDiv = primoSloganDiv.offsetTop;
 
-            if (scrollTop > topPrimoSloganDiv) {
-                titolo.style.justifyContent = "start";
-                titolo.style.position = "sticky";
-                titolo.style.top = "150px";
-                titolo.style.width = "25%";
-            } else {
-                titolo.style.justifyContent = "center";
-                titolo.style.width = "100%";
-            }
-        })
+        //     if (scrollTop > topPrimoSloganDiv) {
+        //         titolo.style.justifyContent = "start";
+        //         titolo.style.position = "sticky";
+        //         titolo.style.top = "150px";
+        //         titolo.style.width = "25%";
+        //     } else {
+        //         titolo.style.justifyContent = "center";
+        //         titolo.style.width = "100%";
+        //     }
+        // })
     </script>
 </x-layout>

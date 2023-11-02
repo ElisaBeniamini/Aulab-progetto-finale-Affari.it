@@ -1,6 +1,6 @@
 <x-layout>
 
-    <x-navbar />
+    <x-navTwo />
 
     <main>
         <!--CAROUSEL-->
@@ -244,7 +244,7 @@
                         <!--CARD-->
                         <a class="linkShow" href="{{route('announcement.show',['announcement' => $item])}}">
                             <div class="cardBox my-4">
-                                <img class="img-card-official" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(400, 300) : asset('img/default-image.jpg') }}" {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}}>
+                                <img class="img-card-official" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(215, 230) : asset('img/default-image.jpg') }}" {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}}>
                                 <div class="corpoCard pt-4 px-3 pb-1 bg-light">
                                     <p class="prezzoCard" style="color:#0466c8!important">
                                         {{ $item->price }} €
@@ -281,7 +281,7 @@
                         <!--CARD-->
                         <a class="linkShow" href="{{route('announcement.show',['announcement' => $item])}}">
                             <div class="cardBox my-4">
-                                <img class="img-card-official" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(400, 300) : asset('img/default-image.jpg') }}" {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}}>
+                                <img class="img-card-official" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(215, 230) : asset('img/default-image.jpg') }}" {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}}>
                                 <div class="corpoCard pt-4 px-3 pb-1 bg-light">
                                     <p class="prezzoCard" style="color:#c44536!important">
                                         {{ $item->price }} €
@@ -318,7 +318,7 @@
                         <!--CARD-->
                         <a class="linkShow" href="{{route('announcement.show',['announcement' => $item])}}">
                             <div class="cardBox my-4">
-                                <img class="img-card-official" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(400, 300) : asset('img/default-image.jpg') }}" {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}}>
+                                <img class="img-card-official" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(215, 230) : asset('img/default-image.jpg') }}" {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}}>
                                 <div class="corpoCard pt-4 px-3 pb-1 bg-light">
                                     <p class="prezzoCard" style="color:#6d6875!important">
                                         {{ $item->price }} €
@@ -341,50 +341,7 @@
         </section>
         <!--TELEFONI < 600 EURO-->
 
-        <!--PRODOTTI < 30 EURO-->
-        <section>
-            <div class="container my-5 containerOver">
-                <div class="row">
-                    <h4 class="text-center titoloCategoriaScript text-light m-0 pt-3">
-                        Scopri questi prodotti minori di 30 €
-                    </h4>
-                </div>
-                <div class="row align-items-center">
-                    <div class="col-6 col-md-6 py-3">
-                        <img class="img-container-offerte" src="/img-prodotti-minori-di-30.jpeg" alt="">
-                    </div>
-                    <div class="col-6 col-md-6 py-3">
-                        <div class="containerWrap">
-                            @foreach ($productMinorsThirty as $item)
-                            <div class="itemWrap">
-                                <!--CARD-->
-                                <a class="linkShow" href="{{route('announcement.show',['announcement' => $item])}}">
-                                    <div class="cardBox my-4">
-                                        <img class="img-card-official" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(400, 300) : asset('img/default-image.jpg') }}" {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}}>
-                                        <div class="corpoCard pt-4 px-3 pb-1 bg-light">
-                                            <p class="prezzoCard">
-                                                {{ $item->price }} €
-                                            </p>
-                                            <h5 class="titoloCard mt-3">
-                                                {{ $item->title }}
-                                            </h5>
-                                            <h6 class="pubblicatoCard mb-0">
-                                                Pubblicato da {{ $item->user->name ?? '' }} <br>
-                                                Il {{ $item->created_at->format('d/m/y') }}
-                                            </h6>
-                                        </div>
-                                    </div>
-                                </a>
-                                <!--CARD-->
-                            </div>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--PRODOTTI < 30 EURO-->
-
+    
         <!--ELETTRODOMESICI-->
         <section>
             <div class="container pe-3 ps-3 my-5 containerElettrodomesticiHome">
@@ -399,7 +356,7 @@
                         <!--CARD-->
                         <a class="linkShow" href="{{route('announcement.show',['announcement' => $item])}}">
                             <div class="cardBox my-4">
-                                <img class="img-card-official" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(400, 300) : asset('img/default-image.jpg') }}" {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}}>
+                                <img class="img-card-official" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(215, 230) : asset('img/default-image.jpg') }}" {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}}>
                                 <div class="corpoCard pt-4 px-3 pb-1 bg-light">
                                     <p class="prezzoCard" style="color:#5c8001!important">
                                         {{ $item->price }} €
@@ -436,7 +393,7 @@
                         <!--CARD-->
                         <a class="linkShow" href="{{route('announcement.show',['announcement' => $item])}}">
                             <div class="cardBox my-4">
-                                <img class="img-card-official" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(400, 300) : asset('img/default-image.jpg') }}" {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}}>
+                                <img class="img-card-official" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(215, 230) : asset('img/default-image.jpg') }}" {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}}>
                                 <div class="corpoCard pt-4 px-3 pb-1 bg-light">
                                     <p class="prezzoCard" style="color:#7678ed!important">
                                         {{ $item->price }} €
@@ -473,7 +430,7 @@
                         <!--CARD-->
                         <a class="linkShow" href="{{route('announcement.show',['announcement' => $item])}}">
                             <div class="cardBox my-4">
-                                <img class="img-card-official" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(400, 300) : asset('img/default-image.jpg') }}" {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}}>
+                                <img class="img-card-official" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(215, 230) : asset('img/default-image.jpg') }}" {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}}>
                                 <div class="corpoCard pt-4 px-3 pb-1 bg-light">
                                     <p class="prezzoCard" style="color:#fbb02d!important">
                                         {{ $item->price }} €
@@ -540,7 +497,7 @@
                         <!--CARD-->
                         <a class="linkShow" href="{{route('announcement.show',['announcement' => $item])}}">
                             <div class="cardBox my-4">
-                                <img class="img-card-official" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(400, 300) : asset('img/default-image.jpg') }}" {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}}>
+                                <img class="img-card-official" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(215, 230) : asset('img/default-image.jpg') }}" {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}}>
                                 <div class="corpoCard pt-4 px-3 pb-1 bg-light">
                                     <p class="prezzoCard" style="color:#73ba9b!important">
                                         {{ $item->price }} €
@@ -577,7 +534,7 @@
                         <!--CARD-->
                         <a class="linkShow" href="{{route('announcement.show',['announcement' => $item])}}">
                             <div class="cardBox my-4">
-                                <img class="img-card-official" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(400, 300) : asset('img/default-image.jpg') }}" {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}}>
+                                <img class="img-card-official" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(215, 230) : asset('img/default-image.jpg') }}" {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}}>
                                 <div class="corpoCard pt-4 px-3 pb-1 bg-light">
                                     <p class="prezzoCard" style="color:#62b6cb!important">
                                         {{ $item->price }} €
@@ -610,11 +567,11 @@
                 </div>
                 <div class="row">
                     @foreach( $giochi as $item)
-                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center px-1">
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center px-2">
                         <!--CARD-->
                         <a class="linkShow" href="{{route('announcement.show',['announcement' => $item])}}">
                             <div class="cardBox my-4">
-                                <img class="img-card-official" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(400, 300) : asset('img/default-image.jpg') }}" {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}}>
+                                <img class="img-card-official" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(215, 230) : asset('img/default-image.jpg') }}" {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}}>
                                 <div class="corpoCard pt-4 px-3 pb-1 bg-light">
                                     <p class="prezzoCard" style="color:#99582a!important">
                                         {{ $item->price }} €

@@ -15,12 +15,13 @@ h2 {
     color: #133c55;
     font-weight: bolder;
     font-family: 'Open Sans', sans-serif ;
-    color: #7069bc ;
+    
 }
 
 .offcanvas {
     background-color: #f5f5f5 !important;
     width: 40% !important;
+    z-index: 9999999;
 }
 
 input {
@@ -93,11 +94,7 @@ label {
     position: absolute(start)
 } */
 
-.btn-outline-primary:hover {
-    background-color: #7069bc !important;
-    color: #f5f5f5 !important;
 
-}
 
 .form-label {
     border-color: #7069bc !important;
@@ -839,9 +836,7 @@ a {
     text-decoration: none;
 }
 
-.dropdown {
-    width: 100%;
-}
+
 
 .navbar-toggler {
     border: none !important;
@@ -1011,8 +1006,8 @@ header {
     z-index: 999;
 }
 
-.navbar {
-    background-color: transparent;
+.navbar{
+    z-index: 9999;
 }
 
 .container-input-cerca {
@@ -1020,11 +1015,7 @@ header {
 }
 
 /*BUTT area-revisore NAVBAR/ pubblica-annuncio NAVBAR*/
-.btn {
-    height: 28;
-    width: 100%;
-    background-color: #133c55 !important;
-}
+
 
 .btn-category {
     height: 38px;
@@ -1186,10 +1177,6 @@ h3 {
         display: none !important;
     }
 
-    .navbar-toggler {
-        display: none !important;
-    }
-
     .navbar {
         padding: 0px !important;
     }
@@ -1275,11 +1262,18 @@ h3 {
 .img-card-official {
     width: 215px;
     height: 230px;
+}
 
+
+@media (max-width:468px) {
+    .img-card-official {
+        width: 174px;
+        height: 230px;
+    }
 }
 
 .cardBox {
-    width: 100%;
+    width: 100%!important;
     height: auto;
 }
 
@@ -1491,6 +1485,20 @@ h3 {
         display: none !important;
     }
 
+    .imgCarhome{
+        height: 40vh;
+    }
+
+}
+
+@media (max-width:468px) {
+    .section-one {
+        margin-top: 300px;
+    }
+
+    footer{
+        margin-bottom: 50px;
+    }
 }
 
 .wolf {
@@ -1500,4 +1508,25 @@ h3 {
 
 .contenitoreShow {
     margin-top: 100px;
+}
+
+.contenitoreShow{
+    margin-top: 120px!important;
+}
+
+.section-index{
+    margin-top: 100px;
+}
+
+.cercAA{
+    width: 400px!important;
+}
+
+.navbar{
+    background-color:transparent;
+    height: 65px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
 }
