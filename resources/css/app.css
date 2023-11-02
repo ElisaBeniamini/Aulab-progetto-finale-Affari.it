@@ -11,8 +11,8 @@ body {
 
 
 h2 {
-    font-family: 'Open Sans', sans-serif !important;
-    color: #7069bc !important;
+    font-family: 'Open Sans', sans-serif ;
+    color: #7069bc ;
 }
 
 .offcanvas {
@@ -29,10 +29,7 @@ label {
     font-size: 14px;
 }
 
-.navbar {
 
-    background-color: #f5f5f5;
-}
 
 .navbar-brand {
     font-family: 'Open Sans', sans-serif;
@@ -208,12 +205,13 @@ label {
 
 /* Stile per footer*/
 footer {
-    background-color: #7069bc;
+    background-color: #f5f5f5;
     height: auto;
+    width: 100%;
 }
 
 .title-footer {
-    color: #f5f5f5 !important;
+    color: #444444 !important;
     font-weight: bold;
     font-size: 20px;
 }
@@ -223,7 +221,7 @@ footer {
 }
 
 .link-footer {
-    color: #f5f5f5 !important;
+    color: #444444 !important;
     font-size: 14px;
     text-decoration: none;
 }
@@ -237,7 +235,7 @@ footer {
 }
 
 .container-footer-two {
-    background-color: #7069bc;
+    background-color: #f5f5f5;
 }
 
 .icon-footer:hover {
@@ -468,8 +466,8 @@ body {
     object-fit: cover !important;
     overflow: hidden !important;
     width: 100% !important;
-    height: 550px !important;
-    border-radius: 13px !important;
+    height: 560px !important;
+    border: 1px solid transparent;
 }
 
 .pippo {
@@ -487,14 +485,12 @@ body {
     box-sizing: border-box;
     object-fit: cover;
     cursor: zoom-in;
-    border-radius: 13px !important;
 }
 
 .img-piccole-show {
     width: 80px !important;
     height: 120px;
     border: 1px solid transparent;
-    border-radius: 10px;
     cursor: pointer;
     transition: 0.3s;
     object-fit: cover;
@@ -508,7 +504,7 @@ body {
 .title-show {
     font-size: 30px;
     font-weight: bold;
-    color: black !important;
+    color: black ;
 }
 
 .price-show {
@@ -647,9 +643,7 @@ body {
     font-weight: bold;
 }
 
-.carousel-control-prev {
-    margin: 0px !important;
-}
+
 
 .panel-show-xxxl {
     display: none;
@@ -719,13 +713,6 @@ body {
 }
 
 
-.carousel-control-prev {
-    width: 3% !important;
-}
-
-.carousel-control-next {
-    width: 3% !important;
-}
 
 .container-overflow-x {
     background-color: lightblue;
@@ -862,8 +849,8 @@ a {
 }
 
 .containerHomepageSectionCategoryInformatica {
-    background-color: #FF5B22;
-    padding: 0px;
+    background-color: #0466c8;
+    padding: 12px;
 }
 
 
@@ -872,12 +859,12 @@ a {
     height: auto;
     overflow-x: scroll;
     overflow-y: hidden;
-    background-color: #FF5B22;
+    background-color: #0466c8;
 }
 
 .containerHomepageSectionCategoryMotori {
-    background-color: #0C356A;
-    padding: 0px;
+    background-color: #c44536;
+    padding: 12px;
 }
 
 .container-overflow-homepageMotori {
@@ -885,7 +872,7 @@ a {
     height: auto;
     overflow-x: scroll;
     overflow-y: hidden;
-    background-color: #0C356A;
+    background-color: #c44536;
 }
 
 .content-overflow-homepage {
@@ -1021,11 +1008,11 @@ header {
 }
 
 .navbar {
-    background-color: #133c55 !important;
+    background-color: transparent;
 }
 
 .container-input-cerca {
-    width: 100%;
+    width: 50%;
 }
 
 .btn {
@@ -1050,7 +1037,7 @@ ul {
 
 .offcanvas {
 
-    width: 24% !important;
+    width: 30% !important;
 }
 
 @media (max-width:468px) {
@@ -1121,17 +1108,7 @@ img {
     object-fit: cover;
 }
 
-.carousel-control-prev {
-    justify-content: center;
-    align-items: start;
-    width: auto;
-}
 
-.carousel-control-next {
-    justify-content: center;
-    align-items: start;
-    width: auto;
-}
 
 .section-home {
     position: absolute;
@@ -1218,7 +1195,7 @@ h3 {
 }
 
 .btn-revisore {
-    width: auto!important;
+    width: auto;
 }
 
 .btn-category-nav-bottom {
@@ -1252,9 +1229,7 @@ h3 {
 
 }
 
-.section-one {
-    margin-top: 99px;
-}
+
 
 .titolo-card {
     font-size: 14px;
@@ -1272,8 +1247,9 @@ h3 {
 
 
 .img-card-official {
-    width: 100%;
+    width: 215px;
     height: 230px;
+
 }
 
 .cardBox {
@@ -1302,41 +1278,198 @@ h3 {
 
 .inputCercaIndex {
     width: 100% !important;
-    background-color: white!important;
+    background-color: white !important;
 }
 
 .form-range {
     width: 100% !important;
 }
 
-.titoloRange{
-    color: black!important;
+.titoloRange {
+    color: black !important;
 }
 
-.titoloCategoriaScript{
-    font-size: 30px;
+.titoloCategoriaScript {
+    font-size: 26px;
     font-weight: 600;
 }
 
-.linkShow:hover{
-    text-decoration: none!important;
+.linkShow:hover {
+    text-decoration: none !important;
     color: black;
 }
 
-.containerFiltri{
+.containerFiltri {
     position: sticky;
-    top:200px!important;
-    height: 400px;
+    top: 200px !important;
+    height: 500px;
 
 }
 
-.titoloFiltra{
+.titoloFiltra {
     color: black;
 }
 
-.container-titolo-categorie{
-    margin-top: 140px!important;
+.container-titolo-categorie {
+    margin-top: 100px !important;
     display: flex;
     justify-content: center;
     width: 100%;
 }
+
+.pulsante-cerca-filtro {
+    width: 100%;
+    padding: 7px;
+    border-radius: 7px;
+    font-weight: 600;
+    background-color: white;
+}
+
+.pulsante-cerca-filtro:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.containerWrap {
+    width: 100%;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: row;
+    overflow-x: scroll;
+}
+
+.itemWrap {
+    height: auto;
+    min-width: 202px;
+    margin-right: 10px;
+}
+
+.img-container-offerte {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 20px;
+}
+
+.containerOver {
+    background-color: #efbb53;
+    border-radius: 30px;
+}
+
+.containerWrap::-webkit-scrollbar {
+    width: 1px;
+    height: 10px;
+    border-radius: 10px;
+}
+
+.containerWrap::-webkit-scrollbar-track {
+    border-radius: 10px;
+    border: 1px solid #cacaca;
+    background-color: #f1f1f1;
+}
+
+.containerWrap::-webkit-scrollbar-thumb {
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(.5, #444444), color-stop(1, #444444));
+    border-radius: 10px;
+}
+
+
+
+.titoloCategorieRounded {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.containerCatRound {
+    transition: transform .2s;
+    width: 100% !important;
+}
+
+.containerCatRound:hover {
+    transform: scale(1.1);
+}
+
+.linkOFF {
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.7s;
+}
+
+.linkOFF:hover {
+    font-size: 16px;
+    font-weight: 600;
+    color: black;
+    margin-left: 12px;
+}
+
+.paragraf-category {
+    font-size: 22px;
+    font-weight: 600;
+    color: #133c55;
+}
+
+.btn-register-aler {
+    width: 100%;
+    transition: transform .2s;
+}
+
+.btn-register-aler:hover {
+    transform: scale(1.1);
+}
+
+.imgCarhome {
+    width: 100%;
+    height: 58vh;
+}
+
+.carousel {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    margin-top: 0px !important;
+}
+
+.section-one {
+    margin-top: 485px;
+}
+
+.btnVaiSu {
+    position: fixed;
+    right: 0px;
+    top: 80%;
+    width: auto;
+    padding: 10px;
+    background-color: white;
+    border-radius: 8px 0px 0px 8px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+    display: none;
+}
+
+.paragrafovaiSu {
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.containerPiccoleRow {
+    display: none;
+}
+
+@media (max-width:768px) {
+    .containerPiccoleRow {
+        display: block !important;
+    }
+
+    .containerPiccole {
+        display: none !important;
+    }
+
+}
+
+.wolf{
+    position: sticky!important;
+    top: 200px!important;
+}
+
+.contenitoreShow {
+    margin-top: 100px !important;
+}
+

@@ -1,5 +1,5 @@
 <header>
-    <nav class="navbar navbar-expand-lg bg-dark shadow-lg py-2" id="nav">
+    <nav class="navbar navbar-expand-lg  py-2" id="nav">
         <div class="container-fluid py-0 px-0">
             <!--START-LOGO-->
             <a class="navbar-brand  me-0" href="{{ route('homepage') }}">
@@ -160,7 +160,7 @@
     <div class="text-center">
         <div class="dropdown px-1">
             <button class="btn dropdown-toggle fs-5" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                
+
                 <ul class="dropdown-menu">
                     <li>
                         <a class="dropdown-item" href="/logout" onclick="event.preventDefault();getElementById('form-logout').submit()">
@@ -202,15 +202,15 @@
     </div>
     <div class="offcanvas-body">
         <div>
-            <p class="paragraf-category">
+            <p class="paragraf-category border-bottom pb-4">
                 Tutte le categorie
             </p>
         </div>
         <div>
-            <ul class="m-0 p-0">
+            <ul class="m-0 p-0 border-bottom pb-4">
                 @foreach ($categories as $category)
                 <li class="py-2">
-                    <a href="{{ route('categoryShow', compact('category')) }}">
+                    <a class="linkOFF" href="{{ route('categoryShow', compact('category')) }}">
                         {{$category->name}}
                     </a>
                 </li>

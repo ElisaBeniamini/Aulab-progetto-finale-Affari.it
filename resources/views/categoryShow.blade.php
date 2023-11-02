@@ -1,6 +1,5 @@
 <x-layout>
     <x-navbar />
-
     <main class="darkLight">
 
         <!-- <a class="btn btn-outline-primary btn-inserisci-annuncio mt-5 mb-3 fs-5" href="{{ URL::previous() }}">
@@ -17,56 +16,31 @@
         </div>
 
         <section class="sectionCategoryIndex">
-            <div class="d-flex">
-                <div class="containerFiltri my-5 px-2 mx-1 py-2 bg-light border">
-                    <label for="exampleFormControlInput1" class="form-label">
-                        <h4 class="coloreCambia titoloFiltra">
-                            FILTRA
-                        </h4>
-                    </label>
-                    <input type="text" class="form-control inputCercaIndex" id="exampleFormControlInput1" placeholder="cerca">
-                    <label for="customRange1" class="form-label mt-5 titoloRange">
-                        <p class="m-0 fs-6 coloreCambia">
-                            Seleziona prezzo
-                        </p>
-                    </label>
-                    <input type="range" class="form-range bg-light" id="customRange1">
-                    <p class="mb-2 fs-6 mt-5 coloreCambia">
-                        Ordina per
-                    </p>
-                    <select class="form-select coloreCambia" aria-label="Default select example">
-                        <option selected>Dal più recente</option>
-                        <option value="1">Dal più recente</option>
-                        <option value="2">Dal più caro</option>
-                        <option value="3">Dal meno caro</option>
-                    </select>
-                </div>
-                <div class="container pe-4 ps-4 my-4">
-                    <div class="row">
-                        @foreach($category->announcements->where('is_accepted', true) as $announcement)
-                        <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center px-1">
-                            <!--CARD-->
-                            <a class="linkShow" href="">
-                                <div class="cardBox border my-4">
-                                    <img class="img-card-official" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(400, 300) : asset('img/default-image.jpg') }}" {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}}>
-                                    <div class="corpo pt-4 px-3 pb-1 bg-light">
-                                        <h4 class="prezzoCard coloreCambia">
-                                            {{ $announcement->price }} €
-                                        </h4>
-                                        <h5 class="titoloCard mt-3">
-                                            {{ $announcement->title }}
-                                        </h5>
-                                        <h6 class="pubblicatoCard mb-0">
-                                            Pubblicato da {{ $announcement->user->name ?? '' }} <br>
-                                            Il {{ $announcement->created_at->format('d/m/y') }}
-                                        </h6>
-                                    </div>
+            <div class="container pe-3 ps-3 my-4">
+                <div class="row">
+                    @foreach($announcements as $announcement)
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center px-1">
+                        <!--CARD-->
+                        <a class="linkShow" href="{{route('announcement.show',['announcement' => $announcement])}}">
+                            <div class="cardBox my-4">
+                                <img class="img-card-official" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(400, 300) : asset('img/default-image.jpg') }}" {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}}>
+                                <div class="corpo pt-4 px-3 pb-1 bg-light">
+                                    <h4 class="prezzoCard coloreCambia">
+                                        {{ $announcement->price }} €
+                                    </h4>
+                                    <h5 class="titoloCard mt-3">
+                                        {{ $announcement->title }}
+                                    </h5>
+                                    <h6 class="pubblicatoCard mb-0">
+                                        Pubblicato da {{ $announcement->user->name ?? '' }} <br>
+                                        Il {{ $announcement->created_at->format('d/m/y') }}
+                                    </h6>
                                 </div>
-                            </a>
-                            <!--CARD-->
-                        </div>
-                        @endforeach
+                            </div>
+                        </a>
+                        <!--CARD-->
                     </div>
+                    @endforeach
                 </div>
             </div>
         </section>
@@ -234,7 +208,6 @@
                 titolo.style.justifyContent = "center";
                 titolo.style.width = "100%";
             }
-
         })
     </script>
 </x-layout>

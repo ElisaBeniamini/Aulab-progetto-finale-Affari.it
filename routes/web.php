@@ -60,3 +60,7 @@ Route::get('/ricerca/annuncio', [SearchAnnouncement::class, 'searchAnnouncements
 
 
 Route::post('/lingua/{lang}', [BasicController::class, 'setLanguage'])->name('set_language_locale');
+
+
+//filtra 
+Route::get('/category/{category}/filtro', [BasicController::class, 'filtraProdotti'])->name('category.filter');

@@ -1,5 +1,5 @@
 <footer>
-    <div class="container-fluid ">
+    <div class="container-fluid border-top">
         <div class="row d-flex justify-content-center">
             <div class="col-12 col-md-4 pt-5">
                 <ul class="list-footer">
@@ -25,7 +25,7 @@
                     </li>
                     <li class="py-1 d-flex">
                         <div>
-                            <a href="{{ route('become.revisor') }}" class="text-light">
+                            <a href="{{ route('become.revisor') }}" class="link-footer">
                                 {{ __('ui.diventa-revisore') }} <i class="bi bi-pencil mr-3"></i>
                             </a>
                         </div>
@@ -83,21 +83,21 @@
         </div>
     </div>
 
-    <div class="container-fluid container-footer-two py-4">
+    <div class="container-fluid container-footer-two py-4 border-top">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 d-flex justify-content-center align-ites-center">
                 <ul class="list-icon-footer d-flex ps-2">
                     <li class="px-3">
-                        <i class="bi bi-facebook text-light fs-3 icon-footer"></i>
+                        <i class="bi bi-facebook fs-3 icon-footer" style="color: rgb(24, 119, 242);"></i>
                     </li>
                     <li class="px-3">
-                        <i class="bi bi-instagram text-light fs-3 icon-footer"></i>
+                        <i class="bi bi-instagram fs-3 icon-footer" style="color:#E4405F"></i>
                     </li>
                     <li class="px-3">
-                        <i class="bi bi-threads-fill text-light fs-3 icon-footer"></i>
+                        <i class="bi bi-threads-fill text-dark fs-3 icon-footer"></i>
                     </li>
                     <li class="px-3">
-                        <i class="bi bi-youtube text-light fs-3 icon-footer"></i>
+                        <i class="bi bi-youtube fs-2 icon-footer" style="color:#CD201F"></i>
                     </li>
                 </ul>
             </div>

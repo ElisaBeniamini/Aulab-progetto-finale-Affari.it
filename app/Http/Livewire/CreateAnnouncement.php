@@ -76,6 +76,8 @@ class CreateAnnouncement extends Component
 
                 dispatch(new ResizeImage($newImage->path, 400, 300));  // job resize img 400*300
 
+                dispatch(new ResizeImage($newImage->path, 215, 230));  // job resize img 215*230 card index show category
+
 
                 dispatch(new GoogleVisionSafeSearch($newImage->id)); // job GoogleVision
                 dispatch(new GoogleVisionLabelImage($newImage->id)); // job GoogleVision
