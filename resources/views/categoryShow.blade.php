@@ -1,5 +1,5 @@
 <x-layout>
-    <x-navbar />
+    <x-navTre />
     <main class="darkLight">
 
         <!-- <a class="btn btn-outline-primary btn-inserisci-annuncio mt-5 mb-3 fs-5" href="{{ URL::previous() }}">
@@ -11,44 +11,58 @@
         </div>
         <div class="mt-4 container-titolo-categorie" id="titoloSposta">
             <h3 class="titoloCategoriaScript m-0 ms-2 coloreCambia" id="titolo">
-                {{$category->name}}
+                {{ $category->name }}
             </h3>
         </div>
 
-        <section class="sectionCategoryIndex">
+        <section class="sectionCategoryIndex" id="secondoSlogan">
             <div class="container pe-3 ps-3 my-4">
                 <div class="row">
-                    @foreach($announcements as $announcement)
-                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center px-1">
-                        <!--CARD-->
-                        <a class="linkShow" href="{{route('announcement.show',['announcement' => $announcement])}}">
-                            <div class="cardBox my-4">
-                                <img class="img-card-official" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(400, 300) : asset('img/default-image.jpg') }}" {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}}>
-                                <div class="corpo pt-4 px-3 pb-1 bg-light">
-                                    <h4 class="prezzoCard coloreCambia">
-                                        {{ $announcement->price }} €
-                                    </h4>
-                                    <h5 class="titoloCard mt-3">
-                                        {{ $announcement->title }}
-                                    </h5>
-                                    <h6 class="pubblicatoCard mb-0">
-                                        Pubblicato da {{ $announcement->user->name ?? '' }} <br>
-                                        Il {{ $announcement->created_at->format('d/m/y') }}
-                                    </h6>
+                    @foreach ($announcements as $announcement)
+                        <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center px-1">
+                            <!--CARD-->
+                            <a class="linkShow"
+                                href="{{ route('announcement.show', ['announcement' => $announcement]) }}">
+                                <div class="cardBox my-4">
+                                    <img class="img-card-official"
+                                        src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(215, 230) : asset('img/default-image.jpg') }}"
+                                        {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}}>
+                                    <div class="corpo pt-4 px-3 pb-1 bg-light">
+                                        <h4 class="prezzoCard coloreCambia">
+                                            {{ $announcement->price }} €
+                                        </h4>
+                                        <h5 class="titoloCard mt-3">
+                                            {{ $announcement->title }}
+                                        </h5>
+                                        <h6 class="pubblicatoCard mb-0">
+                                            {{ __('ui.pubblicato-da') }} {{ $announcement->user->name ?? '' }} <br>
+                                            {{ __('ui.il') }} {{ $announcement->created_at->format('d/m/y') }}
+                                        </h6>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                        <!--CARD-->
-                    </div>
+                            </a>
+                            <!--CARD-->
+                        </div>
                     @endforeach
                 </div>
             </div>
         </section>
 
 
+        <!--PULSANTE-TORNA-SU-->
+        <span onclick="tornaSu()">
+            <div class="btnVaiSu" id="btnSu">
+                <i class="bi bi-arrow-up-short fs-3 m-0 p-0 text-center"></i>
+                <p class="m-0 paragrafovaiSu text-center">Top</p>
+            </div>
+        </span>
+        <!--PULSANTE-TORNA-SU-->
+
+
         <!--START PANNELLO DELLE ACCESSIBILITA-->
-        <div class="container-usabilità">
-            <img class="iconAc" src="/icons8-accessibilità-2-50.png" onclick="openAccessibilita()" alt="">
+
+        <!-- <div class="container-usabilità">
+           <i class="bi bi-person-arms-up fs-2" onclick="openAccessibilita()"></i>
         </div>
 
         <div class="container-accessibilità border" id="panelAcess">
@@ -66,24 +80,24 @@
             </div>
 
             <div class="d-flex justify-content-center mt-3">
-                <div class="mx-1">
+                
                     <button class="btn-dark-light" onclick="darkColor()">
                         <i class="bi bi-moon fs-5 paragraf-icon-dark-light"></i> <br>
-                        <p class="m-0">
+                        <p class="m-0 paragraf-icon-dark-light">
                             dark-zone
                         </p>
                     </button>
-                </div>
-                <div class="mx-1">
+                
+               
                     <button class="btn-dark-light" onclick="lightColor()">
                         <i class="bi bi-sun fs-5"></i> <br>
                         <p class="m-0 paragraf-icon-dark-light">
                             light-zone
                         </p>
                     </button>
-                </div>
+                
             </div>
-        </div>
+        </div> -->
         <!--END PANNELLO DELLE ACCESSIBILITA-->
     </main>
     <!--START-MESSAGGIO-NEL CASO NON ESISTA PRODOTTO-->
@@ -193,21 +207,48 @@
         }
 
         //questa funzione mi permette che allo scroll si sposta il titolo diventa fisso e si fa pi picolo
-        window.addEventListener("scroll", (event) => {
-            let scrollTop = document.documentElement.scrollTop;
-            let primoSloganDiv = document.getElementById("primoSloganDiv");
-            let titolo = document.getElementById("titoloSposta");
-            let topPrimoSloganDiv = primoSloganDiv.offsetTop;
+        // window.addEventListener("scroll", (event) => {
+        //     let scrollTop = document.documentElement.scrollTop;
+        //     let primoSloganDiv = document.getElementById("primoSloganDiv");
+        //     let titolo = document.getElementById("titoloSposta");
+        //     let topPrimoSloganDiv = primoSloganDiv.offsetTop;
 
-            if (scrollTop > topPrimoSloganDiv) {
-                titolo.style.justifyContent = "start";
-                titolo.style.position = "sticky";
-                titolo.style.top = "150px";
-                titolo.style.width = "25%";
+        //     if (scrollTop > topPrimoSloganDiv) {
+        //         titolo.style.justifyContent = "start";
+        //         titolo.style.position = "sticky";
+        //         titolo.style.top = "150px";
+        //         titolo.style.width = "25%";
+        //     } else {
+        //         titolo.style.justifyContent = "center";
+        //         titolo.style.width = "100%";
+        //     }
+        // })
+
+        window.addEventListener('scroll', (event) => {
+
+            let scrollTop = document.documentElement.scrollTop;
+            let secondoSloganDiv = document.getElementById("secondoSlogan");
+
+            let btn = document.getElementById("btnSu");
+
+
+            let topSecondoSloganDiv = secondoSloganDiv.offsetTop;
+
+
+            if (scrollTop > topSecondoSloganDiv) {
+
+                btn.style.display = "block";
+                nav.style.transition = "1s";
+
             } else {
-                titolo.style.justifyContent = "center";
-                titolo.style.width = "100%";
+                btn.style.display = "none";
             }
-        })
+        });
+
+        //torna su
+        function tornaSu() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
     </script>
 </x-layout>

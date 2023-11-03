@@ -1,24 +1,30 @@
 <x-layout>
-    <x-navbar />
+    <x-navTwo />
 
 
     <!-- URL::previous() non richiede una rotta; torna alla pagina precedente rispetto alla posizione dell utente -->
-    <div style="margin-top:80px">
-        <a class="btn-go-back m-4 " href="{{ URL::previous() }}">
+    <div class="mx-2" style="margin-top:80px">
+        <a class="btn-go-back  " href="{{ URL::previous() }}">
             <i class=" bi bi-caret-left"> </i>
             Back
         </a>
     </div>
 
+    <div>
+        <h2 class="display-4 text-center ">
+            {{ $announcement_to_check ? __('ui.revisione-annunci-pieno') : __('ui.revisione-annunci-vuoto') }}
+        </h2>
+    </div>
+
     @if ($announcement_to_check)
-        <div class="container mb-5 "
-            style="box-shadow: rgb(84,110,122,1.0) 0px 8px 35px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset; border-radius:10px;">
-            <div class="row d-flex justify-content-center text-center align-items-center p-2 ">
+        <div class="container mb-5  "
+            style="box-shadow: rgb(228, 232, 234) 0px 8px 35px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset; border-radius:10px;">
+            <div class="row d-flex justify-content-center text-center align-items-start  ">
                 <!-- carosello imamgini con tags e revisione immagine -->
-                <div class="col-12 col-md-6 d-flex justify-content-center align-items-center flex-column">
+                <div class="col-12 col-md-7 d-flex justify-content-center align-items-center flex-column p-5 ">
                     @if ($announcement_to_check->images->isNotEmpty())
                         <!-- carosello -->
-                        <div id="carouselExample" class="carousel slide">
+                        <div id="carouselExample" class="carousel slide carousel-revisore">
                             <div class="carousel-inner">
                                 <!-- immagine carosello -->
                                 @foreach ($announcement_to_check->images as $image)
@@ -27,23 +33,17 @@
                                     </div>
                                 @endforeach
                             </div>
-                            <button class="carousel-control-prev bg-dark" type="button"
-                                data-bs-target="#carouselExample" data-bs-slide="prev">
+                        </div>
+                        <div class="col-md-4 d-flex align justify-content-center mt-3 ">
+                            <!-- button sinistro carosello -->
+                            <button class="carousel-control-prev bg-warning carousel-button-revisore-sx mx-2"
+                                type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Previous</span>
                             </button>
-                            <button class="carousel-control-next bg-dark" type="button"
-                                data-bs-target="#carouselExample" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
-
-
-                        <div class="col-md-4 d-flex align justify-content-center mt-3 ">
                             <!--col Tags -->
-                            <div class="btn-group mx-3">
-                                <button type="button" class="btn btn-secondary dropdown-toggle"
+                            <div class="btn-group mx-1">
+                                <button type="button" class="btn btn-secondary dropdown-toggle btn-sm"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                     Tags
                                 </button>
@@ -59,20 +59,27 @@
                             </div>
                             <!-- Revisione Immagini -->
                             <div class="btn-group">
-                                <button type="button" class="btn btn-secondary dropdown-toggle"
+                                <button type="button" class="btn btn-secondary dropdown-toggle btn-sm"
                                     data-bs-toggle="dropdown" aria-expanded="false">
-                                    Revisione Immagini
+                                    {{ __('ui.revisione-immagini') }}
                                 </button>
-                                <ul class="dropdown-menu m-0 px-4">
+                                <ul class="dropdown-menu  px-2">
                                     <li>
-                                        <p>Adulti : <span class="{{ $image->adult }}"></span></p>
-                                        <p>Satira : <span class="{{ $image->spoof }}"></span></p>
-                                        <p>Medicina : <span class="{{ $image->medical }}"></span></p>
-                                        <p>Violenza : <span class="{{ $image->violence }}"></span></p>
-                                        <p>Contenuto Ammiccante : <span class="{{ $image->racy }}"></span></p>
+                                        <p> {{ __('ui.adulti') }} : <span class="{{ $image->adult }}"></span></p>
+                                        <p>{{ __('ui.Satira') }} : <span class="{{ $image->spoof }}"></span></p>
+                                        <p>{{ __('ui.Medicina') }} : <span class="{{ $image->medical }}"></span></p>
+                                        <p>{{ __('ui.Violenza') }} : <span class="{{ $image->violence }}"></span></p>
+                                        <p>{{ __('ui.Contenuto Ammiccante') }} : <span
+                                                class="{{ $image->racy }}"></span></p>
                                     </li>
                                 </ul>
                             </div>
+                            <!--Destro button carosello -->
+                            <button class="carousel-control-next bg-warning carousel-button-revisore-dx mx-2"
+                                type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
                         </div>
                         <!--Altrimenti mostra l immagine di default -->
                     @else
@@ -80,14 +87,15 @@
                             <img width="450px" height="450px" src="\img\default-image.jpg" class="img-fluid "
                                 alt="">
                             <h4 class=" text-center text-warning">
-                                Nessuna immagine caricata
+                                {{ __('ui.revisione-annunci-vuoto') }}
                             </h4>
                         </div>
                     @endif
                 </div>
                 <!-- summary annuncio -->
-                <div class="col-12 col-md-6 d-flex flex-column p-3 align-items-center text-secondary ">
-                    <div class="card-body fs-3">
+                <div class="col-12 col-md-5 d-flex flex-column  align-items-center text-secondary p-5 "
+                    style="font-family: 'lato'">
+                    <div class="card-body fs-4">
                         <!--titolo annuncio -->
                         <span class="card-title  text-uppercase ">
                             {{ __('ui.titolo') }}: {{ $announcement_to_check->title }}
@@ -95,8 +103,8 @@
 
                         <!-- dati annuncio -->
                         <div class="d-flex flex-column ">
-                            <span class="card-title   text-capitalize ">
-                                categoria: {{ $announcement_to_check->category->name }}
+                            <span class="card-title text-capitalize ">
+                                {{ __('ui.categoria') }} : {{ $announcement_to_check->category->name }}
                             </span>
                             <span class="card-description">
                                 {{ __('ui.descrizione') }}: {{ $announcement_to_check->description }}
@@ -111,41 +119,39 @@
                                 {{ $announcement_to_check->created_at->format('d/m/Y') }}
                             </span>
                         </div>
+                        <!-- button accetta e cancella anuncio -->
+                        <div class="row  mt-5 ">
+                            <div class="col-12 col-md-12 text-center d-flex justify-content-center ">
+                                <form
+                                    action="{{ route('revisor.accept_announcement', ['announcement' => $announcement_to_check]) }}"
+                                    method="POST" class="mx-3">
+                                    @csrf
+                                    @method('PATCH')
+                                    <button type="submit"
+                                        class="btn btn-outline-dark  animate__animated animate__bounce d-flex align-items-center">
+                                        <i class="bi bi-check text-success fs-3"></i>
+                                        {{ __('ui.accetta') }}
+                                    </button>
+                                </form>
+                                <form
+                                    action="{{ route('revisor.reject_announcement', ['announcement' => $announcement_to_check]) }}"
+                                    method="POST">
+                                    @csrf
+                                    @method('PATCH')
+                                    <button type="submit"
+                                        class="btn btn-outline-dark animate__animated animate__bounce animate__delay-2s d-flex align-items-center">
+                                        <i class="bi bi-x text-danger fs-3"></i>
+                                        {{ __('ui.rifiuta') }}
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <!-- button accetta e cancella anuncio -->
-                <div class="row  mt-5 ">
-                    <div class="col-12 col-md-12 text-center d-flex justify-content-center ">
-                        <form
-                            action="{{ route('revisor.accept_announcement', ['announcement' => $announcement_to_check]) }}"
-                            method="POST" class="mx-3">
-                            @csrf
-                            @method('PATCH')
-                            <button type="submit"
-                                class="btn btn-success border-5 btn-lg  animate__animated animate__bounce"> <i
-                                    class="bi bi-check bg-success"></i>
-                                {{ __('ui.accetta') }}</button>
-                        </form>
-                        <form
-                            action="{{ route('revisor.reject_announcement', ['announcement' => $announcement_to_check]) }}"
-                            method="POST">
-                            @csrf
-                            @method('PATCH')
-                            <button type="submit"
-                                class="btn btn-danger  border-5 btn-lg animate__animated animate__bounce animate__delay-2s"><i
-                                    class="bi bi-x bg-danger"></i>
-                                {{ __('ui.rifiuta') }}</button>
-                        </form>
-                    </div>
-                </div>
+
             </div>
         </div>
-    @else
-        <div style="margin-bottom: 358px">
-            <h2 class="display-4 text-center mt-5 mb-5">
-                {{ $announcement_to_check ? __('ui.revisione-annunci-pieno') : __('ui.revisione-annunci-vuoto') }}
-            </h2>
-        </div>
+
 
     @endif
 
@@ -279,4 +285,5 @@
     @endif
     --}}
     <x-footer />
+
 </x-layout>

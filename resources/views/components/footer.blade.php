@@ -5,7 +5,7 @@
                 <ul class="list-footer">
                     <li class="py-1">
                         <h4 class="title-footer m-0">
-                            PRESTO.IT
+                            AFFARI.IT
                         </h4>
                     </li>
                     <li class="py-1">
@@ -83,9 +83,9 @@
         </div>
     </div>
 
-    <div class="container-fluid container-footer-two py-4 border-top">
+    <div class="container-fluid container-footer-two py-4  border-top">
         <div class="row">
-            <div class="col-12 d-flex justify-content-center align-ites-center">
+            <div class="col-12 d-flex justify-content-center align-ites-center px-0">
                 <ul class="list-icon-footer d-flex ps-2">
                     <li class="px-3">
                         <i class="bi bi-facebook fs-3 icon-footer" style="color: rgb(24, 119, 242);"></i>

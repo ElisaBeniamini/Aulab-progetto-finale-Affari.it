@@ -1,78 +1,126 @@
 <x-layout>
-    <x-navbar />
-    <div class="row">
-        <div class="col-12 text-center mt-5">
-            <h2>{{ __('ui.h2-tutti-gli-annunci') }}</h2>
-        </div>
-    </div>
-    <!--Start Card Announcement -->
-    <div class="gridCard my-5 px-2" id="grid">
-        @forelse ($announcements as $announcement)
-            <div>
-                <a class="link-card" href="{{ route('announcement.show', ['announcement' => $announcement]) }}">
-                    <div class="containerCard px-3 py-3">
-                        <div>
-                            <img class="img-card"
-                                src="{{ !$announcement->images()->get()->isEmpty()? $announcement->images()->first()->getUrl(400, 300): '\img\default-image.jpg' }}"
-                                alt="">
-                        </div>
-                        <div class="cardBody mt-3">
-                            <div>
-                                <h6 class="title-card">
-                                    {{ $announcement->title }}
-                                </h6>
-                            </div>
-                            <div>
-                                <h6 class="price-card">
-                                    {{ $announcement->price }} €
-                                </h6>
-                            </div>
-                            <div>
-                                <h6 class="price-card">
-                                    {{ $announcement->category->name }}
-                                </h6>
-                            </div>
+    <x-navTre />
 
-                            <div>
-                                <div class="d-flex align-items-center">
-                                    <div>
-                                        <img class="img-pubblicataDa" src="/img/img-pubblicatada.jpeg" alt="">
-                                    </div>
-                                    <div class="ps-2">
-                                        <h6 class="title-user-card m-0">
-                                            {{ __('ui.pubblicato-da') }} {{ $announcement->user->name ?? '' }}
-                                            il {{ $announcement->created_at->format('d/m/y') }}
-                                        </h6>
-                                    </div>
-                                </div>
+
+    <!--Start Card Announcement -->
+    <section class="section-index">
+        <div class="container pe-3 ps-3 my-5 containerElettrodomesticiHome">
+            <div class="row">
+                <h2 class="text-center">{{ __('ui.h2-tutti-gli-annunci') }}</h2>
+            </div>
+            <div class="row" id="secondoSlogan">
+                @forelse ($announcements as $announcement)
+                <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center px-1">
+                    <!--CARD-->
+                    <a class="linkShow" href="{{route('announcement.show',['announcement' => $announcement])}}">
+                        <div class="cardBox my-4">
+                            <img class="img-card-official" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(215, 230) : asset('img/default-image.jpg') }}" {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}}>
+                            <div class="corpoCard pt-4 px-3 pb-1 bg-light">
+                                <p class="prezzoCard">
+                                    {{ $announcement->price }} €
+                                </p>
+                                <h5 class="titoloCard mt-3">
+                                    {{ $announcement->title }}
+                                </h5>
+                                <h5 class="titoloCard mt-3">
+                                    {{ $announcement->category->name }}
+                                </h5>
+                                <h6 class="pubblicatoCard mb-0">
+                                    Pubblicato da {{ $announcement->user->name ?? '' }} <br>
+                                    Il {{ $announcement->created_at->format('d/m/y') }}
+                                </h6>
                             </div>
                         </div>
-                    </div>
-                </a>
-            </div>
-        @empty
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12">
-                        <h5>
-                            {{ __('ui.empty-category-announcement') }}
-                        </h5>
-                    </div>
+                    </a>
+                    <!--CARD-->
                 </div>
+                @endforeach
             </div>
-        @endforelse
-    </div>
+        </div>
+    </section>
     <!--End Card Announcement -->
 
-    <div class="container-button-grid">
-        <div class="button-grid">
-            <button class="btn-grid-animation" onclick="gridSistem()">
-                <i class="bi bi-grid-3x2-gap-fill fs-4"></i>
-            </button>
-            <button class="btn-grid-animationtwo" onclick="gridSistemTwo()">
-                <i class="bi bi-grid-fill fs-4"></i>
-            </button>
+    <!--PULSANTE-TORNA-SU-->
+    <span onclick="tornaSu()">
+        <div class="btnVaiSu" id="btnSu">
+            <i class="bi bi-arrow-up-short fs-3 m-0 p-0 text-center"></i>
+            <p class="m-0 paragrafovaiSu text-center">Top</p>
         </div>
-    </div>
+    </span>
+    <!--PULSANTE-TORNA-SU-->
+    
     <x-footer />
+
+    <script>
+        //questa funzione mi fa colorare le categorie
+        var value = document.getElementById("titolo").innerText;
+        var out = document.getElementsByClassName("coloreCambia");
+
+        if (value === "Informatica") {
+            for (let i = 0; i < out.length; i++) {
+                out[i].style.color = "#0466c8";
+            }
+        } else if (value === "Motori") {
+            for (let i = 0; i < out.length; i++) {
+                out[i].style.color = "#c44536";
+            }
+        } else if (value === "Elettrodomestici") {
+            for (let i = 0; i < out.length; i++) {
+                out[i].style.color = "#5c8001";
+            }
+        } else if (value === "Libri") {
+            for (let i = 0; i < out.length; i++) {
+                out[i].style.color = "#fbb02d";
+            }
+        } else if (value === "Giochi") {
+            for (let i = 0; i < out.length; i++) {
+                out[i].style.color = "#99582a";
+            }
+        } else if (value === "Sport") {
+            for (let i = 0; i < out.length; i++) {
+                out[i].style.color = "#62b6cb";
+            }
+        } else if (value === "Immobili") {
+            for (let i = 0; i < out.length; i++) {
+                out[i].style.color = "#7678ed";
+            }
+        } else if (value === "Telefoni") {
+            for (let i = 0; i < out.length; i++) {
+                out[i].style.color = "#6d6875";
+            }
+        } else if (value === "Arredamento") {
+            for (let i = 0; i < out.length; i++) {
+                out[i].style.color = "#73ba9b";
+            }
+        }
+
+
+        //torna su
+        window.addEventListener('scroll', (event) => {
+
+            let scrollTop = document.documentElement.scrollTop;
+            let secondoSloganDiv = document.getElementById("secondoSlogan");
+
+            let btn = document.getElementById("btnSu");
+
+
+            let topSecondoSloganDiv = secondoSloganDiv.offsetTop;
+
+
+            if (scrollTop > topSecondoSloganDiv) {
+
+                btn.style.display = "block";
+                nav.style.transition = "1s";
+
+            } else {
+                btn.style.display = "none";
+            }
+        });
+
+        //torna su
+        function tornaSu() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
+    </script>
 </x-layout>

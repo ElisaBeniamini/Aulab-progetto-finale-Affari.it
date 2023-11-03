@@ -6,6 +6,12 @@ return [
     'pubblicato-da' => 'Published by',
     'il' => 'Published on',
     'selezione-prezzi-bassi' => 'A selection of smartphones at lower prices',
+    'esplora le nostre categorie' => 'Explore our categories',
+    'smartphone a minor prezzo' => 'Affordable smartphone deals',
+    'lavora con noi' => 'Work with us',
+    'diventa revisore basta registrarti' => 'Become a reviewer, just register',
+    'scopri come' => 'Discover how',
+
 
     //index annunci
     'h2-tutti-gli-annunci' => 'All advertisements',
@@ -26,6 +32,7 @@ return [
     'ciao' => 'Hello ,',
     'non-hai-ancora-account' => "Don't have an account? Sign up",
     'registrati' => 'Register',
+    'categorie' => 'Categories',
 
     // Start create.announcement
     'titolo' => 'Title',
@@ -33,6 +40,11 @@ return [
     'prezzo' => 'Price',
     'scegli-categoria' => 'Choose a category',
     'carica-articolo' => 'Upload a listing',
+    'anteprima-immagini' => 'image preview',
+    'pubblica un articolo che non usi' => "Publish an article that doesn't use",
+    'vendi i tuoi Articoli su Affari.it' => "Sell Your Items on Affari.it",
+    'vendi o acquista' => "Sell or Buy",
+
 
 
 
@@ -42,12 +54,21 @@ return [
     'revisione-annunci-vuoto' => 'There are no listings to review',
     'accetta' => 'Accept',
     'rifiuta' => 'Reject',
+    'revisione-immagini' => 'Image review',
+    'adulti' => 'Adult',
+    'Satira' => 'Satire',
+    'Medicina' => 'Medicine  ',
+    'Violenza' => 'Violence ',
+    'Contenuto Ammiccante' => 'Provocative Content',
+    'categoria' => 'Category ',
+
+
     //pagina show announcement
 
     'clicca-per-visualizzare-tutto.schermo' => 'Click the image to view full-screen',
     'iva-inclusa' => 'VAT included',
     'contatta' => 'Contact',
-    'scopri-prodotti-correlati' => 'Discover products related to this category',
+    'scopri-prodotti-correlati' => 'Some products recommended for you',
     'selezione-articoli<50' => 'Selection of items under €50',
 
     //pagina become revisor

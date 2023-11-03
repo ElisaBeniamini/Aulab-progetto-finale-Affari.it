@@ -1,7 +1,7 @@
 <x-layout>
-    <x-navbar />
+    <x-navTre />
     <section class="pb-5">
-        <div class="container-fluid mt-3 pt-5">
+        <div class="container my-5 pt-5">
             <div class="row align-items-center">
                 <div class="col-12 col-md-6 d-flex justify-content-center">
                     <div>
@@ -18,7 +18,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 px-5">
+                <div class="col-12 col-md-6 px-5 py-5" style="background-color: #f5f5f5;border-radius:8px">
                     <form action="{{ route('register') }}" method="POST" class="mt-4">
                         @csrf
                         @method('POST')
@@ -70,5 +70,5 @@
             </div>
         </div>
     </section>
-
+    <x-footer />
 </x-layout>
