@@ -1,15 +1,19 @@
 <nav class="navbar navbar-expand-lg" id="nav">
     <div class="container-fluid">
-        <a class="navbar-brand fs-2" href="{{route('homepage')}}">
+        <a class="navbar-brand fs-2" href="{{ route('homepage') }}">
             Affari.it
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <button class="btn border border-dark  btn-category d-flex justify-content-center align-items-center" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+                    <button
+                        class="btn border border-dark  btn-category d-flex justify-content-center align-items-center"
+                        type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop"
+                        aria-controls="staticBackdrop">
                         <div>
                             <i class="bi bi-list fs-4 text-dark"></i>
                         </div>
@@ -21,45 +25,49 @@
                     </button>
                 </li>
                 @auth
-                @if (Auth::user()->is_revisor)
-                <li class="nav-item">
-                    <a href="{{route('revisor.index')}}">
-                        <button type="button" class="btn text-dark border-dark position-relative btn-revisore ms-3">
-                            {{ __('ui.zona-revisore') }}
-                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                {{ App\Models\Announcement::toBeRevisionedCount() }}
-                                <span class="visually-hidden">unread messages</span>
-                            </span>
-                        </button>
-                    </a>
-                </li>
-                @endif
-                <li class="nav-item px-3">
-                    <a class="nav-link inserisciAnnuncio" href="{{ route('announcement.create') }}">
-                        {{ __('ui.inserisci-annuncio') }}
-                    </a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        {{ __('ui.ciao') }} {{ Auth::user()->name }}
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a class="dropdown-item" href="/logout" onclick="event.preventDefault();getElementById('form-logout').submit()">
-                                <div class="d-flex  align-items-center border-bottom">
-                                    <i class="bi bi-box-arrow-right ps-1 fs-5"></i>
-                                    <p class="title-logout m-0 ps-3">
-                                        Logout
-                                    </p>
-                                </div>
+                    @if (Auth::user()->is_revisor)
+                        <li class="nav-item">
+                            <a href="{{ route('revisor.index') }}">
+                                <button type="button"
+                                    class="btn text-dark border-dark position-relative btn-revisore ms-3">
+                                    {{ __('ui.zona-revisore') }}
+                                    <span
+                                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                        {{ App\Models\Announcement::toBeRevisionedCount() }}
+                                        <span class="visually-hidden">unread messages</span>
+                                    </span>
+                                </button>
                             </a>
                         </li>
-                        <form id="form-logout" action="{{ route('logout') }}" method="POST">
-                            @csrf
-                            @method('POST')
-                        </form>
-                    </ul>
-                </li>
+                    @endif
+                    <li class="nav-item px-3">
+                        <a class="nav-link inserisciAnnuncio" href="{{ route('announcement.create') }}">
+                            {{ __('ui.inserisci-annuncio') }}
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            {{ __('ui.ciao') }} {{ Auth::user()->name }}
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="/logout"
+                                    onclick="event.preventDefault();getElementById('form-logout').submit()">
+                                    <div class="d-flex  align-items-center border-bottom">
+                                        <i class="bi bi-box-arrow-right ps-1 fs-5"></i>
+                                        <p class="title-logout m-0 ps-3">
+                                            Logout
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                            <form id="form-logout" action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                @method('POST')
+                            </form>
+                        </ul>
+                    </li>
                 @endauth
             </ul>
             <div class="">
@@ -68,43 +76,39 @@
 
             </div>
 
-            <div  class="">
+            <div class="">
 
                 <x-_locale lang='en' nation='gb' />
 
             </div>
 
-            <div  class="me-5">
+            <div class="me-5">
 
                 <x-_locale lang='es' nation='es' />
 
             </div>
-            <form action="{{route('announcement.search')}}" method="GET" class="d-flex" role="search">
-                <input class="form-control me-2 cercAA" name="searched" type="search" placeholder="{{ __('ui.ricerca')}}" aria-label="Search">
+            <form action="{{ route('announcement.search') }}" method="GET" class="d-flex" role="search">
+                <input class="form-control me-2 cercAA" name="searched" type="search"
+                    placeholder="{{ __('ui.ricerca') }}" aria-label="Search">
                 <button class="btn btn-outline-dark pulsante-cerca" type="submit">Cerca</button>
             </form>
             @guest
-            <!--Login-->
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="67" height="67" fill="black" class="btn bi bi-person-fill pe-3" type="image" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" viewBox="0 0 16 16">
-                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
-                </svg>
-            </div>
-            <!--Login-->
+                <!--Login-->
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="67" height="67" fill="black"
+                        class="btn bi bi-person-fill pe-3" type="image" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" viewBox="0 0 16 16">
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+                    </svg>
+                </div>
+                <!--Login-->
             @endguest
         </div>
     </div>
 </nav>
 
 
-<!--NAV-TOP-->
-<div class="nav-top d-flex justify-content-center align-items-center py-2 px-2 border-bottom">
-    <form action="{{route('announcement.search')}}" method="GET" class="d-flex" role="search">
-        <input class="form-control me-2 cercAA" name="searched" type="search" placeholder="{{ __('ui.ricerca')}}" aria-label="Search">
-        <button class="btn btn-outline-dark" type="submit">Cerca</button>
-    </form>
-</div>
-<!--NAV-TOP-->
+
 
 
 <!--START-NAVBAR-BOTTOM-->
@@ -118,7 +122,8 @@
         </a>
     </div>
     <div class="text-center">
-        <button class="btn-category-nav-bottom" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+        <button class="btn-category-nav-bottom" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
 
             <i class="bi bi-search fs-4 iconeNavBottom text-light"></i>
             <p class="text-light m-0 title-navbarBottom pb-1">
@@ -127,69 +132,74 @@
         </button>
     </div>
     @auth
-    <div class="text-center">
-        @if (Auth::user()->is_revisor)
-        <a href="{{ route('revisor.index') }}">
-            <button type="button" class="btn  position-relative border btn-revisore btnRevisoreBottom">
-                <i class="bi bi-bell-fill fs-4 iconeNavBottom text-light"></i>
-                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger notifiche">
-                    {{ App\Models\Announcement::toBeRevisionedCount() }}
-                    <span class="visually-hidden">unread messages</span>
-                </span>
-            </button>
-            <p class="text-light m-0 title-navbarBottom pb-1">
-                Revisiona
-            </p>
-        </a>
-        @endif
-    </div>
-    <div class="text-center">
-        <a href="{{ route('announcement.create') }}">
-            <i class="bi bi-plus-circle-fill fs-4 iconeNavBottom text-light"></i>
-            <p class="text-light m-0 title-navbarBottom pb-1">
-                Pubblica
-            </p>
-        </a>
-    </div>
-    <div class="text-center">
-        <div class="dropdown px-1">
-            <button class="btn dropdown-toggle fs-5" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-
-                <ul class="dropdown-menu">
-                    <li>
-                        <a class="dropdown-item" href="/logout" onclick="event.preventDefault();getElementById('form-logout').submit()">
-                            <div class="d-flex  align-items-center border-bottom">
-                                <i class="bi bi-box-arrow-right ps-1 fs-5"></i>
-                                <p class="title-logout m-0">
-                                    Logout
-                                </p>
-                            </div>
-                        </a>
-                    </li>
-                    <form id="form-logout" action="{{ route('logout') }}" method="POST">
-                        @csrf
-                        @method('POST')
-                    </form>
-                </ul>
-            </button>
+        <div class="text-center">
+            @if (Auth::user()->is_revisor)
+                <a href="{{ route('revisor.index') }}">
+                    <button type="button" class="btn  position-relative border btn-revisore btnRevisoreBottom">
+                        <i class="bi bi-bell-fill fs-4 iconeNavBottom text-light"></i>
+                        <span
+                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger notifiche">
+                            {{ App\Models\Announcement::toBeRevisionedCount() }}
+                            <span class="visually-hidden">unread messages</span>
+                        </span>
+                    </button>
+                    <p class="text-light m-0 title-navbarBottom pb-1">
+                        Revisiona
+                    </p>
+                </a>
+            @endif
         </div>
-    </div>
+        <div class="text-center">
+            <a href="{{ route('announcement.create') }}">
+                <i class="bi bi-plus-circle-fill fs-4 iconeNavBottom text-light"></i>
+                <p class="text-light m-0 title-navbarBottom pb-1">
+                    Pubblica
+                </p>
+            </a>
+        </div>
+        <div class="text-center">
+            <div class="dropdown px-1">
+                <button class="btn dropdown-toggle fs-5" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="dropdown-item" href="/logout"
+                                onclick="event.preventDefault();getElementById('form-logout').submit()">
+                                <div class="d-flex  align-items-center border-bottom">
+                                    <i class="bi bi-box-arrow-right ps-1 fs-5"></i>
+                                    <p class="title-logout m-0">
+                                        Logout
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+                        <form id="form-logout" action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            @method('POST')
+                        </form>
+                    </ul>
+                </button>
+            </div>
+        </div>
     @endauth
     @guest
-    <div class="text-center">
-        <svg xmlns="http://www.w3.org/2000/svg" width="43" height="43" fill="#f5f5f5" class="btn bi bi-person-fill iconaAccountNavBottom text-dark" type="image" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" viewBox="0 0 16 16">
-            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
-        </svg>
-        <p class="text-light m-0 title-navbarBottom pb-1">
-            Accedi
-        </p>
-    </div>
+        <div class="text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="43" height="43" fill="#f5f5f5"
+                class="btn bi bi-person-fill iconaAccountNavBottom text-dark" type="image" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" viewBox="0 0 16 16">
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+            </svg>
+            <p class="text-light m-0 title-navbarBottom pb-1">
+                Accedi
+            </p>
+        </div>
     @endguest
 </div>
 <!--END-NAVBAR-BOTTOM-->
 
 <!--CANVAS-CATEGORIE-->
-<div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+<div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop"
+    aria-labelledby="staticBackdropLabel">
     <div class="offcanvas-header">
         <h3 class="offcanvas-title" id="staticBackdropLabel">Presto.it</h3>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -203,11 +213,11 @@
         <div>
             <ul class="m-0 p-0 border-bottom pb-4">
                 @foreach ($categories as $category)
-                <li class="py-2">
-                    <a class="linkOFF" href="{{ route('categoryShow', compact('category')) }}">
-                        {{ $category->name }}
-                    </a>
-                </li>
+                    <li class="py-2">
+                        <a class="linkOFF" href="{{ route('categoryShow', compact('category')) }}">
+                            {{ $category->name }}
+                        </a>
+                    </li>
                 @endforeach
             </ul>
             <ul class="m-0 p-0 pb-4">
@@ -238,21 +248,23 @@
                     @csrf
                     @method('POST')
                     @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
                     @endif
                     <div class="form-outline form-white mb-4 mt-2 pt-3">
                         <label class="form-label" for="typeEmailX">Email</label>
-                        <input type="email" name="email" id="typeEmailX" class="form-control form-control-lg input-email-password-canvas" />
+                        <input type="email" name="email" id="typeEmailX"
+                            class="form-control form-control-lg input-email-password-canvas" />
                     </div>
                     <div class="form-outline form-white mb-4">
                         <label class="form-label" for="typePasswordX">Password</label>
-                        <input type="password" name="password" id="typePasswordX" class="form-control form-control-lg input-email-password-canvas" />
+                        <input type="password" name="password" id="typePasswordX"
+                            class="form-control form-control-lg input-email-password-canvas" />
                     </div>
                     <button class="gradient-custom btn btn-login-canvas px-5" type="submit">
                         Login
