@@ -1280,10 +1280,10 @@ h3 {
 
 /* start btn torna indietro */
 .btn-go-back {
-    background-color: white;
-    border: 2px solid #133c55;
+    background-color: black;
+    border: 2px solid black;
     border-radius: 8px;
-    color: darkblue;
+    color: white;
     padding: 5px 10px;
     font-size: 17px;
     text-align: center;
@@ -1293,9 +1293,9 @@ h3 {
 }
 
 .btn-go-back:hover {
-    background-color: #133c55;
-    border: 2px solid #133c55;
-    color: white;
+    background-color: white;
+    border: 2px solid black;
+    color: black;
 }
 
 /* end btn torna indietro*/

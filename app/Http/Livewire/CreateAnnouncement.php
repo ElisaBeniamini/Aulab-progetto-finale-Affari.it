@@ -20,7 +20,7 @@ class CreateAnnouncement extends Component
     public $title, $description, $price, $category, $temporary_images, $images = [], $image, $validated, $form_id, $announcement;
     //START VALIDAZIONE DATI
     protected $rules = [
-        'title' => 'required',
+        'title' => 'required|min:8',
         'description' => 'required',
         'price' => 'required|numeric',
         'category' => 'required',
