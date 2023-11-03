@@ -68,7 +68,7 @@ return [
     'clicca-per-visualizzare-tutto.schermo' => 'Click the image to view full-screen',
     'iva-inclusa' => 'VAT included',
     'contatta' => 'Contact',
-    'scopri-prodotti-correlati' => 'Discover products related to this category',
+    'scopri-prodotti-correlati' => 'Some products recommended for you',
     'selezione-articoli<50' => 'Selection of items under €50',
 
     //pagina become revisor

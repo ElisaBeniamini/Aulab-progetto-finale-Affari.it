@@ -1,4 +1,4 @@
-<x-layout><x-navbar />
+<x-layout><x-navTre />
     <div class="text-center mt-5">
         <h1> {{ __('ui.vuoi-lavorare-con-noi') }}</h1>
         <h2> {{ __('ui.rivedi-dati') }}</h2>

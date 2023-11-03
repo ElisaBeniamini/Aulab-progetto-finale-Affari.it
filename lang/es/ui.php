@@ -70,7 +70,7 @@ return [
     'clicca-per-visualizzare-tutto.schermo' => 'Haz clic en la imagen para verla a pantalla completa',
     'iva-inclusa' => 'IVA incluida',
     'contatta' => 'Contacta',
-    'scopri-prodotti-correlati' => 'Descubre productos relacionados con esta categoría',
+    'scopri-prodotti-correlati' => 'Algunos productos recomendados para ti',
     'selezione-articoli<50' => 'Selección de artículos por debajo de 50 €.',
 
     //pagina become revisor

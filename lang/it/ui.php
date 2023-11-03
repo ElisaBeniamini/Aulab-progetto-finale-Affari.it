@@ -68,7 +68,7 @@ return [
     'clicca-per-visualizzare-tutto.schermo' => "Fare click sull'immagine per visualizzarla a schermo intero",
     'iva-inclusa' => 'Iva inclusa',
     'contatta' => 'Contatta',
-    'scopri-prodotti-correlati' => 'Scopri i prodotti correlati',
+    'scopri-prodotti-correlati' => 'Alcuni prodotti consigliati per te',
     'selezione-articoli<50' => 'Selezione di articoli inferiori a 50 €',
 
     //pagina become revisor

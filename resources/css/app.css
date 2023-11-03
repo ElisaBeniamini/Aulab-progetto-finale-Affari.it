@@ -1661,7 +1661,7 @@ h3 {
 
 .navbar {
     background-color: transparent;
-.navbar {
+
     background-color: transparent;
     height: 65px;
     position: fixed;
@@ -1708,4 +1708,11 @@ body {
 
 .titoloCaricaAnnuncio {
     font-weight: 600 !important;
+}
+
+.bandiere {
+    background-color: transparent;
+    border: none;
+    width: 40px;
+    height: 40px;
 }

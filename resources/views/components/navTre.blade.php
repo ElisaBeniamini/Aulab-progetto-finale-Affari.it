@@ -21,6 +21,7 @@
                     </button>
                 </li>
                 @auth
+                @if (Auth::user()->is_revisor)
                 <li class="nav-item">
                     <a href="{{route('revisor.index')}}">
                         <button type="button" class="btn text-dark border-dark position-relative btn-revisore ms-3">
@@ -32,6 +33,7 @@
                         </button>
                     </a>
                 </li>
+                @endif
                 <li class="nav-item px-3">
                     <a class="nav-link inserisciAnnuncio" href="{{ route('announcement.create') }}">
                         {{ __('ui.inserisci-annuncio') }}
@@ -60,6 +62,23 @@
                 </li>
                 @endauth
             </ul>
+            <div class="">
+
+                <x-_locale lang='it' nation='it' />
+
+            </div>
+
+            <div class="">
+
+                <x-_locale lang='en' nation='gb' />
+
+            </div>
+
+            <div class="me-5">
+
+                <x-_locale lang='es' nation='es' />
+
+            </div>
             <form action="{{route('announcement.search')}}" method="GET" class="d-flex" role="search">
                 <input class="form-control me-2 cercAA" name="searched" type="search" placeholder="{{ __('ui.ricerca')}}" aria-label="Search">
                 <button class="btn btn-outline-dark pulsante-cerca" type="submit">Cerca</button>

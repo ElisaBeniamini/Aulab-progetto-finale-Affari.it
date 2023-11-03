@@ -1,5 +1,6 @@
 <x-layout>
-    <x-navTwo />
+    
+    <x-navTre />
     <livewire:create-announcement />
     <x-footer />
 </x-layout>
