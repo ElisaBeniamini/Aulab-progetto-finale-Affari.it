@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg" id="nav">
+<nav class="navbar navbar-expand-lg navDue" id="nav">
     <div class="container-fluid">
         <a class="navbar-brand fs-2" href="{{route('homepage')}}">
             Affari.it
@@ -68,13 +68,13 @@
 
             </div>
 
-            <div  class="">
+            <div class="">
 
                 <x-_locale lang='en' nation='gb' />
 
             </div>
 
-            <div  class="me-5">
+            <div class="me-5">
 
                 <x-_locale lang='es' nation='es' />
 
@@ -86,7 +86,7 @@
             @guest
             <!--Login-->
             <div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="67" height="67" fill="black" class="btn bi bi-person-fill pe-3" type="image" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" viewBox="0 0 16 16">
+                <svg xmlns="http://www.w3.org/2000/svg" width="67" height="67" fill="#444444" class="btn bi bi-person-fill pe-3" type="image" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" viewBox="0 0 16 16">
                     <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
                 </svg>
             </div>
@@ -108,7 +108,7 @@
 
 
 <!--START-NAVBAR-BOTTOM-->
-<div class="nav-bottom d-flex justify-content-between align-items-center px-3 pt-1">
+<div class="nav-bottom d-flex justify-content-between align-items-center px-3 pt-1 border-top">
     <div class="text-center">
         <a href="{{ route('homepage') }}">
             <i class="bi bi-house-fill fs-4 iconeNavBottom text-light"></i>
@@ -129,7 +129,7 @@
     @auth
     <div class="text-center">
         @if (Auth::user()->is_revisor)
-        <a href="{{ route('revisor.index') }}">
+        <a class="p-0"  href="{{ route('revisor.index') }}">
             <button type="button" class="btn  position-relative border btn-revisore btnRevisoreBottom">
                 <i class="bi bi-bell-fill fs-4 iconeNavBottom text-light"></i>
                 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger notifiche">
@@ -137,14 +137,14 @@
                     <span class="visually-hidden">unread messages</span>
                 </span>
             </button>
-            <p class="text-light m-0 title-navbarBottom pb-1">
+            <p class="text-light m-0 title-navbarBottom pb-2">
                 Revisiona
             </p>
         </a>
         @endif
     </div>
     <div class="text-center">
-        <a href="{{ route('announcement.create') }}">
+        <a class="p-0" href="{{ route('announcement.create') }}">
             <i class="bi bi-plus-circle-fill fs-4 iconeNavBottom text-light"></i>
             <p class="text-light m-0 title-navbarBottom pb-1">
                 Pubblica
@@ -153,8 +153,11 @@
     </div>
     <div class="text-center">
         <div class="dropdown px-1">
-            <button class="btn dropdown-toggle fs-5" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-
+            <button class="btn p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-person-fill iconeNavBottom fs-4 p-0"></i>
+                <p class="text-light m-0 title-navbarBottom pb-1">
+                    Tu
+                </p>
                 <ul class="dropdown-menu">
                     <li>
                         <a class="dropdown-item" href="/logout" onclick="event.preventDefault();getElementById('form-logout').submit()">
@@ -177,11 +180,11 @@
     @endauth
     @guest
     <div class="text-center">
-        <svg xmlns="http://www.w3.org/2000/svg" width="43" height="43" fill="#f5f5f5" class="btn bi bi-person-fill iconaAccountNavBottom text-dark" type="image" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" viewBox="0 0 16 16">
+        <svg xmlns="http://www.w3.org/2000/svg" width="43" height="43" fill="#444444" class="btn bi bi-person-fill iconaAccountNavBottom text-dark" type="image" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" viewBox="0 0 16 16">
             <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
         </svg>
         <p class="text-light m-0 title-navbarBottom pb-1">
-            Accedi
+            Tu
         </p>
     </div>
     @endguest
@@ -191,7 +194,7 @@
 <!--CANVAS-CATEGORIE-->
 <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
     <div class="offcanvas-header">
-        <h3 class="offcanvas-title" id="staticBackdropLabel">Presto.it</h3>
+        <h3 class="offcanvas-title" id="staticBackdropLabel">Affari.it</h3>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
