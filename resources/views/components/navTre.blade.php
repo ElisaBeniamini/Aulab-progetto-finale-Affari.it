@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg" id="nav">
+<nav class="navbar navbar-expand-lg navBarTre" id="nav">
     <div class="container-fluid">
         <a class="navbar-brand fs-2" href="{{route('homepage')}}">
             Affari.it

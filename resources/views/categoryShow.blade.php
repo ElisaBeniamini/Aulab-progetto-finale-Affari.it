@@ -1,5 +1,5 @@
 <x-layout>
-    <x-navbar />
+    <x-navTre />
     <main class="darkLight">
 
         <!-- <a class="btn btn-outline-primary btn-inserisci-annuncio mt-5 mb-3 fs-5" href="{{ URL::previous() }}">
@@ -15,7 +15,7 @@
             </h3>
         </div>
 
-        <section class="sectionCategoryIndex">
+        <section class="sectionCategoryIndex" id="secondoSlogan">
             <div class="container pe-3 ps-3 my-4">
                 <div class="row">
                     @foreach($announcements as $announcement)
@@ -46,9 +46,20 @@
         </section>
 
 
+        <!--PULSANTE-TORNA-SU-->
+        <span onclick="tornaSu()">
+            <div class="btnVaiSu" id="btnSu">
+                <i class="bi bi-arrow-up-short fs-3 m-0 p-0 text-center"></i>
+                <p class="m-0 paragrafovaiSu text-center">Top</p>
+            </div>
+        </span>
+        <!--PULSANTE-TORNA-SU-->
+
+
         <!--START PANNELLO DELLE ACCESSIBILITA-->
-        <div class="container-usabilità">
-            <img class="iconAc" src="/icons8-accessibilità-2-50.png" onclick="openAccessibilita()" alt="">
+
+        <!-- <div class="container-usabilità">
+           <i class="bi bi-person-arms-up fs-2" onclick="openAccessibilita()"></i>
         </div>
 
         <div class="container-accessibilità border" id="panelAcess">
@@ -66,24 +77,24 @@
             </div>
 
             <div class="d-flex justify-content-center mt-3">
-                <div class="mx-1">
+                
                     <button class="btn-dark-light" onclick="darkColor()">
                         <i class="bi bi-moon fs-5 paragraf-icon-dark-light"></i> <br>
-                        <p class="m-0">
+                        <p class="m-0 paragraf-icon-dark-light">
                             dark-zone
                         </p>
                     </button>
-                </div>
-                <div class="mx-1">
+                
+               
                     <button class="btn-dark-light" onclick="lightColor()">
                         <i class="bi bi-sun fs-5"></i> <br>
                         <p class="m-0 paragraf-icon-dark-light">
                             light-zone
                         </p>
                     </button>
-                </div>
+                
             </div>
-        </div>
+        </div> -->
         <!--END PANNELLO DELLE ACCESSIBILITA-->
     </main>
     <!--START-MESSAGGIO-NEL CASO NON ESISTA PRODOTTO-->
@@ -209,5 +220,32 @@
         //         titolo.style.width = "100%";
         //     }
         // })
+
+        window.addEventListener('scroll', (event) => {
+
+            let scrollTop = document.documentElement.scrollTop;
+            let secondoSloganDiv = document.getElementById("secondoSlogan");
+
+            let btn = document.getElementById("btnSu");
+
+
+            let topSecondoSloganDiv = secondoSloganDiv.offsetTop;
+
+
+            if (scrollTop > topSecondoSloganDiv) {
+
+                btn.style.display = "block";
+                nav.style.transition = "1s";
+
+            } else {
+                btn.style.display = "none";
+            }
+        });
+
+        //torna su
+        function tornaSu() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
     </script>
 </x-layout>

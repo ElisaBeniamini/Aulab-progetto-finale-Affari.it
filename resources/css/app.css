@@ -11,11 +11,11 @@ body {
 
 
 h2 {
-    font-family: 'Open Sans', sans-serif !important;
+
     color: #133c55;
     font-weight: bolder;
-    font-family: 'Open Sans', sans-serif ;
-    
+    font-family: 'Open Sans', sans-serif;
+
 }
 
 .offcanvas {
@@ -31,19 +31,12 @@ input {
 
 label {
     font-size: 14px;
+    color: #444444 !important;
 }
 
 
 
-.navbar-brand {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 15px;
-    position: sticky;
-    align-items: center;
-    display: flex;
-    text-decoration: none;
 
-}
 
 .custom-purple-link {
     background-color: #7069bc !important;
@@ -97,9 +90,8 @@ label {
 
 
 .form-label {
-    border-color: #7069bc !important;
-    ;
-    color: #7069bc !important;
+    font-weight: 600;
+    color: #444444;
 }
 
 /* Stile per il campo "Titolo" */
@@ -244,28 +236,34 @@ footer {
 }
 
 .btn-login-canvas {
-    background-color: #7069bc;
+    background-color: #133c55;
     color: #f5f5f5;
     height: 50px;
     width: 100%;
+    font-weight: 600;
+    transition: transform .2s;
 }
 
 .btn-login-canvas:hover {
-    background-color: #7069bc;
+    background-color: #133c55;
     color: #f5f5f5;
     width: 100%;
-    opacity: 0.8;
+
+    transform: scale(1.03);
 }
 
 .btn-register-canvas {
     background-color: #f5f5f5;
+    color: #133c55 !important;
+    font-weight: 600;
     width: 100% !important;
     height: 50px;
-    border: 1px solid #7069bc;
+    border: 1px solid #133c55 !important;
 }
 
 .btn-register-canvas:hover {
-    background-color: #7069bc;
+    background-color: #133c55 !important;
+    color: #f5f5f5 !important;
     width: 100%;
     color: #f5f5f5;
     border: 1px solid #7069bc;
@@ -274,6 +272,7 @@ footer {
 .title-login-canvas {
     font-weight: bold;
     font-size: 30px;
+    color: #133c55 !important;
 }
 
 .input-email-password-canvas {
@@ -325,23 +324,25 @@ footer {
     width: 100% !important;
     height: 45px;
     background-color: white !important;
+    border: 0.2px solid #444444 !important;
 }
 
 .btn-register {
     width: 100% !important;
     height: 45px;
-    background-color: #7069bc;
+    background-color: #133c55 !important;
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 600;
+    transition: transform .2s;
 }
 
 .btn-register:hover {
-    opacity: 0.8;
+    transform: scale(1.03);
 }
 
 .title-register {
     font-size: 56px;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .paragraf-register {
@@ -381,11 +382,6 @@ body {
     z-index: 3;
 }
 
-.nav-item {
-    color: black;
-    font-size: 14px;
-    font-weight: bold !important;
-}
 
 
 
@@ -505,7 +501,7 @@ body {
 .title-show {
     font-size: 30px;
     font-weight: bold;
-    color: black ;
+    color: black;
 }
 
 .price-show {
@@ -537,11 +533,28 @@ body {
 
 
 .container-usabilità {
+    width: 60px;
+    height: 60px;
     position: fixed;
-    top: 92%;
-    right: 1%;
+    top: 88%;
+    left: 1%;
     cursor: pointer;
+    background-color: white;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
+
+@media screen and (max-width: 468px) {
+    .container-usabilità {
+        top: 80%;
+    }
+}
+
 
 .container-accessibilità {
     width: 20%;
@@ -550,15 +563,17 @@ body {
     border-radius: 10px;
     position: fixed;
     top: 53%;
-    right: 1%;
+    left: 1%;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     display: none;
+    display: flex;
+    justify-content: center;
 }
 
 .btn-dark-light {
-    width: 120px;
-    height: auto;
+    width: 50% !important;
     padding: 10px;
+    margin: 10px;
     border-radius: 7px;
     border: none;
     background-color: #f5f5f5;
@@ -799,9 +814,7 @@ body {
     width: 80%;
 }
 
-.container-input-search {
-    width: 50%;
-}
+
 
 .input-search {
     width: 100%;
@@ -1006,7 +1019,7 @@ header {
     z-index: 999;
 }
 
-.navbar{
+.navbar {
     z-index: 9999;
 }
 
@@ -1020,7 +1033,64 @@ header {
 .btn-category {
     height: 38px;
     width: auto;
+    font-size: 14px;
+    font-weight: 700;
 }
+
+.btn-category:hover {
+    height: 38px;
+    width: auto;
+    font-size: 14px;
+    font-weight: 700;
+    background-color: white;
+}
+
+.btn-revisore {
+    height: 38px;
+    width: auto;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.btn-revisore:hover {
+    height: 38px;
+    width: auto;
+    font-size: 14px;
+    font-weight: 700;
+    background-color: white;
+}
+
+.nav-link {
+    color: black;
+    font-size: 14px;
+    font-weight: 700 !important;
+    border: 1px solid black;
+    border-radius: 7px;
+
+}
+
+.nav-link:hover {
+    color: black;
+    font-size: 14px;
+    font-weight: 700 !important;
+    border: 1px solid black;
+    border-radius: 7px;
+    background-color: white;
+}
+
+.pulsante-cerca {
+    background-color: black;
+    color: #f5f5f5;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.nav-item:hover {
+    color: #444444;
+    font-size: 14px;
+    font-weight: 700 !important;
+}
+
 
 a {
     text-decoration: none;
@@ -1140,7 +1210,7 @@ h3 {
 
 
 .nav-bottom {
-    background-color: #133c55;
+    background-color: #f5f5f5;
     width: 100%;
     height: auto;
     position: fixed;
@@ -1186,9 +1256,11 @@ h3 {
     }
 }
 
-.btn-revisore {
-    width: auto;
+.iconeNavBottom {
+    color: #444444 !important;
 }
+
+
 
 .btn-category-nav-bottom {
     border: none;
@@ -1270,10 +1342,28 @@ h3 {
         width: 174px;
         height: 230px;
     }
+
+    .nav-top {
+        display: block;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        z-index: 99999;
+        background-color: #f5f5f5;
+    }
+
+    .navbar {
+        display: none !important;
+    }
+}
+
+.nav-top {
+    display: none;
 }
 
 .cardBox {
-    width: 100%!important;
+    width: 100% !important;
     height: auto;
 }
 
@@ -1328,13 +1418,13 @@ h3 {
 
 }
 
- 
+
 .titoloFiltra {
     color: black;
 }
 
 .container-titolo-categorie {
-    margin-top: 100px !important;
+    margin-top: 30px !important;
     display: flex;
     justify-content: center;
     width: 100%;
@@ -1432,10 +1522,13 @@ h3 {
 .btn-register-aler {
     width: 100%;
     transition: transform .2s;
+    background-color: #133c55;
+
 }
 
 .btn-register-aler:hover {
     transform: scale(1.1);
+    background-color: #133c55;
 }
 
 .imgCarhome {
@@ -1457,7 +1550,7 @@ h3 {
 .btnVaiSu {
     position: fixed;
     right: 0px;
-    top: 80%;
+    top: 85%;
     width: auto;
     padding: 10px;
     background-color: white;
@@ -1465,6 +1558,12 @@ h3 {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     cursor: pointer;
     display: none;
+}
+
+@media screen and (max-width: 468px) {
+    .btnVaiSu {
+        top: 78%;
+    }
 }
 
 .paragrafovaiSu {
@@ -1485,7 +1584,7 @@ h3 {
         display: none !important;
     }
 
-    .imgCarhome{
+    .imgCarhome {
         height: 40vh;
     }
 
@@ -1496,37 +1595,83 @@ h3 {
         margin-top: 300px;
     }
 
-    footer{
+    footer {
         margin-bottom: 50px;
     }
 }
 
 .wolf {
-    position: sticky!important;
-    top: 200px!important;
+    position: sticky !important;
+    top: 200px !important;
 }
+
+
 
 .contenitoreShow {
+    margin-top: 40px !important;
+}
+
+@media (max-width:468px) {
+    .contenitoreShow {
+        margin-top: 100px !important;
+    }
+
+}
+
+.section-index {
     margin-top: 100px;
 }
 
-.contenitoreShow{
-    margin-top: 120px!important;
+.cercAA {
+    width: 100% !important;
+    border-color: black;
 }
 
-.section-index{
-    margin-top: 100px;
-}
-
-.cercAA{
-    width: 400px!important;
-}
-
-.navbar{
-    background-color:transparent;
+.navbar {
+    background-color: transparent;
     height: 65px;
     position: fixed;
     top: 0px;
     left: 0px;
     width: 100%;
+}
+
+.inserisci-annuncio {
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    color: red;
+}
+
+body {
+    font-family: Avenir Next, Helvetica Neue, Helvetica, Arial, sans-serif !important;
+}
+
+.navBarTre {
+    background-color: #f5f5f5 !important;
+}
+
+.testoCheScorre {
+    background: linear-gradient(320deg, rgba(56, 78, 197, 1)16%, rgba(203, 68, 194, 1)52%, rgba(255, 201, 104, 1)87%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-size: 70px;
+    font-family: Avenir Next, Helvetica Neue, Helvetica, Arial, sans-serif !important;
+}
+
+.pulsanteCaricaANNUNCIO {
+    width: 80% !important;
+}
+
+.inputCaricaFoto {
+    width: 80% !important;
+    box-shadow: none !important;
+}
+
+.seleziona {
+    width: 100% !important;
+}
+
+.titoloCaricaAnnuncio {
+    font-weight: 600 !important;
 }

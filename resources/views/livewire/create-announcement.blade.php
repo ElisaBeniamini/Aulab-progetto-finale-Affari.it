@@ -1,6 +1,7 @@
-<div class="container-fluid my-5">
+<x-navTre />
+<div class="container-fluid mb-5">
     <div class="row">
-        <div class="col-12">
+        <div class="col-12"style="margin-top: 100px">
             <div>
                 <h2 class="mb-4 text-center">
                     {{ __('ui.inserisci-annuncio') }}
@@ -79,7 +80,7 @@
                         <div class="row d-flex justify-content-center align-items-center">
                             <div class="col-12 col-md-6 justify-content-center">
                                 <h4>
-                                    Anteprima immagini
+                                    {{ __('ui.anteprima-immagini') }}
                                 </h4>
                                 <div
                                     class="row border border-4 border-secondary rounded shadow d-flex justify-content-center align-items-center mb-3">
@@ -92,7 +93,7 @@
                                             </div>
                                             <button type="button" class="btn btn-danger btn-sm m-3"
                                                 wire:click="removeImage({{ $key }})">
-                                                Cancella
+                                                Delete
                                             </button>
                                         </div>
                                     @endforeach
@@ -103,8 +104,7 @@
 
                     <!--End-Scelta-Categorie-->
                     <!-- Pulsante di invio -->
-                    <button type="submit" class="carica btn custom-purple-button btn-register mt-3 mb-5"><i
-                            class="bi bi-upload"></i>
+                    <button type="submit" class="carica btn btn-outline-dark mt-3 mb-5"><i class="bi bi-upload"></i>
                         {{ __('ui.carica-articolo') }}
                     </button>
                 </form>

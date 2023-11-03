@@ -1,5 +1,5 @@
 <x-layout>
-    <x-navbar />
+    <x-navTre />
     <main id="generalMain">
 
         <!--TITOLO CATEGORIA-->
@@ -36,7 +36,7 @@
         <!--QUESTO CONTENITORE SI VEDE SOLO CON SCHERMO < 768-->
 
         <!--CONTENITORE PRINCIPALE-->
-        <div class="container mb-5">
+        <div class="container mb-5" id="secondoSlogan">
             <div class="row">
                 <div class="col-12 col-md-2 d-flex justify-content-end">
                     <div class="d-flex flex-column containerPiccole wolf">
@@ -105,6 +105,16 @@
         <!--CONTENITORE PRINCIPALE-->
 
 
+        <!--PULSANTE-TORNA-SU-->
+        <span onclick="tornaSu()">
+            <div class="btnVaiSu" id="btnSu">
+                <i class="bi bi-arrow-up-short fs-3 m-0 p-0 text-center"></i>
+                <p class="m-0 paragrafovaiSu text-center">Top</p>
+            </div>
+        </span>
+        <!--PULSANTE-TORNA-SU-->
+
+
         <!--PRODOTTI CORRELATI-->
         <section>
             <div class="container my-5 border-top">
@@ -119,7 +129,7 @@
                         <!--CARD-->
                         <a class="linkShow" href="{{route('announcement.show',['announcement' => $consigliato])}}">
                             <div class="cardBox my-4">
-                                <img class="img-card-official" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(215, 230) : asset('img/default-image.jpg') }}" {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}}>
+                                <img class="img-card-official" src="{{ !$consigliato->images->isEmpty() ? $consigliato->images->first()->getUrl(215, 230) : asset('img/default-image.jpg') }}" {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}}>
                                 <div class="corpoCard pt-4 px-3 pb-1 bg-light">
                                     <p class="prezzoCard">
                                         {{ $consigliato->price }} €
@@ -160,7 +170,7 @@
                         <!--CARD-->
                         <a class="linkShow" href="{{route('announcement.show',['announcement' => $item])}}">
                             <div class="cardBox my-4">
-                                <img class="img-card-official" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(215, 230) : asset('img/default-image.jpg') }}" {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}}>
+                                <img class="img-card-official" src="{{ !$item->images->isEmpty() ? $item->images->first()->getUrl(215, 230) : asset('img/default-image.jpg') }}" {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}}>
                                 <div class="corpoCard pt-4 px-3 pb-1 bg-light">
                                     <p class="prezzoCard">
                                         {{ $item->price }} €
@@ -528,7 +538,7 @@
         <!--END CLICK CONTAINER - IMG-SMALL-XXXL-->
 
         <!--START PANNELLO DELLE ACCESSIBILITA-->
-        <div class="container-usabilità">
+        <!-- <div class="container-usabilità">
             <img class="iconAc" src="/icons8-accessibilità-2-50.png" onclick="openAccessibilita()" alt="">
         </div>
         <div class="container-accessibilità border" id="panelAcess">
@@ -563,7 +573,7 @@
                     </button>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!--END PANNELLO DELLE ACCESSIBILITA-->
     </main>
     <!--END CLICK IMG-SMALL-XXXL-->
@@ -788,6 +798,34 @@
                 for (let i = 0; i < outDue.length; i++) {
                     outDue[i].style.color = "#73ba9b";
                 }
+            }
+
+            //torna su
+            window.addEventListener('scroll', (event) => {
+
+                let scrollTop = document.documentElement.scrollTop;
+                let secondoSloganDiv = document.getElementById("secondoSlogan");
+
+                let btn = document.getElementById("btnSu");
+
+
+                let topSecondoSloganDiv = secondoSloganDiv.offsetTop;
+
+
+                if (scrollTop > topSecondoSloganDiv) {
+
+                    btn.style.display = "block";
+                    nav.style.transition = "1s";
+
+                } else {
+                    btn.style.display = "none";
+                }
+            });
+
+            //torna su
+            function tornaSu() {
+                document.body.scrollTop = 0; // For Safari
+                document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
             }
         </script>
         <!--SCRIPT PER CLICK CAMBIA IMG + ZOOM-->
