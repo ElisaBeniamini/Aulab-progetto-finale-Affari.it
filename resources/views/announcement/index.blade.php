@@ -1,5 +1,5 @@
 <x-layout>
-    <x-navbar />
+    <x-navTwo />
 
     <!--Start Card Announcement -->
     <section class="section-index">
@@ -9,27 +9,29 @@
             </div>
             <div class="row ">
                 @forelse ($announcements as $announcement)
-                <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center px-1">
-                    <!--CARD-->
-                    <a class="linkShow" href="{{route('announcement.show',['announcement' => $announcement])}}">
-                        <div class="cardBox my-4">
-                            <img class="img-card-official" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(215, 230) : asset('img/default-image.jpg') }}" {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}}>
-                            <div class="corpoCard pt-4 px-3 pb-1 bg-light">
-                                <p class="prezzoCard">
-                                    {{ $announcement->price }} €
-                                </p>
-                                <h5 class="titoloCard mt-3">
-                                    {{ $announcement->title }}
-                                </h5>
-                                <h6 class="pubblicatoCard mb-0">
-                                    Pubblicato da {{ $announcement->user->name ?? '' }} <br>
-                                    Il {{ $announcement->created_at->format('d/m/y') }}
-                                </h6>
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center px-1">
+                        <!--CARD-->
+                        <a class="linkShow" href="{{ route('announcement.show', ['announcement' => $announcement]) }}">
+                            <div class="cardBox my-4">
+                                <img class="img-card-official"
+                                    src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(215, 230) : asset('img/default-image.jpg') }}"
+                                    {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}}>
+                                <div class="corpoCard pt-4 px-3 pb-1 bg-light">
+                                    <p class="prezzoCard">
+                                        {{ $announcement->price }} €
+                                    </p>
+                                    <h5 class="titoloCard mt-3">
+                                        {{ $announcement->title }}
+                                    </h5>
+                                    <h6 class="pubblicatoCard mb-0">
+                                        Pubblicato da {{ $announcement->user->name ?? '' }} <br>
+                                        Il {{ $announcement->created_at->format('d/m/y') }}
+                                    </h6>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                    <!--CARD-->
-                </div>
+                        </a>
+                        <!--CARD-->
+                    </div>
                 @endforeach
             </div>
         </div>

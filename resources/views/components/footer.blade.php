@@ -5,7 +5,7 @@
                 <ul class="list-footer">
                     <li class="py-1">
                         <h4 class="title-footer m-0">
-                            PRESTO.IT
+                            AFFARI.IT
                         </h4>
                     </li>
                     <li class="py-1">
