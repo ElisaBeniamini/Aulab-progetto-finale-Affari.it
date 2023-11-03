@@ -81,7 +81,7 @@ return [
     'nome' => 'Name',
     'diventa-revisore-clicca-qui' => 'If you want to apply to become a reviewer, click here',
     'invia-richiesta' => 'Submit request',
-    'Email' => 'Email',
+    'email' => 'Email',
 
     //mail revisor
     'rendilo-revisore-e-clicca-qui' => 'Make it a reviewer and click here',

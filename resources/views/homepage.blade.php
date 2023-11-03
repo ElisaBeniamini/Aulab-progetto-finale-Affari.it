@@ -159,8 +159,11 @@
                     <div class="col-12 col-md-4 d-flex justify-content-center">
                         <a href="http://127.0.0.1:8000/category/3">
                             <div class="d-flex flex-column justify-content-center containerCatRound">
-                                <svg style="color:#5c8001;" xmlns="http://www.w3.org/2000/svg" width="120" height="100" fill="currentColor" class="bi bi-tv-fill ps-3" viewBox="0 0 16 16">
-                                    <path d="M2.5 13.5A.5.5 0 0 1 3 13h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zM2 2h12s2 0 2 2v6s0 2-2 2H2s-2 0-2-2V4s0-2 2-2z" />
+                                <svg style="color:#5c8001;" xmlns="http://www.w3.org/2000/svg" width="120"
+                                    height="100" fill="currentColor" class="bi bi-tv-fill ps-3"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M2.5 13.5A.5.5 0 0 1 3 13h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zM2 2h12s2 0 2 2v6s0 2-2 2H2s-2 0-2-2V4s0-2 2-2z" />
                                 </svg>
                                 <p class="text-center titoloCategorieRounded mt-3" style="color:#5c8001;">
                                     Elettrodomestici
@@ -518,11 +521,13 @@
                                 </h4>
                                 <p class="text-center text-dark mt-5 fs-5">
                                     {{ __('ui.diventa revisore basta registrarti') }}<br>
-                                    {{ __('ui. scopri come') }}
+                                    {{ __('ui.scopri come') }}
                                 </p>
                                 <div class="d-flex justify-content-center">
                                     <a href="{{ route('register') }}">
-                                        <button class="gradient-custom btn btn-register-aler px-5 text-light pulsante-home-alert" type="submit">
+                                        <button
+                                            class="gradient-custom btn btn-register-aler px-5 text-light pulsante-home-alert"
+                                            type="submit">
                                             {{ __('ui.registrati') }}
                                         </button>
                                     </a>
@@ -580,7 +585,7 @@
 
             <marquee behavior="scroll" direction="left" scrollamount="20">
                 <h4 class="testoCheScorre py-5">
-                   Iscriviti in piattaforma ed inizia a monetizzare
+                    Iscriviti in piattaforma ed inizia a monetizzare
                 </h4>
             </marquee>
 
@@ -687,7 +692,8 @@
                 nav.style.backgroundColor = "#f5f5f5";
                 nav.style.transition = "background-color 1s";
                 nav.style.borderBottom = "0.1px solid #d2d2d2";
-                nav.style.boxShadow = "rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;";
+                nav.style.boxShadow =
+                    "rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;";
             } else {
                 nav.style.backgroundColor = "transparent";
                 nav.style.borderBottom = "none";
