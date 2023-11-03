@@ -2,6 +2,7 @@
 <div class="container-fluid mb-5">
     <div class="row">
         <div class="col-12"style="margin-top: 100px">
+        <div class="col-12"style="margin-top: 100px">
             <div>
                 <h2 class="mb-4 text-center">
                     {{ __('ui.inserisci-annuncio') }}

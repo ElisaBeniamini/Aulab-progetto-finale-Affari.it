@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-12">
                     <h3 class="titoloCategoriaScript m-0 coloreCambiaShow" id="titoloShow">
-                        {{$announcement->category->name}}
+                        {{ $announcement->category->name }}
                     </h3>
                 </div>
             </div>
@@ -19,16 +19,24 @@
             <div class="row">
                 <div class="col-12 d-flex justify-content-between">
                     <div>
-                        <img class="img-piccole-show" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(80, 120) : asset('img/default-image.jpg') }}" alt="" onmouseover="cambiaOne()">
+                        <img class="img-piccole-show"
+                            src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(80, 120) : asset('img/default-image.jpg') }}"
+                            alt="" onmouseover="cambiaOne()">
                     </div>
                     <div>
-                        <img class="img-piccole-show" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(80, 120) : asset('img/default-image.jpg') }}" alt="" onmouseover="cambiaTwo()">
+                        <img class="img-piccole-show"
+                            src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(80, 120) : asset('img/default-image.jpg') }}"
+                            alt="" onmouseover="cambiaTwo()">
                     </div>
                     <div>
-                        <img class="img-piccole-show" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(80, 120) : asset('img/default-image.jpg') }}" alt="" onmouseover="cambiaThree()">
+                        <img class="img-piccole-show"
+                            src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(80, 120) : asset('img/default-image.jpg') }}"
+                            alt="" onmouseover="cambiaThree()">
                     </div>
                     <div>
-                        <img class="img-piccole-show" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(80, 120) : asset('img/default-image.jpg') }}" alt="" onmouseover="cambiaFour()">
+                        <img class="img-piccole-show"
+                            src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(80, 120) : asset('img/default-image.jpg') }}"
+                            alt="" onmouseover="cambiaFour()">
                     </div>
                 </div>
             </div>
@@ -40,17 +48,27 @@
             <div class="row">
                 <div class="col-12 col-md-2 d-flex justify-content-end">
                     <div class="d-flex flex-column containerPiccole wolf">
-                        <img class="img-piccole-show" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(80, 120) : asset('img/default-image.jpg') }}" alt="" onmouseover="cambiaOne()">
-                        <img class="img-piccole-show" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(80, 120) : asset('img/default-image.jpg') }}" alt="" onmouseover="cambiaTwo()">
-                        <img class="img-piccole-show" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(80, 120) : asset('img/default-image.jpg') }}" alt="" onmouseover="cambiaThree()">
-                        <img class="img-piccole-show" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(80, 120) : asset('img/default-image.jpg') }}" alt="" onmouseover="cambiaFour()">
+                        <img class="img-piccole-show"
+                            src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(80, 120) : asset('img/default-image.jpg') }}"
+                            alt="" onmouseover="cambiaOne()">
+                        <img class="img-piccole-show"
+                            src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(80, 120) : asset('img/default-image.jpg') }}"
+                            alt="" onmouseover="cambiaTwo()">
+                        <img class="img-piccole-show"
+                            src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(80, 120) : asset('img/default-image.jpg') }}"
+                            alt="" onmouseover="cambiaThree()">
+                        <img class="img-piccole-show"
+                            src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(80, 120) : asset('img/default-image.jpg') }}"
+                            alt="" onmouseover="cambiaFour()">
                     </div>
                 </div>
 
                 <div class="col-12 col-md-7 justify-content-center">
                     <div id="generalContainerImgShow" class="cic">
 
-                        <img class="img-show img-fluid" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(740, 560) : asset('img/default-image.jpg') }}" alt="" id="container-img-small" onclick="openPanelShowxxxl()">
+                        <img class="img-show img-fluid"
+                            src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(740, 560) : asset('img/default-image.jpg') }}"
+                            alt="" id="container-img-small" onclick="openPanelShowxxxl()">
 
                     </div>
                     <div class="text-center mt-3 mb-5 border-bottom">
@@ -94,7 +112,8 @@
                                     {{ __('ui.contatta') }} {{ $announcement->user->name ?? '' }}
                                 </h6>
                                 <i class="bi bi-envelope-at-fill fs-5"></i>
-                                <a target="blank" class="mb-5 ps-1" href="mailto:{{ $announcement->user->email ?? '' }}">{{ $announcement->user->email ?? '' }}
+                                <a target="blank" class="mb-5 ps-1"
+                                    href="mailto:{{ $announcement->user->email ?? '' }}">{{ $announcement->user->email ?? '' }}
                                 </a>
                             </div>
                         </div>
@@ -305,7 +324,7 @@
                                 <div class="container-fluid">
                                     <div class="row">
                                         @foreach ($consigliati->where('is_accepted', true) as $consigliato)
-                                            <div class="col-12 col-md-2 px-0">
+<div class="col-12 col-md-2 px-0">
                                                 
                                                 <a class="link-card"
                                                     href="{{ route('announcement.show', ['announcement' => $consigliato]) }}">
@@ -354,7 +373,7 @@
                                                 </a>
                                             
                                             </div>
-                                        @endforeach
+@endforeach
                                     </div>
                                 </div>
                             </div>
@@ -451,8 +470,7 @@
                         <div class="content-overflow py-2">
                             <div class="d-flex">
                                 @foreach ($ineferioridicianquanta->where('is_accepted', true) as $item)
-                                    
-                                    <a class="link-card"
+<a class="link-card"
                                         href="{{ route('announcement.show', ['announcement' => $item]) }}">
                                         <div class="containerCard px-2 py-3">
                                             <div>
@@ -479,8 +497,7 @@
                                             </div>
                                         </div>
                                     </a>
-                                   
-                                @endforeach
+@endforeach
                             </div>
                         </div>
                     </div>
@@ -502,7 +519,8 @@
                             </div>
                             <div class="py-3 pe-1">
                                 <span>
-                                    <i class="bi bi-x-lg fs-4 icon-close-container-xxxl" onclick="closePanelShowxxxl()"></i>
+                                    <i class="bi bi-x-lg fs-4 icon-close-container-xxxl"
+                                        onclick="closePanelShowxxxl()"></i>
                                 </span>
                             </div>
                         </div>
@@ -511,23 +529,33 @@
                 <div class="row pb-3">
                     <div class="col-12 col-md-9 pe-0">
                         <div>
-                            <img class="img-show-small-xxxl pe-0 py-4" src="{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}" alt="" id="container-img-xxxl">
+                            <img class="img-show-small-xxxl pe-0 py-4"
+                                src="{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}"
+                                alt="" id="container-img-xxxl">
                         </div>
                     </div>
                     <div class="col-12 col-md-3 pt-4">
                         <div class="row">
                             <div class="d-flex justify-content-center px-1">
                                 <div class="px-1">
-                                    <img class="img-piccole-show-xxxl border" src="{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}" alt="" onclick="cambiaUno()">
+                                    <img class="img-piccole-show-xxxl border"
+                                        src="{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}"
+                                        alt="" onclick="cambiaUno()">
                                 </div>
                                 <div class="px-1">
-                                    <img class="img-piccole-show-xxxl border" src="{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}" alt="" onclick="cambiaDue()">
+                                    <img class="img-piccole-show-xxxl border"
+                                        src="{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}"
+                                        alt="" onclick="cambiaDue()">
                                 </div>
                                 <div class="px-1">
-                                    <img class="img-piccole-show-xxxl border" src="{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}" alt="" onclick="cambiaTre()">
+                                    <img class="img-piccole-show-xxxl border"
+                                        src="{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}"
+                                        alt="" onclick="cambiaTre()">
                                 </div>
                                 <div class="px-1">
-                                    <img class="img-piccole-show-xxxl border" src="{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}" alt="" onclick="cambiaQuattro()">
+                                    <img class="img-piccole-show-xxxl border"
+                                        src="{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}"
+                                        alt="" onclick="cambiaQuattro()">
                                 </div>
                             </div>
                         </div>
@@ -588,179 +616,179 @@
         </div>
         </div>
         </div> --}}
-        <x-footer />
-        <!--SCRIPT PER CLICK CAMBIA IMG + ZOOM-->
-        <script>
-            function cambiaOne() {
+    <x-footer />
+    <!--SCRIPT PER CLICK CAMBIA IMG + ZOOM-->
+    <script>
+        function cambiaOne() {
 
-                document.getElementById("container-img-small").src =
-                    "{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}";
-            }
+            document.getElementById("container-img-small").src =
+                "{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}";
+        }
 
-            function cambiaTwo() {
-                document.getElementById("container-img-small").src =
-                    "{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}";
-            }
+        function cambiaTwo() {
+            document.getElementById("container-img-small").src =
+                "{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}";
+        }
 
-            function cambiaThree() {
-                document.getElementById("container-img-small").src =
-                    "{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}";
-            }
+        function cambiaThree() {
+            document.getElementById("container-img-small").src =
+                "{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}";
+        }
 
-            function cambiaFour() {
-                document.getElementById("container-img-small").src =
-                    "{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}";
-            }
-
-
-            const containerShow = document.getElementById("generalContainerImgShow");
-            const img = document.getElementById("container-img-small");
-
-            containerShow.addEventListener("mousemove", onZoom);
-            containerShow.addEventListener("mouseover", onZoom);
-            containerShow.addEventListener("mouseleave", offZoom);
-
-            function onZoom(e) {
-                const x = e.clientX - e.target.offsetLeft;
-                const y = e.clientY - e.target.offsetTop;
-
-                img.style.transformOrigin = `${x}px ${y}px`;
-                img.style.transform = "scale(2)";
-            }
-
-            function offZoom(e) {
-                img.style.transformOrigin = `center center`;
-                img.style.transform = "scale(1)";
-            }
-
-            //ARPI PANEL SHOW-XXXL
-            function openPanelShowxxxl() {
-                let open = document.getElementById("panelXXXL");
-                let opacityBackgroun = document.getElementById("generalMain");
-                open.style.display = "block";
-            }
-
-            function closePanelShowxxxl() {
-                let close = document.getElementById("panelXXXL");
-                let opacityBackgroun = document.getElementById("generalMain");
-                close.style.display = "none";
-            }
-            //CAMBIA IMG AL CLIK N.B. PANEL-SHOW-XXXL
-            function cambiaUno() {
-
-                document.getElementById("container-img-xxxl").src =
-                    "{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}";
-            }
-
-            function cambiaDue() {
-                document.getElementById("container-img-xxxl").src =
-                    "{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}";
-            }
-
-            function cambiaTre() {
-                document.getElementById("container-img-xxxl").src =
-                    "{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}";
-            }
-
-            function cambiaQuattro() {
-                document.getElementById("container-img-xxxl").src =
-                    "{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}";
-            }
-
-            //PANNELLO ACCESSIBILITA
-            function openAccessibilita() {
-                let x = document.getElementById("panelAcess");
-
-                x.style.display = "block";
-            }
-
-            function closePanelAcess() {
-                let y = document.getElementById("panelAcess");
-
-                y.style.display = "none";
-            }
-
-            function darkColor() {
-                let t = document.getElementsByClassName("darkLight");
-                let p = document.getElementsByClassName("lightZone");
-
-                for (let i = 0; i < t.length; i++) {
-                    t[i].style.backgroundColor = "#212529";
-                    t[i].style.transition = "0.5s";
-                }
+        function cambiaFour() {
+            document.getElementById("container-img-small").src =
+                "{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}";
+        }
 
 
-                for (let i = 0; i < p.length; i++) {
-                    p[i].style.color = "#f5f5f5";
-                    p[i].style.transition = "0.5s";
-                }
+        const containerShow = document.getElementById("generalContainerImgShow");
+        const img = document.getElementById("container-img-small");
 
-            }
+        containerShow.addEventListener("mousemove", onZoom);
+        containerShow.addEventListener("mouseover", onZoom);
+        containerShow.addEventListener("mouseleave", offZoom);
 
-            function lightColor() {
-                let z = document.getElementsByClassName("darkLight");
-                let o = document.getElementsByClassName("lightZone");
+        function onZoom(e) {
+            const x = e.clientX - e.target.offsetLeft;
+            const y = e.clientY - e.target.offsetTop;
 
-                for (let i = 0; i < z.length; i++) {
-                    z[i].style.backgroundColor = "#f5f5f5";
-                    z[i].style.transition = "0.5s";
-                }
+            img.style.transformOrigin = `${x}px ${y}px`;
+            img.style.transform = "scale(2)";
+        }
 
+        function offZoom(e) {
+            img.style.transformOrigin = `center center`;
+            img.style.transform = "scale(1)";
+        }
 
-                for (let i = 0; i < o.length; i++) {
-                    o[i].style.color = "#212529";
-                    o[i].style.transition = "0.5s";
-                }
+        //ARPI PANEL SHOW-XXXL
+        function openPanelShowxxxl() {
+            let open = document.getElementById("panelXXXL");
+            let opacityBackgroun = document.getElementById("generalMain");
+            open.style.display = "block";
+        }
 
+        function closePanelShowxxxl() {
+            let close = document.getElementById("panelXXXL");
+            let opacityBackgroun = document.getElementById("generalMain");
+            close.style.display = "none";
+        }
+        //CAMBIA IMG AL CLIK N.B. PANEL-SHOW-XXXL
+        function cambiaUno() {
+
+            document.getElementById("container-img-xxxl").src =
+                "{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}";
+        }
+
+        function cambiaDue() {
+            document.getElementById("container-img-xxxl").src =
+                "{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}";
+        }
+
+        function cambiaTre() {
+            document.getElementById("container-img-xxxl").src =
+                "{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}";
+        }
+
+        function cambiaQuattro() {
+            document.getElementById("container-img-xxxl").src =
+                "{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}";
+        }
+
+        //PANNELLO ACCESSIBILITA
+        function openAccessibilita() {
+            let x = document.getElementById("panelAcess");
+
+            x.style.display = "block";
+        }
+
+        function closePanelAcess() {
+            let y = document.getElementById("panelAcess");
+
+            y.style.display = "none";
+        }
+
+        function darkColor() {
+            let t = document.getElementsByClassName("darkLight");
+            let p = document.getElementsByClassName("lightZone");
+
+            for (let i = 0; i < t.length; i++) {
+                t[i].style.backgroundColor = "#212529";
+                t[i].style.transition = "0.5s";
             }
 
 
-
-            //questa funzione mi fa colorare le categorie
-            var value = document.getElementById("titoloShow").innerText;
-            var out = document.getElementsByClassName("coloreCambiaShow");
-
-            if (value === "Informatica") {
-                for (let i = 0; i < out.length; i++) {
-                    out[i].style.color = "#0466c8";
-                }
-            } else if (value === "Motori") {
-                for (let i = 0; i < out.length; i++) {
-                    out[i].style.color = "#c44536";
-                }
-            } else if (value === "Elettrodomestici") {
-                for (let i = 0; i < out.length; i++) {
-                    out[i].style.color = "#5c8001";
-                }
-            } else if (value === "Libri") {
-                for (let i = 0; i < out.length; i++) {
-                    out[i].style.color = "#fbb02d";
-                }
-            } else if (value === "Giochi") {
-                for (let i = 0; i < out.length; i++) {
-                    out[i].style.color = "#99582a";
-                }
-            } else if (value === "Sport") {
-                for (let i = 0; i < out.length; i++) {
-                    out[i].style.color = "#62b6cb";
-                }
-            } else if (value === "Immobili") {
-                for (let i = 0; i < out.length; i++) {
-                    out[i].style.color = "#7678ed";
-                }
-            } else if (value === "Telefoni") {
-                for (let i = 0; i < out.length; i++) {
-                    out[i].style.color = "#6d6875";
-                }
-            } else if (value === "Arredamento") {
-                for (let i = 0; i < out.length; i++) {
-                    out[i].style.color = "#73ba9b";
-                }
+            for (let i = 0; i < p.length; i++) {
+                p[i].style.color = "#f5f5f5";
+                p[i].style.transition = "0.5s";
             }
 
-            //altro cambio colore
-            let valueDue = document.getElementById("titoloCategoryCard").innerText;
-            let outDue = document.getElementsByClassName("coloreCambia2");
+        }
+
+        function lightColor() {
+            let z = document.getElementsByClassName("darkLight");
+            let o = document.getElementsByClassName("lightZone");
+
+            for (let i = 0; i < z.length; i++) {
+                z[i].style.backgroundColor = "#f5f5f5";
+                z[i].style.transition = "0.5s";
+            }
+
+
+            for (let i = 0; i < o.length; i++) {
+                o[i].style.color = "#212529";
+                o[i].style.transition = "0.5s";
+            }
+
+        }
+
+
+
+        //questa funzione mi fa colorare le categorie
+        var value = document.getElementById("titoloShow").innerText;
+        var out = document.getElementsByClassName("coloreCambiaShow");
+
+        if (value === "Informatica") {
+            for (let i = 0; i < out.length; i++) {
+                out[i].style.color = "#0466c8";
+            }
+        } else if (value === "Motori") {
+            for (let i = 0; i < out.length; i++) {
+                out[i].style.color = "#c44536";
+            }
+        } else if (value === "Elettrodomestici") {
+            for (let i = 0; i < out.length; i++) {
+                out[i].style.color = "#5c8001";
+            }
+        } else if (value === "Libri") {
+            for (let i = 0; i < out.length; i++) {
+                out[i].style.color = "#fbb02d";
+            }
+        } else if (value === "Giochi") {
+            for (let i = 0; i < out.length; i++) {
+                out[i].style.color = "#99582a";
+            }
+        } else if (value === "Sport") {
+            for (let i = 0; i < out.length; i++) {
+                out[i].style.color = "#62b6cb";
+            }
+        } else if (value === "Immobili") {
+            for (let i = 0; i < out.length; i++) {
+                out[i].style.color = "#7678ed";
+            }
+        } else if (value === "Telefoni") {
+            for (let i = 0; i < out.length; i++) {
+                out[i].style.color = "#6d6875";
+            }
+        } else if (value === "Arredamento") {
+            for (let i = 0; i < out.length; i++) {
+                out[i].style.color = "#73ba9b";
+            }
+        }
+
+        //altro cambio colore
+        let valueDue = document.getElementById("titoloCategoryCard").innerText;
+        let outDue = document.getElementsByClassName("coloreCambia2");
 
             if (valueDue === "Informatica") {
                 for (let i = 0; i < outDue.length; i++) {

@@ -16,6 +16,8 @@ h2 {
     font-weight: bolder;
     font-family: 'Open Sans', sans-serif;
 
+    font-family: 'Open Sans', sans-serif;
+
 }
 
 .offcanvas {
@@ -1276,12 +1278,12 @@ h3 {
 /* end navbar nuova */
 
 
-/* start btn torna indietro  IN USO 1-11*/
+/* start btn torna indietro */
 .btn-go-back {
     background-color: white;
     border: 2px solid #133c55;
     border-radius: 8px;
-    color: #133c55;
+    color: darkblue;
     padding: 5px 10px;
     font-size: 17px;
     text-align: center;
@@ -1543,6 +1545,36 @@ h3 {
     margin-top: 0px !important;
 }
 
+/* START carosello area revisore, riportato al default */
+.carousel-revisore {
+    position: initial;
+    top: initial;
+    left: initial;
+    margin-top: initial;
+}
+
+.carousel-button-revisore-sx {
+    position: initial;
+    top: initial;
+    left: initial;
+    margin-top: initial;
+
+    height: 40px;
+}
+
+.carousel-button-revisore-dx {
+    position: initial;
+    top: initial;
+    left: initial;
+    margin-top: initial;
+
+    height: 40px;
+}
+
+/*END carosello area revisore, riportato al default */
+
+
+
 .section-one {
     margin-top: 485px;
 }
@@ -1627,6 +1659,8 @@ h3 {
     border-color: black;
 }
 
+.navbar {
+    background-color: transparent;
 .navbar {
     background-color: transparent;
     height: 65px;
