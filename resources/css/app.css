@@ -1289,10 +1289,10 @@ h3 {
 
 /* start btn torna indietro */
 .btn-go-back {
-    background-color: white;
-    border: 2px solid #133c55;
+    background-color: black;
+    border: 2px solid black;
     border-radius: 8px;
-    color: darkblue;
+    color: white;
     padding: 5px 10px;
     font-size: 17px;
     text-align: center;
@@ -1568,8 +1568,8 @@ h3 {
     top: initial;
     left: initial;
     margin-top: initial;
-
     height: 40px;
+    background-color: #444444;
 }
 
 .carousel-button-revisore-dx {
@@ -1577,8 +1577,8 @@ h3 {
     top: initial;
     left: initial;
     margin-top: initial;
-
     height: 40px;
+    background-color: #444444;
 }
 
 /*END carosello area revisore, riportato al default */
@@ -1668,6 +1668,12 @@ h3 {
     width: 100% !important;
     border-color: #444444;
     background-color: white!important;
+    border-color: black;
+
+}
+
+.cercAA::placeholder {
+    font-size: 14px;
 }
 
 .navbar {

@@ -7,14 +7,16 @@ return [
     'il' => 'Publicado el',
     'selezione-prezzi-bassi' => 'Una selección de teléfonos inteligentes a precios más bajos.',
     'esplora le nostre categorie' => 'Explora nuestras categorías.',
-    'smartphone a minor prezzo' => 'Ofertas asequibles de smartphones',
+    'smartphone a minor prezzo' => 'Ofertas Especiales en Teléfonos Celulares',
     'lavora con noi' => 'Trabaja con nosotros',
     'diventa revisore basta registrarti' => 'Conviértete en revisor, solo regístrate!',
     'scopri come' => 'Descubre cómo',
-    'anteprima-immagini' => 'Miniatura de imágenes',
     'pubblica un articolo che non usi' => 'Publica un artículo que no use',
     'vendi i tuoi Articoli su Affari.it' => 'Vende tus artículos en Affari.it',
     'vendi o acquista' => "Vende o compra",
+    'cerca' => 'Busca',
+    'iscriviti-in-piattaforma-ed-inizia-a-monetizzare' => 'Regístrate en la plataforma y comienza a monetizar',
+    'scopri-i-prodotti-ideali-per-i-tuoi-gusti' => 'Descubre los productos ideales para tus gustos',
 
 
 
@@ -46,6 +48,8 @@ return [
     'scegli-categoria' => 'Elige una categoría',
     'carica-articolo' => 'Upload anuncio',
     'categorie' => 'Categorías',
+    'anteprima-immagini' => 'Miniatura de imágenes',
+
 
 
 
@@ -64,6 +68,7 @@ return [
     'Violenza' => 'Violencia ',
     'Contenuto Ammiccante' => 'Contenido Provocativo',
     'categoria' => 'categoría ',
+
 
     //pagina show announcement
 

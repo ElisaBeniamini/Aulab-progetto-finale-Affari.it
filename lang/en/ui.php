@@ -7,11 +7,17 @@ return [
     'il' => 'Published on',
     'selezione-prezzi-bassi' => 'A selection of smartphones at lower prices',
     'esplora le nostre categorie' => 'Explore our categories',
-    'smartphone a minor prezzo' => 'Affordable smartphone deals',
+    'smartphone a minor prezzo' => 'Special Offers on Cell Phones',
     'lavora con noi' => 'Work with us',
     'diventa revisore basta registrarti' => 'Become a reviewer, just register',
     'scopri come' => 'Discover how',
 
+    'pubblica un articolo che non usi' => "Publish an article you don't use",
+    'vendi i tuoi Articoli su Affari.it' => 'Sell your articles on Affari.it',
+    'vendi o acquista' => "Sell or buy",
+    'cerca' => "Search",
+    'iscriviti-in-piattaforma-ed-inizia-a-monetizzare' => 'Sign up on the platform and start monetizing',
+    'scopri-i-prodotti-ideali-per-i-tuoi-gusti' => 'Discover the ideal products for your tastes',
 
     //index annunci
     'h2-tutti-gli-annunci' => 'All advertisements',
@@ -77,7 +83,7 @@ return [
     'nome' => 'Name',
     'diventa-revisore-clicca-qui' => 'If you want to apply to become a reviewer, click here',
     'invia-richiesta' => 'Submit request',
-    'Email' => 'Email',
+    'email' => 'Email',
 
     //mail revisor
     'rendilo-revisore-e-clicca-qui' => 'Make it a reviewer and click here',

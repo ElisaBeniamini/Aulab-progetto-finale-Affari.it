@@ -6,13 +6,18 @@ return [
     'pubblicato-da' => 'Pubblicato da',
     'il' => 'Pubblicato il',
     'selezione-prezzi-bassi' => 'Una selezione di smartphone a prezzi bassi',
-    'esplora le nostre categorie' => 'esplora le nostre categorie',
-    'smartphone a minor prezzo' => 'Smartphone a minor prezzo',
+    'esplora le nostre categorie' => 'Esplora le nostre categorie',
+    'smartphone a minor prezzo' => 'Offerte Speciali sui Cellulari',
     'lavora con noi' => 'Lavora con noi',
     'diventa revisore basta registrarti' => 'Diventa revisore, basta registrarsi!',
     'scopri come' => 'Scopri come',
 
-
+    'pubblica un articolo che non usi' => 'Pubblica un articolo che non usi',
+    'vendi i tuoi Articoli su Affari.it' => 'vendi i tuoi Articoli su Affari.it',
+    'vendi o acquista' => "Vendi o compra",
+    'cerca' => 'Cerca',
+    'iscriviti-in-piattaforma-ed-inizia-a-monetizzare' => 'Iscriviti in piattaforma ed inizia a monetizzare',
+    'scopri-i-prodotti-ideali-per-i-tuoi-gusti' => 'Scopri i prodotti ideali per i tuoi gusti',
 
 
     //index annunci
@@ -56,7 +61,7 @@ return [
     'accetta' => 'Accetta',
     'rifiuta' => 'Rifiuta',
     'revisione-immagini' => 'Revisione immagini',
-    'adulti' => 'Agulti',
+    'adulti' => 'Adulti',
     'Satira' => 'Satira',
     'Medicina' => 'Medicina ',
     'Violenza' => 'Violenza ',
