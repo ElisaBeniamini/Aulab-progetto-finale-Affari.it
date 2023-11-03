@@ -51,7 +51,7 @@ class ResizeImage implements ShouldQueue
         $croppedImage = SpatieImage::load($srcPath);  // Carica l'immagine dal percorso specificato
         $croppedImage->crop(Manipulations::CROP_CENTER, $w, $h)
             ->save($destPath);
-        $croppedImage->watermark(base_path('resources\img\watermark.png')) //Sovrapponi il watermark all'immagine.
+        $croppedImage->watermark(base_path('resources/img/watermark.png')) //Sovrapponi il watermark all'immagine.
             ->watermarkPosition('bottom-right') //posizione del watermark
             ->watermarkPadding(1, 5, Manipulations::UNIT_PERCENT) //  Imposta l'offset del watermark rispetto ai margini dell'immagine.
             ->watermarkWidth(100, Manipulations::UNIT_PIXELS) // Regola la larghezza del watermark
