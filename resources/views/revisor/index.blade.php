@@ -11,13 +11,20 @@
     </div>
 
     <div>
-        <h2 class="display-4 text-center ">
-            {{ $announcement_to_check ? __('ui.revisione-annunci-pieno') : __('ui.revisione-annunci-vuoto') }}
-        </h2>
+        @if ($announcement_to_check)
+            <div class="text-center">
+                <h2>{{ __('ui.revisione-annunci-pieno') }}</h2>
+            </div>
+        @else
+            <div class="text-center" style="height: 250px">
+                <h2>{{ __(__('ui.revisione-annunci-vuoto')) }}</h2>
+            </div>
+        @endif
     </div>
 
     @if ($announcement_to_check)
-        <div class="container mb-5  "
+        <div class="container
+                mb-5 "
             style="box-shadow: rgb(228, 232, 234) 0px 8px 35px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset; border-radius:10px;">
             <div class="row d-flex justify-content-center text-center align-items-start  ">
                 <!-- carosello imamgini con tags e revisione immagine -->
@@ -36,8 +43,8 @@
                         </div>
                         <div class="col-md-4 d-flex align justify-content-center mt-3 ">
                             <!-- button sinistro carosello -->
-                            <button class="carousel-control-prev bg-warning carousel-button-revisore-sx mx-2"
-                                type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                            <button class="carousel-control-prev  carousel-button-revisore-sx mx-2" type="button"
+                                data-bs-target="#carouselExample" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Previous</span>
                             </button>
@@ -59,8 +66,9 @@
                             </div>
                             <!-- Revisione Immagini -->
                             <div class="btn-group">
-                                <button type="button" class="btn btn-secondary dropdown-toggle btn-sm"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                <button style="background-color: #444444" type="button"
+                                    class="btn dropdown-toggle btn-sm text-light" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
                                     {{ __('ui.revisione-immagini') }}
                                 </button>
                                 <ul class="dropdown-menu  px-2">
@@ -75,8 +83,8 @@
                                 </ul>
                             </div>
                             <!--Destro button carosello -->
-                            <button class="carousel-control-next bg-warning carousel-button-revisore-dx mx-2"
-                                type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                            <button class="carousel-control-next  carousel-button-revisore-dx mx-2" type="button"
+                                data-bs-target="#carouselExample" data-bs-slide="next">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Next</span>
                             </button>

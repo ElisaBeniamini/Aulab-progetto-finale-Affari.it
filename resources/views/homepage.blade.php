@@ -112,7 +112,7 @@
 
             <marquee behavior="scroll" direction="left" scrollamount="20">
                 <h4 class="testoCheScorre py-5">
-                    Scopri i prodotti ideali per i tuoi gusti
+                    {{ __('ui.scopri-i-prodotti-ideali-per-i-tuoi-gusti') }}
                 </h4>
             </marquee>
 
@@ -585,7 +585,7 @@
 
             <marquee behavior="scroll" direction="left" scrollamount="20">
                 <h4 class="testoCheScorre py-5">
-                    Iscriviti in piattaforma ed inizia a monetizzare
+                    {{ __('ui.iscriviti-in-piattaforma-ed-inizia-a-monetizzare') }}
                 </h4>
             </marquee>
 

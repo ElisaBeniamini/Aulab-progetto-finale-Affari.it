@@ -18,26 +18,15 @@
         <div class="container mt-5 mb-1 containerPiccoleRow">
             <div class="row">
                 <div class="col-12 d-flex justify-content-between">
-                    <div>
-                        <img class="img-piccole-show"
-                            src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(80, 120) : asset('img/default-image.jpg') }}"
-                            alt="" onmouseover="cambiaOne()">
-                    </div>
-                    <div>
-                        <img class="img-piccole-show"
-                            src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(80, 120) : asset('img/default-image.jpg') }}"
-                            alt="" onmouseover="cambiaTwo()">
-                    </div>
-                    <div>
-                        <img class="img-piccole-show"
-                            src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(80, 120) : asset('img/default-image.jpg') }}"
-                            alt="" onmouseover="cambiaThree()">
-                    </div>
-                    <div>
-                        <img class="img-piccole-show"
-                            src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(80, 120) : asset('img/default-image.jpg') }}"
-                            alt="" onmouseover="cambiaFour()">
-                    </div>
+
+                    @foreach ($announcement->images as $image)
+                        <div>
+                            <img class="img-piccole-show" src="{{ $image->getUrl(80, 120) }}"
+                                alt="{{ asset('img/default-image.jpg') }}">
+
+                        </div>
+                    @endforeach
+
                 </div>
             </div>
         </div>
@@ -48,18 +37,13 @@
             <div class="row">
                 <div class="col-12 col-md-2 d-flex justify-content-end">
                     <div class="d-flex flex-column containerPiccole wolf">
-                        <img class="img-piccole-show"
-                            src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(80, 120) : asset('img/default-image.jpg') }}"
-                            alt="" onmouseover="cambiaOne()">
-                        <img class="img-piccole-show"
-                            src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(80, 120) : asset('img/default-image.jpg') }}"
-                            alt="" onmouseover="cambiaTwo()">
-                        <img class="img-piccole-show"
-                            src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(80, 120) : asset('img/default-image.jpg') }}"
-                            alt="" onmouseover="cambiaThree()">
-                        <img class="img-piccole-show"
-                            src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(80, 120) : asset('img/default-image.jpg') }}"
-                            alt="" onmouseover="cambiaFour()">
+                        @foreach ($announcement->images as $image)
+                            <div>
+                                <img class="img-piccole-show" src="{{ $image->getUrl(80, 120) }}"
+                                    alt="{{ asset('img/default-image.jpg') }}">
+
+                            </div>
+                        @endforeach
                     </div>
                 </div>
 
@@ -144,30 +128,33 @@
                 </div>
                 <div class="row">
                     @foreach ($consigliati->where('is_accepted', true) as $consigliato)
-                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center px-1">
-                        <!--CARD-->
-                        <a class="linkShow" href="{{route('announcement.show',['announcement' => $consigliato])}}">
-                            <div class="cardBox my-4">
-                                <img class="img-card-official" src="{{ !$consigliato->images->isEmpty() ? $consigliato->images->first()->getUrl(215, 230) : asset('img/default-image.jpg') }}" {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}}>
-                                <div class="corpoCard pt-4 px-3 pb-1 bg-light">
-                                    <p class="prezzoCard">
-                                        {{ $consigliato->price }} €
-                                    </p>
-                                    <h5 class="titoloCard mt-3">
-                                        {{ $consigliato->title }}
-                                    </h5>
-                                    <h5 class="titoloCard mt-3">
-                                        {{ $consigliato->category->name }}
-                                    </h5>
-                                    <h6 class="pubblicatoCard mb-0">
-                                        Pubblicato da {{ $consigliato->user->name ?? '' }} <br>
-                                        Il {{ $consigliato->created_at->format('d/m/y') }}
-                                    </h6>
+                        <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center px-1">
+                            <!--CARD-->
+                            <a class="linkShow"
+                                href="{{ route('announcement.show', ['announcement' => $consigliato]) }}">
+                                <div class="cardBox my-4">
+                                    <img class="img-card-official"
+                                        src="{{ !$consigliato->images->isEmpty() ? $consigliato->images->first()->getUrl(215, 230) : asset('img/default-image.jpg') }}"
+                                        {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}}>
+                                    <div class="corpoCard pt-4 px-3 pb-1 bg-light">
+                                        <p class="prezzoCard">
+                                            {{ $consigliato->price }} €
+                                        </p>
+                                        <h5 class="titoloCard mt-3">
+                                            {{ $consigliato->title }}
+                                        </h5>
+                                        <h5 class="titoloCard mt-3">
+                                            {{ $consigliato->category->name }}
+                                        </h5>
+                                        <h6 class="pubblicatoCard mb-0">
+                                            Pubblicato da {{ $consigliato->user->name ?? '' }} <br>
+                                            Il {{ $consigliato->created_at->format('d/m/y') }}
+                                        </h6>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                        <!--CARD-->
-                    </div>
+                            </a>
+                            <!--CARD-->
+                        </div>
                     @endforeach
                 </div>
             </div>
@@ -185,30 +172,32 @@
                 </div>
                 <div class="row">
                     @foreach ($ineferioridicianquanta->where('is_accepted', true) as $item)
-                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center px-1">
-                        <!--CARD-->
-                        <a class="linkShow" href="{{route('announcement.show',['announcement' => $item])}}">
-                            <div class="cardBox my-4">
-                                <img class="img-card-official" src="{{ !$item->images->isEmpty() ? $item->images->first()->getUrl(215, 230) : asset('img/default-image.jpg') }}" {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}}>
-                                <div class="corpoCard pt-4 px-3 pb-1 bg-light">
-                                    <p class="prezzoCard">
-                                        {{ $item->price }} €
-                                    </p>
-                                    <h5 class="titoloCard mt-3">
-                                        {{ $item->title }}
-                                    </h5>
-                                    <h5 class="titoloCard mt-3" id="titoloCategoryCard">
-                                        {{ $item->category->name }}
-                                    </h5>
-                                    <h6 class="pubblicatoCard mb-0">
-                                        Pubblicato da {{ $item->user->name ?? '' }} <br>
-                                        Il {{ $item->created_at->format('d/m/y') }}
-                                    </h6>
+                        <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center px-1">
+                            <!--CARD-->
+                            <a class="linkShow" href="{{ route('announcement.show', ['announcement' => $item]) }}">
+                                <div class="cardBox my-4">
+                                    <img class="img-card-official"
+                                        src="{{ !$item->images->isEmpty() ? $item->images->first()->getUrl(215, 230) : asset('img/default-image.jpg') }}"
+                                        {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}}>
+                                    <div class="corpoCard pt-4 px-3 pb-1 bg-light">
+                                        <p class="prezzoCard">
+                                            {{ $item->price }} €
+                                        </p>
+                                        <h5 class="titoloCard mt-3">
+                                            {{ $item->title }}
+                                        </h5>
+                                        <h5 class="titoloCard mt-3" id="titoloCategoryCard">
+                                            {{ $item->category->name }}
+                                        </h5>
+                                        <h6 class="pubblicatoCard mb-0">
+                                            Pubblicato da {{ $item->user->name ?? '' }} <br>
+                                            Il {{ $item->created_at->format('d/m/y') }}
+                                        </h6>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                        <!--CARD-->
-                    </div>
+                            </a>
+                            <!--CARD-->
+                        </div>
                     @endforeach
                 </div>
             </div>
@@ -790,71 +779,71 @@
         let valueDue = document.getElementById("titoloCategoryCard").innerText;
         let outDue = document.getElementsByClassName("coloreCambia2");
 
-            if (valueDue === "Informatica") {
-                for (let i = 0; i < outDue.length; i++) {
-                    outDue[i].style.color = "#0466c8";
-                }
-            } else if (valueDue === "Motori") {
-                for (let i = 0; i < outDue.length; i++) {
-                    outDue[i].style.color = "#c44536";
-                }
-            } else if (valueDue === "Elettrodomestici") {
-                for (let i = 0; i < outDue.length; i++) {
-                    outDue[i].style.color = "#5c8001";
-                }
-            } else if (valueDue === "Libri") {
-                for (let i = 0; i < outDue.length; i++) {
-                    outDue[i].style.color = "#fbb02d";
-                }
-            } else if (valueDue === "Giochi") {
-                for (let i = 0; i < outDue.length; i++) {
-                    outDue[i].style.color = "#99582a";
-                }
-            } else if (valueDue === "Sport") {
-                for (let i = 0; i < outDue.length; i++) {
-                    outDue[i].style.color = "#62b6cb";
-                }
-            } else if (valueDue === "Immobili") {
-                for (let i = 0; i < outDue.length; i++) {
-                    outDue[i].style.color = "#7678ed";
-                }
-            } else if (valueDue === "Telefoni") {
-                for (let i = 0; i < outDue.length; i++) {
-                    outDue[i].style.color = "#6d6875";
-                }
-            } else if (valueDue === "Arredamento") {
-                for (let i = 0; i < outDue.length; i++) {
-                    outDue[i].style.color = "#73ba9b";
-                }
+        if (valueDue === "Informatica") {
+            for (let i = 0; i < outDue.length; i++) {
+                outDue[i].style.color = "#0466c8";
             }
-
-            //torna su
-            window.addEventListener('scroll', (event) => {
-
-                let scrollTop = document.documentElement.scrollTop;
-                let secondoSloganDiv = document.getElementById("secondoSlogan");
-
-                let btn = document.getElementById("btnSu");
-
-
-                let topSecondoSloganDiv = secondoSloganDiv.offsetTop;
-
-
-                if (scrollTop > topSecondoSloganDiv) {
-
-                    btn.style.display = "block";
-                    nav.style.transition = "1s";
-
-                } else {
-                    btn.style.display = "none";
-                }
-            });
-
-            //torna su
-            function tornaSu() {
-                document.body.scrollTop = 0; // For Safari
-                document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        } else if (valueDue === "Motori") {
+            for (let i = 0; i < outDue.length; i++) {
+                outDue[i].style.color = "#c44536";
             }
-        </script>
-        <!--SCRIPT PER CLICK CAMBIA IMG + ZOOM-->
+        } else if (valueDue === "Elettrodomestici") {
+            for (let i = 0; i < outDue.length; i++) {
+                outDue[i].style.color = "#5c8001";
+            }
+        } else if (valueDue === "Libri") {
+            for (let i = 0; i < outDue.length; i++) {
+                outDue[i].style.color = "#fbb02d";
+            }
+        } else if (valueDue === "Giochi") {
+            for (let i = 0; i < outDue.length; i++) {
+                outDue[i].style.color = "#99582a";
+            }
+        } else if (valueDue === "Sport") {
+            for (let i = 0; i < outDue.length; i++) {
+                outDue[i].style.color = "#62b6cb";
+            }
+        } else if (valueDue === "Immobili") {
+            for (let i = 0; i < outDue.length; i++) {
+                outDue[i].style.color = "#7678ed";
+            }
+        } else if (valueDue === "Telefoni") {
+            for (let i = 0; i < outDue.length; i++) {
+                outDue[i].style.color = "#6d6875";
+            }
+        } else if (valueDue === "Arredamento") {
+            for (let i = 0; i < outDue.length; i++) {
+                outDue[i].style.color = "#73ba9b";
+            }
+        }
+
+        //torna su
+        window.addEventListener('scroll', (event) => {
+
+            let scrollTop = document.documentElement.scrollTop;
+            let secondoSloganDiv = document.getElementById("secondoSlogan");
+
+            let btn = document.getElementById("btnSu");
+
+
+            let topSecondoSloganDiv = secondoSloganDiv.offsetTop;
+
+
+            if (scrollTop > topSecondoSloganDiv) {
+
+                btn.style.display = "block";
+                nav.style.transition = "1s";
+
+            } else {
+                btn.style.display = "none";
+            }
+        });
+
+        //torna su
+        function tornaSu() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
+    </script>
+    <!--SCRIPT PER CLICK CAMBIA IMG + ZOOM-->
 </x-layout>

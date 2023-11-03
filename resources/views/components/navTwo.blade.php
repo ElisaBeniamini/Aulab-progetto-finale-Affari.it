@@ -90,7 +90,7 @@
             <form action="{{ route('announcement.search') }}" method="GET" class="d-flex" role="search">
                 <input class="form-control me-2 cercAA" name="searched" type="search"
                     placeholder="{{ __('ui.ricerca') }}" aria-label="Search">
-                <button class="btn btn-outline-dark pulsante-cerca" type="submit">Cerca</button>
+                <button class="btn btn-outline-dark pulsante-cerca" type="submit"> {{ __('ui.cerca') }}</button>
             </form>
             @guest
                 <!--Login-->

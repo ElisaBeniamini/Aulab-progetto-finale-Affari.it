@@ -15,8 +15,9 @@ return [
     'pubblica un articolo che non usi' => 'Pubblica un articolo che non usi',
     'vendi i tuoi Articoli su Affari.it' => 'vendi i tuoi Articoli su Affari.it',
     'vendi o acquista' => "Vendi o compra",
-
-
+    'cerca' => 'Cerca',
+    'iscriviti-in-piattaforma-ed-inizia-a-monetizzare' => 'Iscriviti in piattaforma ed inizia a monetizzare',
+    'scopri-i-prodotti-ideali-per-i-tuoi-gusti' => 'Scopri i prodotti ideali per i tuoi gusti',
 
 
     //index annunci

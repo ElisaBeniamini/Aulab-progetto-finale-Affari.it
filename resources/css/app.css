@@ -1558,8 +1558,8 @@ h3 {
     top: initial;
     left: initial;
     margin-top: initial;
-
     height: 40px;
+    background-color: #444444;
 }
 
 .carousel-button-revisore-dx {
@@ -1567,8 +1567,8 @@ h3 {
     top: initial;
     left: initial;
     margin-top: initial;
-
     height: 40px;
+    background-color: #444444;
 }
 
 /*END carosello area revisore, riportato al default */
@@ -1657,6 +1657,11 @@ h3 {
 .cercAA {
     width: 100% !important;
     border-color: black;
+
+}
+
+.cercAA::placeholder {
+    font-size: 14px;
 }
 
 .navbar {
