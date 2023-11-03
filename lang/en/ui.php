@@ -7,10 +7,14 @@ return [
     'il' => 'Published on',
     'selezione-prezzi-bassi' => 'A selection of smartphones at lower prices',
     'esplora le nostre categorie' => 'Explore our categories',
-    'smartphone a minor prezzo' => 'Affordable smartphone deals',
+    'smartphone a minor prezzo' => 'Special Offers on Cell Phones',
     'lavora con noi' => 'Work with us',
     'diventa revisore basta registrarti' => 'Become a reviewer, just register',
     'scopri come' => 'Discover how',
+
+    'pubblica un articolo che non usi' => "Publish an article you don't use",
+    'vendi i tuoi Articoli su Affari.it' => 'Sell your articles on Affari.it',
+    'vendi o acquista' => "Sell or buy",
 
 
     //index annunci
