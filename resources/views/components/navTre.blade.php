@@ -21,9 +21,10 @@
                     </button>
                 </li>
                 @auth
+
                 @if (Auth::user()->is_revisor)
                 <li class="nav-item">
-                    <a href="{{route('revisor.index')}}">
+                    <a href="{{ route('revisor.index') }}">
                         <button type="button" class="btn text-dark border-dark position-relative btn-revisore ms-3">
                             {{ __('ui.zona-revisore') }}
                             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
@@ -34,6 +35,7 @@
                     </a>
                 </li>
                 @endif
+
                 <li class="nav-item px-3">
                     <a class="nav-link inserisciAnnuncio" href="{{ route('announcement.create') }}">
                         {{ __('ui.inserisci-annuncio') }}

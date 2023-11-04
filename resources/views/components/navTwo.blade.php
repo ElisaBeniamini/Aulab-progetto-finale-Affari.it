@@ -77,7 +77,6 @@
             </div>
 
             <div class="">
-            <div class="">
 
                 <x-_locale lang='en' nation='gb' />
 

@@ -40,13 +40,15 @@
                     <div class="d-flex flex-column containerPiccole wolf">
                         @foreach ($announcement->images as $image)
                             <div>
-                                <img class="img-piccole-show" src="{{ $image->getUrl(80, 120) }}"
+                                <img  class="img-piccole-show" src="{{ $image->getUrl(80, 120) }}"
                                     alt="{{ asset('img/default-image.jpg') }}">
 
                             </div>
                         @endforeach
                     </div>
                 </div>
+
+              
 
                 <div class="col-12 col-md-7 justify-content-center">
                     <div id="generalContainerImgShow" class="cic">
