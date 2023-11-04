@@ -730,16 +730,16 @@
         },
         {
             "name": "google/cloud-core",
-            "version": "v1.52.7",
+            "version": "v1.52.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-cloud-php-core.git",
-                "reference": "f79480d1e2b31a695ae98b42ca10b67b41da9fb1"
+                "reference": "2ebcaa410f7e92dca5677dd9cc4ec1f9f315e83c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-cloud-php-core/zipball/f79480d1e2b31a695ae98b42ca10b67b41da9fb1",
-                "reference": "f79480d1e2b31a695ae98b42ca10b67b41da9fb1",
+                "url": "https://api.github.com/repos/googleapis/google-cloud-php-core/zipball/2ebcaa410f7e92dca5677dd9cc4ec1f9f315e83c",
+                "reference": "2ebcaa410f7e92dca5677dd9cc4ec1f9f315e83c",
                 "shasum": ""
             },
             "require": {
@@ -789,22 +789,22 @@
             ],
             "description": "Google Cloud PHP shared dependency, providing functionality useful to all components.",
             "support": {
-                "source": "https://github.com/googleapis/google-cloud-php-core/tree/v1.52.7"
+                "source": "https://github.com/googleapis/google-cloud-php-core/tree/v1.52.8"
             },
-            "time": "2023-10-16T22:54:31+00:00"
+            "time": "2023-11-02T19:15:44+00:00"
         },
         {
             "name": "google/cloud-vision",
-            "version": "v1.7.5",
+            "version": "v1.7.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-cloud-php-vision.git",
-                "reference": "ede0c8cb6a99c27122e3000411d72c1f921d6b94"
+                "reference": "ff6a0fb22b5cfe0954165f3d149483fe46ff059e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-cloud-php-vision/zipball/ede0c8cb6a99c27122e3000411d72c1f921d6b94",
-                "reference": "ede0c8cb6a99c27122e3000411d72c1f921d6b94",
+                "url": "https://api.github.com/repos/googleapis/google-cloud-php-vision/zipball/ff6a0fb22b5cfe0954165f3d149483fe46ff059e",
+                "reference": "ff6a0fb22b5cfe0954165f3d149483fe46ff059e",
                 "shasum": ""
             },
             "require": {
@@ -846,9 +846,9 @@
             ],
             "description": "Cloud Vision Client for PHP",
             "support": {
-                "source": "https://github.com/googleapis/google-cloud-php-vision/tree/v1.7.5"
+                "source": "https://github.com/googleapis/google-cloud-php-vision/tree/v1.7.6"
             },
-            "time": "2023-10-16T22:54:31+00:00"
+            "time": "2023-11-02T19:15:44+00:00"
         },
         {
             "name": "google/common-protos",
@@ -904,16 +904,16 @@
         },
         {
             "name": "google/gax",
-            "version": "v1.24.0",
+            "version": "v1.25.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/gax-php.git",
-                "reference": "2fedb0dc9bbad2dff945d95e165bc0af418186b8"
+                "reference": "8f07f56f8d14e784777020cd73cfde518bd7dd33"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/gax-php/zipball/2fedb0dc9bbad2dff945d95e165bc0af418186b8",
-                "reference": "2fedb0dc9bbad2dff945d95e165bc0af418186b8",
+                "url": "https://api.github.com/repos/googleapis/gax-php/zipball/8f07f56f8d14e784777020cd73cfde518bd7dd33",
+                "reference": "8f07f56f8d14e784777020cd73cfde518bd7dd33",
                 "shasum": ""
             },
             "require": {
@@ -953,9 +953,9 @@
             ],
             "support": {
                 "issues": "https://github.com/googleapis/gax-php/issues",
-                "source": "https://github.com/googleapis/gax-php/tree/v1.24.0"
+                "source": "https://github.com/googleapis/gax-php/tree/v1.25.0"
             },
-            "time": "2023-10-10T17:52:54+00:00"
+            "time": "2023-11-02T22:05:32+00:00"
         },
         {
             "name": "google/grpc-gcp",
@@ -4461,28 +4461,28 @@
         },
         {
             "name": "spatie/image-optimizer",
-            "version": "1.7.1",
+            "version": "1.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/image-optimizer.git",
-                "reference": "af179994e2d2413e4b3ba2d348d06b4eaddbeb30"
+                "reference": "62f7463483d1bd975f6f06025d89d42a29608fe1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/image-optimizer/zipball/af179994e2d2413e4b3ba2d348d06b4eaddbeb30",
-                "reference": "af179994e2d2413e4b3ba2d348d06b4eaddbeb30",
+                "url": "https://api.github.com/repos/spatie/image-optimizer/zipball/62f7463483d1bd975f6f06025d89d42a29608fe1",
+                "reference": "62f7463483d1bd975f6f06025d89d42a29608fe1",
                 "shasum": ""
             },
             "require": {
                 "ext-fileinfo": "*",
                 "php": "^7.3|^8.0",
                 "psr/log": "^1.0 | ^2.0 | ^3.0",
-                "symfony/process": "^4.2|^5.0|^6.0"
+                "symfony/process": "^4.2|^5.0|^6.0|^7.0"
             },
             "require-dev": {
                 "pestphp/pest": "^1.21",
                 "phpunit/phpunit": "^8.5.21|^9.4.4",
-                "symfony/var-dumper": "^4.2|^5.0|^6.0"
+                "symfony/var-dumper": "^4.2|^5.0|^6.0|^7.0"
             },
             "type": "library",
             "autoload": {
@@ -4510,9 +4510,9 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/image-optimizer/issues",
-                "source": "https://github.com/spatie/image-optimizer/tree/1.7.1"
+                "source": "https://github.com/spatie/image-optimizer/tree/1.7.2"
             },
-            "time": "2023-07-27T07:57:32+00:00"
+            "time": "2023-11-03T10:08:02+00:00"
         },
         {
             "name": "spatie/temporary-directory",
@@ -7316,16 +7316,16 @@
         },
         {
             "name": "filp/whoops",
-            "version": "2.15.3",
+            "version": "2.15.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filp/whoops.git",
-                "reference": "c83e88a30524f9360b11f585f71e6b17313b7187"
+                "reference": "a139776fa3f5985a50b509f2a02ff0f709d2a546"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/c83e88a30524f9360b11f585f71e6b17313b7187",
-                "reference": "c83e88a30524f9360b11f585f71e6b17313b7187",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/a139776fa3f5985a50b509f2a02ff0f709d2a546",
+                "reference": "a139776fa3f5985a50b509f2a02ff0f709d2a546",
                 "shasum": ""
             },
             "require": {
@@ -7375,7 +7375,7 @@
             ],
             "support": {
                 "issues": "https://github.com/filp/whoops/issues",
-                "source": "https://github.com/filp/whoops/tree/2.15.3"
+                "source": "https://github.com/filp/whoops/tree/2.15.4"
             },
             "funding": [
                 {
@@ -7383,7 +7383,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-07-13T12:00:00+00:00"
+            "time": "2023-11-03T12:00:00+00:00"
         },
         {
             "name": "hamcrest/hamcrest-php",
