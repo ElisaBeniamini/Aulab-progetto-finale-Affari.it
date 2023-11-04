@@ -41,7 +41,9 @@ class BasicController extends Controller
 
         $giochi =  Announcement::where('is_accepted', true)->where('category_id', '=', 5)->inRandomOrder()->limit(6)->get();
         
-        return view('homepage', compact('announcements', 'categories', 'itOnly', 'motorsOnly', 'smartphoneMinors','productMinorsThirty','elettrodomestici','immobili','libri','arredamento','sports','giochi'));
+        $minors = Announcement::where('price', '<', 50)->inRandomOrder()->limit(12)->get();
+
+        return view('homepage', compact('announcements', 'categories', 'itOnly', 'motorsOnly', 'smartphoneMinors','productMinorsThirty','elettrodomestici','immobili','libri','arredamento','sports','giochi','minors'));
     }
 
 

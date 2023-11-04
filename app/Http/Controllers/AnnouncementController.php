@@ -32,11 +32,12 @@ class AnnouncementController extends Controller
 
     public function showAnnouncement(Announcement $announcement)
     {
-        $consigliati = Announcement::inRandomOrder()->limit(12)->get();
+        $consigliati = Announcement::where('is_accepted', true)->inRandomOrder()->limit(12)->get();
+        //take obbliga 
 
         // $consigliatiTwo = Announcement::inRandomOrder()->limit(6)->get();
 
-        $ineferioridicianquanta = Announcement::where('price', '<', 50)->inRandomOrder()->limit(12)->get();
+        $ineferioridicianquanta = Announcement::where('is_accepted', true)->where('price', '<', 50)->inRandomOrder()->limit(12)->get();
 
         return view('announcement.show', compact('announcement', 'consigliati', 'ineferioridicianquanta')); // vedi annuncio
     }

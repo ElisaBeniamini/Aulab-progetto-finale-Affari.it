@@ -15,7 +15,9 @@ return [
     'pubblica un articolo che non usi' => "Publish an article you don't use",
     'vendi i tuoi Articoli su Affari.it' => 'Sell your articles on Affari.it',
     'vendi o acquista' => "Sell or buy",
-
+    'cerca' => "Search",
+    'iscriviti-in-piattaforma-ed-inizia-a-monetizzare' => 'Sign up on the platform and start monetizing',
+    'scopri-i-prodotti-ideali-per-i-tuoi-gusti' => 'Discover the ideal products for your tastes',
 
     //index annunci
     'h2-tutti-gli-annunci' => 'All advertisements',
