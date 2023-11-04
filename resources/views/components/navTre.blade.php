@@ -110,7 +110,7 @@
 
 
 <!--START-NAVBAR-BOTTOM-->
-<div class="nav-bottom d-flex justify-content-between align-items-center px-3 pt-1">
+<div class="nav-bottom d-flex justify-content-between align-items-center border-top px-3 pt-1">
     <div class="text-center">
         <a href="{{route('homepage')}}">
             <i class="bi bi-house-fill fs-4 iconeNavBottom text-light"></i>
@@ -179,7 +179,7 @@
     @endauth
     @guest
     <div class="text-center">
-        <svg xmlns="http://www.w3.org/2000/svg" width="43" height="43" fill="#f5f5f5" class="btn bi bi-person-fill iconaAccountNavBottom text-dark" type="image" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" viewBox="0 0 16 16">
+        <svg xmlns="http://www.w3.org/2000/svg" width="43" height="43" fill="#444444" class="btn bi bi-person-fill iconaAccountNavBottom text-dark" type="image" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" viewBox="0 0 16 16">
             <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
         </svg>
         <p class="text-light m-0 title-navbarBottom pb-1">

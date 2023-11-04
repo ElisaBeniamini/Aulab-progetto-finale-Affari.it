@@ -18,6 +18,8 @@ yarn-error.log
 /.idea
 /.vscode
 /storage/*.index
+/storage/announcements.index-shm
+/storage/announcements.index-wal
 /google_credential.json
 
 

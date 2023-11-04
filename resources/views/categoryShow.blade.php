@@ -9,8 +9,9 @@
         <div id="primoSloganDiv" style="height: 30px;" class="mt-4">
 
         </div>
-        <div class="mt-4 container-titolo-categorie" id="titoloSposta">
-            <h3 class="titoloCategoriaScript m-0 ms-2 coloreCambia" id="titolo">
+    
+        <div class="mt-5 container-titolo-categorie" id="titoloSposta">
+            <h3 class="titoloCategoriaScript m-0 ms-2 coloreCambia pb-3 pt-2" id="titolo">
                 {{ $category->name }}
             </h3>
         </div>

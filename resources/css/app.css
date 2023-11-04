@@ -23,7 +23,7 @@ h2 {
 .offcanvas {
     background-color: #f5f5f5 !important;
     width: 40% !important;
-    z-index: 9999999;
+    z-index: 9999999999999;
 }
 
 input {
@@ -280,6 +280,7 @@ footer {
 .input-email-password-canvas {
     height: 10px !important;
     width: 100% !important;
+    background-color: white!important;
 }
 
 .btn-logout {
@@ -1352,7 +1353,13 @@ h3 {
 @media (max-width:468px) {
     .img-card-official {
         width: 174px;
-        height: 230px;
+        height: 230px; 
+    }
+
+   
+
+    .navbar {
+        display: none !important;
     }
 
     .nav-top {
@@ -1361,12 +1368,8 @@ h3 {
         top: 0px;
         left: 0px;
         width: 100%;
-        z-index: 99999;
+        z-index: 999999999;
         background-color: #f5f5f5;
-    }
-
-    .navbar {
-        display: none !important;
     }
 }
 
@@ -1648,7 +1651,7 @@ h3 {
 
 
 .contenitoreShow {
-    margin-top: 40px !important;
+    margin-top: 100px !important;
 }
 
 @media (max-width:468px) {
@@ -1704,7 +1707,7 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
-    font-size: 70px;
+    font-size: 50px;
     font-family: Avenir Next, Helvetica Neue, Helvetica, Arial, sans-serif !important;
 }
 

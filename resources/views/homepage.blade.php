@@ -104,11 +104,11 @@
         <!--TESTO-CHE-SCORRE-->
         <section class="my-5">
 
-            <marquee behavior="scroll" direction="left" scrollamount="20">
-                <h4 class="testoCheScorre py-5">
+            
+                 <h4 class="testoCheScorre py-5 text-center px-2">
                     {{ __('ui.scopri-i-prodotti-ideali-per-i-tuoi-gusti') }}
-                </h4>
-            </marquee>
+                </h4> 
+            
 
         </section>
         <!--TESTO-CHE-SCORRE-->
@@ -368,11 +368,11 @@
                     <!--TESTO-CHE-SCORRE-->
                     <section class="my-3">
 
-                        <marquee behavior="scroll" direction="left" scrollamount="20">
-                            <h4 class="testoCheScorre py-5">
+                        
+                             <h4 class="testoCheScorre py-5 text-center px-2">
                                 Annunci a prezzi bassi scopri di piu...
-                            </h4>
-                        </marquee>
+                            </h4> 
+                     
 
                     </section>
                     <!--TESTO-CHE-SCORRE-->
@@ -483,13 +483,13 @@
         <!--TESTO-CHE-SCORRE-->
         <section class="my-5">
 
-            <marquee behavior="scroll" direction="left" scrollamount="20">
+           
 
-                <h4 class="testoCheScorre py-5">
+                 <h4 class="testoCheScorre py-5 text-center px-2">
                     Pubblica comodamente da casa tua
-                </h4>
+                </h4> 
 
-            </marquee>
+           
 
         </section>
         <!--TESTO-CHE-SCORRE-->
@@ -604,11 +604,11 @@
         <!--TESTO-CHE-SCORRE-->
         <section class="my-5">
 
-            <marquee behavior="scroll" direction="left" scrollamount="20">
-                <h4 class="testoCheScorre py-5">
+            
+                <h4 class="testoCheScorre py-5 text-center px-2">
                     {{ __('ui.iscriviti-in-piattaforma-ed-inizia-a-monetizzare') }}
                 </h4>
-            </marquee>
+           
 
         </section>
         <!--TESTO-CHE-SCORRE-->

@@ -6,7 +6,7 @@
         <div class="container my-5 contenitoreShow">
             <div class="row">
                 <div class="col-12">
-                    <h3 class="titoloCategoriaScript m-0 coloreCambiaShow" id="titoloShow">
+                    <h3 class="titoloCategoriaScript m-0 coloreCambiaShow border-bottom" id="titoloShow">
                         {{ $announcement->category->name }}
                     </h3>
                 </div>
@@ -35,7 +35,7 @@
         <!--CONTENITORE PRINCIPALE-->
         <div class="container mb-5" id="secondoSlogan">
             <div class="row">
-                <div class="col-12 col-md-2 d-flex justify-content-end">
+                <div class="col-12 col-md-2 d-flex justify-content-end my-2">
 
                     <div class="d-flex flex-column containerPiccole wolf">
                         @foreach ($announcement->images as $image)
@@ -49,7 +49,7 @@
 
               
 
-                <div class="col-12 col-md-7 justify-content-center">
+                <div class="col-12 col-md-7 justify-content-center my-2">
                     <div id="generalContainerImgShow" class="cic">
                         <img id="immagineGrande" class="img-show img-fluid"
                             src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(740, 560) : asset('img/default-image.jpg') }}"
@@ -57,7 +57,7 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-3 d-flex justify-content-start">
+                <div class="col-12 col-md-3 d-flex justify-content-center my-2">
                     <div class="">
                         <div>
                             <h2 class="title-show coloreCambiaShow">
@@ -65,7 +65,7 @@
                             </h2>
                         </div>
                         <div class="mt-4">
-                            <h3 class="price-show border-bottom pb-3 coloreCambiaShow">
+                            <h3 class="price-show  pb-3 coloreCambiaShow">
                                 {{ $announcement->price }} € {{ __('ui.iva-inclusa') }}
                             </h3>
                         </div>
@@ -117,7 +117,7 @@
         <section>
             <div class="container my-5 border-top">
                 <div class="row">
-                    <h5 class="title-prodotti-correlati ps-0 m-0 pt-5 pb-4">
+                    <h5 class="title-prodotti-correlati ps-0 m-0 pt-5 pb-4 text-center">
                         {{ __('ui.scopri-prodotti-correlati') }}
                     </h5>
                 </div>
@@ -163,11 +163,11 @@
                 <div class="row">
                     <!--TESTO-CHE-SCORRE-->
                     <section class="my-2">
-                        <marquee behavior="scroll" direction="left" scrollamount="20">
+                        
                             <h4 class="testoCheScorre py-5">
                                 Prezzi bassi dacci uno squardo...
                             </h4>
-                        </marquee>
+                       
                     </section>
                     <!--TESTO-CHE-SCORRE-->
                 </div>
