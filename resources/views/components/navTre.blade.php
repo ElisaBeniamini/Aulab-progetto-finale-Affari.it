@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navBarTre" id="nav">
-    <div class="container-fluid">
-        <a class="navbar-brand fs-2" href="{{route('homepage')}}">
+<nav class="navbar navbar-expand-lg navBarTre px-2" id="nav">
+    <div class="container-fluid px-0">
+        <a class="navbar-brand fs-2 ps-3" href="{{route('homepage')}}">
             Affari.it
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,7 +14,7 @@
                             <i class="bi bi-list fs-4 text-dark"></i>
                         </div>
                         <div>
-                            <p class="m-0 ps-2 text-dark">
+                            <p class="m-0 ps-2 categoriePulsante">
                                 Categorie
                             </p>
                         </div>
@@ -26,7 +26,11 @@
                 <li class="nav-item">
                     <a href="{{ route('revisor.index') }}">
                         <button type="button" class="btn text-dark border-dark position-relative btn-revisore ms-3">
-                            {{ __('ui.zona-revisore') }}
+                            <p class="m-0 ps-2 categoriePulsante">
+
+                                {{ __('ui.zona-revisore') }}
+
+                            </p>
                             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                                 {{ App\Models\Announcement::toBeRevisionedCount() }}
                                 <span class="visually-hidden">unread messages</span>
@@ -88,7 +92,7 @@
             @guest
             <!--Login-->
             <div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="67" height="67" fill="black" class="btn bi bi-person-fill pe-3" type="image" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" viewBox="0 0 16 16">
+                <svg xmlns="http://www.w3.org/2000/svg" width="67" height="67" fill="#444444" class="btn bi bi-person-fill pe-3" type="image" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" viewBox="0 0 16 16">
                     <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
                 </svg>
             </div>
@@ -100,17 +104,38 @@
 
 
 <!--NAV-TOP-->
-<div class="nav-top d-flex justify-content-center align-items-center py-2 px-2 border-bottom">
+<div class="nav-top d-flex justify-content-center align-items-center pt-1 px-2 border-bottom">
     <form action="{{route('announcement.search')}}" method="GET" class="d-flex" role="search">
         <input class="form-control me-2 cercAA" name="searched" type="search" placeholder="{{ __('ui.ricerca')}}" aria-label="Search">
-        <button class="btn btn-outline-dark" type="submit">Cerca</button>
+        <button class="btn btn-outline-dark" style="background-color:#444444;color:#f5f5f5"; type="submit">Cerca</button>
     </form>
+    <!--BANDIERE-->
+    <div class="d-flex justify-content-between">
+        <div class="">
+
+            <x-_locale lang='it' nation='it' />
+
+        </div>
+
+        <div class="">
+
+            <x-_locale lang='en' nation='gb' />
+
+        </div>
+
+        <div class="">
+
+            <x-_locale lang='es' nation='es' />
+
+        </div>
+    </div>
+    <!--BANDIERE-->
 </div>
 <!--NAV-TOP-->
 
 
 <!--START-NAVBAR-BOTTOM-->
-<div class="nav-bottom d-flex justify-content-between align-items-center border-top px-3 pt-1">
+<div class="nav-bottom d-flex justify-content-between align-items-center border-top px-2">
     <div class="text-center">
         <a href="{{route('homepage')}}">
             <i class="bi bi-house-fill fs-4 iconeNavBottom text-light"></i>
@@ -155,8 +180,13 @@
     </div>
     <div class="text-center">
         <div class="dropdown px-1">
-            <button class="btn dropdown-toggle fs-5" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-
+            <button class="btn p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" fill="#444444" class="bi bi-person-fill" viewBox="0 0 16 16">
+                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+                </svg>
+                <p class="text-light m-0 title-navbarBottom pb-1">
+                    Tu
+                </p>
                 <ul class="dropdown-menu">
                     <li>
                         <a class="dropdown-item" href="/logout" onclick="event.preventDefault();getElementById('form-logout').submit()">

@@ -1,7 +1,7 @@
 <?php
 return [
     // Start Homepage
-    'ultimi-sei-annunci' => 'Ultimi sei annunci',
+    'ultimi-sei-annunci' => 'Ultimi  annunci',
     'btn-tutti-gli-annunci' => 'Annunci',
     'pubblicato-da' => 'Pubblicato da',
     'il' => 'Pubblicato il',
@@ -18,7 +18,8 @@ return [
     'cerca' => 'Cerca',
     'iscriviti-in-piattaforma-ed-inizia-a-monetizzare' => 'Iscriviti in piattaforma ed inizia a monetizzare',
     'scopri-i-prodotti-ideali-per-i-tuoi-gusti' => 'Scopri i prodotti ideali per i tuoi gusti',
-
+    'annunci-a-prezzi-bassi-scopri-di-più'=> 'Annunci a prezzi bassi scopri di più',
+    'pubblica-comodamente-da-casa-tua'=>'Pubblica comodamente da casa tua',
 
     //index annunci
     'h2-tutti-gli-annunci' => 'Tutti gli annunci',
@@ -75,6 +76,7 @@ return [
     'contatta' => 'Contatta',
     'scopri-prodotti-correlati' => 'Alcuni prodotti consigliati per te',
     'selezione-articoli<50' => 'Selezione di articoli inferiori a 50 €',
+    'iscriviti-sulla-nostra-piattaforma'=>'Iscriviti sulla nostra piattaforma',
 
     //pagina become revisor
     'vuoi-lavorare-con-noi' => 'Vuoi lavorare con noi?',

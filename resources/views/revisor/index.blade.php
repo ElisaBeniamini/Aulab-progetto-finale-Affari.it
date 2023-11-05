@@ -1,16 +1,11 @@
 <x-layout>
-    <x-navTwo />
+    <x-navTre />
 
 
     <!-- URL::previous() non richiede una rotta; torna alla pagina precedente rispetto alla posizione dell utente -->
-    <div class="mx-2" style="margin-top:80px">
-        <a class="btn-go-back  " href="{{ URL::previous() }}">
-            <i class=" bi bi-caret-left"> </i>
-            Back
-        </a>
-    </div>
+   
 
-    <div>
+    <div  style="margin-top:120px">
         @if ($announcement_to_check)
             <div class="text-center">
                 <h2>{{ __('ui.revisione-annunci-pieno') }}</h2>
@@ -94,9 +89,7 @@
                         <div class="col-12 col-md-6 d-flex flex-column ">
                             <img width="450px" height="450px" src="\img\default-image.jpg" class="img-fluid "
                                 alt="">
-                            <h4 class=" text-center text-warning">
-                                {{ __('ui.revisione-annunci-vuoto') }}
-                            </h4>
+                           
                         </div>
                     @endif
                 </div>

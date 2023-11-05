@@ -1,7 +1,7 @@
 <?php
 return [
     // Start Homepage
-    'ultimi-sei-annunci' => 'Last six Announcements',
+    'ultimi-sei-annunci' => 'Last  Announcements',
     'btn-tutti-gli-annunci' => 'Advertisements',
     'pubblicato-da' => 'Published by',
     'il' => 'Published on',
@@ -18,6 +18,8 @@ return [
     'cerca' => "Search",
     'iscriviti-in-piattaforma-ed-inizia-a-monetizzare' => 'Sign up on the platform and start monetizing',
     'scopri-i-prodotti-ideali-per-i-tuoi-gusti' => 'Discover the ideal products for your tastes',
+    'annunci-a-prezzi-bassi-scopri-di-più'=> 'Ads at low prices find out more',
+    'pubblica-comodamente-da-casa-tua'=>'Publish from the comfort of your home',
 
     //index annunci
     'h2-tutti-gli-annunci' => 'All advertisements',
@@ -76,6 +78,7 @@ return [
     'contatta' => 'Contact',
     'scopri-prodotti-correlati' => 'Some products recommended for you',
     'selezione-articoli<50' => 'Selection of items under €50',
+    'iscriviti-sulla-nostra-piattaforma'=>'Sign up on our platform',
 
     //pagina become revisor
     'vuoi-lavorare-con-noi' => 'Want to work with us?',
