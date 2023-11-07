@@ -35,22 +35,24 @@
         <div class="container mb-5" id="secondoSlogan">
             <div class="row">
                 <div class="col-12 col-md-2 d-flex justify-content-end my-2">
-
-                    <div class="d-flex flex-column containerPiccole wolf">
-                        @foreach ($announcement->images as $image)
-                        <div id="immaginiPiccole">
-                            <img onmouseover="cambiaImmagine(this.src)" class="img-piccole-show" src="{{ $image->getUrl(400, 300) }}" alt="{{ asset('img/default-image.jpg') }}">
+                   
+                        <div class="d-flex flex-column containerPiccole wolf">
+                            @foreach ($announcement->images as $image)
+                            <div id="immaginiPiccole">
+                                <img onmouseover="cambiaImmagine(this.src)" class="img-piccole-show" src="{{ $image->getUrl(400, 300) }}" alt="{{ asset('img/default-image.jpg') }}">
+                            </div>
+                            @endforeach
                         </div>
-                        @endforeach
-                    </div>
+                  
+
                 </div>
+                <div class="col-12 col-md-7 justify-content-center my-2 wolf">
+                   
+                        <div id="generalContainerImgShow" class="">
+                            <img id="immagineGrande" class="img-show img-fluid" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(740, 560) : asset('img/default-image.jpg') }}" alt="" id="container-img-small">
+                        </div>
+                   
 
-
-
-                <div class="col-12 col-md-7 justify-content-center my-2">
-                    <div id="generalContainerImgShow" class="cic">
-                        <img id="immagineGrande" class="img-show img-fluid" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(740, 560) : asset('img/default-image.jpg') }}" alt="" id="container-img-small">
-                    </div>
                 </div>
 
                 <div class="col-12 col-md-3 d-flex justify-content-center my-2">
@@ -581,7 +583,7 @@
         </div> --}}
         <section class="my-2">
             <h4 class="testoCheScorre py-5  text-center">
-            {{ __('ui.iscriviti-sulla-nostra-piattaforma') }}
+                {{ __('ui.iscriviti-sulla-nostra-piattaforma') }}
             </h4>
             <div class="d-flex justify-content-center mb-5">
                 <a href="{{ route('register') }}">
