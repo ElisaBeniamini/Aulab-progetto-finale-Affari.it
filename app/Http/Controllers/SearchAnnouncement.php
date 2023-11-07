@@ -11,6 +11,8 @@ class SearchAnnouncement extends Controller
     {
         $announcements = Announcement::search($request->searched)->where('is_accepted', true)->paginate(10);
 
+
+
         return view('announcement.index', compact('announcements'));
     }
 }

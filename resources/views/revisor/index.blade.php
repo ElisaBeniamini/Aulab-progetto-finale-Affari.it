@@ -3,15 +3,15 @@
 
 
     <!-- URL::previous() non richiede una rotta; torna alla pagina precedente rispetto alla posizione dell utente -->
-   
 
-    <div  style="margin-top:120px">
+
+    <div style="margin-top:120px">
         @if ($announcement_to_check)
             <div class="text-center">
                 <h2>{{ __('ui.revisione-annunci-pieno') }}</h2>
             </div>
         @else
-            <div class="text-center" style="height: 250px">
+            <div class="text-center" style="height: 520px">
                 <h2>{{ __(__('ui.revisione-annunci-vuoto')) }}</h2>
             </div>
         @endif
@@ -31,7 +31,8 @@
                                 <!-- immagine carosello -->
                                 @foreach ($announcement_to_check->images as $image)
                                     <div class="carousel-item  {{ $loop->first ? 'active' : '' }} text-center">
-                                        <img src="{{ $image->getUrl(600, 300) }}" class="img-fluid rounded-3" />
+                                        <img style="object-fit: contain" src="{{ $image->getUrl(400, 300) }}"
+                                            class="img-fluid rounded-3" />
                                     </div>
                                 @endforeach
                             </div>
@@ -89,7 +90,7 @@
                         <div class="col-12 col-md-6 d-flex flex-column ">
                             <img width="450px" height="450px" src="\img\default-image.jpg" class="img-fluid "
                                 alt="">
-                           
+
                         </div>
                     @endif
                 </div>
@@ -108,7 +109,9 @@
                                 {{ __('ui.categoria') }} : {{ $announcement_to_check->category->name }}
                             </span>
                             <span class="card-description">
-                                {{ __('ui.descrizione') }}: {{ $announcement_to_check->description }}
+                                {{ __('ui.descrizione') }}: <span
+                                    style="font-size: 18px">{{ $announcement_to_check->description }}
+                                </span>
                             </span><br>
                             <span class="card-footer">
                                 {{ __('ui.pubblicato-da') }} :

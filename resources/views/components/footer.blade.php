@@ -83,7 +83,7 @@
         </div>
     </div>
 
-    <div class="container-fluid container-footer-two py-4  border-top">
+    <div class="container-fluid container-footer-two py-5  border-top">
         <div class="row">
             <div class="col-12 d-flex justify-content-center align-ites-center px-0">
                 <ul class="list-icon-footer d-flex ps-2">
