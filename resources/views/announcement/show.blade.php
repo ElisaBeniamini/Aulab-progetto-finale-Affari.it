@@ -20,10 +20,11 @@
                 <div class="col-12 d-flex justify-content-between">
 
                     @foreach ($announcement->images as $image)
-                    <div id="immaginiPiccole">
-                        <img onmouseover="cambiaImmagine(this.src)" class="img-piccole-show" src="{{ $image->getUrl(400, 300) }}" alt="{{ asset('img/default-image.jpg') }}">
+                        <div id="immaginiPiccole" class="mx-1">
+                            <img onmouseover="cambiaImmagine(this.src)" class="img-piccole-show"
+                                src="{{ $image->getUrl(400, 300) }}" alt="{{ asset('img/default-image.jpg') }}">
 
-                    </div>
+                        </div>
                     @endforeach
 
                 </div>
@@ -35,24 +36,25 @@
         <div class="container mb-5" id="secondoSlogan">
             <div class="row">
                 <div class="col-12 col-md-2 d-flex justify-content-end my-2">
-                   
-                        <div class="d-flex flex-column containerPiccole wolf">
-                            @foreach ($announcement->images as $image)
-                            <div id="immaginiPiccole">
-                                <img onmouseover="cambiaImmagine(this.src)" class="img-piccole-show" src="{{ $image->getUrl(400, 300) }}" alt="{{ asset('img/default-image.jpg') }}">
+
+                    <div class="d-flex flex-column containerPiccole wolf">
+                        @foreach ($announcement->images as $image)
+                            <div id="immaginiPiccole " class="mb-1">
+                                <img onmouseover="cambiaImmagine(this.src)" class="img-piccole-show"
+                                    src="{{ $image->getUrl(400, 300) }}" alt="{{ asset('img/default-image.jpg') }}">
                             </div>
-                            @endforeach
-                        </div>
-                  
-
+                        @endforeach
+                    </div>
                 </div>
-                <div class="col-12 col-md-7 justify-content-center my-2 wolf">
-                   
-                        <div id="generalContainerImgShow" class="">
-                            <img id="immagineGrande" class="img-show img-fluid" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(740, 560) : asset('img/default-image.jpg') }}" alt="" id="container-img-small">
-                        </div>
-                   
 
+
+
+                <div class="col-12 col-md-7 justify-content-center my-2">
+                    <div id="generalContainerImgShow">
+                        <img id="immagineGrande" class="img-show img-fluid"
+                            src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(740, 560) : asset('img/default-image.jpg') }}"
+                            alt="" id="container-img-small">
+                    </div>
                 </div>
 
                 <div class="col-12 col-md-3 d-flex justify-content-center my-2">
@@ -75,9 +77,6 @@
                         <div class="mt-5">
                             <div class="d-flex align-items-center">
                                 <div>
-                                    <img class="img-pubblicataDa" src="/img/img-pubblicatada.jpeg" alt="">
-                                </div>
-                                <div class="ps-2">
                                     <h6 class="title-user-card m-0">
                                         {{ __('ui.pubblicato-da') }} {{ $announcement->user->name ?? '' }} <br>
                                         {{ __('ui.il') }} {{ $announcement->created_at->format('d/m/y') }}
@@ -89,7 +88,8 @@
                                     {{ __('ui.contatta') }} {{ $announcement->user->name ?? '' }}
                                 </h6>
                                 <i class="bi bi-envelope-at-fill fs-5"></i>
-                                <a target="blank" class="mb-5 ps-1" href="mailto:{{ $announcement->user->email ?? '' }}">{{ $announcement->user->email ?? '' }}
+                                <a target="blank" class="mb-5 ps-1"
+                                    href="mailto:{{ $announcement->user->email ?? '' }}">{{ $announcement->user->email ?? '' }}
                                 </a>
                             </div>
                         </div>
@@ -120,30 +120,33 @@
                 </div>
                 <div class="row">
                     @foreach ($consigliati->where('is_accepted', true) as $consigliato)
-                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center px-1">
-                        <!--CARD-->
-                        <a class="linkShow" href="{{ route('announcement.show', ['announcement' => $consigliato]) }}">
-                            <div class="cardBox my-4">
-                                <img class="img-card-official" src="{{ !$consigliato->images->isEmpty() ? $consigliato->images->first()->getUrl(215, 230) : asset('img/default-image.jpg') }}" {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}}>
-                                <div class="corpoCard pt-4 px-3 pb-1 bg-light">
-                                    <p class="prezzoCard">
-                                        {{ $consigliato->price }} €
-                                    </p>
-                                    <h5 class="titoloCard mt-3">
-                                        {{ $consigliato->title }}
-                                    </h5>
-                                    <h5 class="titoloCard mt-3">
-                                        {{ $consigliato->category->name }}
-                                    </h5>
-                                    <h6 class="pubblicatoCard mb-0">
-                                        Pubblicato da {{ $consigliato->user->name ?? '' }} <br>
-                                        Il {{ $consigliato->created_at->format('d/m/y') }}
-                                    </h6>
+                        <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center px-1">
+                            <!--CARD-->
+                            <a class="linkShow"
+                                href="{{ route('announcement.show', ['announcement' => $consigliato]) }}">
+                                <div class="cardBox my-4">
+                                    <img class="img-card-official"
+                                        src="{{ !$consigliato->images->isEmpty() ? $consigliato->images->first()->getUrl(215, 230) : asset('img/default-image.jpg') }}"
+                                        {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}}>
+                                    <div class="corpoCard pt-4 px-3 pb-1 bg-light">
+                                        <p class="prezzoCard">
+                                            {{ $consigliato->price }} €
+                                        </p>
+                                        <h5 class="titoloCard mt-3">
+                                            {{ $consigliato->title }}
+                                        </h5>
+                                        <h5 class="titoloCard mt-3">
+                                            {{ $consigliato->category->name }}
+                                        </h5>
+                                        <h6 class="pubblicatoCard mb-0">
+                                            Pubblicato da {{ $consigliato->user->name ?? '' }} <br>
+                                            Il {{ $consigliato->created_at->format('d/m/y') }}
+                                        </h6>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                        <!--CARD-->
-                    </div>
+                            </a>
+                            <!--CARD-->
+                        </div>
                     @endforeach
                 </div>
             </div>
@@ -167,30 +170,32 @@
                 </div>
                 <div class="row">
                     @foreach ($ineferioridicianquanta->where('is_accepted', true) as $item)
-                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center px-1">
-                        <!--CARD-->
-                        <a class="linkShow" href="{{ route('announcement.show', ['announcement' => $item]) }}">
-                            <div class="cardBox my-4">
-                                <img class="img-card-official" src="{{ !$item->images->isEmpty() ? $item->images->first()->getUrl(215, 230) : asset('img/default-image.jpg') }}" {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}}>
-                                <div class="corpoCard pt-4 px-3 pb-1 bg-light">
-                                    <p class="prezzoCard">
-                                        {{ $item->price }} €
-                                    </p>
-                                    <h5 class="titoloCard mt-3">
-                                        {{ $item->title }}
-                                    </h5>
-                                    <h5 class="titoloCard mt-3" id="titoloCategoryCard">
-                                        {{ $item->category->name }}
-                                    </h5>
-                                    <h6 class="pubblicatoCard mb-0">
-                                        Pubblicato da {{ $item->user->name ?? '' }} <br>
-                                        Il {{ $item->created_at->format('d/m/y') }}
-                                    </h6>
+                        <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center px-1">
+                            <!--CARD-->
+                            <a class="linkShow" href="{{ route('announcement.show', ['announcement' => $item]) }}">
+                                <div class="cardBox my-4">
+                                    <img class="img-card-official"
+                                        src="{{ !$item->images->isEmpty() ? $item->images->first()->getUrl(215, 230) : asset('img/default-image.jpg') }}"
+                                        {{-- $announcement->images()->first()->getUrl(400, 300)  per il resize --}}>
+                                    <div class="corpoCard pt-4 px-3 pb-1 bg-light">
+                                        <p class="prezzoCard">
+                                            {{ $item->price }} €
+                                        </p>
+                                        <h5 class="titoloCard mt-3">
+                                            {{ $item->title }}
+                                        </h5>
+                                        <h5 class="titoloCard mt-3" id="titoloCategoryCard">
+                                            {{ $item->category->name }}
+                                        </h5>
+                                        <h6 class="pubblicatoCard mb-0">
+                                            Pubblicato da {{ $item->user->name ?? '' }} <br>
+                                            Il {{ $item->created_at->format('d/m/y') }}
+                                        </h6>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                        <!--CARD-->
-                    </div>
+                            </a>
+                            <!--CARD-->
+                        </div>
                     @endforeach
                 </div>
             </div>
@@ -198,7 +203,7 @@
         <!--PRODOTTI MINORI DI 50€-->
 
 
-        <!--MAIN-->
+
         <!-- <section>
             <div class="container-fluid my-5">
                 <div class="row">
@@ -290,203 +295,7 @@
         </section> -->
         <!--MAIN-->
 
-        <!--START POTREBBE INTERESSARTI-->
-        <!-- <section>
-            <div class="border-top bg-light">
-                <h5 class="title-prodotti-correlati ps-5  m-0 pt-4">
-                    {{ __('ui.scopri-prodotti-correlati') }}
-                </h5>
-            </div>
-            <div class="container-fluid px-4 pb-4 pt-4 container-slider-img-show bg-light">
-                <div class="row">
-                    <div id="carouselExample" class="carousel slide">
-                        <div class="carousel-inner">
-                            
-                            <div class="carousel-item active">
-                                <div class="container-fluid">
-                                    <div class="row">
-                                        @foreach ($consigliati->where('is_accepted', true) as $consigliato)
-<div class="col-12 col-md-2 px-0">
-                                                
-                                                <a class="link-card"
-                                                    href="{{ route('announcement.show', ['announcement' => $consigliato]) }}">
-                                                    <div class="containerCard px-3 py-3">
-                                                        <div>
-                                                            <img class="img-card px-0"
-                                                                src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(400, 300) : asset('img/default-image.jpg') }}"
-                                                                alt="">
-                                                        </div>
-                                                        <div class="cardBody mt-3">
-                                                            <div>
-                                                                <h6 class="title-card">
-                                                                    {{ $consigliato->title }}
-                                                                </h6>
-                                                            </div>
-                                                            <div>
-                                                                <h6 class="price-card">
-                                                                    {{ $consigliato->price }} €
-                                                                </h6>
-                                                            </div>
-                                                            <div>
-                                                                <h6 class="price-card">
-                                                                    {{ $consigliato->category->name }}
-                                                                </h6>
-                                                            </div>
 
-                                                            <div>
-                                                                <div class="d-flex align-items-center">
-                                                                    <div>
-                                                                        <img class="img-pubblicataDa"
-                                                                            src="/img/img-pubblicatada.jpeg"
-                                                                            alt="">
-                                                                    </div>
-                                                                    <div class="ps-2">
-                                                                        <h6 class="title-user-card m-0">
-                                                                            {{ __('ui.pubblicato-da') }}
-                                                                            {{ $consigliato->user->name ?? '' }} <br>
-                                                                            {{ __('ui.il') }}
-                                                                            {{ $consigliato->created_at->format('d/m/y') }}
-                                                                        </h6>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            
-                                            </div>
-@endforeach
-                                    </div>
-                                </div>
-                            </div>
-                            
-
-                           
-                            <div class="carousel-item">
-                                <div class="container-fluid">
-                                    <div class="row">
-                                        
-                                            <div class="col-12 col-md-2 px-0">
-                                               
-                                                <a class="link-card"
-                                                    href="{{ route('announcement.show', ['announcement' => $consigliato]) }}">
-                                                    <div class="containerCard px-3 py-3">
-                                                        <div>
-                                                            <img class="img-card px-0"
-                                                                src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(400, 300) : asset('img/default-image.jpg') }}"
-                                                                alt="">
-                                                        </div>
-                                                        <div class="cardBody mt-3">
-                                                            <div>
-                                                                <h6 class="title-card">
-                                                                    {{ $consigliato->title }}
-                                                                </h6>
-                                                            </div>
-                                                            <div>
-                                                                <h6 class="price-card">
-                                                                    {{ $consigliato->price }} €
-                                                                </h6>
-                                                            </div>
-                                                            <div>
-                                                                <h6 class="price-card">
-                                                                    {{ $consigliato->category->name }}
-                                                                </h6>
-                                                            </div>
-
-                                                            <div>
-                                                                <div class="d-flex align-items-center">
-                                                                    <div>
-                                                                        <img class="img-pubblicataDa"
-                                                                            src="/img/img-pubblicatada.jpeg"
-                                                                            alt="">
-                                                                    </div>
-                                                                    <div class="ps-2">
-                                                                        <h6 class="title-user-card m-0">
-                                                                            {{ __('ui.pubblicato-da') }}
-                                                                            {{ $consigliato->user->name ?? '' }}
-                                                                            {{ __('ui.il') }}
-                                                                            {{ $consigliato->created_at->format('d/m/y') }}
-                                                                        </h6>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                               
-                                            </div>
-                                      
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <button class="carousel-control-prev justufy-content-start" type="button"
-                            data-bs-target="#carouselExample" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon bg-dark  rounded-3 px-2 py-2"
-                                aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
-                            data-bs-slide="next">
-                            <span class="carousel-control-next-icon bg-dark  rounded-3 px-2 py-2"
-                                aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-        <!--END POTREBBE INTERESSARTI-->
-
-        <!--START SECTION PRODOTTI MINORI DI 50€-->
-        <!-- <section>
-            <div class="border-top bg-light">
-                <h5 class="title-prodotti-correlati ps-5  m-0 pt-4 pb-5">
-                    {{ __('ui.selezione-articoli<50') }}
-                </h5>
-            </div>
-            <div class="container-fluid bg-light">
-                <div class="row d-flex justify-content-center">
-                    <div class="container-overflow mb-5">
-                        <div class="content-overflow py-2">
-                            <div class="d-flex">
-                                @foreach ($ineferioridicianquanta->where('is_accepted', true) as $item)
-<a class="link-card"
-                                        href="{{ route('announcement.show', ['announcement' => $item]) }}">
-                                        <div class="containerCard px-2 py-3">
-                                            <div>
-                                                <img class="img-card px-0 card-over-flow"
-                                                    src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(400, 300) : asset('img/default-image.jpg') }}"
-                                                    alt="">
-                                            </div>
-                                            <div class="cardBody mt-3">
-                                                <div>
-                                                    <h6 class="title-card">
-                                                        {{ $item->title }}
-                                                    </h6>
-                                                </div>
-                                                <div>
-                                                    <h6 class="price-card">
-                                                        {{ $item->price }} €
-                                                    </h6>
-                                                </div>
-                                                <div>
-                                                    <h6 class="price-card">
-                                                        {{ $item->category->name }}
-                                                    </h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-@endforeach
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-        <!--END SECTION PRODOTTI MINORI DI 50€-->
 
         <!--START CONTAINER - CLICK IMG-SMALL-XXXL-->
         <section class="d-flex justify-content-center">
@@ -501,7 +310,8 @@
                             </div>
                             <div class="py-3 pe-1">
                                 <span>
-                                    <i class="bi bi-x-lg fs-4 icon-close-container-xxxl" onclick="closePanelShowxxxl()"></i>
+                                    <i class="bi bi-x-lg fs-4 icon-close-container-xxxl"
+                                        onclick="closePanelShowxxxl()"></i>
                                 </span>
                             </div>
                         </div>
@@ -510,16 +320,20 @@
                 <div class="row pb-3">
                     <div class="col-12 col-md-9 pe-0">
                         <div>
-                            <img id="immagineGrande2" class="img-show-small-xxxl pe-0 py-4" src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(740, 560) : asset('img/default-image.jpg') }}" alt="">
+                            <img id="immagineGrande2" class="img-show-small-xxxl pe-0 py-4"
+                                src="{{ !$announcement->images->isEmpty() ? $announcement->images->first()->getUrl(740, 560) : asset('img/default-image.jpg') }}"
+                                alt="">
                         </div>
                     </div>
                     <div class="col-12 col-md-3 pt-4">
                         <div class="d-flex justify-content-center px-1">
                             <div class="px-1">
                                 @foreach ($announcement->images as $image)
-                                <div id="immaginiPiccole">
-                                    <img onmouseover="cambiaImmagine2(this.src)" class="img-piccole-show" src="{{ $image->getUrl(80, 120) }}" alt="{{ asset('img/default-image.jpg') }}">
-                                </div>
+                                    <div id="immaginiPiccole">
+                                        <img onmouseover="cambiaImmagine2(this.src)" class="img-piccole-show"
+                                            src="{{ $image->getUrl(80, 120) }}"
+                                            alt="{{ asset('img/default-image.jpg') }}">
+                                    </div>
                                 @endforeach
                             </div>
                         </div>
@@ -581,251 +395,252 @@
         </div>
         </div>
         </div> --}}
-        <section class="my-2">
-            <h4 class="testoCheScorre py-5  text-center">
-                {{ __('ui.iscriviti-sulla-nostra-piattaforma') }}
-            </h4>
-            <div class="d-flex justify-content-center mb-5">
-                <a href="{{ route('register') }}">
-                    <button class="gradient-custom btn btn-register-aler px-5 mb-5 text-light pulsante-home-alert" type="submit">
-                        {{ __('ui.registrati') }}
-                    </button>
-                </a>
-            </div>
-        </section>
-        <x-footer />
-        <!--SCRIPT PER CLICK CAMBIA IMG + ZOOM-->
-        <script>
-            function cambiaOne() {
+    <section class="my-2">
+        <h4 class="testoCheScorre py-5  text-center">
+            {{ __('ui.iscriviti-sulla-nostra-piattaforma') }}
+        </h4>
+        <div class="d-flex justify-content-center mb-5">
+            <a href="{{ route('register') }}">
+                <button class="gradient-custom btn btn-register-aler px-5 mb-5 text-light pulsante-home-alert"
+                    type="submit">
+                    {{ __('ui.registrati') }}
+                </button>
+            </a>
+        </div>
+    </section>
+    <x-footer />
+    <!--SCRIPT PER CLICK CAMBIA IMG + ZOOM-->
+    <script>
+        function cambiaOne() {
 
-                document.getElementById("container-img-small").src =
-                    "{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}";
+            document.getElementById("container-img-small").src =
+                "{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}";
+        }
+
+        function cambiaTwo() {
+            document.getElementById("container-img-small").src =
+                "{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}";
+        }
+
+        function cambiaThree() {
+            document.getElementById("container-img-small").src =
+                "{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}";
+        }
+
+        function cambiaFour() {
+            document.getElementById("container-img-small").src =
+                "{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}";
+        }
+
+
+
+        //ARPI PANEL SHOW-XXXL
+        function openPanelShowxxxl() {
+            let open = document.getElementById("panelXXXL");
+            let opacityBackgroun = document.getElementById("generalMain");
+            open.style.display = "block";
+        }
+
+        function closePanelShowxxxl() {
+            let close = document.getElementById("panelXXXL");
+            let opacityBackgroun = document.getElementById("generalMain");
+            close.style.display = "none";
+        }
+        //CAMBIA IMG AL CLIK N.B. PANEL-SHOW-XXXL
+        function cambiaUno() {
+
+            document.getElementById("container-img-xxxl").src =
+                "{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}";
+        }
+
+        function cambiaDue() {
+            document.getElementById("container-img-xxxl").src =
+                "{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}";
+        }
+
+        function cambiaTre() {
+            document.getElementById("container-img-xxxl").src =
+                "{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}";
+        }
+
+        function cambiaQuattro() {
+            document.getElementById("container-img-xxxl").src =
+                "{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}";
+        }
+
+        //PANNELLO ACCESSIBILITA
+        function openAccessibilita() {
+            let x = document.getElementById("panelAcess");
+
+            x.style.display = "block";
+        }
+
+        function closePanelAcess() {
+            let y = document.getElementById("panelAcess");
+
+            y.style.display = "none";
+        }
+
+        function darkColor() {
+            let t = document.getElementsByClassName("darkLight");
+            let p = document.getElementsByClassName("lightZone");
+
+            for (let i = 0; i < t.length; i++) {
+                t[i].style.backgroundColor = "#212529";
+                t[i].style.transition = "0.5s";
             }
 
-            function cambiaTwo() {
-                document.getElementById("container-img-small").src =
-                    "{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}";
+
+            for (let i = 0; i < p.length; i++) {
+                p[i].style.color = "#f5f5f5";
+                p[i].style.transition = "0.5s";
             }
 
-            function cambiaThree() {
-                document.getElementById("container-img-small").src =
-                    "{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}";
+        }
+
+        function lightColor() {
+            let z = document.getElementsByClassName("darkLight");
+            let o = document.getElementsByClassName("lightZone");
+
+            for (let i = 0; i < z.length; i++) {
+                z[i].style.backgroundColor = "#f5f5f5";
+                z[i].style.transition = "0.5s";
             }
 
-            function cambiaFour() {
-                document.getElementById("container-img-small").src =
-                    "{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}";
+
+            for (let i = 0; i < o.length; i++) {
+                o[i].style.color = "#212529";
+                o[i].style.transition = "0.5s";
             }
 
+        }
 
 
-            //ARPI PANEL SHOW-XXXL
-            function openPanelShowxxxl() {
-                let open = document.getElementById("panelXXXL");
-                let opacityBackgroun = document.getElementById("generalMain");
-                open.style.display = "block";
+
+        //questa funzione mi fa colorare le categorie
+        var value = document.getElementById("titoloShow").innerText;
+        var out = document.getElementsByClassName("coloreCambiaShow");
+
+        if (value === "Informatica") {
+            for (let i = 0; i < out.length; i++) {
+                out[i].style.color = "#0466c8";
             }
-
-            function closePanelShowxxxl() {
-                let close = document.getElementById("panelXXXL");
-                let opacityBackgroun = document.getElementById("generalMain");
-                close.style.display = "none";
+        } else if (value === "Motori") {
+            for (let i = 0; i < out.length; i++) {
+                out[i].style.color = "#c44536";
             }
-            //CAMBIA IMG AL CLIK N.B. PANEL-SHOW-XXXL
-            function cambiaUno() {
-
-                document.getElementById("container-img-xxxl").src =
-                    "{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}";
+        } else if (value === "Elettrodomestici") {
+            for (let i = 0; i < out.length; i++) {
+                out[i].style.color = "#5c8001";
             }
-
-            function cambiaDue() {
-                document.getElementById("container-img-xxxl").src =
-                    "{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}";
+        } else if (value === "Libri") {
+            for (let i = 0; i < out.length; i++) {
+                out[i].style.color = "#fbb02d";
             }
-
-            function cambiaTre() {
-                document.getElementById("container-img-xxxl").src =
-                    "{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}";
+        } else if (value === "Giochi") {
+            for (let i = 0; i < out.length; i++) {
+                out[i].style.color = "#99582a";
             }
-
-            function cambiaQuattro() {
-                document.getElementById("container-img-xxxl").src =
-                    "{{ !$announcement->images()->get()->isEmpty()? Storage::url($announcement->images()->first()->path): '\img\default-image.jpg' }}";
+        } else if (value === "Sport") {
+            for (let i = 0; i < out.length; i++) {
+                out[i].style.color = "#62b6cb";
             }
-
-            //PANNELLO ACCESSIBILITA
-            function openAccessibilita() {
-                let x = document.getElementById("panelAcess");
-
-                x.style.display = "block";
+        } else if (value === "Immobili") {
+            for (let i = 0; i < out.length; i++) {
+                out[i].style.color = "#7678ed";
             }
-
-            function closePanelAcess() {
-                let y = document.getElementById("panelAcess");
-
-                y.style.display = "none";
+        } else if (value === "Telefoni") {
+            for (let i = 0; i < out.length; i++) {
+                out[i].style.color = "#6d6875";
             }
+        } else if (value === "Arredamento") {
+            for (let i = 0; i < out.length; i++) {
+                out[i].style.color = "#73ba9b";
+            }
+        }
 
-            function darkColor() {
-                let t = document.getElementsByClassName("darkLight");
-                let p = document.getElementsByClassName("lightZone");
+        function cambiaColore(titolo, colore) {
+            //altro cambio colore
+            let valueDue = document.getElementById("titoloCategoryCard").innerText;
+            let outDue = document.getElementsByClassName(colore);
 
-                for (let i = 0; i < t.length; i++) {
-                    t[i].style.backgroundColor = "#212529";
-                    t[i].style.transition = "0.5s";
+            if (valueDue === "Informatica") {
+                for (let i = 0; i < outDue.length; i++) {
+                    outDue[i].style.color = "#0466c8";
                 }
-
-
-                for (let i = 0; i < p.length; i++) {
-                    p[i].style.color = "#f5f5f5";
-                    p[i].style.transition = "0.5s";
+            } else if (valueDue === "Motori") {
+                for (let i = 0; i < outDue.length; i++) {
+                    outDue[i].style.color = "#c44536";
                 }
-
-            }
-
-            function lightColor() {
-                let z = document.getElementsByClassName("darkLight");
-                let o = document.getElementsByClassName("lightZone");
-
-                for (let i = 0; i < z.length; i++) {
-                    z[i].style.backgroundColor = "#f5f5f5";
-                    z[i].style.transition = "0.5s";
+            } else if (valueDue === "Elettrodomestici") {
+                for (let i = 0; i < outDue.length; i++) {
+                    outDue[i].style.color = "#5c8001";
                 }
-
-
-                for (let i = 0; i < o.length; i++) {
-                    o[i].style.color = "#212529";
-                    o[i].style.transition = "0.5s";
+            } else if (valueDue === "Libri") {
+                for (let i = 0; i < outDue.length; i++) {
+                    outDue[i].style.color = "#fbb02d";
                 }
-
-            }
-
-
-
-            //questa funzione mi fa colorare le categorie
-            var value = document.getElementById("titoloShow").innerText;
-            var out = document.getElementsByClassName("coloreCambiaShow");
-
-            if (value === "Informatica") {
-                for (let i = 0; i < out.length; i++) {
-                    out[i].style.color = "#0466c8";
+            } else if (valueDue === "Giochi") {
+                for (let i = 0; i < outDue.length; i++) {
+                    outDue[i].style.color = "#99582a";
                 }
-            } else if (value === "Motori") {
-                for (let i = 0; i < out.length; i++) {
-                    out[i].style.color = "#c44536";
+            } else if (valueDue === "Sport") {
+                for (let i = 0; i < outDue.length; i++) {
+                    outDue[i].style.color = "#62b6cb";
                 }
-            } else if (value === "Elettrodomestici") {
-                for (let i = 0; i < out.length; i++) {
-                    out[i].style.color = "#5c8001";
+            } else if (valueDue === "Immobili") {
+                for (let i = 0; i < outDue.length; i++) {
+                    outDue[i].style.color = "#7678ed";
                 }
-            } else if (value === "Libri") {
-                for (let i = 0; i < out.length; i++) {
-                    out[i].style.color = "#fbb02d";
+            } else if (valueDue === "Telefoni") {
+                for (let i = 0; i < outDue.length; i++) {
+                    outDue[i].style.color = "#6d6875";
                 }
-            } else if (value === "Giochi") {
-                for (let i = 0; i < out.length; i++) {
-                    out[i].style.color = "#99582a";
-                }
-            } else if (value === "Sport") {
-                for (let i = 0; i < out.length; i++) {
-                    out[i].style.color = "#62b6cb";
-                }
-            } else if (value === "Immobili") {
-                for (let i = 0; i < out.length; i++) {
-                    out[i].style.color = "#7678ed";
-                }
-            } else if (value === "Telefoni") {
-                for (let i = 0; i < out.length; i++) {
-                    out[i].style.color = "#6d6875";
-                }
-            } else if (value === "Arredamento") {
-                for (let i = 0; i < out.length; i++) {
-                    out[i].style.color = "#73ba9b";
+            } else if (valueDue === "Arredamento") {
+                for (let i = 0; i < outDue.length; i++) {
+                    outDue[i].style.color = "#73ba9b";
                 }
             }
+        }
 
-            function cambiaColore(titolo, colore) {
-                //altro cambio colore
-                let valueDue = document.getElementById("titoloCategoryCard").innerText;
-                let outDue = document.getElementsByClassName(colore);
 
-                if (valueDue === "Informatica") {
-                    for (let i = 0; i < outDue.length; i++) {
-                        outDue[i].style.color = "#0466c8";
-                    }
-                } else if (valueDue === "Motori") {
-                    for (let i = 0; i < outDue.length; i++) {
-                        outDue[i].style.color = "#c44536";
-                    }
-                } else if (valueDue === "Elettrodomestici") {
-                    for (let i = 0; i < outDue.length; i++) {
-                        outDue[i].style.color = "#5c8001";
-                    }
-                } else if (valueDue === "Libri") {
-                    for (let i = 0; i < outDue.length; i++) {
-                        outDue[i].style.color = "#fbb02d";
-                    }
-                } else if (valueDue === "Giochi") {
-                    for (let i = 0; i < outDue.length; i++) {
-                        outDue[i].style.color = "#99582a";
-                    }
-                } else if (valueDue === "Sport") {
-                    for (let i = 0; i < outDue.length; i++) {
-                        outDue[i].style.color = "#62b6cb";
-                    }
-                } else if (valueDue === "Immobili") {
-                    for (let i = 0; i < outDue.length; i++) {
-                        outDue[i].style.color = "#7678ed";
-                    }
-                } else if (valueDue === "Telefoni") {
-                    for (let i = 0; i < outDue.length; i++) {
-                        outDue[i].style.color = "#6d6875";
-                    }
-                } else if (valueDue === "Arredamento") {
-                    for (let i = 0; i < outDue.length; i++) {
-                        outDue[i].style.color = "#73ba9b";
-                    }
-                }
+        //torna su
+        window.addEventListener('scroll', (event) => {
+
+            let scrollTop = document.documentElement.scrollTop;
+            let secondoSloganDiv = document.getElementById("secondoSlogan");
+
+            let btn = document.getElementById("btnSu");
+
+
+            let topSecondoSloganDiv = secondoSloganDiv.offsetTop;
+
+
+            if (scrollTop > topSecondoSloganDiv) {
+
+                btn.style.display = "block";
+                nav.style.transition = "1s";
+
+            } else {
+                btn.style.display = "none";
             }
+        });
 
+        //torna su
+        function tornaSu() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
 
-            //torna su
-            window.addEventListener('scroll', (event) => {
+        function cambiaImmagine(nuovaImmagineSrc) {
+            var immagineGrande = document.getElementById('immagineGrande');
+            immagineGrande.src = nuovaImmagineSrc;
+        }
 
-                let scrollTop = document.documentElement.scrollTop;
-                let secondoSloganDiv = document.getElementById("secondoSlogan");
-
-                let btn = document.getElementById("btnSu");
-
-
-                let topSecondoSloganDiv = secondoSloganDiv.offsetTop;
-
-
-                if (scrollTop > topSecondoSloganDiv) {
-
-                    btn.style.display = "block";
-                    nav.style.transition = "1s";
-
-                } else {
-                    btn.style.display = "none";
-                }
-            });
-
-            //torna su
-            function tornaSu() {
-                document.body.scrollTop = 0; // For Safari
-                document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-            }
-
-            function cambiaImmagine(nuovaImmagineSrc) {
-                var immagineGrande = document.getElementById('immagineGrande');
-                immagineGrande.src = nuovaImmagineSrc;
-            }
-
-            function cambiaImmagine2(nuovaImmagineSrc2) {
-                var immagineGrande2 = document.getElementById('immagineGrande2');
-                immagineGrande2.src = nuovaImmagineSrc2;
-            }
-        </script>
-        <!--SCRIPT PER CLICK CAMBIA IMG + ZOOM-->
+        function cambiaImmagine2(nuovaImmagineSrc2) {
+            var immagineGrande2 = document.getElementById('immagineGrande2');
+            immagineGrande2.src = nuovaImmagineSrc2;
+        }
+    </script>
+    <!--SCRIPT PER CLICK CAMBIA IMG + ZOOM-->
 </x-layout>

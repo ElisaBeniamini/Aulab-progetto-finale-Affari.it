@@ -7,7 +7,7 @@ return [
     'il' => 'Publicado el',
     'selezione-prezzi-bassi' => 'Una selección de teléfonos inteligentes a precios más bajos.',
     'esplora le nostre categorie' => 'Explora nuestras categorías.',
-    'smartphone a minor prezzo' => 'Ofertas Especiales en Teléfonos Celulares',
+    'smartphone a minor prezzo' => 'Teléfonos de bajo precio',
     'lavora con noi' => 'Trabaja con nosotros',
     'diventa revisore basta registrarti' => 'Conviértete en revisor, solo regístrate!',
     'scopri come' => 'Descubre cómo',
@@ -17,8 +17,8 @@ return [
     'cerca' => 'Busca',
     'iscriviti-in-piattaforma-ed-inizia-a-monetizzare' => 'Regístrate en la plataforma y comienza a monetizar',
     'scopri-i-prodotti-ideali-per-i-tuoi-gusti' => 'Descubre los productos ideales para tus gustos',
-    'annunci-a-prezzi-bassi-scopri-di-più'=> 'anuncios-a-precios-bajos-descubre-más',
-    'pubblica-comodamente-da-casa-tua'=>'Publica desde la comodidad de tu casa',
+    'annunci-a-prezzi-bassi-scopri-di-più' => 'Anuncios a precios bajos descubre más',
+    'pubblica-comodamente-da-casa-tua' => 'Publica desde la comodidad de tu casa',
 
 
 
@@ -79,7 +79,7 @@ return [
     'contatta' => 'Contacta',
     'scopri-prodotti-correlati' => 'Algunos productos recomendados para ti',
     'selezione-articoli<50' => 'Selección de artículos por debajo de 50 €.',
-    'iscriviti-sulla-nostra-piattaforma'=>'Regístrate en nuestra plataforma',
+    'iscriviti-sulla-nostra-piattaforma' => 'Regístrate en nuestra plataforma',
 
     //pagina become revisor
     'vuoi-lavorare-con-noi' => '¿Quieres trabajar con nosotros?',

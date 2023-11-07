@@ -7,7 +7,7 @@ return [
     'il' => 'Pubblicato il',
     'selezione-prezzi-bassi' => 'Una selezione di smartphone a prezzi bassi',
     'esplora le nostre categorie' => 'Esplora le nostre categorie',
-    'smartphone a minor prezzo' => 'Offerte Speciali sui Cellulari',
+    'smartphone a minor prezzo' => 'Telefoni a basso prezzo',
     'lavora con noi' => 'Lavora con noi',
     'diventa revisore basta registrarti' => 'Diventa revisore, basta registrarsi!',
     'scopri come' => 'Scopri come',
@@ -18,8 +18,8 @@ return [
     'cerca' => 'Cerca',
     'iscriviti-in-piattaforma-ed-inizia-a-monetizzare' => 'Iscriviti in piattaforma ed inizia a monetizzare',
     'scopri-i-prodotti-ideali-per-i-tuoi-gusti' => 'Scopri i prodotti ideali per i tuoi gusti',
-    'annunci-a-prezzi-bassi-scopri-di-più'=> 'Annunci a prezzi bassi scopri di più',
-    'pubblica-comodamente-da-casa-tua'=>'Pubblica comodamente da casa tua',
+    'annunci-a-prezzi-bassi-scopri-di-più' => 'Annunci a prezzi bassi scopri di più',
+    'pubblica-comodamente-da-casa-tua' => 'Pubblica comodamente da casa tua',
 
     //index annunci
     'h2-tutti-gli-annunci' => 'Tutti gli annunci',
@@ -76,7 +76,7 @@ return [
     'contatta' => 'Contatta',
     'scopri-prodotti-correlati' => 'Alcuni prodotti consigliati per te',
     'selezione-articoli<50' => 'Selezione di articoli inferiori a 50 €',
-    'iscriviti-sulla-nostra-piattaforma'=>'Iscriviti sulla nostra piattaforma',
+    'iscriviti-sulla-nostra-piattaforma' => 'Iscriviti sulla nostra piattaforma',
 
     //pagina become revisor
     'vuoi-lavorare-con-noi' => 'Vuoi lavorare con noi?',

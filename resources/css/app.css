@@ -119,7 +119,7 @@ label {
 /* Stile per il campo "Scegli Categoria" */
 #category {
     background-color: #fff !important;
-    width: 100%!important;
+    width: 100% !important;
     border: 0.2px solid black;
 }
 
@@ -172,7 +172,7 @@ label {
     justify-content: center;
     height: 100%;
     width: 100% !important;
-    
+
 }
 
 
@@ -479,7 +479,7 @@ body {
 .img-show {
     width: 100%;
     height: 560px !important;
-    border: 1px solid transparent;
+    border: 0.2px solid #444444;
     cursor: pointer;
     box-sizing: border-box;
     object-fit: cover !important;
@@ -488,7 +488,7 @@ body {
 .img-piccole-show {
     height: 100%;
     width: 100%;
-    border: 1px solid transparent;
+    border: 0.2px solid #444444;
     cursor: pointer;
     transition: 0.3s;
     object-fit: cover !important;
@@ -720,7 +720,7 @@ body {
     height: 38px;
     margin: 0 auto !important;
     text-align: center !important;
-    margin-top: 30px!important;
+    margin-top: 30px !important;
     background-color: #444444;
     color: #f5f5f5;
     font-weight: 600;
@@ -731,7 +731,7 @@ body {
     height: 38px;
     margin: 0 auto !important;
     text-align: center !important;
-    margin-top: 30px!important;
+    margin-top: 30px !important;
     background-color: #444444;
     color: #f5f5f5;
     font-weight: 600;
@@ -739,7 +739,7 @@ body {
 
 #description {
     width: 100% !important;
-   
+
     margin: 0 auto !important;
     text-align: center !important;
 }
@@ -1248,10 +1248,11 @@ h3 {
     width: 100%;
     height: auto;
     position: fixed;
-    bottom: 0 !important;
+    bottom: 0px !important;
     left: 0 !important;
     z-index: 999;
     display: none !important;
+
 }
 
 .btnRevisoreBottom {
@@ -1369,6 +1370,7 @@ h3 {
 .img-card-official {
     width: 215px;
     height: 230px;
+
 }
 
 .nav-top {
@@ -1403,6 +1405,7 @@ h3 {
 .cardBox {
     width: 100% !important;
     height: auto;
+    border: 0.2px solid #444444;
 }
 
 .cardBox:hover {
@@ -1573,13 +1576,16 @@ h3 {
 .imgCarhome {
     width: 100%;
     height: 58vh;
+    object-fit: cover !important;
+    background-size: cover;
+    background-position: start;
 }
 
 .carousel {
     position: absolute;
     top: 0px;
     left: 0px;
-    margin-top: 0px !important;
+    margin-top: 35px !important;
 }
 
 /* START carosello area revisore, riportato al default */
@@ -1704,9 +1710,7 @@ h3 {
 }
 
 .navbar {
-    background-color: transparent;
-
-    background-color: transparent;
+    background-color: white;
     height: 65px;
     position: fixed;
     top: 0px;
@@ -1756,6 +1760,10 @@ body {
     font-weight: 600 !important;
 }
 
+.navbar-collapse.show {
+    background-color: #f5f5f5 !important;
+}
+
 .bandiere {
     background-color: transparent;
     border: none;
@@ -1764,7 +1772,7 @@ body {
 }
 
 .navDue {
-    background-color: transparent;
+    background-color: #f5f5f5 !important;
 }
 
 .offcanvas-title {
@@ -1789,9 +1797,9 @@ body {
         margin-top: 450px;
     }
 
-   
 
-    
+
+
 }
 
 
@@ -1802,34 +1810,43 @@ body {
         margin-top: 360px;
     }
 
-    .carousel{
-        margin-top: 80px!important;
+    .carousel {
+        margin-top: 80px !important;
     }
 }
 
 
 
-select{
-    width: 100%!important;
+select {
+    width: 100% !important;
 }
 
 #category,
 #price {
     width: 100% !important;
-   
+
 }
 
 .form-control[type="file"]:not(:disabled):not([readonly]) {
     cursor: pointer;
-    width: 100%!important;
-    box-shadow: none!important;
+    width: 100% !important;
+    box-shadow: none !important;
     border: 0.2px solid black;
-    background-color: white!important;
+    background-color: white !important;
     font-weight: 600;
-    color: #444444!important;
+    color: #444444 !important;
 }
 
-.img-registrazione{
- height: 620px!important;
+.img-registrazione {
+    height: 620px !important;
 }
 
+@media (max-width:768px) {
+    .nav-bottom {
+        display: flex !important;
+    }
+
+    .navbar-toggler {
+        display: none !important;
+    }
+}
